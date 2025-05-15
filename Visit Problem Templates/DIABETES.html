@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGCRC- Diabetes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+  <!-- Navbar -->
+<div class="vibrant-nav-container">
+  <div class="vibrant-nav-header">
+    <div class="vibrant-nav-icon">📋</div>
+    <div class="vibrant-nav-title">DISEASE TEMPLATES</div>
+    <div class="vibrant-nav-arrow">▼</div>
+  </div>
+  <div class="vibrant-nav-dropdown">
+    <a href="ABDOMINAL PAIN.html" class="vibrant-nav-link">
+      <i>🩺</i> ABDOMINAL PAIN
+    </a>
+    <a href="ANEMIA.html" class="vibrant-nav-link">
+      <i>🩸</i> ANEMIA
+    </a>
+    <a href="ASTHMA ACCUTE.html" class="vibrant-nav-link">
+      <i>🌬️</i> ASTHMA ACUTE
+    </a>
+    <a href="ASTHMA SYMPTOM.html" class="vibrant-nav-link">
+      <i>😤</i> ASTHMA SYMPTOM
+    </a>
+    <a href="BACK PAIN.html" class="vibrant-nav-link">
+      <i>🧘</i> BACK PAIN
+    </a>
+    <a href="CHEST_PAIN.html" class="vibrant-nav-link">
+      <i>❤️</i> CHEST PAIN
+    </a>
+    <a href="DIABETES.html" class="vibrant-nav-link">
+      <i>🩸</i> DIABETES
+    </a>
+    <a href="GERD.html" class="vibrant-nav-link">
+      <i>🤢</i> GERD
+    </a>
+    <a href="GYNECOLOGY.html" class="vibrant-nav-link">
+      <i>🌸</i> GYNECOLOGY
+    </a>
+    <a href="HEADACHE.html" class="vibrant-nav-link">
+      <i>🤕</i> HEADACHE
+    </a>
+    <a href="HYPERTENSION.html" class="vibrant-nav-link">
+      <i>🩺</i> HYPERTENSION
+    </a>
+    <a href="STROKE.html" class="vibrant-nav-link">
+      <i>🧠</i> STROKE
+    </a>
+  </div>
+</div>
+
+  <div class="header">
+    <img src="logo.png" alt="Amader Gram Logo" class="logo">
+    <div>
+      <div class="clinic-name">AMADER GRAM CANCER CARE AND RESEARCH CENTER</div>
+      <div class="template-title">DIABETES FOR HISTORY AND PHYSICAL EXAMINATION</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="main-content">
+      <!-- Patient Information Section -->
+      <div class="section">
+        <div class="section-title">Patient Information</div>
+        <div class="form-row">
+          <div class="form-col">
+            <div class="form-group">
+              <label>Name:</label>
+              <input type="text" class="auto-fill" placeholder="Auto-filled">
+            </div>
+          </div>
+          <div class="form-col">
+            <div class="form-group">
+              <label>ID:</label>
+              <input type="text" class="auto-fill" placeholder="Auto-filled">
+            </div>
+          </div>
+          <div class="form-col">
+            <div class="form-group">
+              <label>Date:</label>
+              <input type="date" id="visit-date">
+            </div>
+          </div>
+          <div class="form-col">
+            <div class="form-group">
+              <label>Age today:</label>
+              <input type="number" id="age" min="0" max="120" style="width: 80px;"> years
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diagnosis Reference Section -->
+      <div class="section">
+        <div class="section-title">Diagnosis Reference</div>
+        <p><strong>Diagnosis:</strong></p>
+        <p><strong>Hemoglobin A1c</strong> blood test more than 6.5% OR Random blood glucose more than 200 mg/dL OR
+          Fasting blood glucose more than 125 mg/dL in the presence of weight loss, increased hunger, polyuria and
+          polydipsia.</p>
+
+        <div class="form-group">
+          <p><strong>DM1</strong> = type 1 diabetes mellitus (5-10% of cases); Autoimmune disorder against pancreatic
+            Beta cells → insulin deficiency.</p>
+          <p><strong>DM2</strong> = type 2 diabetes mellitus (90-95% of cases); Insulin resistance in target organs and
+            relative insulin deficiency.</p>
+        </div>
+
+        <div class="form-group">
+          <p><strong>Diabetic ketoacidosis:</strong> Hyperglycemic emergency with history of a few days of polydipsia,
+            polyuria, vomiting; Then dehydration, rapid deep breathing (Kussmaul respiration), fruity smelling breath,
+            confusion, and shock. Commonly caused by infection.</p>
+        </div>
+
+        <div class="form-group">
+          <p><strong>Hypoglycemia in diabetics treated with insulin.</strong> Confusion, altered behavior, anxiety,
+            sweating, palpitations, tachycardia, and tremor.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="section-title">History</div>
+
+        <div class="form-group">
+          <label>Patient-reported age of onset of diabetes:</label>
+          <input type="number" min="0" max="120" style="width: 80px;"> years old
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">History of:</div>
+
+     <div class="form-group" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+       <div style="display: flex; align-items: center;">
+          <label class="audit-item" style="margin-right: 15px; margin-bottom: 0;">Metabolic syndrome:</label>
+            <div class="radio-group" style="display: flex; gap: 10px;">
+              <label class="radio-option"><input type="radio" name="metabolic-syndrome" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="metabolic-syndrome" value="no"> NO</label>
+            </div>
+        </div>
+              <a href="#" class="info-link" data-info="metabolic-syndrome" style="white-space: nowrap;">Syndrome Details</a>
+      </div>
+
+          <div class="form-group">
+            <label>Hypertension</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="hypertension" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="hypertension" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Orthostatic hypotension</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="orthostatic" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="orthostatic" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Cigarette smoking</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="smoking" value="past"> In past</label>
+              <label class="radio-option"><input type="radio" name="smoking" value="current"> Currently</label>
+              <label class="radio-option"><input type="radio" name="smoking" value="never"> Never</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Does the patient have other first-degree family members (mother, father, sister, brother) with
+              diabetes?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="family-diabetes" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="family-diabetes" value="no"> NO</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Illness signs attributed to diabetes:</div>
+
+          <div class="form-group">
+            <label>Rashes</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="rashes" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="rashes" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Infections</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="infections" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="infections" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Poor wound healing</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="wound-healing" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="wound-healing" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Dry skin</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="dry-skin" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="dry-skin" value="no"> NO</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Signs and symptoms of diabetes currently:</div>
+
+          <div class="form-group">
+            <label>Polyuria</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="polyuria" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="polyuria" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Polydipsia</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="polydipsia" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="polydipsia" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Peridontitis</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="peridontitis" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="peridontitis" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Symptoms of vaginitis</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="vaginitis" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="vaginitis" value="no"> NO</label>
+              <label class="radio-option"><input type="radio" name="vaginitis" value="na"> NOT Applicable</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Symptoms of urinary tract Infection</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="uti" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="uti" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>History of weight loss</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="weight-loss" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="weight-loss" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Polyphagia</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="polyphagia" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="polyphagia" value="no"> NO</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Signs suggesting diabetic neuropathy:</div>
+
+          <div class="form-group">
+            <label>Paresthesias</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="paresthesias" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="paresthesias" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Hyperesthesia</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="hyperesthesia" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="hyperesthesia" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Numbness</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="numbness" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="numbness" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Interosseal muscle wasting (especially loss of muscles in the fingers)</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="muscle-wasting" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="muscle-wasting" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Abnormal sweating</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="sweating" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="sweating" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="audit-item">Feelings of the feet burning at night?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="burning-feet" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="burning-feet" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Foot deformity</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="foot-deformity" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="foot-deformity" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Foot ulcer</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="foot-ulcer" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="foot-ulcer" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Thick foot callus formation</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="callus" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="callus" value="no"> NO</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Symptoms suggesting diabetic retinopathy:</div>
+
+          <div class="form-group">
+            <label>Cobweb-like streaks</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="cobweb" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="cobweb" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Floating spots</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="floaters" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="floaters" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Blurred vision</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="blurred-vision" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="blurred-vision" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Vision loss in one part of visual fields</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="vision-loss" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="vision-loss" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Dark or empty areas/blind spots of vision</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="blind-spots" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="blind-spots" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Color blindness or color fading</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="color-blindness" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="color-blindness" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Night blindness</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="night-blindness" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="night-blindness" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Symptoms of intermittent claudication?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="claudication" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="claudication" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Has the patient suffered an episode of ketoacidosis?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="ketoacidosis" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="ketoacidosis" value="no"> NO</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Previous laboratory or imaging test results relevant to diabetes:</div>
+
+          <div class="form-group">
+            <label>BUN:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="bun" value="no"> No test done</label>
+              <label class="radio-option"><input type="radio" name="bun" value="yes"> Test done. Date and result:
+                <input type="date" style="margin-left: 10px;">
+                <input type="text" placeholder="Result" style="margin-left: 10px;">
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Creatinine:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="creatinine" value="no"> No test done</label>
+              <label class="radio-option"><input type="radio" name="creatinine" value="yes"> Test done. Date and result:
+                <input type="date" style="margin-left: 10px;">
+                <input type="text" placeholder="Result" style="margin-left: 10px;">
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Cholesterol/lipids:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="cholesterol" value="no"> No tests done</label>
+              <label class="radio-option"><input type="radio" name="cholesterol" value="yes"> Tests done. Date and
+                results:
+                <input type="date" style="margin-left: 10px;">
+                <input type="text" placeholder="Results" style="margin-left: 10px;">
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Hemoglobin A1c:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="a1c" value="no"> No test done</label>
+              <label class="radio-option"><input type="radio" name="a1c" value="yes"> Test done. Date and result:
+                <input type="date" style="margin-left: 10px;">
+                <input type="text" placeholder="Result" style="margin-left: 10px;">
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Urinalysis for microalbuminuria:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="urinalysis" value="no"> No test done</label>
+              <label class="radio-option"><input type="radio" name="urinalysis" value="yes"> Test done. Date and result:
+                <input type="date" style="margin-left: 10px;">
+                <input type="text" placeholder="Result" style="margin-left: 10px;">
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Chest X ray:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="chest-xray" value="no"> No image taken</label>
+              <label class="radio-option"><input type="radio" name="chest-xray" value="yes"> X ray done. Date and
+                results:
+                <input type="date" style="margin-left: 10px;">
+                <div style="margin-top: 10px;">
+                  <label>Heart enlarged:</label>
+                  <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="heart-enlarged" value="yes"> YES</label>
+                    <label class="radio-option"><input type="radio" name="heart-enlarged" value="no"> NO</label>
+                  </div>
+                </div>
+                <div style="margin-top: 10px;">
+                  <label>Aortic or coronary artery calcification:</label>
+                  <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="calcification" value="yes"> YES</label>
+                    <label class="radio-option"><input type="radio" name="calcification" value="no"> NO</label>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="form-group">
+            <label class="audit-item">Patient reports moderate or greater physical activity during:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="activity" value="less"> Less than 3 hours per
+                week</label>
+              <label class="radio-option"><input type="radio" name="activity" value="3-5"> 3-5 hours per week</label>
+              <label class="radio-option"><input type="radio" name="activity" value="more"> More than 5 hours per
+                week</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Does the patient take a daily aspirin?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="aspirin" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="aspirin" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Current medical treatment for diabetes:</label>
+            <textarea></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="audit-item">Current home monitoring for diabetes:</label>
+            <textarea></textarea>
+          </div>
+        </div>
+      </div>
+
+        <!-- Targeted Physical Examination Section -->
+        <div class="section">
+            <div class="section-title">Targeted Physical Examination</div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Vital signs</div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Weight (kg):</label>
+                            <input type="number" id="weight" step="0.1">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Height (cm):</label>
+                            <input type="number" id="height">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label class="audit-item">Estimated B.M.I.:</label>
+                            <input type="text" id="bmi" readonly>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label class="audit-item">Waist circumference (cm):</label>
+                            <input type="number" id="waist-circumference">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Hip circumference (cm):</label>
+                            <input type="number" id="hip-circumference">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Waist/Hip ratio:</label>
+                            <span id="waist-hip-ratio"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                    <!-- Blood Pressure Section -->
+
+          <div class="form-row" style="align-items: flex-end; gap: 20px;">
+             <div class="form-group" style="flex: 1;">
+              <label>Blood pressure 1:</label>
+                 <div style="display: flex; align-items: center; gap: 5px;">
+                   <input type="number" id="bp1-systolic" style="width: 80px; text-align: center;"> 
+                   <span>/</span>
+                       <input type="number" id="bp1-diastolic" style="width: 80px; text-align: center;">
+                    <span>mmHg</span>
+                  </div>
+             </div>
+  
+           <div class="form-group" style="flex: 1;">
+                 <label>Blood pressure 2:</label>
+                   <div style="display: flex; align-items: center; gap: 5px;">
+                  <input type="number" id="bp2-systolic" style="width: 80px; text-align: center;">
+                    <span>/</span>
+                   <input type="number" id="bp2-diastolic" style="width: 80px; text-align: center;">
+                    <span>mmHg</span>
+                 </div>
+             </div>
+  
+            <div class="form-group" style="flex: 1; margin-left: 20px;">
+                <label>Average:</label>
+                  <input type="text" id="bp-average" readonly style="background-color: #f5f5f5; width: 180px; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+            </div>
+                
+           <div class="form-row">
+            <div class="form-group">
+                <label>Pulse rate:</label>
+                <input type="number"> /min
+                <label style="margin-left: 10px;">R and L Pulses simultaneous:</label>
+                <div class="radio-group" style="display: inline-flex; margin-left: 10px;">
+                  <label class="radio-option"><input type="radio" name="pulses-simultaneous" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="pulses-simultaneous" value="no"> NO</label>
+                </div>
+              </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Respiratory rate/minute:</label>
+                            <input type="number">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Temperature (°C):</label>
+                            <input type="number" step="0.1">
+                        </div>
+                    </div>
+                </div>
+
+          <div class="form-row">
+             <div class="form-col">
+             <div class="form-group">
+                 <label class="audit-item">Oximetry: %oxygen saturation</label>
+                    <input type="number" id="oximetry" min="0" max="100" style="width: 150px; border: 2px solid #000; padding: 8px;">
+              </div>
+            </div>
+           <div class="form-col">
+             <div class="form-group">
+               <label class="audit-item">Triceps skinfold thickness (mm)</label>
+               <input type="number" id="triceps-skinfold" min="0" max="50" step="0.1" style="width: 150px; border: 2px solid #000; padding: 8px;">
+              </div>
+            </div>
+          </div>
+       </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Visual Acuity Assessment</div>
+
+          <div class="form-group">
+            <label><a href="#" class="info-link" data-info="visual-acuity">Visual Acuity Assessment Strategy</a></label>
+          </div>
+
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label>Snellen notation Right eye:</label>
+                <input type="text">
+              </div>
+            </div>
+
+            <div class="form-col">
+              <div class="form-group">
+                <label>Snellen notation Left eye:</label>
+                <input type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Retinal fundus imaging</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="fundus-imaging" value="not-done"> Not done</label>
+              <label class="radio-option"><input type="radio" name="fundus-imaging" value="done"> Done</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="audit-item">Diabetes retinopathy grade:</label>
+            <input type="text">
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Thyroid Examination</div>
+
+          <div class="form-group">
+            <label>Thyroid Palpable/enlarged</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="thyroid" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="thyroid" value="no"> NO</label>
+            </div>
+          </div>
+
+             <div class="form-group" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+               <div style="display: flex; align-items: center;">
+                 <label class="audit-item" style="margin-right: 15px; margin-bottom: 0;">Lid lag present:</label>
+               <div class="radio-group" style="display: flex; gap: 10px;">
+                  <label class="radio-option"><input type="radio" name="lid-lag" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="lid-lag" value="no"> NO</label>
+               </div>
+             </div>
+                   <a href="#" class="info-link" data-info="lid-lag-info" style="white-space: nowrap;">Lid Lag Details</a>
+            </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Cardiovascular Examination</div>
+
+          <div class="form-group">
+            <label>Carotid artery:</label>
+            <div class="form-row">
+              <div class="form-col">
+                <label>Right Bruit</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="right-bruit" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="right-bruit" value="no"> NO</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label>Left Bruit</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="left-bruit" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="left-bruit" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="audit-item">Dorsalis pedis artery pulse palpable:</label>
+            <div class="form-row">
+              <div class="form-col">
+                <label>Right</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="right-dorsalis" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="right-dorsalis" value="no"> NO</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label>Left</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="left-dorsalis" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="left-dorsalis" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="audit-item">Posterior tibial artery pulse palpable:</label>
+            <div class="form-row">
+              <div class="form-col">
+                <label>Right</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="right-tibial" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="right-tibial" value="no"> NO</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label>Left</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="left-tibial" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="left-tibial" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Pedal/leg edema present:</label>
+            <div class="form-row">
+              <div class="form-col">
+                <label>Right</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="right-edema" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="right-edema" value="no"> NO</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label>Left</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="left-edema" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="left-edema" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="audit-item">Point of maximal cardiac impulse</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="pmi" value="normal"> Normal</label>
+              <label class="radio-option"><input type="radio" name="pmi" value="displaced"> Displaced</label>
+              <label class="radio-option"><input type="radio" name="pmi" value="1cm"> One cm in size</label>
+              <label class="radio-option"><input type="radio" name="pmi" value="2cm"> Two or >cm in size=increased</label>
+            </div>
+          </div>
+
+        <div class="form-group">
+            <label>Heart sounds:</label>
+          <div class="form-group">
+            <label><a href="#" class="info-link" data-info="cardiac-auscultation">A PRIMER ON CARDIAC AUSCULTATION</a></label>
+          </div>
+            <div class="form-group">
+              <label>Cardiac impulse:</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="cardiac-impulse" value="normal"> Normal</label>
+                <label class="radio-option"><input type="radio" name="cardiac-impulse" value="increased"> Increased</label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div class="form-group">
+                <label>S1 Intensity</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="s1-intensity" value="normal"> Normal</label>
+                  <label class="radio-option"><input type="radio" name="s1-intensity" value="increased"> Increased</label>
+                  <label class="radio-option"><input type="radio" name="s1-intensity" value="decreased"> Decreased</label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label>S2 Intensity</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="s2-intensity" value="normal"> Normal</label>
+                  <label class="radio-option"><input type="radio" name="s2-intensity" value="increased"> Increased</label>
+                  <label class="radio-option"><input type="radio" name="s2-intensity" value="decreased"> Decreased</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>Murmurs:</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="murmurs-present" value="none"> None</label>
+                <label class="radio-option"><input type="radio" name="murmurs-present" value="present"> Present</label>
+              </div>
+              
+              <div id="murmurs-present-details" style="margin-top: 10px; display: none;">
+                <div class="form-group">
+                  <label>Description:</label>
+                  <textarea style="min-height: 60px;"></textarea>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>S3</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="s3-present" value="present"> Present</label>
+                <label class="radio-option"><input type="radio" name="s3-present" value="none"> None heard</label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>S4</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="s4-present" value="present"> Present</label>
+                <label class="radio-option"><input type="radio" name="s4-present" value="none"> None heard</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Lung Examination</div>
+
+          <div class="form-group">
+            <label>Lungs:</label>
+            <div class="form-row">
+              <div class="form-col">
+                <label>Right</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="right-lung" value="normal"> No abnormal sounds
+                    over all fields</label>
+                  <label class="radio-option"><input type="radio" name="right-lung" value="abnormal"> Abnormal sounds:
+                    <input type="text" placeholder="Describe" style="margin-left: 5px;">
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label>Left</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="left-lung" value="normal"> No abnormal sounds
+                    over all fields</label>
+                  <label class="radio-option"><input type="radio" name="left-lung" value="abnormal"> Abnormal sounds:
+                    <input type="text" placeholder="Describe" style="margin-left: 5px;">
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Abdominal Examination</div>
+
+          <div class="form-group">
+            <label class="audit-item">Is the liver height enlarged to percussion (=>10 cm in women, >13 cm in
+              men)</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="liver-enlarged" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="liver-enlarged" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Spleen</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="spleen" value="not-felt"> Not felt</label>
+              <label class="radio-option"><input type="radio" name="spleen" value="tip-felt"> Tip felt</label>
+              <label class="radio-option"><input type="radio" name="spleen" value="clearly-felt"> Clearly felt →
+                enlarged</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Feet Examination</div>
+
+          <div class="form-group">
+            <label>Deformity:</label>
+            <div class="form-row">
+              <div class="form-col">
+                <label>Right foot</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="right-deformity" value="present"> Present</label>
+                  <label class="radio-option"><input type="radio" name="right-deformity" value="absent"> Absent</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label>Left foot</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="left-deformity" value="present"> Present</label>
+                  <label class="radio-option"><input type="radio" name="left-deformity" value="absent"> Absent</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Vibratory sensation in big toe:</label>
+            <div class="form-row">
+              <div class="form-col">
+                <label>Right foot</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="right-deformity" value="present"> Present</label>
+                  <label class="radio-option"><input type="radio" name="right-deformity" value="absent"> Absent</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label>Left foot</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="left-deformity" value="present"> Present</label>
+                  <label class="radio-option"><input type="radio" name="left-deformity" value="absent"> Absent</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+         <div class="form-group">
+            <label>Pinprick sensation in big toe:</label>
+            <div class="form-row">
+              <div class="form-col">
+                <label>Right foot</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="right-deformity" value="present"> Present</label>
+                  <label class="radio-option"><input type="radio" name="right-deformity" value="absent"> Absent</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label>Left foot</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="left-deformity" value="present"> Present</label>
+                  <label class="radio-option"><input type="radio" name="left-deformity" value="absent"> Absent</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <div class="form-group">
+            <label>Pinprick sensation in small toe:</label>
+            <div class="form-row">
+              <div class="form-col">
+                <label>Right foot</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="right-deformity" value="present"> Present</label>
+                  <label class="radio-option"><input type="radio" name="right-deformity" value="absent"> Absent</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label>Left foot</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="left-deformity" value="present"> Present</label>
+                  <label class="radio-option"><input type="radio" name="left-deformity" value="absent"> Absent</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Pinprick sensation in little toe:</label>
+            <div class="form-row">
+              <div class="form-col">
+                <label>Right foot</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="right-deformity" value="present"> Present</label>
+                  <label class="radio-option"><input type="radio" name="right-deformity" value="absent"> Absent</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label>Left foot</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="left-deformity" value="present"> Present</label>
+                  <label class="radio-option"><input type="radio" name="left-deformity" value="absent"> Absent</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        <div class="form-group">
+            <label>Monofilament sensation in big toe:</label>
+            <div class="form-row">
+              <div class="form-col">
+                <label>Right foot</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="right-deformity" value="present"> Present</label>
+                  <label class="radio-option"><input type="radio" name="right-deformity" value="absent"> Absent</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label>Left foot</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="left-deformity" value="present"> Present</label>
+                  <label class="radio-option"><input type="radio" name="left-deformity" value="absent"> Absent</label>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+        <div class="form-group">
+            <label>Monofilament sensation in little toe:</label>
+            <div class="form-row">
+              <div class="form-col">
+                <label>Right foot</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="right-deformity" value="present"> Present</label>
+                  <label class="radio-option"><input type="radio" name="right-deformity" value="absent"> Absent</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label>Left foot</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="left-deformity" value="present"> Present</label>
+                  <label class="radio-option"><input type="radio" name="left-deformity" value="absent"> Absent</label>
+                </div>
+              </div>
+              <div class="form-col">
+                <label>Bottom foot</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="left-deformity" value="present"> Present</label>
+                  <label class="radio-option"><input type="radio" name="left-deformity" value="absent"> Absent</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Skin Conditions</div>
+
+          <div class="form-group">
+            <label class="audit-item">Feet:</label>
+            <div class="form-group">
+              <label>Sores, ulcers or open wounds</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="sores" value="none"> NONE</label>
+                <label class="radio-option"><input type="radio" name="sores" value="yes"> YES →
+                  <input type="text" placeholder="Describe" style="margin-left: 5px;">
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Callus formation, blister formation, hemorrhage</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="callus-formation" value="none"> NONE</label>
+                <label class="radio-option"><input type="radio" name="callus-formation" value="yes"> YES →
+                  <input type="text" placeholder="Describe" style="margin-left: 5px;">
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Yellow, brown or reddish patches</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="patches" value="none"> NONE</label>
+                <label class="radio-option"><input type="radio" name="patches" value="yes"> YES →
+                  <input type="text" placeholder="Describe" style="margin-left: 5px;">
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Acanthosis nigricans (dark velvety patches on back of neck or underarm areas)</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="acanthosis" value="none"> NONE</label>
+                <label class="radio-option"><input type="radio" name="acanthosis" value="yes"> YES →
+                  <input type="text" placeholder="Describe" style="margin-left: 5px;">
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Signs of infection---increased heat, redness</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="infection" value="none"> NONE</label>
+                <label class="radio-option"><input type="radio" name="infection" value="yes"> YES →
+                  <input type="text" placeholder="Describe" style="margin-left: 5px;">
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Neurological Examination</div>
+
+          <div class="form-group">
+            <label>Is speech fluent?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="speech" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="speech" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Can patient comprehend regular speech?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="comprehend" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="comprehend" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Can patient repeat 3 common words?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="repeat-words" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="repeat-words" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Visual fields Intact to right and left and up and down</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="visual-fields" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="visual-fields" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="audit-item">Facial muscles:</label>
+            <div class="form-group">
+              <label>Smile</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="smile" value="normal"> Normal</label>
+                <label class="radio-option"><input type="radio" name="smile" value="asymmetric"> Asymmetric</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Showing teeth</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="teeth" value="normal"> Normal</label>
+                <label class="radio-option"><input type="radio" name="teeth" value="asymmetric"> Asymmetric</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Fine finger tremor</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="tremor" value="present"> PRESENT</label>
+              <label class="radio-option"><input type="radio" name="tremor" value="absent"> ABSENT</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Gait:</label>
+            <div class="form-row">
+              <div class="form-col">
+                <label>REGULAR</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="gait-regular" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="gait-regular" value="no"> NO</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label>STEADY/STABLE</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="gait-steady" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="gait-steady" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Strength:</label>
+            <div class="form-row">
+              <div class="form-col">
+                <label>Arm raise right</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="arm-right" value="normal"> NORMAL</label>
+                  <label class="radio-option"><input type="radio" name="arm-right" value="weak"> WEAK</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label>Arm raise left</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="arm-left" value="normal"> NORMAL</label>
+                  <label class="radio-option"><input type="radio" name="arm-left" value="weak"> WEAK</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label>Leg raise right</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="leg-right" value="normal"> NORMAL</label>
+                  <label class="radio-option"><input type="radio" name="leg-right" value="weak"> WEAK</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label>Leg raise left</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="leg-left" value="normal"> NORMAL</label>
+                  <label class="radio-option"><input type="radio" name="leg-left" value="weak"> WEAK</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Reflexes:</label>
+            <div class="form-row">
+              <div class="form-col">
+                <label>Brachial right</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="brachial-right" value="normal"> NORMAL</label>
+                  <label class="radio-option"><input type="radio" name="brachial-right" value="hyper"> HYPER</label>
+                  <label class="radio-option"><input type="radio" name="brachial-right" value="decreased"> DECREASED</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label>Brachial left</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="brachial-left" value="normal"> NORMAL</label>
+                  <label class="radio-option"><input type="radio" name="brachial-left" value="hyper"> HYPER</label>
+                  <label class="radio-option"><input type="radio" name="brachial-left" value="decreased"> DECREASED</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label>Knee right</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="knee-right" value="normal"> NORMAL</label>
+                  <label class="radio-option"><input type="radio" name="knee-right" value="hyper"> HYPER</label>
+                  <label class="radio-option"><input type="radio" name="knee-right" value="decreased"> DECREASED</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label>Knee left</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="knee-left" value="normal"> NORMAL</label>
+                  <label class="radio-option"><input type="radio" name="knee-left" value="hyper"> HYPER</label>
+                  <label class="radio-option"><input type="radio" name="knee-left" value="decreased"> DECREASED</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label class="audit-item">Ankle right</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="ankle-right" value="normal"> NORMAL</label>
+                  <label class="radio-option"><input type="radio" name="ankle-right" value="hyper"> HYPER</label>
+                  <label class="radio-option"><input type="radio" name="ankle-right" value="decreased"> DECREASED</label>
+                </div>
+              </div>
+
+              <div class="form-col">
+                <label class="audit-item">Ankle left</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="ankle-left" value="normal"> NORMAL</label>
+                  <label class="radio-option"><input type="radio" name="ankle-left" value="hyper"> HYPER</label>
+                  <label class="radio-option"><input type="radio" name="ankle-left" value="decreased"> DECREASED</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Summary of Key Findings</div>
+
+          <div class="form-group">
+            <label>Co-morbid conditions:</label>
+            <textarea></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>History:</label>
+            <textarea></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Cardiovascular disease symptoms or signs:</label>
+            <textarea></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Neurological symptoms or signs</label>
+            <textarea></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Retinopathic signs or symptoms</label>
+            <textarea></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="audit-item">Date of last retinal imaging (should be annual in established diabetic
+              patient):</label>
+            <input type="date">
+          </div>
+
+          <div class="form-group">
+            <label>Skin conditions:</label>
+            <textarea></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Feet conditions:</label>
+            <textarea></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Physical examination findings:</label>
+            <textarea></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>BMI:</label>
+            <input type="text" id="summary-bmi" readonly style="background-color: #eee;">
+          </div>
+
+          <div class="form-group">
+            <label>Waist:hip ratio:</label>
+            <input type="text" id="summary-ratio" readonly style="background-color: #eee;">
+            <p>(0.86 for women and 1.0 for men are high)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary Section -->
+      <div class="section" style="width: 100%; margin-top: 30px;">
+        <div class="section-title">SUMMARY OF DIABETES DIAGNOSIS AND STATUS</div>
+
+        <div class="subsection">
+          <div class="subsection-title">INCLUDING PATIENT ASSESSMENT OF THIS PROBLEM, TREATMENT SIDE EFFECTS, AND
+            TREATMENT COST:</div>
+          <textarea style="min-height: 100px; width: 100%;"></textarea>
+        </div>
+
+        <div class="subsection">
+          <div class="form-group">
+            <label>Changes made to Master major problem and diagnoses list updating this and any other problems.</label>
+            <div class="radio-group" style="margin-top: 10px; display: flex; gap: 20px;">
+              <label class="radio-option"><input type="radio" name="changes-made" value="done"> DONE</label>
+              <label class="radio-option"><input type="radio" name="changes-made" value="none"> NONE NEEDED</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="form-group">
+            <label>Immediate recommended further tests:</label>
+            <div class="radio-group" style="margin-top: 10px; display: flex; gap: 20px;">
+              <label class="radio-option"><input type="radio" name="immediate-tests" value="none"> NONE</label>
+              <label class="radio-option"><input type="radio" name="immediate-tests" value="specific"> Specific tests and
+                appointments</label>
+            </div>
+            <div id="specific-tests" style="margin-top: 10px; display: none;">
+              <textarea placeholder="List specific tests and appointments" style="width: 100%;"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="form-group">
+            <label>Tele-consultations obtained:</label>
+            <div class="radio-group" style="margin-top: 10px; display: flex; gap: 20px;">
+              <label class="radio-option"><input type="radio" name="teleconsult" value="none"> NONE</label>
+              <label class="radio-option"><input type="radio" name="teleconsult" value="yes"> Name of Consultant <input
+                  type="text" placeholder="Consultant name" style="margin-left: 10px; width: 300px;"></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="form-group">
+            <label>Recommended medical interventions:</label>
+            <textarea style="min-height: 80px; width: 100%;"></textarea>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="form-group">
+            <label>Treatment target: Hemoglobin A1c <7%</label>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="form-group">
+            <label>Patient education:</label>
+            <div class="two-column">
+              <div class="form-group">
+                <label><input type="checkbox"> Exercise</label>
+              </div>
+              <div class="form-group">
+                <label><input type="checkbox"> Weight</label>
+              </div>
+              <div class="form-group">
+                <label><input type="checkbox"> Protective footwear</label>
+              </div>
+              <div class="form-group">
+                <label><input type="checkbox"> Diet</label>
+              </div>
+              <div class="form-group">
+                <label><input type="checkbox"> DIABETES: WHY TO SEEK REGULAR PROFESSIONAL CARE</label>
+              </div>
+              <div class="form-group">
+                <label><input type="checkbox"> CUTS OR SORES MAY NOT HEAL PROPERLY.</label>
+              </div>
+              <div class="form-group">
+                <label><input type="checkbox"> TO PREVENT DAMAGE TO YOUR EYESIGHT.</label>
+              </div>
+              <div class="form-group">
+                <label><input type="checkbox"> TO PREVENT LOSING A FOOT OR LEG BECAUSE OF INJURIES TO THE BLOOD VESSELS
+                  AND NERVES OF THE LEGS AND FEET.</label>
+              </div>
+              <div class="form-group">
+                <label><input type="checkbox"> TO PREVENT KIDNEY FAILURE SPECIAL EXAMINATIONS AND TESTS SHOULD BE DONE
+                  ANNUALLY.</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="form-group">
+            <label>Follow up visit plans emphasizing importance of regular follow up visits to prevent
+              complications:</label>
+            <textarea style="min-height: 80px; width: 100%;"></textarea>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="form-row" style="display: flex; justify-content: space-between; gap: 30px;">
+            <div class="form-col" style="flex: 1;">
+              <div class="form-group">
+                <label>Medical assistant:</label>
+                <input type="text" style="width: 100%;">
+              </div>
+
+              <div class="form-group">
+                <label>Amader Gram services telephone number for appointments:</label>
+                <input type="tel" placeholder="Enter mobile number" style="width: 100%;">
+              </div>
+
+              <div class="form-group">
+                <label>Amader Gram telephone number for medical questions:</label>
+                <input type="tel" placeholder="Enter mobile number" style="width: 100%;">
+              </div>
+
+              <div class="form-group">
+                <label style="display: flex; align-items: center;">
+                  <input type="checkbox" style="margin-right: 10px;"> Provision of paper copy for this visit GIVEN
+                </label>
+              </div>
+            </div>
+
+            <div class="form-col" style="flex: 1;">
+              <div class="form-group">
+                <label>DATE</label>
+                <input type="date" style="width: 100%;">
+              </div>
+
+              <div class="form-group">
+                <label>Medical officer:</label>
+                <input type="text" style="width: 100%;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="buttons" style="margin-top: 20px; text-align: left;">
+          <button id="save-btn">SAVE</button>
+          <button id="submit-btn">SUBMIT TO EMR</button>
+          <button id="print-btn">PRINT</button>
+        </div>
+      </div>
+    </div>
+
+          <!-- Links Column (right panel) -->
+<div class="links-column">
+    <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">Visit Record Templates</h3>
+    <nav class="template-toc">
+      <ul>
+        <li><a href="#patient-info" class="template-link">1. Patient Information</a></li>
+        <li><a href="#diagnosis-reference" class="template-link">2. Diagnosis Reference</a></li>
+        <li>
+          <a href="#history" class="template-link">3. History</a>
+          <ul>
+            <li><a href="#metabolic-syndrome" class="template-link">3.1 Metabolic Syndrome</a></li>
+            <li><a href="#illness-signs" class="template-link">3.2 Illness Signs</a></li>
+            <li><a href="#neuropathy" class="template-link">3.3 Neuropathy</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#physical-exam" class="template-link">4. Physical Examination</a>
+          <ul>
+            <li><a href="#vital-signs" class="template-link">4.1 Vital Signs</a></li>
+            <li><a href="#visual-acuity" class="template-link">4.2 Visual Acuity</a></li>
+            <li><a href="#cardiovascular" class="template-link">4.3 Cardiovascular</a></li>
+            <li><a href="#feet-exam" class="template-link">4.4 Feet Examination</a></li>
+          </ul>
+        </li>
+        <li><a href="#summary" class="template-link">5. Summary</a></li>
+      </ul>
+    </nav>
+  
+        <!-- Examination References Section -->
+    <div class="info-links-section" style="margin-top: 30px;">
+        <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">Examination References</h3>
+        
+        <a href="#" class="info-link" data-info="lid-lag-info">Lid Lag Information</a>
+        <a href="#" class="info-link" data-info="pmi-info">Point of Maximal Impulse (PMI)</a>
+        <a href="#" class="info-link" data-info="s1-info">Heart Sound S1</a>
+        <a href="#" class="info-link" data-info="s2-info">Heart Sound S2</a>
+        <a href="#" class="info-link" data-info="split-s2-info">Split S2</a>
+        <a href="#" class="info-link" data-info="s3-info">Heart Sound S3</a>
+        <a href="#" class="info-link" data-info="murmurs-info">Heart Murmurs</a>
+        <a href="#" class="info-link" data-info="auscultation-sites">Auscultation Sites</a>
+    </div>
+
+      <!-- Snellen Chart Section -->
+    <div style="margin-top: 30px; text-align: center;">
+        <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">SNELLEN CHART</h3>
+        <img src="SNELLEN CHART.jpg" alt="Snellen Chart" 
+             style="width: 100%; max-width: 700px; 
+                    margin: 15px auto; 
+                    background-color: transparent;
+                    box-shadow: none;
+                    border: none;">
+         </div>
+     </div>
+    
+    <!-- Info Modal -->
+    <div id="infoModal" class="info-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="infoContent" class="info-content"></div>
+        </div>
+    </div>
+         
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set current date
+        const today = new Date();
+        const visitDateInput = document.getElementById('visit-date');
+        if (visitDateInput) {
+            visitDateInput.valueAsDate = today;
+        }
+        
+        // Improved toggle display function
+        function toggleDisplay(triggerSelector, targetId, checkValue = true) {
+            const triggers = document.querySelectorAll(triggerSelector);
+            const target = document.getElementById(targetId);
+            
+            if (!triggers.length || !target) return;
+            
+            function updateDisplay() {
+                const shouldShow = Array.from(triggers).some(el => 
+                    el.checked && (checkValue === true || el.value == checkValue)
+                );
+                target.style.display = shouldShow ? 'block' : 'none';
+            }
+            
+            triggers.forEach(trigger => {
+                trigger.addEventListener('change', updateDisplay);
+            });
+            
+            // Initialize
+            updateDisplay();
+        }
+
+        // Set up all conditional displays
+        toggleDisplay('input[name="hypertension"]', 'hypertension-details', 'yes');
+        toggleDisplay('input[name="teleconsult"]', 'teleconsultant-details', 'done');
+        toggleDisplay('input[name="specialist-consult"]', 'specialist-details', 'yes');
+        toggleDisplay('input[name="murmurs-present"]', 'murmurs-present-details', 'present');
+        toggleDisplay('input[name="appointment-made"]', 'appointment-date', 'yes');
+        toggleDisplay('input[name="virtual-care"]', 'virtual-care-details', 'yes');
+        toggleDisplay('input[name="community-health"]', 'community-health-details', 'yes');
+        toggleDisplay('input[name="immediate-tests"]', 'specific-tests', 'specific');
+
+        // BMI calculation
+        const weightInput = document.getElementById('weight');
+        const heightInput = document.getElementById('height');
+        const bmiInput = document.getElementById('bmi');
+        const summaryBmi = document.getElementById('summary-bmi');
+        
+        function calculateBMI() {
+            if (weightInput && heightInput && bmiInput) {
+                const weight = parseFloat(weightInput.value);
+                const height = parseFloat(heightInput.value) / 100; // convert cm to m
+                const bmi = (weight && height > 0) ? (weight / (height * height)).toFixed(1) : '';
+                bmiInput.value = bmi;
+                if (summaryBmi) summaryBmi.value = bmi;
+            }
+        }
+        
+        if (weightInput && heightInput) {
+            ['input', 'change'].forEach(event => {
+                weightInput.addEventListener(event, calculateBMI);
+                heightInput.addEventListener(event, calculateBMI);
+            });
+            calculateBMI();
+        }
+        
+        // Blood pressure average calculation
+        const bp1Systolic = document.getElementById('bp1-systolic');
+        const bp1Diastolic = document.getElementById('bp1-diastolic');
+        const bp2Systolic = document.getElementById('bp2-systolic');
+        const bp2Diastolic = document.getElementById('bp2-diastolic');
+        const bpAverage = document.getElementById('bp-average');
+        
+        function calculateBPAverage() {
+            if (bp1Systolic && bp1Diastolic && bp2Systolic && bp2Diastolic && bpAverage) {
+                const sys1 = parseFloat(bp1Systolic.value) || 0;
+                const dia1 = parseFloat(bp1Diastolic.value) || 0;
+                const sys2 = parseFloat(bp2Systolic.value) || 0;
+                const dia2 = parseFloat(bp2Diastolic.value) || 0;
+                
+                if (sys1 > 0 && dia1 > 0 && sys2 > 0 && dia2 > 0) {
+                    const avgSys = Math.round((sys1 + sys2) / 2);
+                    const avgDia = Math.round((dia1 + dia2) / 2);
+                    bpAverage.value = `${avgSys}/${avgDia}`;
+                } else {
+                    bpAverage.value = '';
+                }
+            }
+        }
+        
+        if (bp1Systolic && bp1Diastolic && bp2Systolic && bp2Diastolic) {
+            ['input', 'change'].forEach(event => {
+                bp1Systolic.addEventListener(event, calculateBPAverage);
+                bp1Diastolic.addEventListener(event, calculateBPAverage);
+                bp2Systolic.addEventListener(event, calculateBPAverage);
+                bp2Diastolic.addEventListener(event, calculateBPAverage);
+            });
+            calculateBPAverage();
+        }
+
+        // Waist/Hip ratio calculation
+        const waistInput = document.getElementById('waist-circumference');
+        const hipInput = document.getElementById('hip-circumference');
+        const ratioDisplay = document.getElementById('waist-hip-ratio');
+        const summaryRatio = document.getElementById('summary-ratio');
+        
+        function calculateWaistHipRatio() {
+            if (waistInput && hipInput && ratioDisplay) {
+                const waist = parseFloat(waistInput.value);
+                const hip = parseFloat(hipInput.value);
+                const ratio = (waist && hip > 0) ? (waist / hip).toFixed(2) : '';
+                ratioDisplay.textContent = ratio;
+                if (summaryRatio) summaryRatio.value = ratio;
+            }
+        }
+        
+        if (waistInput && hipInput) {
+            ['input', 'change'].forEach(event => {
+                waistInput.addEventListener(event, calculateWaistHipRatio);
+                hipInput.addEventListener(event, calculateWaistHipRatio);
+            });
+            calculateWaistHipRatio();
+        }
+
+           // Button functionality
+           document.getElementById('save-btn')?.addEventListener('click', function() {
+                // Validate form before saving
+                if (validateForm()) {
+                    alert('Form data saved successfully!');
+                    // In real implementation: saveFormData();
+                }
+            });
+            
+            document.getElementById('submit-btn')?.addEventListener('click', function() {
+                if (validateForm()) {
+                    if (confirm('Are you sure you want to submit this to EMR?')) {
+                        alert('Form submitted to EMR successfully!');
+                        // In real implementation: submitToEMR();
+                    }
+                }
+            });
+            
+            document.getElementById('print-btn')?.addEventListener('click', function() {
+                window.print();
+            });
+
+            // Form validation
+            function validateForm() {
+                // Example: Check required fields are filled
+                let isValid = true;
+                
+                document.querySelectorAll('[required]').forEach(field => {
+                    if (!field.value.trim()) {
+                        field.style.borderColor = 'red';
+                        isValid = false;
+                    } else {
+                        field.style.borderColor = '';
+                    }
+                });
+                
+                if (!isValid) {
+                    alert('Please fill in all required fields');
+                    return false;
+                }
+                return true;
+            }
+
+            // Initialize all hidden fields and trigger change events
+            document.querySelectorAll('.hidden').forEach(el => {
+                el.style.display = 'none';
+            });
+            
+            document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(el => {
+                if (el.checked) el.dispatchEvent(new Event('change'));
+            });
+
+            // Info modal functionality
+            const modal = document.getElementById("infoModal");
+            const infoLinks = document.querySelectorAll(".info-link");
+            const infoContent = document.getElementById("infoContent");
+            const span = document.getElementsByClassName("close")[0];
+            
+            // Info content definitions
+            const infoData = {
+
+      "cardiac-auscultation": `
+          <h3 style="color: var(--primary-color); margin-top: 0;">A PRIMER ON CARDIAC AUSCULTATION</h3>
+                 <p style="color: #ff0000; font-weight: bold;">This exam should be done with an acoustically augmented stethoscope.</p>
+                 <p style="color: #ff0000; font-weight: bold;">This exam should be done three times with the patient lying flat on the back, lying on the left side, and sitting up.</p>
+
+          <div style="max-height: 70vh; overflow-y: auto; padding-right: 10px;">
+            <p><strong>First heart sound (S1)</strong>: Closure of atrial-ventricular valves - tricuspid (right heart) and mitral (left heart) valves. Best heard at apex.</p>
+            
+            <p><strong>Systole</strong>: The period between S1 and S2 when the heart muscles are contracting.</p>
+            
+            <p><strong>Second heart sound (S2)</strong>: Aortic and pulmonic valve (also called semi-lunar valves) closure, usually in this order. Best heard in the cephalad right (A2) and left (P2) rib interspaces.</p>
+            
+            <p><strong>Split S2</strong>: Normal with inspiration associated with increased filling of right ventricle = A2 followed by delayed P2.</p>
+            
+            <p><strong>Third heart sound (S3)</strong>: A physiologically normal ventricular filling sound in young people and with exercise best heard at apex.</p>
+            
+            <p><strong>Diastole</strong>: The period between S2 and S1 when the heart muscles are at rest.</p>
+            
+            <p><strong>Atrial-ventricular valves</strong>: Open silently in diastole.</p>
+            
+            <p><strong>Murmurs</strong>: The significance of murmurs is determined by their locations, character, timing, and intensities. Systolic murmurs are often innocent or not indicative of heart disease, while diastolic murmurs are almost always pathologic.</p>
+            
+            <h4 style="color: var(--primary-color); margin-bottom: 5px;">Auscultation sites:</h4>
+            <ul style="margin-top: 5px;">
+              <li><strong>Right second rib interspace</strong> (between the second and third ribs, to the right of and next to the sternum) - closest to the aortic valve</li>
+              <li><strong>Left second interspace</strong> (between the second and third ribs, to the left of and next to the sternum) - closest to the pulmonic valve</li>
+              <li><strong>Left lower sternal border</strong> - closest to the tricuspid valve</li>
+              <li><strong>Apex</strong> (approximately between the 5th and 6th left ribs 3 inches from the left sternal border, where the heart beat can most easily be felt) - closest to the mitral valve</li>
+            </ul>
+            
+            <h4 style="color: var(--primary-color); margin-bottom: 5px;">Key Points:</h4>
+            <ul style="margin-top: 5px;">
+              <li>Use the diaphragm of the stethoscope for high-pitched sounds (S1, S2, murmurs of aortic/pulmonic stenosis, mitral regurgitation)</li>
+              <li>Use the bell for low-pitched sounds (S3, S4, murmur of mitral stenosis)</li>
+              <li>Have patient breathe normally, then hold breath in expiration to listen carefully</li>
+              <li>Compare auscultation findings with pulse palpation for timing</li>
+            </ul>
+          </div>
+        `,
+          
+            "lid-lag-info": `
+    <p><strong>Lid lag</strong> is a condition in which the upper eyelid is higher than normal while the eye is in downgaze. It can be measured by comparing the upper eyelid position in downgaze to its position in primary gaze relative to a fixed point like the pupil. The most common cause of lid lag is hyperthyroidism.</p>
+           `,
+
+          "visual-acuity": `
+        <h3 style="color: #1976d2; margin-top: 0; text-align: center; font-weight: bold; text-shadow: 1px 1px 3px rgba(25,118,210,0.2); animation: pulse 2s infinite;">
+            Visual Acuity Testing
+      </h3>
+        <div style="max-height: 70vh; overflow-y: auto; padding-right: 10px;">
+        <!-- Testing Procedure -->
+        <div style="background: linear-gradient(to right, #e3f2fd, #bbdefb); padding: 15px; border-left: 5px solid #2196f3; margin-bottom: 15px; border-radius: 0 8px 8px 0; animation: fadeIn 1s;">
+            <h4 style="color: #0d47a1; margin-top: 0; border-bottom: 2px dashed #64b5f6; padding-bottom: 5px;">Testing Procedure</h4>
+            <ul style="margin-bottom: 0; color: #0d47a1; padding-left: 20px;">
+                <li style="margin-bottom: 8px;">Have patient stand at appropriate marking on floor, 20 feet away from the chart.</li>
+                <li style="margin-bottom: 8px;">Have the patient cover one eye and read the lowest line they are able to read and record the Snellen notation.</li>
+                <li>Test each eye independently.</li>
+            </ul>
+        </div>
+        
+        <!-- Snellen Chart -->
+        <div style="background: linear-gradient(to right, #e1f5fe, #b3e5fc); padding: 15px; border-left: 5px solid #0288d1; border-radius: 0 8px 8px 0; animation: fadeIn 1.2s;">
+            <h4 style="color: #01579b; margin-top: 0; border-bottom: 2px dashed #4fc3f7; padding-bottom: 5px;">Snellen Chart</h4>
+            <div style="text-align: center; margin-top: 10px;">
+                <img src="SNELLEN CHART.jpg" alt="Snellen Eye Chart" style="max-width: 100%; height: auto; border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <p style="margin-top: 8px; margin-bottom: 0; font-size: 0.9em; color: #01579b;">Standard Snellen chart for visual acuity testing</p>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h4 {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        </style>
+    `,
+
+              "metabolic-syndrome": `
+    <h3 style="color: #7b1fa2; margin-top: 0; text-align: center; font-weight: bold; text-shadow: 1px 1px 3px rgba(123,31,162,0.2); animation: pulse 2s infinite;">
+        Metabolic Syndrome
+    </h3>
+    <div style="max-height: 70vh; overflow-y: auto; padding-right: 10px;">
+        <div style="background: linear-gradient(to right, #f3e5f5, #e1bee7); padding: 15px; border-left: 5px solid #9c27b0; border-radius: 0 8px 8px 0; animation: fadeIn 1s;">
+            <p style="margin-bottom: 0; color: #4a148c; font-weight: 500;">
+                Metabolic syndrome (also called insulin resistance syndrome) is characterized primarily by abdominal/visceral obesity (which is associated with increased insulin resistance); with waist circumference >85 cm in men, >80 cm in women for Asians, high triglycerides, and non-alcoholic fatty liver disease (NAFLD) (also called metabolic-dysfunction steatotic liver disease - MASLD). Usually associated with type 2 diabetes (=with hemoglobin A1c more than 6.5%) and often also with hypertension.
+            </p>
+        </div>
+    </div>
+    
+    <style>
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+`,
+                "lid-lag-info": "Lid lag is a condition in which the upper eyelid is higher than normal while the eye is in downgaze. It can be measured by comparing the upper eyelid position in downgaze to its position in primary gaze relative to a fixed point like the pupil.",
+                "pmi-info": "The point of maximal impulse (PMI) of the heart is the location at which the cardiac impulse can be best palpated on the chest wall. It is frequently at the fifth intercostal space at the midclavicular line. When dilated cardiomyopathy is present, this can be shifted laterally.",
+                "s1-info": "S1 = closure of atrial-ventricular valves=tricuspid (right heart) and mitral (left heart) valves. Best heard at apex.",
+                "s2-info": "S2 = Aortic and pulmonic valve (also called semi-lunar valves) closure, usually in this order. Best heard in the cephalad right (A2) and left (P2) rib interspaces.",
+                "split-s2-info": "Normal with inspiration associated with increased filling of right ventricle=A2 followed by delayed P2.",
+                "s3-info": "A physiologically normal ventricular filling sound in young people and with exercise best heard at apex.",
+                "murmurs-info": "The significance of murmurs is determined by their locations, character, timing, and intensities. Systolic murmurs are often innocent or not indicative of heart disease, while diastolic murmurs are almost always pathologic.",
+                "auscultation-sites": "Auscultation sites:<br><br>" +
+                    "1. Right second rib interspace (that is between the second and third ribs, to the right of and next to the sternum) (closest to the aortic valve)<br>" +
+                    "2. Left second interspace (that is between the second and third ribs, to the left of and next to the sternum) (closest to the pulmonic valve)<br>" +
+                    "3. Left lower sternal border (closest to the tricuspid valve)<br>" +
+                    "4. Apex (or bottom) (approximately between the 5th and 6th left ribs 3 inches from the left sternal border, where the heart beat can most easily be felt) (closest to the mitral valve)"
+            };
+            
+            // When user clicks on an info link, open the modal
+            infoLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const infoKey = this.getAttribute('data-info');
+                    infoContent.innerHTML = infoData[infoKey];
+                    modal.style.display = "block";
+                });
+            });
+            
+            // When user clicks on (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+            
+            // When user clicks anywhere outside the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+         // Navbar functionality
+  const vibrantNav = document.querySelector('.vibrant-nav-container');
+  const navHeader = document.querySelector('.vibrant-nav-header');
+  
+  // Set animation delays for each link
+  document.querySelectorAll('.vibrant-nav-link').forEach((link, index) => {
+    link.style.setProperty('--i', index);
+  });
+  
+  // Toggle dropdown
+  if (navHeader) {
+    navHeader.addEventListener('click', function(e) {
+      e.stopPropagation();
+      vibrantNav.classList.toggle('active');
+    });
+  }
+  
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function() {
+    if (vibrantNav) {
+      vibrantNav.classList.remove('active');
+    }
+  });
+  
+  // Highlight current page
+  const currentPage = window.location.pathname.split('/').pop();
+  const navLinks = document.querySelectorAll('.vibrant-nav-link');
+  
+  navLinks.forEach(link => {
+    const linkHref = link.getAttribute('href');
+    if (linkHref === currentPage) {
+      link.classList.add('current');
+      link.innerHTML = '<i>✨</i> ' + link.textContent.replace('🩺 ', '').replace('🌸 ', '').replace('🤕 ', '');
+    }
+  });
+
+        // Example form data functions (for actual implementation)
+        function saveFormData() {
+            const formData = collectFormData();
+            console.log('Saving:', formData);
+        }
+
+        function submitToEMR() {
+            const formData = collectFormData();
+            console.log('Submitting to EMR:', formData);
+        }
+
+        function collectFormData() {
+            return {
+                // Collect all form data here
+                assessment: document.querySelector('.subsection textarea')?.value,
+                changesMade: document.querySelector('input[name="changes-made"]:checked')?.value,
+            };
+        }
+
+        document.querySelectorAll('.template-toc a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Add highlight to the section
+            targetElement.style.backgroundColor = '#f5f5f5';
+            setTimeout(() => {
+                targetElement.style.backgroundColor = '';
+            }, 2000);
+        }
+    });
+});
+</script>
+        
+</body>
+</html>

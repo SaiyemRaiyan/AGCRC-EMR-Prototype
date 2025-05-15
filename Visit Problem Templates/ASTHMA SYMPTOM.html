@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGCRC- Asthma Symptom</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+  <!-- Navbar -->
+<div class="vibrant-nav-container">
+  <div class="vibrant-nav-header">
+    <div class="vibrant-nav-icon">📋</div>
+    <div class="vibrant-nav-title">DISEASE TEMPLATES</div>
+    <div class="vibrant-nav-arrow">▼</div>
+  </div>
+  <div class="vibrant-nav-dropdown">
+    <a href="ABDOMINAL PAIN.html" class="vibrant-nav-link">
+      <i>🩺</i> ABDOMINAL PAIN
+    </a>
+    <a href="ANEMIA.html" class="vibrant-nav-link">
+      <i>🩸</i> ANEMIA
+    </a>
+    <a href="ASTHMA ACCUTE.html" class="vibrant-nav-link">
+      <i>🌬️</i> ASTHMA ACUTE
+    </a>
+    <a href="ASTHMA SYMPTOM.html" class="vibrant-nav-link">
+      <i>😤</i> ASTHMA SYMPTOM
+    </a>
+    <a href="BACK PAIN.html" class="vibrant-nav-link">
+      <i>🧘</i> BACK PAIN
+    </a>
+    <a href="CHEST_PAIN.html" class="vibrant-nav-link">
+      <i>❤️</i> CHEST PAIN
+    </a>
+    <a href="DIABETES.html" class="vibrant-nav-link">
+      <i>🩸</i> DIABETES
+    </a>
+    <a href="GERD.html" class="vibrant-nav-link">
+      <i>🤢</i> GERD
+    </a>
+    <a href="GYNECOLOGY.html" class="vibrant-nav-link">
+      <i>🌸</i> GYNECOLOGY
+    </a>
+    <a href="HEADACHE.html" class="vibrant-nav-link">
+      <i>🤕</i> HEADACHE
+    </a>
+    <a href="HYPERTENSION.html" class="vibrant-nav-link">
+      <i>🩺</i> HYPERTENSION
+    </a>
+    <a href="STROKE.html" class="vibrant-nav-link">
+      <i>🧠</i> STROKE
+    </a>
+  </div>
+</div>
+
+  <div class="header">
+    <img src="logo.png" alt="Amader Gram Logo" class="logo">
+    <div>
+      <div class="clinic-name">AMADER GRAM CANCER CARE AND RESEARCH CENTER</div>
+      <div class="template-title">ASTHMA FOR VISIT HISTORY, AND PHYSICAL EXAMINATION</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="main-content">
+      <!-- Patient Information Section -->
+      <div class="section">
+        <div class="section-title">Patient Information</div>
+        <div class="form-row">
+          <div class="form-col">
+            <div class="form-group">
+              <label>Name:</label>
+              <input type="text" class="auto-fill" placeholder="Auto-filled">
+            </div>
+          </div>
+          <div class="form-col">
+            <div class="form-group">
+              <label>ID:</label>
+              <input type="text" class="auto-fill" placeholder="Auto-filled">
+            </div>
+          </div>
+          <div class="form-col">
+            <div class="form-group">
+              <label>Date of Visit:</label>
+              <input type="date" id="visit-date" value="<?php echo date('Y-m-d'); ?>">
+            </div>
+          </div>
+          <div class="form-col">
+            <div class="form-group">
+              <label>Age today:</label>
+              <input type="number" id="age" min="0" max="120" style="width: 80px;" class="auto-fill" placeholder="Auto-filled"> years
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diagnosis Reference Section -->
+      <div class="section">
+        <div class="section-title">Diagnosis</div>
+
+        <div class="subsection">
+          <div class="subsection-title">Definition</div>
+          <p>Cardinal triad of asthma: Intermittent shortness of breath, wheezing, and cough. If a patient has chronic cough alone, and normal spirometric measures, other allergic conditions such as allergic rhinitis, rhinosinusitis, nasal polyposis and gastroesophageal reflux should be considered.</p>
+        </div>
+      </div>
+
+      <!-- Red Flags Section -->
+      <div class="section">
+        <div class="section-title">Red Flags</div>
+        <p class="red-flag">Cigarette smoke exposure increases severity of asthmatic attacks</p>
+        <p class="red-flag">Decreasing the frequency of asthma attacks, and getting a complete response to treatment with normalization of spirometric measures, and complete absence of any wheezing on careful chest auscultation, are important goals of treatment because meeting these goals reduces the likelihood of permanent scarring of bronchioles with development of COPD.</p>
+      </div>
+
+      <div class="panel">
+        <div class="section-title">History</div>
+
+        <div class="subsection">
+          <div class="subsection-title">Medical History</div>
+
+          <div class="form-group">
+            <label class="audit-item">If female, is patient pregnant?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="pregnant" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="pregnant" value="no"> NO</label>
+              <label class="radio-option"><input type="radio" name="pregnant" value="na"> Not applicable</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Patient-reported age of onset of asthma:</label>
+            <input type="number" id="asthma-onset" min="0" max="120" style="width: 80px;"> years old
+          </div>
+
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label class="audit-item">Hypertension:</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="hypertension" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="hypertension" value="no"> NO</label>
+                </div>
+                
+                <div id="hypertension-details" class="hidden" style="margin-top: 10px;">
+                  <div class="form-group">
+                    <label>Number of years: 
+                      <input type="number" name="hypertension-years" min="0" max="100" style="width: 80px;">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label class="audit-item">Diabetes:</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="diabetes" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="diabetes" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label class="audit-item">Gastroesophageal reflux:</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="gerd" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="gerd" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Current Symptoms</div>
+
+          <div class="form-group">
+            <label>Frequency of symptoms:</label>
+            <input type="text" id="symptom-frequency" placeholder="__days/week">
+          </div>
+
+          <div class="form-group">
+            <label>Daily</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="daily" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="daily" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label>Cough (nighttime or early morning):</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="cough" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="cough" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label>Wheezing:</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="wheezing" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="wheezing" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label>Shortness of breath:</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="sob" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="sob" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label>Chest tightness:</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="tightness" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="tightness" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label>Disturbance of sleep:</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="sleep" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="sleep" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label>Evidence of current infection with fever:</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="fever" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="fever" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Allergy History</div>
+
+          <div class="form-group">
+            <label>Does the patient have a history of specific allergies?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="allergies" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="allergies" value="no"> NO</label>
+            </div>
+            <div id="allergies-details" style="margin-top: 10px; display: none;">
+              <div class="form-group">
+                <label>What are these?</label>
+                <input type="text" id="allergies-list">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>History of recurrent rhinitis or sinusitis, or nasal polyps</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="rhinitis" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="rhinitis" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>History of urticaria or eczema</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="urticaria" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="urticaria" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>History of Penicillin allergy</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="penicillin" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="penicillin" value="no"> NO</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Exposure History</div>
+
+          <div class="form-group">
+            <label>Is the patient a current cigarette smoker?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="smoker" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="smoker" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="audit-item">Is the patient exposed to second-hand cigarette smoke in the home?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="secondhand" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="secondhand" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="audit-item">Does the patient have exposure to cooking fire smoke in his/her home?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="cooksmoke" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="cooksmoke" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Do the patient's shortness of breath attacks seem to happen when they are exposed to someone with a respiratory infection, like a cold?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="infection" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="infection" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="audit-item">Does the patient know of any specific environmental such as a food or seasonal exposure which brings on an asthma attack?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="exposure" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="exposure" value="no"> NO</label>
+            </div>
+            <div id="exposure-details" style="margin-top: 10px; display: none;">
+              <div class="form-group">
+                <label>What is this exposure:</label>
+                <input type="text" id="exposure-type">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Is the patient's shortness of breath made worse by exercise?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="exercise" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="exercise" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Is the patient's shortness of breath made worse by exposure to cold air?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="coldair" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="coldair" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Is patient under treatment with an ACEI (angiotensin-converting enzyme inhibitor for hypertension?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="acei" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="acei" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="audit-item">Did/Does the patient's mother, or father or any sisters of brothers have asthma?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="family" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="family" value="no"> NO</label>
+            </div>
+            <div id="family-details" style="margin-top: 10px; display: none;">
+              <div class="form-group">
+                <label>Was a cause identified in any of these individuals and if yes what was the cause?</label>
+                <input type="text" id="family-cause">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Test Results</div>
+
+          <div class="form-group">
+            <label>Chest X ray</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="xray" value="no"> No image taken</label>
+              <label class="radio-option"><input type="radio" name="xray" value="yes"> Image taken</label>
+            </div>
+            <div id="xray-details" style="margin-top: 10px; display: none;">
+              <div class="form-row">
+                <div class="form-col">
+                  <div class="form-group">
+                    <label>Last X ray done Date</label>
+                    <input type="date" id="xray-date">
+                  </div>
+                </div>
+                <div class="form-col">
+                  <div class="form-group">
+                    <label>Results</label>
+                    <input type="text" id="xray-results">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Hemoglobin</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="hemoglobin" value="no"> No test done</label>
+              <label class="radio-option"><input type="radio" name="hemoglobin" value="yes"> Test done</label>
+            </div>
+            <div id="hemoglobin-details" style="margin-top: 10px; display: none;">
+              <div class="form-row">
+                <div class="form-col">
+                  <div class="form-group">
+                    <label>Last test done Date</label>
+                    <input type="date" id="hemoglobin-date">
+                  </div>
+                </div>
+                <div class="form-col">
+                  <div class="form-group">
+                    <label>Result:</label>
+                    <input type="text" id="hemoglobin-result" placeholder="gm/dl">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Eosinophil count</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="eosinophil" value="no"> No test done</label>
+              <label class="radio-option"><input type="radio" name="eosinophil" value="yes"> Test done</label>
+            </div>
+            <div id="eosinophil-details" style="margin-top: 10px; display: none;">
+              <div class="form-row">
+                <div class="form-col">
+                  <div class="form-group">
+                    <label>Last test done Date</label>
+                    <input type="date" id="eosinophil-date">
+                  </div>
+                </div>
+                <div class="form-col">
+                  <div class="form-group">
+                    <label>Result:</label>
+                    <input type="text" id="eosinophil-result">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Oximetry</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="oximetry" value="no"> No test done</label>
+              <label class="radio-option"><input type="radio" name="oximetry" value="yes"> Test done</label>
+            </div>
+            <div id="oximetry-details" style="margin-top: 10px; display: none;">
+              <div class="form-row">
+                <div class="form-col">
+                  <div class="form-group">
+                    <label>Last test done Date</label>
+                    <input type="date" id="oximetry-date">
+                  </div>
+                </div>
+                <div class="form-col">
+                  <div class="form-group">
+                    <label>Results:</label>
+                    <input type="text" id="oximetry-result" placeholder="%O2 saturation">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="audit-item">Spirometry</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="spirometry" value="no"> No test done</label>
+              <label class="radio-option"><input type="radio" name="spirometry" value="yes"> Test done</label>
+            </div>
+            <div id="spirometry-details" style="margin-top: 10px; display: none;">
+              <div class="form-row">
+                <div class="form-col">
+                  <div class="form-group">
+                    <label>Last test done Date</label>
+                    <input type="date" id="spirometry-date">
+                  </div>
+                </div>
+                <div class="form-col">
+                  <div class="form-group">
+                    <label>FVC</label>
+                    <input type="text" id="spirometry-fvc">
+                  </div>
+                </div>
+                <div class="form-col">
+                  <div class="form-group">
+                    <label>FEV1</label>
+                    <input type="text" id="spirometry-fev1">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Peak flow meter</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="peakflow" value="no"> No test done</label>
+              <label class="radio-option"><input type="radio" name="peakflow" value="yes"> Test done</label>
+            </div>
+            <div id="peakflow-details" style="margin-top: 10px; display: none;">
+              <div class="form-row">
+                <div class="form-col">
+                  <div class="form-group">
+                    <label>Last test done Date</label>
+                    <input type="date" id="peakflow-date">
+                  </div>
+                </div>
+                <div class="form-col">
+                  <div class="form-group">
+                    <label>FEV1</label>
+                    <input type="text" id="peakflow-fev1">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Immunization History</div>
+
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label>Pneumococcus</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="pneumococcus" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="pneumococcus" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label>Hemophilus Influenza Type B</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="hib" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="hib" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label>Influenza</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="influenza" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="influenza" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label>Covid-19</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="covid" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="covid" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Current Status</div>
+
+          <div class="form-group">
+            <label>Does the patient have a breathing peak flow meter?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="flowmeter" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="flowmeter" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="audit-item">Does the patient chew betel nut? (This interacts with asthma treatment drugs)</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="betel" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="betel" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Patient reports moderate or greater physical activity during:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="activity" value="less"> Less than 3 hours per week</label>
+              <label class="radio-option"><input type="radio" name="activity" value="3-5"> 3-5 hours per week</label>
+              <label class="radio-option"><input type="radio" name="activity" value="more"> More than 5 hours per week</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Current Treatment</div>
+
+          <div class="form-group">
+            <label>Current treatment for asthma:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="treatment" value="none"> NONE</label>
+              <label class="radio-option"><input type="radio" name="treatment" value="other"> OTHER:</label>
+            </div>
+            <div id="treatment-details" style="margin-top: 10px; display: none;">
+              <textarea id="treatment-description" rows="3" cols="50"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+                  <!-- Targeted Physical Examination Section -->
+        <div class="section">
+            <div class="section-title">Targeted Physical Examination</div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Vital signs</div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Weight (kg):</label>
+                            <input type="number" id="weight" step="0.1">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Height (cm):</label>
+                            <input type="number" id="height">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label class="audit-item">Estimated B.M.I.:</label>
+                            <input type="text" id="bmi" readonly>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label class="audit-item">Waist circumference (cm):</label>
+                            <input type="number" id="waist-circumference">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Hip circumference (cm):</label>
+                            <input type="number" id="hip-circumference">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Waist/Hip ratio:</label>
+                            <span id="waist-hip-ratio"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                    <!-- Blood Pressure Section -->
+
+          <div class="form-row" style="align-items: flex-end; gap: 20px;">
+             <div class="form-group" style="flex: 1;">
+              <label>Blood pressure 1:</label>
+                 <div style="display: flex; align-items: center; gap: 5px;">
+                   <input type="number" id="bp1-systolic" style="width: 80px; text-align: center;"> 
+                   <span>/</span>
+                       <input type="number" id="bp1-diastolic" style="width: 80px; text-align: center;">
+                    <span>mmHg</span>
+                  </div>
+             </div>
+  
+           <div class="form-group" style="flex: 1;">
+                 <label>Blood pressure 2:</label>
+                   <div style="display: flex; align-items: center; gap: 5px;">
+                  <input type="number" id="bp2-systolic" style="width: 80px; text-align: center;">
+                    <span>/</span>
+                   <input type="number" id="bp2-diastolic" style="width: 80px; text-align: center;">
+                    <span>mmHg</span>
+                 </div>
+             </div>
+  
+            <div class="form-group" style="flex: 1; margin-left: 20px;">
+                <label>Average:</label>
+                  <input type="text" id="bp-average" readonly style="background-color: #f5f5f5; width: 180px; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+            </div>
+                
+           <div class="form-row">
+            <div class="form-group">
+                <label>Pulse rate:</label>
+                <input type="number"> /min
+                <label style="margin-left: 10px;">R and L Pulses simultaneous:</label>
+                <div class="radio-group" style="display: inline-flex; margin-left: 10px;">
+                  <label class="radio-option"><input type="radio" name="pulses-simultaneous" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="pulses-simultaneous" value="no"> NO</label>
+                </div>
+              </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Respiratory rate/minute:</label>
+                            <input type="number">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Temperature (°C):</label>
+                            <input type="number" step="0.1">
+                        </div>
+                    </div>
+                </div>
+
+            <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label class="audit-item">Oximetry: %oxygen saturation</label>
+                <input type="number" id="oximetry" min="0" max="100" style="width: 150px; border: 2px solid #000; padding: 8px;">
+              </div>
+            </div>
+          </div>
+            </div>
+
+        <div class="subsection">
+          <div class="subsection-title">General Examination</div>
+
+          <div class="form-group">
+            <label>Upright posture because of air hunger</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="posture" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="posture" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Fingernail beds:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="nails" value="pink"> PINK</label>
+              <label class="radio-option"><input type="radio" name="nails" value="blue"> BLUE</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Conjunctiva:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="conjunctiva" value="pink"> PINK</label>
+              <label class="radio-option"><input type="radio" name="conjunctiva" value="blue"> BLUE</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Lips:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="lips" value="pink"> PINK</label>
+              <label class="radio-option"><input type="radio" name="lips" value="blue"> BLUE</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Pursed lips</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="pursed" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="pursed" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Accessory muscles-sternocleidomastoid use in breathing</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="accessory" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="accessory" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Intercostal retractions</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="retractions" value="present"> PRESENT</label>
+              <label class="radio-option"><input type="radio" name="retractions" value="absent"> ABSENT</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Can speak an entire sentence?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="sentence" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="sentence" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="audit-item">Nasal passage examination for polyps:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="polyps" value="present"> Polyp(s) Present</label>
+              <label class="radio-option"><input type="radio" name="polyps" value="absent"> Absent</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Ear external canals:</label>
+            <textarea id="ear-canals" rows="2" cols="50"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Throat</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="tonsils" value="enlarged"> Tonsils</label>
+              <label class="radio-option"><input type="radio" name="tonsils" value="enlarged"> Enlarged</label>
+              <label class="radio-option"><input type="radio" name="tonsils" value="minimal"> Minimal</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Heart examination</div>
+          <div class="form-group">
+            <label><a href="#" class="info-link" data-info="cardiac-auscultation">A PRIMER ON CARDIAC AUSCULTATION</a></label>
+          </div>
+          
+          
+          <div class="form-group">
+            <label>Heart sounds:</label>
+            <div class="form-group">
+              <label>Cardiac impulse:</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="cardiac-impulse" value="normal"> Normal</label>
+                <label class="radio-option"><input type="radio" name="cardiac-impulse" value="increased"> Increased</label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>Heart sounds:</label>
+              <div class="form-group">
+                <label>S1 Intensity</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="s1-intensity" value="normal"> Normal</label>
+                  <label class="radio-option"><input type="radio" name="s1-intensity" value="increased"> Increased</label>
+                  <label class="radio-option"><input type="radio" name="s1-intensity" value="decreased"> Decreased</label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label>S2 Intensity</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="s2-intensity" value="normal"> Normal</label>
+                  <label class="radio-option"><input type="radio" name="s2-intensity" value="increased"> Increased</label>
+                  <label class="radio-option"><input type="radio" name="s2-intensity" value="decreased"> Decreased</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>Murmurs:</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="murmurs-present" value="none"> None</label>
+                <label class="radio-option"><input type="radio" name="murmurs-present" value="present"> Present</label>
+              </div>
+              
+              <div id="murmurs-present-details" style="margin-top: 10px; display: none;">
+                <div class="form-group">
+                  <label>Description:</label>
+                  <textarea style="min-height: 60px;"></textarea>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>S3</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="s3-present" value="present"> Present</label>
+                <label class="radio-option"><input type="radio" name="s3-present" value="none"> None heard</label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>S4</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="s4-present" value="present"> Present</label>
+                <label class="radio-option"><input type="radio" name="s4-present" value="none"> None heard</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Lung Auscultation</div>
+          <div class="form-group">
+            <label><a href="#" class="info-link" data-info="lung-auscultation">Lung auscultation with amplified stethoscope</a></label>
+          </div>
+
+          <div class="lung-auscultation-grid">
+            <div class="lung-section">
+              <h4>Right lung:</h4>
+              <div class="form-group">
+                <label class="audit-item">Anterior upper lung fields</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="rua" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="rua" value="no"> NO</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="audit-item">Anterior lower lung fields</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="rla" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="rla" value="no"> NO</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="audit-item">Posterior upper lung fields</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="rup" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="rup" value="no"> NO</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="audit-item">Posterior lower lung fields</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="rlp" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="rlp" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="lung-section">
+              <h4>Left lung:</h4>
+              <div class="form-group">
+                <label class="audit-item">Anterior upper lung fields</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="lua" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="lua" value="no"> NO</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="audit-item">Anterior lower lung fields</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="lla" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="lla" value="no"> NO</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="audit-item">Posterior upper lung fields</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="lup" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="lup" value="no"> NO</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="audit-item">Posterior lower lung fields</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="llp" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="llp" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Findings with very quiet respirations</label>
+            <textarea id="quiet-resp" rows="3" cols="50"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Findings with forced expiration</label>
+            <textarea id="forced-exp" rows="3" cols="50"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="audit-item">Spirometry</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="spirometry_type" value="fvc"> FVC</label>
+              <label class="radio-option"><input type="radio" name="spirometry_type" value="fev1"> FEV1</label>
+            </div>
+          </div>
+          
+          <div id="peak-flow-container" class="form-group hidden">
+            <label>Peak flow meter FEV1</label>
+            <input type="text" id="peak-fev1" style="width: 100%; border: 2px solid #000;">
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Summary</div>
+
+          <div class="form-group">
+            <label>Potentially alterable or avoidable trigger factors</label>
+            <textarea id="triggers" rows="3" cols="50"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Important co-morbid conditions:</label>
+            <textarea id="comorbid" rows="3" cols="50"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Current level of control:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="control" value="good"> Good</label>
+              <label class="radio-option"><input type="radio" name="control" value="partial"> Partly controlled</label>
+              <label class="radio-option"><input type="radio" name="control" value="uncontrolled"> Uncontrolled</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Immunizations needed:</label>
+            <textarea id="immunizations-needed" rows="3" cols="50"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Critical physical examination findings</label>
+            <textarea id="critical-findings" rows="3" cols="50"></textarea>
+          </div>
+        </div>
+      </div>
+                            <!-- Summary Section -->
+            <div class="section" style="width: 100%; margin-top: 30px;">
+              <div class="section-title">SUMMARY OF ASTHMA SYMPTOM DIAGNOSIS AND STATUS</div>
+              
+              <div class="subsection">
+                  <div class="subsection-title">Determinants/causes for this problem</div>
+                  <textarea style="min-height: 100px; width: 100%;"></textarea>
+                  <div class="form-group">
+                      <label>Done, noting: <input type="text" style="width: 80%;"></label>
+                  </div>
+              </div>
+              
+              <div class="subsection">
+                  <div class="subsection-title">Notable physical examination abnormalities</div>
+                  <textarea style="min-height: 100px; width: 100%;"></textarea>
+              </div>
+              
+              <div class="subsection">
+                  <div class="subsection-title">Red flags from history and physical examination</div>
+                  <textarea style="min-height: 100px; width: 100%;"></textarea>
+              </div>
+              
+              <div class="subsection">
+                  <div class="subsection-title">Physician review of Determinants for health and medical history EMR section</div>
+                  <textarea style="min-height: 100px; width: 100%;"></textarea>
+                  <div class="form-group">
+                      <label>Done, noting: <input type="text" style="width: 80%;"></label>
+                  </div>
+              </div>
+              
+              <div class="subsection">
+                  <div class="subsection-title">Physician review to confirm and check history and physical examination data</div>
+                  <div class="radio-group">
+                      <label class="radio-option"><input type="radio" name="review-confirm" value="confirm"> Confirmed</label>
+                      <label class="radio-option"><input type="radio" name="review-confirm" value="not-confirm"> Not confirmed</label>
+                  </div>
+              </div>
+              
+              <div class="subsection">
+                  <div class="subsection-title">Physician analysis and synthesis of the history and physical examination data: Differential diagnoses and details (key disease stage and activity measures)</div>
+                  <textarea style="min-height: 100px; width: 100%;"></textarea>
+              </div>
+              
+              <div class="subsection">
+                  <div class="subsection-title">Physician recommendations for further diagnostic data</div>
+                  <div class="radio-group">
+                      <label class="radio-option"><input type="radio" name="diagnostic-recommendation" value="immediate"> Immediate</label>
+                      <label class="radio-option"><input type="radio" name="diagnostic-recommendation" value="when-possible"> When possible</label>
+                  </div>
+              </div>
+              
+              <div class="subsection">
+                  <div class="subsection-title">Tele-consultation</div>
+                  <div class="radio-group">
+                      <label class="radio-option"><input type="radio" name="teleconsult" value="done"> Done</label>
+                      <label class="radio-option"><input type="radio" name="teleconsult" value="not-done"> Not done</label>
+                  </div>
+                  <div id="teleconsultant-details" style="margin-top: 15px; display: none;">
+                      <div class="form-group">
+                          <label>Teleconsultant name</label>
+                          <input type="text" style="width: 100%;">
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="subsection">
+                  <div class="subsection-title">Summary of tele-consultant comments and recommendations</div>
+                  <textarea style="min-height: 100px; width: 100%;"></textarea>
+              </div>
+              
+              <div class="subsection">
+                  <div class="subsection-title">Discussion with patient concerning tele-consultant recommendations</div>
+                  <textarea style="min-height: 100px; width: 100%;"></textarea>
+              </div>
+              
+              <div class="subsection">
+                  <div class="subsection-title">Goals for interventions</div>
+                  <textarea style="min-height: 100px; width: 100%;"></textarea>
+              </div>
+              
+              <div class="subsection">
+                  <div class="subsection-title">Patient education</div>
+                  <div class="form-group">
+                      <label><input type="checkbox"> Review of specific symptoms and signs from physical examination</label>
+                  </div>
+                  <div class="form-group">
+                      <label><input type="checkbox"> Discussion of problem chronicity and benefits of regular evaluations</label>
+                  </div>
+                  <div class="form-group">
+                      <label><input type="checkbox"> Review of in-room health posters</label>
+                  </div>
+                  <div class="form-group">
+                      <label><input type="checkbox"> Discussion of appropriate physical activities</label>
+                  </div>
+                  <div class="form-group">
+                      <label><input type="checkbox"> Discussion of immunization status</label>
+                  </div>
+                  <div class="form-group">
+                      <label><input type="checkbox"> Review of specific written patient management instructions for this problem</label>
+                  </div>
+                  <div class="form-group">
+                      <label><input type="checkbox"> Review of any patient educational videos</label>
+                  </div>
+                  <div class="form-group">
+                      <label><input type="checkbox"> Discussion of specific medication treatment(s) proposed: Benefits, risks, costs</label>
+                  </div>
+                  <div class="form-group">
+                      <label><input type="checkbox"> Physical therapy plan by patient alone discussed</label>
+                  </div>
+                  <div class="form-group">
+                      <label><input type="checkbox"> Physical therapy referral discussed with benefits and risks</label>
+                  </div>
+              </div>
+              
+              <div class="subsection">
+                  <div class="subsection-title">Specialist consultation recommended</div>
+                  <div class="radio-group">
+                      <label class="radio-option"><input type="radio" name="specialist-consult" value="yes"> YES</label>
+                      <label class="radio-option"><input type="radio" name="specialist-consult" value="no"> NO</label>
+                  </div>
+                  <div id="specialist-details" style="margin-top: 15px; display: none;">
+                      <div class="form-group">
+                          <label>Discussion of benefits, risks and costs with patient</label>
+                          <textarea style="min-height: 80px; width: 100%;"></textarea>
+                      </div>
+                      <div class="form-group">
+                          <label>Consultant name and contact information</label>
+                          <input type="text" style="width: 100%;">
+                      </div>
+                      <div class="form-group">
+                          <label>Consultation appointment made</label>
+                          <div class="radio-group">
+                              <label class="radio-option"><input type="radio" name="consult-appointment" value="yes"> YES</label>
+                              <label class="radio-option"><input type="radio" name="consult-appointment" value="no"> NO</label>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="subsection">
+                  <div class="subsection-title">Follow-up care plans</div>
+                  
+                  <div class="form-group">
+                      <label>With these providers</label>
+                      <div class="form-group">
+                          <label>Purpose discussed with patient</label>
+                          <div class="radio-group">
+                              <label class="radio-option"><input type="radio" name="purpose-discussed" value="yes"> YES</label>
+                              <label class="radio-option"><input type="radio" name="purpose-discussed" value="no"> NO</label>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label>Specific scheduled appointment made</label>
+                          <div class="radio-group">
+                              <label class="radio-option"><input type="radio" name="appointment-made" value="yes"> YES</label>
+                              <label class="radio-option"><input type="radio" name="appointment-made" value="no"> NO</label>
+                          </div>
+                          <div id="appointment-date" style="margin-top: 10px; display: none;">
+                              <div class="form-row">
+                                  <div class="form-col">
+                                      <label>Month</label>
+                                      <input type="text">
+                                  </div>
+                                  <div class="form-col">
+                                      <label>Day</label>
+                                      <input type="text">
+                                  </div>
+                                  <div class="form-col">
+                                      <label>Year</label>
+                                      <input type="text">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="form-group">
+                      <label>With system virtual care providers</label>
+                      <div class="radio-group">
+                          <label class="radio-option"><input type="radio" name="virtual-care" value="yes"> YES</label>
+                          <label class="radio-option"><input type="radio" name="virtual-care" value="no"> NO</label>
+                      </div>
+                      <div id="virtual-care-details" style="margin-top: 15px; display: none;">
+                          <div class="form-group">
+                              <label>Discussion of purpose</label>
+                              <textarea style="min-height: 80px; width: 100%;"></textarea>
+                          </div>
+                          <div class="form-group">
+                              <label>Telephone number of this service</label>
+                              <input type="tel" style="width: 100%;">
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="form-group">
+                      <label>With patient's village community health worker/volunteer</label>
+                      <div class="radio-group">
+                          <label class="radio-option"><input type="radio" name="community-health" value="yes"> YES</label>
+                          <label class="radio-option"><input type="radio" name="community-health" value="no"> NO</label>
+                      </div>
+                      <div id="community-health-details" style="margin-top: 15px; display: none;">
+                          <div class="form-group">
+                              <label>Discussion of purpose</label>
+                              <textarea style="min-height: 80px; width: 100%;"></textarea>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="subsection">
+                  <div class="form-group">
+                      <label>On the basis of this visit, have changes been made to the Determinants for health and medical history summary EMR section for this patient?</label>
+                      <div class="radio-group">
+                          <label class="radio-option"><input type="radio" name="emr-changes" value="yes"> YES</label>
+                          <label class="radio-option"><input type="radio" name="emr-changes" value="no"> NO</label>
+                          <label class="radio-option"><input type="radio" name="emr-changes" value="none"> NONE INDICATED</label>
+                      </div>
+                  </div>
+                  
+                  <div class="form-group">
+                      <label>Medical assistant providing this service</label>
+                      <input type="text" style="width: 100%; border-bottom: 1px solid #000; border-top: none; border-left: none; border-right: none; background: transparent;">
+                  </div>
+                  
+                  <div class="form-group">
+                      <label>Medical Officer/physician providing this service</label>
+                      <input type="text" style="width: 100%; border-bottom: 1px solid #000; border-top: none; border-left: none; border-right: none; background: transparent;">
+                  </div>
+                  
+                  <div class="form-group">
+                      <label>Telephone number for appointments in this clinic</label>
+                      <input type="tel" style="width: 100%; border-bottom: 1px solid #000; border-top: none; border-left: none; border-right: none; background: transparent;">
+                  </div>
+                  
+                  <div class="form-group">
+                      <label>Paper copy of this entire visit record provided to patient</label>
+                      <div class="radio-group">
+                          <label class="radio-option"><input type="radio" name="paper-copy" value="yes"> YES</label>
+                          <label class="radio-option"><input type="radio" name="paper-copy" value="no"> NO</label>
+                      </div>
+                  </div>
+                  
+                  <div class="form-group">
+                      <label>Updated/current Determinants for health and medical history summary uploaded onto patient's cell phone application</label>
+                      <div class="radio-group">
+                          <label class="radio-option"><input type="radio" name="uploaded-app" value="yes"> YES</label>
+                          <label class="radio-option"><input type="radio" name="uploaded-app" value="no"> NO</label>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="buttons" style="margin-top: 20px; text-align: left;">
+                  <button id="save-btn">SAVE</button>
+                  <button id="submit-btn">SUBMIT TO EMR</button>
+                  <button id="print-btn">PRINT</button>
+              </div>
+          </div>
+    </div>
+
+       <!-- Links Column -->
+<div class="links-column">
+  <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">Visit Record Templates</h3>
+
+  <nav class="template-toc">
+    <ul>
+      <li><a href="#patient-info" class="template-link">1. Patient Information</a></li>
+      <li><a href="#diagnosis-reference" class="template-link">2. Diagnosis Reference</a></li>
+      <li><a href="#history" class="template-link">3. History</a></li>
+      <li>
+        <a href="#physical-exam" class="template-link">4. Physical Examinations</a>
+        <ul>
+          <li><a href="#vital-signs" class="template-link">4.1 Vital Signs</a></li>
+          <li><a href="#general-exam" class="template-link">4.2 General Examination</a></li>
+          <li><a href="#heart-exam" class="template-link">4.3 Heart Examination</a></li>
+          <li><a href="#lung-exam" class="template-link">4.4 Lung Auscultation</a></li>
+        </ul>
+      </li>
+      <li><a href="#summary" class="template-link">5. Summary and Follow-up</a></li>
+    </ul>
+  </nav>
+
+  <!-- Examination References Section -->
+  <div class="info-links-section" style="margin-top: 30px;">
+    <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">Examination References</h3>
+
+    <a href="#" class="info-link" data-info="asthma-guidelines">Asthma Clinical Guidelines</a>
+    <a href="#" class="info-link" data-info="inhaler-technique">Inhaler Technique</a>
+    <a href="#" class="info-link" data-info="wheezing">Wheezing Characteristics</a>
+    <a href="#" class="info-link" data-info="spirometry">Spirometry Interpretation</a>
+    <a href="#" class="info-link" data-info="lung-auscultation">Lung Auscultation</a>
+    <a href="#" class="info-link" data-info="medical-interventions">Recommended Medical Interventions</a>
+    <a href="#" class="info-link" data-info="patient-education">Patient Education</a>
+  </div>
+</div>
+  </div>
+
+  <!-- Info Modal -->
+  <div id="infoModal" class="info-modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="infoContent" class="info-content"></div>
+    </div>
+  </div>
+
+                    <!-- javascript -->
+<script>
+             document.addEventListener('DOMContentLoaded', function() {
+    // Set current date
+    const today = new Date();
+    const visitDateInput = document.getElementById('visit-date');
+    if (visitDateInput) {
+        visitDateInput.valueAsDate = today;
+    }
+
+    // Improved toggle display function
+    function toggleDisplay(triggerSelector, targetId, checkValue = true) {
+        const triggers = document.querySelectorAll(triggerSelector);
+        const target = document.getElementById(targetId);
+
+        if (!triggers.length || !target) return;
+
+        function updateDisplay() {
+            const shouldShow = Array.from(triggers).some(el =>
+                el.checked && (checkValue === true || el.value == checkValue)
+            );
+            target.style.display = shouldShow ? 'block' : 'none';
+        }
+
+        triggers.forEach(trigger => {
+            trigger.addEventListener('change', updateDisplay);
+        });
+
+        // Initialize
+        updateDisplay();
+    }
+
+    // Set up all conditional displays
+    toggleDisplay('input[name="allergies"]', 'allergies-details', 'yes');
+    toggleDisplay('input[name="exposure"]', 'exposure-details', 'yes');
+    toggleDisplay('input[name="family"]', 'family-details', 'yes');
+    toggleDisplay('input[name="xray"]', 'xray-details', 'yes');
+    toggleDisplay('input[name="hemoglobin"]', 'hemoglobin-details', 'yes');
+    toggleDisplay('input[name="eosinophil"]', 'eosinophil-details', 'yes');
+    toggleDisplay('input[name="oximetry"]', 'oximetry-details', 'yes');
+    toggleDisplay('input[name="spirometry"]', 'spirometry-details', 'yes');
+    toggleDisplay('input[name="peakflow"]', 'peakflow-details', 'yes');
+    toggleDisplay('input[name="treatment"]', 'treatment-details', 'other');
+    toggleDisplay('input[name="murmurs-present"]', 'murmurs-present-details', 'present');
+    toggleDisplay('input[name="testing"]', 'testing-details', 'specific');
+    toggleDisplay('input[name="tele"]', 'tele-details', 'yes');
+    toggleDisplay('input[name="hypertension"]', 'hypertension-details', 'yes');
+    
+    // New Spirometry radio button functionality
+    toggleDisplay('input[name="spirometry_type"]', 'peak-flow-container', 'fev1');
+    
+
+    // BMI calculation
+    const weightInput = document.getElementById('weight');
+    const heightInput = document.getElementById('height');
+    const bmiInput = document.getElementById('bmi');
+
+    function calculateBMI() {
+        if (weightInput && heightInput && bmiInput) {
+            const weight = parseFloat(weightInput.value);
+            const height = parseFloat(heightInput.value) / 100; // convert cm to m
+            bmiInput.value = (weight && height > 0) ? (weight / (height * height)).toFixed(1) : "";
+        }
+    }
+
+    if (weightInput && heightInput) {
+        ['input', 'change'].forEach(event => {
+            weightInput.addEventListener(event, calculateBMI);
+            heightInput.addEventListener(event, calculateBMI);
+        });
+        calculateBMI();
+    }
+
+    // Waist/hip ratio calculation
+    const waistInput = document.getElementById('waist-circumference');
+    const hipInput = document.getElementById('hip-circumference');
+    const ratioDisplay = document.getElementById('waist-hip-ratio');
+
+    function calculateWaistHipRatio() {
+        if (waistInput && hipInput && ratioDisplay) {
+            const waist = parseFloat(waistInput.value);
+            const hip = parseFloat(hipInput.value);
+
+            if (waist > 0 && hip > 0) {
+                const ratio = (waist / hip).toFixed(2);
+                ratioDisplay.textContent = ratio;
+            } else {
+                ratioDisplay.textContent = "";
+            }
+        }
+    }
+
+    if (waistInput && hipInput) {
+        ['input', 'change'].forEach(event => {
+            waistInput.addEventListener(event, calculateWaistHipRatio);
+            hipInput.addEventListener(event, calculateWaistHipRatio);
+        });
+        calculateWaistHipRatio();
+    }
+
+    // Blood pressure average calculation
+    const bp1Systolic = document.getElementById('bp1-systolic');
+    const bp1Diastolic = document.getElementById('bp1-diastolic');
+    const bp2Systolic = document.getElementById('bp2-systolic');
+    const bp2Diastolic = document.getElementById('bp2-diastolic');
+    const bpAverage = document.getElementById('bp-average');
+    
+    function calculateBPAverage() {
+        if (bp1Systolic && bp1Diastolic && bp2Systolic && bp2Diastolic && bpAverage) {
+            const sys1 = parseFloat(bp1Systolic.value) || 0;
+            const dia1 = parseFloat(bp1Diastolic.value) || 0;
+            const sys2 = parseFloat(bp2Systolic.value) || 0;
+            const dia2 = parseFloat(bp2Diastolic.value) || 0;
+            
+            if (sys1 > 0 && dia1 > 0 && sys2 > 0 && dia2 > 0) {
+                const avgSys = Math.round((sys1 + sys2) / 2);
+                const avgDia = Math.round((dia1 + dia2) / 2);
+                bpAverage.value = `${avgSys}/${avgDia}`;
+            } else {
+                bpAverage.value = '';
+            }
+        }
+    }
+    
+    if (bp1Systolic && bp1Diastolic && bp2Systolic && bp2Diastolic) {
+        ['input', 'change'].forEach(event => {
+            bp1Systolic.addEventListener(event, calculateBPAverage);
+            bp1Diastolic.addEventListener(event, calculateBPAverage);
+            bp2Systolic.addEventListener(event, calculateBPAverage);
+            bp2Diastolic.addEventListener(event, calculateBPAverage);
+        });
+        calculateBPAverage();
+    }
+
+    // Toggle display for consultant name
+    const teleconsultRadios = document.querySelectorAll('input[name="teleconsult"]');
+    const consultantNameInput = document.getElementById('consultant-name');
+
+    function toggleConsultantName() {
+        const selected = document.querySelector('input[name="teleconsult"]:checked');
+        if (selected) {
+            const show = selected.value === 'yes';
+            consultantNameInput.style.display = show ? 'block' : 'none';
+        }
+    }
+
+    if (teleconsultRadios.length && consultantNameInput) {
+        teleconsultRadios.forEach(radio => {
+            radio.addEventListener('change', toggleConsultantName);
+        });
+        toggleConsultantName();
+    }
+
+    // Info modal functionality
+    const modal = document.getElementById("infoModal");
+    const infoLinks = document.querySelectorAll(".info-link");
+    const infoContent = document.getElementById("infoContent");
+    const span = document.getElementsByClassName("close")[0];
+
+    // Info content definitions - Updated with cardiac and lung auscultation info
+    const infoData = {
+        "cardiac-auscultation": `
+          <h3 style="color: var(--primary-color); margin-top: 0;">A PRIMER ON CARDIAC AUSCULTATION</h3>
+          <div style="max-height: 70vh; overflow-y: auto; padding-right: 10px;">
+            <p><strong>First heart sound (S1)</strong>: Closure of atrial-ventricular valves - tricuspid (right heart) and mitral (left heart) valves. Best heard at apex.</p>
+            
+            <p><strong>Systole</strong>: The period between S1 and S2 when the heart muscles are contracting.</p>
+            
+            <p><strong>Second heart sound (S2)</strong>: Aortic and pulmonic valve (also called semi-lunar valves) closure, usually in this order. Best heard in the cephalad right (A2) and left (P2) rib interspaces.</p>
+            
+            <p><strong>Split S2</strong>: Normal with inspiration associated with increased filling of right ventricle = A2 followed by delayed P2.</p>
+            
+            <p><strong>Third heart sound (S3)</strong>: A physiologically normal ventricular filling sound in young people and with exercise best heard at apex.</p>
+            
+            <p><strong>Diastole</strong>: The period between S2 and S1 when the heart muscles are at rest.</p>
+            
+            <p><strong>Atrial-ventricular valves</strong>: Open silently in diastole.</p>
+            
+            <p><strong>Murmurs</strong>: The significance of murmurs is determined by their locations, character, timing, and intensities. Systolic murmurs are often innocent or not indicative of heart disease, while diastolic murmurs are almost always pathologic.</p>
+            
+            <h4 style="color: var(--primary-color); margin-bottom: 5px;">Auscultation sites:</h4>
+            <ul style="margin-top: 5px;">
+              <li><strong>Right second rib interspace</strong> (between the second and third ribs, to the right of and next to the sternum) - closest to the aortic valve</li>
+              <li><strong>Left second interspace</strong> (between the second and third ribs, to the left of and next to the sternum) - closest to the pulmonic valve</li>
+              <li><strong>Left lower sternal border</strong> - closest to the tricuspid valve</li>
+              <li><strong>Apex</strong> (approximately between the 5th and 6th left ribs 3 inches from the left sternal border, where the heart beat can most easily be felt) - closest to the mitral valve</li>
+            </ul>
+            
+            <h4 style="color: var(--primary-color); margin-bottom: 5px;">Key Points:</h4>
+            <ul style="margin-top: 5px;">
+              <li>Use the diaphragm of the stethoscope for high-pitched sounds (S1, S2, murmurs of aortic/pulmonic stenosis, mitral regurgitation)</li>
+              <li>Use the bell for low-pitched sounds (S3, S4, murmur of mitral stenosis)</li>
+              <li>Have patient breathe normally, then hold breath in expiration to listen carefully</li>
+              <li>Compare auscultation findings with pulse palpation for timing</li>
+            </ul>
+          </div>
+        `,
+        "lung-auscultation": `
+            <h3 style="color: var(--primary-color); margin-top: 0;">LUNG AUSCULTATION WITH AMPLIFIED STETHOSCOPE</h3>
+            <div style="max-height: 70vh; overflow-y: auto; padding-right: 10px;">
+                <h4 style="color: var(--primary-color); margin-bottom: 5px;">Technique:</h4>
+                <ul style="margin-top: 5px;">
+                    <li>Have patient sit upright if possible</li>
+                    <li>Listen through clothing creates artifact. Place stethoscope directly on skin.</li>
+                    <li>Compare symmetrical areas side-to-side</li>
+                    <li>Listen to at least one full respiratory cycle at each site</li>
+                    <li>Systematically examine all lung zones (upper, middle, lower; anterior, lateral, posterior)</li>
+                </ul>
+                
+                <h4 style="color: var(--primary-color); margin-bottom: 5px;">Normal Breath Sounds:</h4>
+                <ul style="margin-top: 5px;">
+                    <li><strong>Vesicular</strong>: Soft, low-pitched over most lung fields</li>
+                    <li><strong>Bronchial</strong>: Louder, higher-pitched over trachea</li>
+                    <li><strong>Bronchovesicular</strong>: Intermediate sounds near large airways</li>
+                </ul>
+                
+                <h4 style="color: var(--primary-color); margin-bottom: 5px;">Abnormal Breath Sounds:</h4>
+                <ul style="margin-top: 5px;">
+                    <li><strong>Wheezes</strong>: High-pitched musical sounds from narrowed airways (asthma, COPD)</li>
+                    <li><strong>Rhonchi</strong>: Low-pitched snoring from secretions in large airways</li>
+                    <li><strong>Crackles</strong>: Discontinuous popping sounds from fluid in alveoli or opening of collapsed airways</li>
+                    <li><strong>Stridor</strong>: Harsh sound from upper airway obstruction</li>
+                    <li><strong>Pleural rub</strong>: Creaking sound from inflamed pleural surfaces</li>
+                </ul>
+                
+                <h4 style="color: var(--primary-color); margin-bottom: 5px;">Special Maneuvers:</h4>
+                <ul style="margin-top: 5px;">
+                    <li><strong>Forced expiration</strong>: Helps detect subtle wheezing</li>
+                    <li><strong>Whispered pectoriloquy</strong>: Increased transmission suggests consolidation</li>
+                    <li><strong>Egophony</strong>: "E" to "A" change suggests consolidation</li>
+                </ul>
+            </div>
+        `,
+        "asthma-guidelines": "Asthma management guidelines recommend a stepwise approach to treatment based on symptom control and risk factors. Key points include:<br><br>1. Regular assessment of symptom control and risk factors<br>2. Patient education and self-management<br>3. Avoidance of triggers<br>4. Pharmacological therapy tailored to disease severity",
+        "inhaler-technique": "Proper inhaler technique is critical for effective asthma management:<br><br>1. Remove cap and shake inhaler<br>2. Breathe out fully away from inhaler<br>3. Place mouthpiece between teeth and seal lips around it<br>4. Start to breathe in slowly and press canister once<br>5. Continue to breathe in slowly and deeply<br>6. Hold breath for 10 seconds if possible",
+        "wheezing": "Wheezing characteristics in asthma:<br><br>- High-pitched whistling sounds during breathing<br>- Typically more pronounced during expiration<br>- May be diffuse or localized depending on severity<br>- Can vary in intensity throughout the day<br>- Often worse at night or early morning",
+        "spirometry": "Spirometry interpretation for asthma:<br><br>- FEV1/FVC ratio < 0.7 suggests airflow obstruction<br>- Improvement in FEV1 >12% and 200mL after bronchodilator indicates reversible obstruction<br>- Monitoring FEV1 over time helps assess disease control<br>- Normal spirometry doesn't rule out asthma (may need challenge tests)",
+        "medical-interventions": "The best treatment plans come from following clinical practice guidelines. A good summary is at New England Journal of Medicine 2023.389:1023-31",
+        "patient-education": "<strong>Asthma is a complex, chronic condition.</strong> Successful management can only occur with regular periodic check-up visits with the same expert health care provider.<br><br><strong>Goals of management:</strong><br>#1. Reduce risk of acute attacks→<br>&nbsp;&nbsp;&nbsp;&nbsp;*identify usual causes and ways to limit these (like masking)<br><br>#2. Maximize control of symptoms→<br>&nbsp;&nbsp;&nbsp;&nbsp;*No waking up at night with coughing and wheezing.<br>&nbsp;&nbsp;&nbsp;&nbsp;*No limitation of usual activities<br>&nbsp;&nbsp;&nbsp;&nbsp;*Confirm return to normal of spirometric measures (FV, and Fev1) and no wheezing at all over all lung fields.<br><br>#3. Minimize the side effects and costs of medications."
+    };
+
+    // When user clicks on an info link, open the modal
+    infoLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const infoKey = this.getAttribute('data-info');
+            if (infoData[infoKey]) {
+                infoContent.innerHTML = infoData[infoKey];
+                modal.style.display = "block";
+            }
+        });
+    });
+
+    // When user clicks on (x), close the modal
+    if (span) {
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
+
+    // When user clicks anywhere outside the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Button functionality
+    const saveBtn = document.getElementById('save-btn');
+    const submitBtn = document.getElementById('submit-btn');
+    const printBtn = document.getElementById('print-btn');
+
+    if (saveBtn) {
+        saveBtn.addEventListener('click', function() {
+            alert('Form data saved successfully!');
+        });
+    }
+
+    if (submitBtn) {
+        submitBtn.addEventListener('click', function() {
+            if (confirm('Are you sure you want to submit this to EMR?')) {
+                alert('Form submitted to EMR successfully!');
+            }
+        });
+    }
+
+    if (printBtn) {
+        printBtn.addEventListener('click', function() {
+            window.print();
+        });
+    }
+
+    // Get the radio buttons and details div (murmurs)
+    const murmursRadios = document.querySelectorAll('input[name="murmurs-present"]');
+    const murmursDetails = document.getElementById('murmurs-present-details');
+
+    // Add event listeners to each radio button
+    murmursRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            if (this.value === 'present') {
+                murmursDetails.style.display = 'block';
+            } else {
+                murmursDetails.style.display = 'none';
+            }
+        });
+    });
+
+    // Navigation within the form
+    const tocLinks = document.querySelectorAll('.template-toc a');
+    tocLinks.forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Add highlight to the section
+                targetElement.style.backgroundColor = '#f5f5f5';
+                setTimeout(() => {
+                    targetElement.style.backgroundColor = "";
+                }, 2000);
+            }
+        });
+    });
+
+    // Initialize all hidden fields and trigger change events
+    document.querySelectorAll('.hidden').forEach(el => {
+        el.style.display = 'none';
+    });
+
+    document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(el => {
+        if (el.checked) el.dispatchEvent(new Event('change'));
+    });
+
+        // Navbar functionality
+  const vibrantNav = document.querySelector('.vibrant-nav-container');
+  const navHeader = document.querySelector('.vibrant-nav-header');
+  
+  // Set animation delays for each link
+  document.querySelectorAll('.vibrant-nav-link').forEach((link, index) => {
+    link.style.setProperty('--i', index);
+  });
+  
+  // Toggle dropdown
+  if (navHeader) {
+    navHeader.addEventListener('click', function(e) {
+      e.stopPropagation();
+      vibrantNav.classList.toggle('active');
+    });
+  }
+  
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function() {
+    if (vibrantNav) {
+      vibrantNav.classList.remove('active');
+    }
+  });
+  
+  // Highlight current page
+  const currentPage = window.location.pathname.split('/').pop();
+  const navLinks = document.querySelectorAll('.vibrant-nav-link');
+  
+  navLinks.forEach(link => {
+    const linkHref = link.getAttribute('href');
+    if (linkHref === currentPage) {
+      link.classList.add('current');
+      link.innerHTML = '<i>✨</i> ' + link.textContent.replace('🩺 ', '').replace('🌸 ', '').replace('🤕 ', '');
+    }
+  });
+  
+});
+</script>
+   </body>
+</html>

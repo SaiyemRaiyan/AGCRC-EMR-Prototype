@@ -1,0 +1,2015 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGCRC- Hypertension</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+<div class="vibrant-nav-container">
+  <div class="vibrant-nav-header">
+    <div class="vibrant-nav-icon">📋</div>
+    <div class="vibrant-nav-title">DISEASE TEMPLATES</div>
+    <div class="vibrant-nav-arrow">▼</div>
+  </div>
+  <div class="vibrant-nav-dropdown">
+    <a href="ABDOMINAL PAIN.html" class="vibrant-nav-link">
+      <i>🩺</i> ABDOMINAL PAIN
+    </a>
+    <a href="ANEMIA.html" class="vibrant-nav-link">
+      <i>🩸</i> ANEMIA
+    </a>
+    <a href="ASTHMA ACCUTE.html" class="vibrant-nav-link">
+      <i>🌬️</i> ASTHMA ACUTE
+    </a>
+    <a href="ASTHMA SYMPTOM.html" class="vibrant-nav-link">
+      <i>😤</i> ASTHMA SYMPTOM
+    </a>
+    <a href="BACK PAIN.html" class="vibrant-nav-link">
+      <i>🧘</i> BACK PAIN
+    </a>
+    <a href="CHEST_PAIN.html" class="vibrant-nav-link">
+      <i>❤️</i> CHEST PAIN
+    </a>
+    <a href="DIABETES.html" class="vibrant-nav-link">
+      <i>🩸</i> DIABETES
+    </a>
+    <a href="GERD.html" class="vibrant-nav-link">
+      <i>🤢</i> GERD
+    </a>
+    <a href="GYNECOLOGY.html" class="vibrant-nav-link">
+      <i>🌸</i> GYNECOLOGY
+    </a>
+    <a href="HEADACHE.html" class="vibrant-nav-link">
+      <i>🤕</i> HEADACHE
+    </a>
+    <a href="HYPERTENSION.html" class="vibrant-nav-link">
+      <i>🩺</i> HYPERTENSION
+    </a>
+    <a href="STROKE.html" class="vibrant-nav-link">
+      <i>🧠</i> STROKE
+    </a>
+  </div>
+</div>
+
+    <div class="header">
+        <img src="logo.png" alt="Amader Gram Logo" class="logo">
+        <div>
+            <div class="clinic-name">AMADER GRAM CANCER CARE AND RESEARCH CENTER</div>
+            <div class="template-title">HYPERTENSION FOR HISTORY AND PHYSICAL EXAMINATION</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main-content">
+            <!-- Patient Information Section -->
+            <div class="section">
+                <div class="section-title">Patient Information</div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Name:</label>
+                            <input type="text" class="auto-fill" placeholder="Auto-filled">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>ID:</label>
+                            <input type="text" class="auto-fill" placeholder="Auto-filled">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Date of Visit:</label>
+                            <input type="date" id="visit-date" value="<?php echo date('Y-m-d'); ?>">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Age today:</label>
+                            <input type="number" id="age" min="0" max="120" style="width: 80px;" class="auto-fill" placeholder="Auto-filled"> years
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diagnosis Section -->
+            <div class="section" id="diagnosis">
+                <div class="section-title">Diagnosis</div>
+                <div class="reference">
+                    <strong>Measurement of blood pressure:</strong> No smoking or caffeine consumption during previous one hour. Empty bladder. 5 minutes resting, seated, back supported, both feet on floor, legs uncrossed, arm supported to level of heart, cuff on bare skin, with monitor, take measurements 2-3 times separated by 3 minutes between measurements. Calculate the average systolic and diastolic measurements as the blood pressure of record.
+                </div>
+                
+                <div class="reference">
+                    <strong>Hypertension is present if:</strong>
+                    <ul>
+                        <li>On <strong>three</strong> separate assessments over a span of at least 3-4 weeks, properly measured blood pressure is:
+                            <ul>
+                                <li>>130 mmHg systolic and/or >80 mmHg diastolic</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <strong>Hypertension stage categories are:</strong>
+                    <ul>
+                        <li>Stage 1: Systolic BP 130-139 mmHg or Diastolic BP 80-89 mmHg</li>
+                        <li>Stage 2: Systolic BP >=140 mmHg or Diastolic BP >=90 mmHg</li>
+                    </ul>
+                </div>
+                
+                <div class="reference">
+                    <strong>The goal of treatment</strong> is to keep a patient's BP less than systolic 130 mmHg and diastolic 90 mmHg or 80 mm Hg in diabetic or patients with chronic renal failure in order to decrease the likelihood of stroke, heart and kidney diseases, and heart attack. For patients 65 and over, who often have isolated systolic hypertension, with stiffer blood vessels, the treatment goal is BP less than 140 systolic and 90 diastolic.
+                </div>
+            </div>
+
+            <!-- History Section -->
+            <div class="section" id="history">
+                <div class="section-title">History</div>
+                
+                 <div class="form-group">
+             <label>Patient-reported onset of hypertension:</label>
+                 <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                    <input type="number" id="hypertension-year" min="1900" max="2099" step="1" placeholder="Year">
+                          <span>→</span>
+                    <input type="number" id="hypertension-year" placeholder="Years with hypertension">
+                </div>
+            </div>
+                
+                <div class="form-group">
+                    <label>If woman, is patient pregnant?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="pregnant" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="pregnant" value="no"> NO</label>
+                        <label class="radio-option"><input type="radio" name="pregnant" value="na"> NOT APPLICABLE</label>
+                    </div>
+                </div>
+                
+                <div id="woman-options" style="display: none;">
+                    <div class="form-group">
+                        <label>Currently taking oral contraceptives</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="contraceptives" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="contraceptives" value="no"> NO</label>
+                            <label class="radio-option"><input type="radio" name="contraceptives" value="na"> NOT APPLICABLE</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Has she taken oral contraceptives in the past</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="past-contraceptives" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="past-contraceptives" value="no"> NO</label>
+                        </div>
+                    </div>
+                      <div id="contraceptive-years" style="display: none;">
+    <div class="form-group">
+        <label>For how many years:</label>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <input type="number" min="0" max="100" step="1" style="width: 60px;"> years
+            <div style="display: flex; align-items: center; gap: 5px;">
+                <span>specifically from</span>
+                <input type="number" min="1900" max="2099" step="1" placeholder="year" style="width: 80px;">
+                <span>until</span>
+                <input type="number" min="1900" max="2099" step="1" placeholder="year" style="width: 80px;">
+            </div>
+        </div>
+    </div>
+</div>          
+
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">History of:</div>
+                    
+                    <div class="form-group">
+                        <label>Heart disease</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="heart-disease" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="heart-disease" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Diabetes</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="diabetes" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="diabetes" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+    <div class="form-group" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+       <div style="display: flex; align-items: center;">
+          <label class="audit-item" style="margin-right: 15px; margin-bottom: 0;">Metabolic syndrome:</label>
+            <div class="radio-group" style="display: flex; gap: 10px;">
+              <label class="radio-option"><input type="radio" name="metabolic-syndrome" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="metabolic-syndrome" value="no"> NO</label>
+            </div>
+        </div>
+              <a href="#" class="info-link" data-info="metabolic-syndrome" style="white-space: nowrap;">Syndrome Details</a>
+      </div>
+                    
+                    <div class="form-group">
+                        <label>In women, eclampsia (high blood pressure) during a pregnancy</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="eclampsia" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="eclampsia" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Cigarette smoking</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="smoking" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="smoking" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div id="smoking-details" style="display: none;">
+                        <div class="form-group">
+                            <label>Is patient currently a cigarette smoker?</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="current-smoker" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="current-smoker" value="no"> NO</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>If patient was ever a cigarette smoker, numbers of years patient smoked:</label>
+                                     <input type="number" min="0" max="100" step="1" placeholder="years"> 
+                                <div class="form-group">
+                                        <label>For how many years:</label>
+                                   <div style="display: flex; align-items: center; gap: 10px;">
+                                      <input type="number" min="0" max="100" step="1" style="width: 60px;"> of smoking
+                                    </div>
+                               </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Has the patient ever been told that he/she has a heart murmur?</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="heart-murmur" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="heart-murmur" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Does the patient have any first-degree relatives (mother, father, brother, or sister) who have had a major cardiovascular disease event before age 55 (a heart attack, sudden death, stroke, heart failure)?</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="family-cvd" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="family-cvd" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Does the patient have any first-degree relatives (mother, father, brother, or sister) with hypertension?</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="family-hypertension" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="family-hypertension" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Does the patient have exposure to cooking fire smoke in his/her home:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="cooking-smoke" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="cooking-smoke" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Has the patient had regular exposure to Ayurvedic medicines, lead smelting, a lead battery dumping place, or yellow pigmented turmeric?</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="lead-exposure" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="lead-exposure" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Covid 19 infection in the last year</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="covid" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="covid" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Dengue infection in the last year</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="dengue" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="dengue" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Specific symptoms currently the patient attributes to presence of hypertension or cardiovascular problems.</label>
+                        <textarea></textarea>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Previous laboratory or imaging test results relevant to hypertension:</div>
+                    
+                <div class="form-group">
+            <label>BUN:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="bun" value="no"> No test done</label>
+              <label class="radio-option"><input type="radio" name="bun" value="yes"> Test done. Date and result:
+                <input type="date" style="margin-left: 10px;">
+                <input type="text" placeholder="Result" style="margin-left: 10px;">
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Creatinine:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="creatinine" value="no"> No test done</label>
+              <label class="radio-option"><input type="radio" name="creatinine" value="yes"> Test done. Date and result:
+                <input type="date" style="margin-left: 10px;">
+                <input type="text" placeholder="Result" style="margin-left: 10px;">
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Sodium:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="cholesterol" value="no"> No tests done</label>
+              <label class="radio-option"><input type="radio" name="cholesterol" value="yes"> Tests done. Date and
+                results:
+                <input type="date" style="margin-left: 10px;">
+                <input type="text" placeholder="Results" style="margin-left: 10px;">
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Potassium:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="a1c" value="no"> No test done</label>
+              <label class="radio-option"><input type="radio" name="a1c" value="yes"> Test done. Date and result:
+                <input type="date" style="margin-left: 10px;">
+                <input type="text" placeholder="Result" style="margin-left: 10px;">
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>TSH:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="urinalysis" value="no"> No test done</label>
+              <label class="radio-option"><input type="radio" name="urinalysis" value="yes"> Test done. Date and result:
+                <input type="date" style="margin-left: 10px;">
+                <input type="text" placeholder="Result" style="margin-left: 10px;">
+              </label>
+            </div>
+          </div>
+
+                    <div class="form-group">
+            <label>Cholesterol/Lipids:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="urinalysis" value="no"> No test done</label>
+              <label class="radio-option"><input type="radio" name="urinalysis" value="yes"> Test done. Date and result:
+                <input type="date" style="margin-left: 10px;">
+                <input type="text" placeholder="Result" style="margin-left: 10px;">
+              </label>
+            </div>
+          </div>
+
+        <div class="form-group">
+            <label>Hemoglobin:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="urinalysis" value="no"> No test done</label>
+              <label class="radio-option"><input type="radio" name="urinalysis" value="yes"> Test done. Date and result:
+                <input type="date" style="margin-left: 10px;">
+                <input type="text" placeholder="Result" style="margin-left: 10px;">
+              </label>
+            </div>
+          </div>
+
+        <div class="form-group">
+            <label>Urinalysis for microalbuminuria:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="urinalysis" value="no"> No test done</label>
+              <label class="radio-option"><input type="radio" name="urinalysis" value="yes"> Test done. Date and result:
+                <input type="date" style="margin-left: 10px;">
+                <input type="text" placeholder="Result" style="margin-left: 10px;">
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Chest X ray:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="chest-xray" value="no"> No image taken</label>
+              <label class="radio-option"><input type="radio" name="chest-xray" value="yes"> X ray done. Date and
+                results:
+                <input type="date" style="margin-left: 10px;">
+                <div style="margin-top: 10px;">
+                  <label>Heart enlarged:</label>
+                  <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="heart-enlarged" value="yes"> YES</label>
+                    <label class="radio-option"><input type="radio" name="heart-enlarged" value="no"> NO</label>
+                  </div>
+                </div>
+                <div style="margin-top: 10px;">
+                  <label>Aortic or coronary artery calcification:</label>
+                  <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="calcification" value="yes"> YES</label>
+                    <label class="radio-option"><input type="radio" name="calcification" value="no"> NO</label>
+                  </div>
+                </div>
+                                 <div style="margin-top: 10px;">
+                  <label>Any Abnormality:</label>
+                  <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="calcification" value="yes"> YES</label>
+                    <label class="radio-option"><input type="radio" name="calcification" value="no"> NO</label>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+     
+                  <div class="form-group">
+          <label>Electrocardiogram:</label>
+          <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="ekg" value="no"> Tracing done</label>
+              <label class="radio-option"><input type="radio" name="ekg" value="yes"> EKG done.  Date and result:
+                  <input type="date" style="margin-left: 10px;">
+                  <div class="form-group" style="margin-top: 5px;">
+                      <label>Increased voltage</label>
+                      <div class="radio-group">
+                          <label class="radio-option"><input type="radio" name="voltage" value="yes"> YES</label>
+                          <label class="radio-option"><input type="radio" name="voltage" value="no"> NO</label>
+                      </div>
+                    </div>
+                  
+              </label>
+          </div>
+      </div>
+
+        <div class="form-group">
+            <label>Electrocardiography:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="urinalysis" value="no"> No test done</label>
+              <label class="radio-option"><input type="radio" name="urinalysis" value="yes"> Echo done. Date and result:
+                <input type="date" style="margin-left: 10px;">
+                <input type="text" placeholder="Result" style="margin-left: 10px;">
+              </label>
+            </div>
+          </div>
+
+        <div class="form-group">
+            <label>Carotid Ultrasound:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="urinalysis" value="no"> No test done</label>
+              <label class="radio-option"><input type="radio" name="urinalysis" value="yes"> Ultrasound done. Date and result:
+                <input type="date" style="margin-left: 10px;">
+                <input type="text" placeholder="Result" style="margin-left: 10px;">
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+                    <div class="form-group">
+                        <label>Patient reports moderate or greater physical activity during:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="activity" value="less"> Less than 3 hours per week</label>
+                            <label class="radio-option"><input type="radio" name="activity" value="moderate"> 3-5 hours per week</label>
+                            <label class="radio-option"><input type="radio" name="activity" value="more"> More than 5 hours per week</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Does the patient take an aspirin every day?</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="aspirin" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="aspirin" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Current treatment for hypertension:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="hypertension-treatment" value="none"> NONE</label>
+                            <label class="radio-option"><input type="radio" name="hypertension-treatment" value="other"> OTHER:</label>
+                            <input type="text" style="margin-left: 10px; display: none;" id="hypertension-treatment-other">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Current treatment for hyperlipidemia (with Statin drug)</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="statin" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="statin" value="no"> NO</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    <!-- Targeted Physical Examination Section -->
+        <div class="section">
+            <div class="section-title">Targeted Physical Examination</div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Vital signs</div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Weight (kg):</label>
+                            <input type="number" id="weight" step="0.1">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Height (cm):</label>
+                            <input type="number" id="height">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label class="audit-item">Estimated B.M.I.:</label>
+                            <input type="text" id="bmi" readonly>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label class="audit-item">Waist circumference (cm):</label>
+                            <input type="number" id="waist-circumference">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Hip circumference (cm):</label>
+                            <input type="number" id="hip-circumference">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Waist/Hip ratio:</label>
+                            <span id="waist-hip-ratio"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                    <!-- Blood Pressure Section -->
+
+          <div class="form-row" style="align-items: flex-end; gap: 20px;">
+             <div class="form-group" style="flex: 1;">
+              <label>Blood pressure 1:</label>
+                 <div style="display: flex; align-items: center; gap: 5px;">
+                   <input type="number" id="bp1-systolic" style="width: 80px; text-align: center;"> 
+                   <span>/</span>
+                       <input type="number" id="bp1-diastolic" style="width: 80px; text-align: center;">
+                    <span>mmHg</span>
+                  </div>
+             </div>
+  
+           <div class="form-group" style="flex: 1;">
+                 <label>Blood pressure 2:</label>
+                   <div style="display: flex; align-items: center; gap: 5px;">
+                  <input type="number" id="bp2-systolic" style="width: 80px; text-align: center;">
+                    <span>/</span>
+                   <input type="number" id="bp2-diastolic" style="width: 80px; text-align: center;">
+                    <span>mmHg</span>
+                 </div>
+             </div>
+  
+            <div class="form-group" style="flex: 1; margin-left: 20px;">
+                <label>Average:</label>
+                  <input type="text" id="bp-average" readonly style="background-color: #f5f5f5; width: 180px; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+            </div>
+                
+           <div class="form-row">
+            <div class="form-group">
+                <label>Pulse rate:</label>
+                <input type="number"> /min
+                <label style="margin-left: 10px;">R and L Pulses simultaneous:</label>
+                <div class="radio-group" style="display: inline-flex; margin-left: 10px;">
+                  <label class="radio-option"><input type="radio" name="pulses-simultaneous" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="pulses-simultaneous" value="no"> NO</label>
+                </div>
+              </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Respiratory rate/minute:</label>
+                            <input type="number">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Temperature (°C):</label>
+                            <input type="number" step="0.1">
+                        </div>
+                    </div>
+                </div>
+
+          <div class="form-row">
+             <div class="form-col">
+             <div class="form-group">
+                 <label class="audit-item">Oximetry: %oxygen saturation</label>
+                    <input type="number" id="oximetry" min="0" max="100" style="width: 150px; border: 2px solid #000; padding: 8px;">
+              </div>
+            </div>
+           <div class="form-col">
+             <div class="form-group">
+               <label class="audit-item">Triceps skinfold thickness (mm)</label>
+               <input type="number" id="triceps-skinfold" min="0" max="50" step="0.1" style="width: 150px; border: 2px solid #000; padding: 8px;">
+              </div>
+            </div>
+          </div>
+       </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Retinal fundoscopy:</div>
+                    
+                    <div class="form-group">
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="fundoscopy" value="no"> Not done</label>
+                            <label class="radio-option"><input type="radio" name="fundoscopy" value="yes"> Image taken</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Hypertensive retinopathy grade:</label>
+                        <select>
+                            <option value="">Select grade</option>
+                            <option value="1">Grade 1: Barely detectable arterial narrowing</option>
+                            <option value="2">Grade 2: Obvious arterial narrowing with focal irregularities</option>
+                            <option value="3">Grade 3: Grade 2 plus retinal hemorrhages, exudates, cotton-wool spots, or retinal edema</option>
+                            <option value="4">Grade 4: Grade 3 plus papilledema</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Thyroid</div>
+                    
+                    <div class="form-group">
+                        <label>Palpable/enlarged:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="thyroid" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="thyroid" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+             <div class="form-group" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+               <div style="display: flex; align-items: center;">
+                 <label class="audit-item" style="margin-right: 15px; margin-bottom: 0;">Lid lag present:</label>
+               <div class="radio-group" style="display: flex; gap: 10px;">
+                  <label class="radio-option"><input type="radio" name="lid-lag" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="lid-lag" value="no"> NO</label>
+               </div>
+             </div>
+                   <a href="#" class="info-link" data-info="lid-lag-info" style="white-space: nowrap;">Lid Lag Details</a>
+            </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Carotid artery</div>
+                    
+                  <div class="form-group" style="display: flex; gap: 180px;">
+               <div>
+                    <label>Right Bruit</label>
+                   <div class="radio-group">
+                       <label class="radio-option"><input type="radio" name="carotid-right" value="yes"> YES</label>
+                       <label class="radio-option"><input type="radio" name="carotid-left" value="no"> NO</label>
+                     </div>
+                </div>
+    
+              <div>
+                  <label>Left Bruit</label>
+                  <div class="radio-group">
+                      <label class="radio-option"><input type="radio" name="carotid-left" value="yes"> YES</label>
+                     <label class="radio-option"><input type="radio" name="carotid-left" value="no"> NO</label>
+                   </div>
+                 </div>
+                 </div>
+            </div>
+                
+            <div class="subsection">
+                <div class="subsection-title">Posterior tibial artery</div>
+    
+                <div class="form-group" style="display: flex; gap: 180px;">
+             <div>
+                 <label>Pulse palpable: Right</label>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="tibial-right" value="yes"> YES</label>
+                <label class="radio-option"><input type="radio" name="tibial-right" value="no"> NO</label>
+            </div>
+           </div>
+        
+             <div>
+                 <label>Left</label>
+                    <div class="radio-group">
+                      <label class="radio-option"><input type="radio" name="tibial-left" value="yes"> YES</label>
+                      <label class="radio-option"><input type="radio" name="tibial-left" value="no"> NO</label>
+                   </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="subsection">
+                <div class="subsection-title">Pedal/leg edema</div>
+    
+                <div class="form-group" style="display: flex; gap: 180px;">
+             <div>
+                 <label>Present: Right</label>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="edema-right" value="yes"> YES</label>
+                <label class="radio-option"><input type="radio" name="edema-right" value="no"> NO</label>
+            </div>
+           </div>
+        
+             <div>
+                 <label>Left</label>
+                    <div class="radio-group">
+                      <label class="radio-option"><input type="radio" name="edema-left" value="yes"> YES</label>
+                      <label class="radio-option"><input type="radio" name="edema-left" value="no"> NO</label>
+                   </div>
+               </div>
+            </div>
+         </div>
+                
+
+                
+                <div class="subsection" id="heart-exam">
+                    <div class="subsection-title">Heart examination</div>
+                    
+                    <div class="form-group">
+                        <label><a href="#" class="info-link" data-info="cardiac-auscultation">A PRIMER ON CARDIAC AUSCULTATION</a></label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="audit-item">Point of maximal cardiac impulse:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="pmi" value="normal"> Normal</label>
+                            <label class="radio-option"><input type="radio" name="pmi" value="displaced"> Displaced</label>
+                        </div>
+                        <div class="radio-group" style="margin-top: 5px;">
+                            <label class="radio-option"><input type="radio" name="pmi-size" value="1cm"> One cm in size</label>
+                            <label class="radio-option"><input type="radio" name="pmi-size" value="2cm"> Two or >cm in size=increased</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Heart sounds:</label>
+                        <div class="form-group">
+                            <label>S1 Intensity</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="s1-intensity" value="normal"> Normal</label>
+                                <label class="radio-option"><input type="radio" name="s1-intensity" value="increased"> Increased</label>
+                                <label class="radio-option"><input type="radio" name="s1-intensity" value="decreased"> Decreased</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>S2 Intensity</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="s2-intensity" value="normal"> Normal</label>
+                                <label class="radio-option"><input type="radio" name="s2-intensity" value="increased"> Increased</label>
+                                <label class="radio-option"><input type="radio" name="s2-intensity" value="decreased"> Decreased</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>S2 Increased amplitude and or duration in aortic area</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="s2-aortic" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="s2-aortic" value="no"> NO</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>S2 split:</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="s2-split" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="s2-split" value="no"> NO</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>S3</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="s3" value="present"> Present</label>
+                                <label class="radio-option"><input type="radio" name="s3" value="none"> None heard</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>S4</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="s4" value="present"> Present</label>
+                                <label class="radio-option"><input type="radio" name="s4" value="none"> None heard</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="audit-item">Examination for murmurs by location (timing and character):</label>
+                        <div class="form-group">
+                            <label>Left second interspace:</label>
+                            <textarea></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Right second interspace:</label>
+                            <textarea></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Apex and left lower sternal border:</label>
+                            <textarea></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Second and third left interspace:</label>
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subsection" id="lung-exam">
+                    <div class="subsection-title">Lungs</div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Right</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="right-lung" value="normal"> No abnormal sounds over all fields</label>
+                                    <label class="radio-option"><input type="radio" name="right-lung" value="abnormal"> Abnormal sounds:</label>
+                                </div>
+                                <div id="right-lung-details" style="margin-top: 10px; display: none;">
+                                    <textarea placeholder="Describe abnormal sounds"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Left</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="left-lung" value="normal"> No abnormal sounds over all fields</label>
+                                    <label class="radio-option"><input type="radio" name="left-lung" value="abnormal"> Abnormal sounds:</label>
+                                </div>
+                                <div id="left-lung-details" style="margin-top: 10px; display: none;">
+                                    <textarea placeholder="Describe abnormal sounds"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Abdomen</div>
+                    
+                    <div class="form-group">
+                        <label class="audit-item">Is the liver height enlarged to percussion (>=10 cm in women, >=13 cm in men)</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="liver-enlarged" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="liver-enlarged" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Spleen:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="spleen" value="not-felt"> Not felt</label>
+                            <label class="radio-option"><input type="radio" name="spleen" value="tip-felt"> Tip felt</label>
+                            <label class="radio-option"><input type="radio" name="spleen" value="clearly-felt"> Clearly felt→enlarged</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Tenderness or suggested mass</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="abdomen-mass" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="abdomen-mass" value="no"> NO</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Neurological examination</div>
+                    
+                    <div class="form-group">
+                        <label>Is speech fluent?</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="speech" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="speech" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Can patient comprehend regular speech?</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="comprehension" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="comprehension" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Can patient repeat 3 common words?</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="repeat-words" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="repeat-words" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Visual fields Intact to right and left and up and down</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="visual-fields" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="visual-fields" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="audit-item">Visual acuity assessment (SNELLEN CHART)</label>
+                          <div class="form-group">
+                            <label><a href="#" class="info-link" data-info="visual-acuity">Visual Acuity Assessment Strategy</a></label>
+                         </div>
+                         
+                            <div class="form-group" style="display: flex; gap: 180px;">
+                         <div>
+                                 <label>Snellen notation Right eye:</label>
+                                 <input type="text">
+                        </div>
+                    <div>
+                         <label>Snellen notation Left eye:</label>
+                               <input type="text">
+                     </div>
+                  </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="audit-item">Facial muscles. Smile:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="smile" value="normal"> Normal</label>
+                            <label class="radio-option"><input type="radio" name="smile" value="asymmetric"> Asymmetric</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Showing teeth:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="teeth" value="normal"> Normal</label>
+                            <label class="radio-option"><input type="radio" name="teeth" value="asymmetric"> Asymmetric</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="audit-item">Fine finger tremor:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="tremor" value="present"> PRESENT</label>
+                            <label class="radio-option"><input type="radio" name="tremor" value="absent"> ABSENT</label>
+                        </div>
+                    </div>
+                    
+                     <div class="subsection">
+                        <div class="subsection-title">Gait</div>
+    
+                          <div class="form-group" style="display: flex; gap: 180px;">
+                           <div>
+                                <label>Regular</label>
+                          <div class="radio-group">
+                               <label class="radio-option"><input type="radio" name="gait-regular" value="yes"> YES</label>
+                               <label class="radio-option"><input type="radio" name="gait-regular" value="no"> NO</label>
+                         </div>
+                      </div>
+        
+                        <div>
+                            <label>Steady/Stable</label>
+                             <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="gait-regular" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="gait-regular" value="no"> NO</label>
+                                </div>
+                           </div>
+                          </div>
+                       </div>
+                    
+                    <div class="form-group">
+                        <label>Strength:</label>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label>Arm raise right</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="arm-right" value="normal"> NORMAL</label>
+                                    <label class="radio-option"><input type="radio" name="arm-right" value="weak"> WEAK</label>
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <label>Arm raise left</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="arm-left" value="normal"> NORMAL</label>
+                                    <label class="radio-option"><input type="radio" name="arm-left" value="weak"> WEAK</label>
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <label>Leg raise right</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="leg-right" value="normal"> NORMAL</label>
+                                    <label class="radio-option"><input type="radio" name="leg-right" value="weak"> WEAK</label>
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <label>Leg raise left</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="leg-left" value="normal"> NORMAL</label>
+                                    <label class="radio-option"><input type="radio" name="leg-left" value="weak"> WEAK</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Reflexes:</label>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label>Brachial right:</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="brachial-right" value="normal"> NORMAL</label>
+                                    <label class="radio-option"><input type="radio" name="brachial-right" value="hyper"> HYPER</label>
+                                    <label class="radio-option"><input type="radio" name="brachial-right" value="decreased"> DECREASED</label>
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <label>Brachial left:</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="brachial-left" value="normal"> NORMAL</label>
+                                    <label class="radio-option"><input type="radio" name="brachial-left" value="hyper"> HYPER</label>
+                                    <label class="radio-option"><input type="radio" name="brachial-left" value="decreased"> DECREASED</label>
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <label>Knee right:</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="knee-right" value="normal"> NORMAL</label>
+                                    <label class="radio-option"><input type="radio" name="knee-right" value="hyper"> HYPER</label>
+                                    <label class="radio-option"><input type="radio" name="knee-right" value="decreased"> DECREASED</label>
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <label>Knee left:</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="knee-left" value="normal"> NORMAL</label>
+                                    <label class="radio-option"><input type="radio" name="knee-left" value="hyper"> HYPER</label>
+                                    <label class="radio-option"><input type="radio" name="knee-left" value="decreased"> DECREASED</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Section -->
+            <div class="section" id="summary">
+                <div class="section-title">Summary of positive history and physical examination items</div>
+                
+                <div class="form-group">
+                    <label>Risk factors:</label>
+                    <div class="form-group">
+                        <label>Diet Likely high salt</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="high-salt" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="high-salt" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Metabolic syndrome with diabetes, abdominal obesity, hypertension, increase triglycerides.</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="metabolic-risk" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="metabolic-risk" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Cigarette smoking</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="smoking-risk" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="smoking-risk" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Diabetes</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="diabetes-risk" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="diabetes-risk" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Family history of heart disease</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="family-heart-risk" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="family-heart-risk" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Family history of hypertension</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="family-hypertension-risk" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="family-hypertension-risk" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Moderate physical exercise < 3 hours/week</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="exercise-risk" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="exercise-risk" value="no"> NO</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Physical exam:</label>
+                    <div class="form-group">
+                        <label>Hypertension stage:</label>
+                        <select>
+                            <option value="">Select stage</option>
+                            <option value="1">Stage 1: Systolic BP 130-139 mmHg or Diastolic BP 80-89 mmHg</option>
+                            <option value="2">Stage 2: Systolic BP >=140 mmHg or Diastolic BP >=90 mmHg</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Waist/hip ratio: (>0.86 is high for women; >1.0 is high for men)</label>
+                        <input type="text" id="summary-waist-hip" readonly>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>BMI>22.6</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="bmi-risk" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="bmi-risk" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Hypertension retinopathy grade:</label>
+                        <input type="text" id="summary-retinopathy" readonly>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Cardiac examination abnormalities:</label>
+                        <textarea></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Consider immediate baseline chest x ray, lipid studies, TSH, BUN and creatinine, echocardiography, HgbA1c screening, EKG, urinalysis for microalbuminuria</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>ASCVD risk calculation: <a href="https://tools.acc.org/ascvd-risk-estimator-plus/#!/calculate/estimate/" target="_blank">ASCVD Risk Estimator + (acc.org)</a></label>
+                        <div class="form-group">
+                            <label>Need Total Cholesterol, HDL cholesterol, LDL Cholesterol</label>
+                            <input type="text" style="width: 100%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Section -->
+<div class="section" id="summary">
+    <div class="section-title">SUMMARY OF HYPERTENSION DIAGNOSIS AND STATUS INCLUDING PATIENT ASSESSMENT OF THIS PROBLEM, TREATMENT SIDE EFFECTS, AND TREATMENT COST</div>
+    
+    <div class="subsection">
+        <div class="subsection-title">Determinants/causes for this problem</div>
+        <textarea style="min-height: 100px; width: 100%;"></textarea>
+        <div class="form-group">
+            <label>Done, noting: <input type="text" style="width: 80%;"></label>
+        </div>
+    </div>
+    
+    <div class="subsection">
+        <div class="subsection-title">Notable physical examination abnormalities</div>
+        <textarea style="min-height: 100px; width: 100%;"></textarea>
+    </div>
+    
+    <div class="subsection">
+        <div class="subsection-title">Red flags from history and physical examination</div>
+        <textarea style="min-height: 100px; width: 100%;"></textarea>
+    </div>
+    
+    <div class="subsection">
+        <div class="subsection-title">Physician review of Determinants for health and medical history EMR section</div>
+        <textarea style="min-height: 100px; width: 100%;"></textarea>
+        <div class="form-group">
+            <label>Done, noting: <input type="text" style="width: 80%;"></label>
+        </div>
+    </div>
+    
+    <div class="subsection">
+        <div class="subsection-title">Physician review to confirm and check history and physical examination data</div>
+        <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="review-confirm" value="confirm"> Confirmed</label>
+            <label class="radio-option"><input type="radio" name="review-confirm" value="not-confirm"> Not confirmed</label>
+        </div>
+    </div>
+    
+    <div class="subsection">
+        <div class="subsection-title">Physician analysis and synthesis of the history and physical examination data: Differential diagnoses and details (key disease stage and activity measures)</div>
+        <textarea style="min-height: 100px; width: 100%;"></textarea>
+    </div>
+    
+    <div class="subsection">
+        <div class="subsection-title">Physician recommendations for further diagnostic data</div>
+        <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="diagnostic-recommendation" value="immediate"> Immediate</label>
+            <label class="radio-option"><input type="radio" name="diagnostic-recommendation" value="when-possible"> When possible</label>
+        </div>
+    </div>
+    
+    <div class="subsection">
+        <div class="subsection-title">Tele-consultation</div>
+        <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="teleconsult" value="done"> Done</label>
+            <label class="radio-option"><input type="radio" name="teleconsult" value="not-done"> Not done</label>
+        </div>
+        <div id="teleconsultant-details" style="margin-top: 15px; display: none;">
+            <div class="form-group">
+                <label>Teleconsultant name</label>
+                <input type="text" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+    
+    <div class="subsection">
+        <div class="subsection-title">Summary of tele-consultant comments and recommendations</div>
+        <textarea style="min-height: 100px; width: 100%;"></textarea>
+    </div>
+    
+    <div class="subsection">
+        <div class="subsection-title">Discussion with patient concerning tele-consultant recommendations</div>
+        <textarea style="min-height: 100px; width: 100%;"></textarea>
+    </div>
+    
+    <div class="subsection">
+        <div class="subsection-title">Goals for interventions</div>
+        <textarea style="min-height: 100px; width: 100%;"></textarea>
+    </div>
+    
+    <div class="subsection">
+        <div class="subsection-title">Patient education</div>
+        <div class="form-group">
+            <label><input type="checkbox"> Review of specific symptoms and signs from physical examination</label>
+        </div>
+        <div class="form-group">
+            <label><input type="checkbox"> Discussion of problem chronicity and benefits of regular evaluations</label>
+        </div>
+        <div class="form-group">
+            <label><input type="checkbox"> Review of in-room health posters</label>
+        </div>
+        <div class="form-group">
+            <label><input type="checkbox"> Discussion of appropriate physical activities</label>
+        </div>
+        <div class="form-group">
+            <label><input type="checkbox"> Discussion of immunization status</label>
+        </div>
+        <div class="form-group">
+            <label><input type="checkbox"> Review of specific written patient management instructions for this problem</label>
+        </div>
+        <div class="form-group">
+            <label><input type="checkbox"> Review of any patient educational videos</label>
+        </div>
+        <div class="form-group">
+            <label><input type="checkbox"> Discussion of specific medication treatment(s) proposed: Benefits, risks, costs</label>
+        </div>
+        <div class="form-group">
+            <label><input type="checkbox"> Physical therapy plan by patient alone discussed</label>
+        </div>
+        <div class="form-group">
+            <label><input type="checkbox"> Physical therapy referral discussed with benefits and risks</label>
+        </div>
+    </div>
+    
+    <div class="subsection">
+        <div class="subsection-title">Specialist consultation recommended</div>
+        <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="specialist-consult" value="yes"> YES</label>
+            <label class="radio-option"><input type="radio" name="specialist-consult" value="no"> NO</label>
+        </div>
+        <div id="specialist-details" style="margin-top: 15px; display: none;">
+            <div class="form-group">
+                <label>Discussion of benefits, risks and costs with patient</label>
+                <textarea style="min-height: 80px; width: 100%;"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Consultant name and contact information</label>
+                <input type="text" style="width: 100%;">
+            </div>
+            <div class="form-group">
+                <label>Consultation appointment made</label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="consult-appointment" value="yes"> YES</label>
+                    <label class="radio-option"><input type="radio" name="consult-appointment" value="no"> NO</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="subsection">
+        <div class="subsection-title">Follow-up care plans</div>
+        
+        <div class="form-group">
+            <label>With these providers</label>
+            <div class="form-group">
+                <label>Purpose discussed with patient</label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="purpose-discussed" value="yes"> YES</label>
+                    <label class="radio-option"><input type="radio" name="purpose-discussed" value="no"> NO</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Specific scheduled appointment made</label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="appointment-made" value="yes"> YES</label>
+                    <label class="radio-option"><input type="radio" name="appointment-made" value="no"> NO</label>
+                </div>
+                <div id="appointment-date" style="margin-top: 10px; display: none;">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Month</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-col">
+                            <label>Day</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-col">
+                            <label>Year</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>With system virtual care providers</label>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="virtual-care" value="yes"> YES</label>
+                <label class="radio-option"><input type="radio" name="virtual-care" value="no"> NO</label>
+            </div>
+            <div id="virtual-care-details" style="margin-top: 15px; display: none;">
+                <div class="form-group">
+                    <label>Discussion of purpose</label>
+                    <textarea style="min-height: 80px; width: 100%;"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Telephone number of this service</label>
+                    <input type="tel" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>With patient's village community health worker/volunteer</label>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="community-health" value="yes"> YES</label>
+                <label class="radio-option"><input type="radio" name="community-health" value="no"> NO</label>
+            </div>
+            <div id="community-health-details" style="margin-top: 15px; display: none;">
+                <div class="form-group">
+                    <label>Discussion of purpose</label>
+                    <textarea style="min-height: 80px; width: 100%;"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="subsection">
+        <div class="form-group">
+            <label>On the basis of this visit, have changes been made to the Determinants for health and medical history summary EMR section for this patient?</label>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="emr-changes" value="yes"> YES</label>
+                <label class="radio-option"><input type="radio" name="emr-changes" value="no"> NO</label>
+                <label class="radio-option"><input type="radio" name="emr-changes" value="none"> NONE INDICATED</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Medical assistant providing this service</label>
+            <input type="text" style="width: 100%; border-bottom: 1px solid #000; border-top: none; border-left: none; border-right: none; background: transparent;">
+        </div>
+        
+        <div class="form-group">
+            <label>Medical Officer/physician providing this service</label>
+            <input type="text" style="width: 100%; border-bottom: 1px solid #000; border-top: none; border-left: none; border-right: none; background: transparent;">
+        </div>
+        
+        <div class="form-group">
+            <label>Telephone number for appointments in this clinic</label>
+            <input type="tel" style="width: 100%; border-bottom: 1px solid #000; border-top: none; border-left: none; border-right: none; background: transparent;">
+        </div>
+        
+        <div class="form-group">
+            <label>Paper copy of this entire visit record provided to patient</label>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="paper-copy" value="yes"> YES</label>
+                <label class="radio-option"><input type="radio" name="paper-copy" value="no"> NO</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Updated/current Determinants for health and medical history summary uploaded onto patient's cell phone application</label>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="uploaded-app" value="yes"> YES</label>
+                <label class="radio-option"><input type="radio" name="uploaded-app" value="no"> NO</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- Buttons Section -->
+            <div class="buttons">
+                <button id="save-btn">SAVE</button>
+                <button id="submit-btn">SUBMIT TO EMR</button>
+                <button id="print-btn">PRINT</button>
+            </div>
+        </div>
+
+        <!-- Links Column -->
+        <div class="links-column">
+            <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">Visit Record Templates</h3>
+            <nav class="template-toc">
+                <ul>
+                    <li><a href="#diagnosis" class="template-link">1. Diagnosis</a></li>
+                    <li><a href="#history" class="template-link">2. History</a></li>
+                    <li>
+                        <a href="#physical-exam" class="template-link">3. Physical Examinations</a>
+                        <ul>
+                            <li><a href="#vital-signs" class="template-link">3.1 Vital Signs</a></li>
+                            <li><a href="#heart-exam" class="template-link">3.2 Heart Exam</a></li>
+                            <li><a href="#lung-exam" class="template-link">3.3 Lung Exam</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#summary" class="template-link">4. Summary</a></li>
+                    <li><a href="#hypertension-diagnosis" class="template-link">5. Hypertension Diagnosis</a></li>
+                </ul>
+            </nav>
+
+            <!-- Examination References Section -->
+            <div class="info-links-section" style="margin-top: 30px;">
+                <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">Examination References</h3>
+                <a href="#" class="info-link" data-info="hypertension-guidelines">Hypertension Diagnosis Guidelines</a>
+                <a href="#" class="info-link" data-info="hypertension-stages">Hypertension Stages</a>
+                <a href="#" class="info-link" data-info="treatment-options">Hypertension Treatment Options</a>
+                <a href="#" class="info-link" data-info="lifestyle-modifications">Lifestyle Modifications</a>
+                <a href="#" class="info-link" data-info="metabolic-syndrome">Metabolic Syndrome</a>
+                <a href="#" class="info-link" data-info="cardiac-auscultation">Cardiac Auscultation</a>
+                <a href="#" class="info-link" data-info="hypertensive-retinopathy">Hypertensive Retinopathy</a>
+                <a href="#" class="info-link" data-info="patient-education">Patient Education</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Modal -->
+    <div id="infoModal" class="info-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="infoContent" class="info-content"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current date
+            const today = new Date();
+            const visitDateInput = document.getElementById('visit-date');
+            if (visitDateInput) {
+                visitDateInput.valueAsDate = today;
+            }
+
+            // Calculate years with hypertension
+            const hypertensionYearInput = document.querySelector('input[type="number"][placeholder="year"]');
+            const hypertensionYearsSpan = document.getElementById('hypertension-years');
+            
+            if (hypertensionYearInput && hypertensionYearsSpan) {
+                hypertensionYearInput.addEventListener('change', function() {
+                    const year = parseInt(this.value);
+                    if (!isNaN(year) && year > 1900 && year <= today.getFullYear()) {
+                        const yearsWithHypertension = today.getFullYear() - year;
+                        hypertensionYearsSpan.textContent = `→ Number of years with hypertension: ${yearsWithHypertension}`;
+                    }
+                });
+            }
+
+            // Toggle display function for conditional sections
+            function toggleDisplay(triggerSelector, targetId, checkValue = true) {
+                const triggers = document.querySelectorAll(triggerSelector);
+                const target = document.getElementById(targetId);
+
+                if (!triggers.length || !target) return;
+
+                function updateDisplay() {
+                    const shouldShow = Array.from(triggers).some(el => 
+                        el.checked && (checkValue === true || el.value == checkValue)
+                    );
+                    target.style.display = shouldShow ? 'block' : 'none';
+                }
+
+                triggers.forEach(trigger => {
+                    trigger.addEventListener('change', updateDisplay);
+                });
+                updateDisplay();
+            }
+
+            // Set up all conditional displays
+            toggleDisplay('input[name="pregnant"]', 'woman-options', 'yes');
+            toggleDisplay('input[name="past-contraceptives"]', 'contraceptive-years', 'yes');
+            toggleDisplay('input[name="smoking"]', 'smoking-details', 'yes');
+            toggleDisplay('input[name="hypertension-treatment"]', 'hypertension-treatment-other', 'other');
+            toggleDisplay('input[name="right-lung"]', 'right-lung-details', 'abnormal');
+            toggleDisplay('input[name="left-lung"]', 'left-lung-details', 'abnormal');
+            toggleDisplay('input[name="further-tests"]', 'specific-tests', 'specific');
+            toggleDisplay('input[name="teleconsult"]', 'teleconsult-details', 'yes');
+
+            // BMI calculation
+            const weightInput = document.getElementById('weight');
+            const heightInput = document.getElementById('height');
+            const bmiInput = document.getElementById('bmi');
+            const summaryWaistHip = document.getElementById('summary-waist-hip');
+
+            function calculateBMI() {
+                if (weightInput && heightInput && bmiInput) {
+                    const weight = parseFloat(weightInput.value);
+                    const height = parseFloat(heightInput.value) / 100; // convert cm to m
+                    bmiInput.value = (weight && height > 0) ? (weight / (height * height)).toFixed(1) : "";
+                }
+            }
+
+            if (weightInput && heightInput) {
+                ['input', 'change'].forEach(event => {
+                    weightInput.addEventListener(event, calculateBMI);
+                    heightInput.addEventListener(event, calculateBMI);
+                });
+                calculateBMI();
+            }
+
+            // Waist/hip ratio calculation
+            const waistInput = document.getElementById('waist-circumference');
+            const hipInput = document.getElementById('hip-circumference');
+            const ratioDisplay = document.getElementById('waist-hip-ratio');
+
+            function calculateWaistHipRatio() {
+                if (waistInput && hipInput && ratioDisplay) {
+                    const waist = parseFloat(waistInput.value);
+                    const hip = parseFloat(hipInput.value);
+                    if (waist > 0 && hip > 0) {
+                        const ratio = (waist / hip).toFixed(2);
+                        ratioDisplay.textContent = ratio;
+                        if (summaryWaistHip) {
+                            summaryWaistHip.value = ratio;
+                        }
+                    } else {
+                        ratioDisplay.textContent = "";
+                        if (summaryWaistHip) {
+                            summaryWaistHip.value = "";
+                        }
+                    }
+                }
+            }
+
+            if (waistInput && hipInput) {
+                ['input', 'change'].forEach(event => {
+                    waistInput.addEventListener(event, calculateWaistHipRatio);
+                    hipInput.addEventListener(event, calculateWaistHipRatio);
+                });
+                calculateWaistHipRatio();
+            }
+
+         // Blood pressure average calculation
+            const bp1Systolic = document.getElementById('bp1-systolic');
+            const bp1Diastolic = document.getElementById('bp1-diastolic');
+            const bp2Systolic = document.getElementById('bp2-systolic');
+            const bp2Diastolic = document.getElementById('bp2-diastolic');
+            const bpAverage = document.getElementById('bp-average');
+            
+            function calculateBPAverage() {
+                if (bp1Systolic && bp1Diastolic && bp2Systolic && bp2Diastolic && bpAverage) {
+                    const sys1 = parseFloat(bp1Systolic.value) || 0;
+                    const dia1 = parseFloat(bp1Diastolic.value) || 0;
+                    const sys2 = parseFloat(bp2Systolic.value) || 0;
+                    const dia2 = parseFloat(bp2Diastolic.value) || 0;
+                    
+                    if (sys1 > 0 && dia1 > 0 && sys2 > 0 && dia2 > 0) {
+                        const avgSys = Math.round((sys1 + sys2) / 2);
+                        const avgDia = Math.round((dia1 + dia2) / 2);
+                        bpAverage.value = `${avgSys}/${avgDia}`;
+                    } else {
+                        bpAverage.value = '';
+                    }
+                }
+            }
+            
+            if (bp1Systolic && bp1Diastolic && bp2Systolic && bp2Diastolic) {
+                ['input', 'change'].forEach(event => {
+                    bp1Systolic.addEventListener(event, calculateBPAverage);
+                    bp1Diastolic.addEventListener(event, calculateBPAverage);
+                    bp2Systolic.addEventListener(event, calculateBPAverage);
+                    bp2Diastolic.addEventListener(event, calculateBPAverage);
+                });
+                calculateBPAverage();
+            }
+            // Left arm BP average
+            const bpLeftSystolic1 = document.getElementById('bp-left-systolic1');
+            const bpLeftDiastolic1 = document.getElementById('bp-left-diastolic1');
+            const bpLeftSystolic2 = document.getElementById('bp-left-systolic2');
+            const bpLeftDiastolic2 = document.getElementById('bp-left-diastolic2');
+            const bpLeftAverage = document.getElementById('bp-left-average');
+
+            function calculateLeftBPAverage() {
+                calculateBPAverage(bpLeftSystolic1, bpLeftDiastolic1, bpLeftSystolic2, bpLeftDiastolic2, bpLeftAverage);
+            }
+
+            if (bpLeftSystolic1 && bpLeftDiastolic1 && bpLeftSystolic2 && bpLeftDiastolic2 && bpLeftAverage) {
+                [bpLeftSystolic1, bpLeftDiastolic1, bpLeftSystolic2, bpLeftDiastolic2].forEach(input => {
+                    ['input', 'change'].forEach(event => {
+                        input.addEventListener(event, calculateLeftBPAverage);
+                    });
+                });
+                calculateLeftBPAverage();
+            }
+
+            // Button functionality
+            const saveBtn = document.getElementById('save-btn');
+            const submitBtn = document.getElementById('submit-btn');
+            const printBtn = document.getElementById('print-btn');
+
+            if (saveBtn) {
+                saveBtn.addEventListener('click', function() {
+                    alert('Form data saved successfully!');
+                });
+            }
+
+            if (submitBtn) {
+                submitBtn.addEventListener('click', function() {
+                    if (confirm('Are you sure you want to submit this to EMR?')) {
+                        alert('Form submitted to EMR successfully!');
+                    }
+                });
+            }
+
+            if (printBtn) {
+                printBtn.addEventListener('click', function() {
+                    window.print();
+                });
+            }
+
+            // Info modal functionality
+            const modal = document.getElementById("infoModal");
+            const infoLinks = document.querySelectorAll(".info-link");
+            const infoContent = document.getElementById("infoContent");
+            const span = document.getElementsByClassName("close")[0];
+
+            // Info content definitions
+            const infoData = {
+                "hypertension-guidelines": `
+                    <div style="font-size: 22px; line-height: 1.6;">
+                        <h3 style="color: var(--primary-color); margin-bottom: 15px;">Hypertension Diagnosis Guidelines</h3>
+                        <p>Diagnosis of hypertension is based on:</p>
+                        <ol style="padding-left: 25px;">
+                            <li>Properly measured blood pressure on <strong>three</strong> separate occasions over 3-4 weeks</li>
+                            <li>Average systolic BP ≥130 mmHg or diastolic BP ≥80 mmHg</li>
+                            <li>Assessment of cardiovascular risk factors and target organ damage</li>
+                        </ol>
+                        <p style="margin-top: 15px;"><strong>Measurement protocol:</strong> No smoking or caffeine for 1 hour prior, empty bladder, 5 minutes resting, seated with back supported, feet on floor, legs uncrossed, arm supported at heart level, cuff on bare skin.</p>
+                    </div>
+                `,
+
+                "lid-lag-info": `
+                   <p><strong>Lid lag</strong> is a condition in which the upper eyelid is higher than normal while the eye is in downgaze. It can be measured by comparing the upper eyelid position in downgaze to its position in primary gaze relative to a fixed point like the pupil. The most common cause of lid lag is hyperthyroidism.</p>
+                `,
+                "hypertension-stages": `
+                    <div style="font-size: 22px; line-height: 1.6;">
+                        <h3 style="color: var(--primary-color); margin-bottom: 15px;">Hypertension Stage Classification</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left;">Category</th>
+                                <th style="padding: 10px; text-align: left;">Systolic BP (mmHg)</th>
+                                <th style="padding: 10px; text-align: left;">Diastolic BP (mmHg)</th>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 10px;">Normal</td>
+                                <td style="padding: 10px;">&lt;120</td>
+                                <td style="padding: 10px;">&lt;80</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 10px;">Elevated</td>
+                                <td style="padding: 10px;">120-129</td>
+                                <td style="padding: 10px;">&lt;80</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 10px;">Stage 1 Hypertension</td>
+                                <td style="padding: 10px;">130-139</td>
+                                <td style="padding: 10px;">80-89</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px;">Stage 2 Hypertension</td>
+                                <td style="padding: 10px;">≥140</td>
+                                <td style="padding: 10px;">≥90</td>
+                            </tr>
+                        </table>
+                        <div style="background-color: #f5f5f5; padding: 15px; border-left: 3px solid var(--primary-color); margin-top: 15px;">
+                            <p><strong>Note:</strong> Based on 2017 ACC/AHA guidelines. Treatment goals may vary based on patient age and comorbidities.</p>
+                        </div>
+                    </div>
+                `,
+                "treatment-options": `
+                    <div style="font-size: 22px; line-height: 1.6;">
+                        <h3 style="color: var(--primary-color); margin-bottom: 15px;">Hypertension Treatment Options</h3>
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="color: var(--secondary-color); margin-bottom: 10px;">Initial treatment options:</h4>
+                            <ol style="padding-left: 25px;">
+                                <li><strong>Thiazide diuretics</strong> (e.g., Chlorthalidone 12.5 mg daily)</li>
+                                <li><strong>Calcium channel blockers</strong> (e.g., Amlodipine 5 mg daily)</li>
+                                <li><strong>ACE inhibitors</strong> (e.g., Lisinopril 5 mg daily)</li>
+                                <li><strong>ARBs</strong> (e.g., Losartan 50 mg daily)</li>
+                            </ol>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <h4 style="color: var(--secondary-color); margin-bottom: 10px;">Special populations:</h4>
+                            <ul style="padding-left: 25px;">
+                                <li><strong>Diabetes:</strong> ACEI or ARB preferred</li>
+                                <li><strong>Chronic kidney disease:</strong> ACEI or ARB preferred</li>
+                                <li><strong>Elderly (≥60):</strong> Calcium channel blocker preferred for isolated systolic hypertension</li>
+                            </ul>
+                        </div>
+                        <div style="background-color: #f5f5f5; padding: 15px; border-left: 3px solid var(--primary-color);">
+                            <p><strong>Note:</strong> For most patients, goal BP is &lt;130/80 mmHg. Re-evaluate after 4-8 weeks of treatment.</p>
+                        </div>
+                    </div>
+                `,
+                "visual-acuity": `
+        <h3 style="color: #1976d2; margin-top: 0; text-align: center; font-weight: bold; text-shadow: 1px 1px 3px rgba(25,118,210,0.2); animation: pulse 2s infinite;">
+            Visual Acuity Testing
+      </h3>
+        <div style="max-height: 70vh; overflow-y: auto; padding-right: 10px;">
+        <!-- Testing Procedure -->
+        <div style="background: linear-gradient(to right, #e3f2fd, #bbdefb); padding: 15px; border-left: 5px solid #2196f3; margin-bottom: 15px; border-radius: 0 8px 8px 0; animation: fadeIn 1s;">
+            <h4 style="color: #0d47a1; margin-top: 0; border-bottom: 2px dashed #64b5f6; padding-bottom: 5px;">Testing Procedure</h4>
+            <ul style="margin-bottom: 0; color: #0d47a1; padding-left: 20px;">
+                <li style="margin-bottom: 8px;">Have patient stand at appropriate marking on floor, 20 feet away from the chart.</li>
+                <li style="margin-bottom: 8px;">Have the patient cover one eye and read the lowest line they are able to read and record the Snellen notation.</li>
+                <li>Test each eye independently.</li>
+            </ul>
+        </div>
+        
+        <!-- Snellen Chart -->
+        <div style="background: linear-gradient(to right, #e1f5fe, #b3e5fc); padding: 15px; border-left: 5px solid #0288d1; border-radius: 0 8px 8px 0; animation: fadeIn 1.2s;">
+            <h4 style="color: #01579b; margin-top: 0; border-bottom: 2px dashed #4fc3f7; padding-bottom: 5px;">Snellen Chart</h4>
+            <div style="text-align: center; margin-top: 10px;">
+                <img src="SNELLEN CHART.jpg" alt="Snellen Eye Chart" style="max-width: 100%; height: auto; border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <p style="margin-top: 8px; margin-bottom: 0; font-size: 0.9em; color: #01579b;">Standard Snellen chart for visual acuity testing</p>
+            </div>
+        </div>
+       </div>
+    
+        <style>
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h4 {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        </style>
+        `,
+                "lifestyle-modifications": `
+                    <div style="font-size: 22px; line-height: 1.6;">
+                        <h3 style="color: var(--primary-color); margin-bottom: 15px;">Lifestyle Modifications for Hypertension</h3>
+                        <p>Recommended lifestyle changes to reduce blood pressure:</p>
+                        <ul style="padding-left: 25px;">
+                            <li><strong>Weight loss</strong> if overweight or obese (goal BMI &lt;25)</li>
+                            <li><strong>DASH diet</strong> (Dietary Approaches to Stop Hypertension)</li>
+                            <li><strong>Reduced sodium intake</strong> (&lt;2.3 g/day, ideally &lt;1.5 g/day)</li>
+                            <li><strong>Regular physical activity</strong> (≥150 min/week moderate-intensity)</li>
+                            <li><strong>Moderate alcohol consumption</strong> (≤1 drink/day for women, ≤2 for men)</li>
+                            <li><strong>Smoking cessation</strong></li>
+                            <li><strong>Stress management</strong> techniques</li>
+                        </ul>
+                        <div style="background-color: #f5f5f5; padding: 15px; border-left: 3px solid var(--primary-color); margin-top: 15px;">
+                            <p>Lifestyle changes can reduce systolic BP by 4-11 mmHg and may reduce medication requirements.</p>
+                        </div>
+                    </div>
+                `,
+                   "metabolic-syndrome": `
+            <h3 style="color: #7b1fa2; margin-top: 0; text-align: center; font-weight: bold; text-shadow: 1px 1px 3px rgba(123,31,162,0.2); animation: pulse 2s infinite;">
+              Metabolic Syndrome
+            </h3>
+          <div style="max-height: 70vh; overflow-y: auto; padding-right: 10px;">
+              <div style="background: linear-gradient(to right, #f3e5f5, #e1bee7); padding: 15px; border-left: 5px solid #9c27b0; border-radius: 0 8px 8px 0; animation: fadeIn 1s;">
+                <p style="margin-bottom: 0; color: #4a148c; font-weight: 500;">
+                  Metabolic syndrome (also called insulin resistance syndrome) is characterized primarily by abdominal/visceral obesity (which is associated with increased insulin resistance); with waist circumference >85 cm in men, >80 cm in women for Asians, high triglycerides, and non-alcoholic fatty liver disease (NAFLD) (also called metabolic-dysfunction steatotic liver disease - MASLD). Usually associated with type 2 diabetes (=with hemoglobin A1c more than 6.5%) and often also with hypertension.
+                </p>
+            </div>
+          </div>
+        <style>
+           @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+          }
+           @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+           }
+            </style>
+       `,
+                "cardiac-auscultation": `
+                    <h3 style="color: var(--primary-color); margin-top: 0;">A PRIMER ON CARDIAC AUSCULTATION</h3>
+                    <div style="max-height: 70vh; overflow-y: auto; padding-right: 10px;">
+                        <p><strong>First heart sound (S1)</strong>: Closure of atrial-ventricular valves - tricuspid (right heart) and mitral (left heart) valves. Best heard at apex.</p>
+                        <p><strong>Systole</strong>: The period between S1 and S2 when the heart muscles are contracting.</p>
+                        <p><strong>Second heart sound (S2)</strong>: Aortic and pulmonic valve (also called semi-lunar valves) closure, usually in this order. Best heard in the cephalad right (A2) and left (P2) rib interspaces.</p>
+                        <p><strong>Split S2</strong>: Normal with inspiration associated with increased filling of right ventricle = A2 followed by delayed P2.</p>
+                        <p><strong>Third heart sound (S3)</strong>: A physiologically normal ventricular filling sound in young people and with exercise best heard at apex.</p>
+                        <p><strong>Diastole</strong>: The period between S2 and S1 when the heart muscles are at rest.</p>
+                        <p><strong>Atrial-ventricular valves</strong>: Open silently in diastole.</p>
+                        <p><strong>Murmurs</strong>: The significance of murmurs is determined by their locations, character, timing, and intensities. Systolic murmurs are often innocent or not indicative of heart disease, while diastolic murmurs are almost always pathologic.</p>
+                        <h4 style="color: var(--primary-color); margin-bottom: 5px;">Auscultation sites:</h4>
+                        <ul style="margin-top: 5px;">
+                            <li><strong>Right second rib interspace</strong> (between the second and third ribs, to the right of and next to the sternum) - closest to the aortic valve</li>
+                            <li><strong>Left second interspace</strong> (between the second and third ribs, to the left of and next to the sternum) - closest to the pulmonic valve</li>
+                            <li><strong>Left lower sternal border</strong> - closest to the tricuspid valve</li>
+                            <li><strong>Apex</strong> (approximately between the 5th and 6th left ribs 3 inches from the left sternal border, where the heart beat can most easily be felt) - closest to the mitral valve</li>
+                        </ul>
+                        <h4 style="color: var(--primary-color); margin-bottom: 5px;">Key Points:</h4>
+                        <ul style="margin-top: 5px;">
+                            <li>Use the diaphragm of the stethoscope for high-pitched sounds (S1, S2, murmurs of aortic/pulmonic stenosis, mitral regurgitation)</li>
+                            <li>Use the bell for low-pitched sounds (S3, S4, murmur of mitral stenosis)</li>
+                            <li>Have patient breathe normally, then hold breath in expiration to listen carefully</li>
+                            <li>Compare auscultation findings with pulse palpation for timing</li>
+                        </ul>
+                    </div>
+                `,
+                "hypertensive-retinopathy": `
+                    <div style="font-size: 22px; line-height: 1.6;">
+                        <h3 style="color: var(--primary-color); margin-bottom: 15px;">Hypertensive Retinopathy Grading</h3>
+                        <p>Classification of hypertensive retinopathy:</p>
+                        <ol style="padding-left: 25px;">
+                            <li><strong>Grade 1</strong>: Barely detectable arterial narrowing</li>
+                            <li><strong>Grade 2</strong>: Obvious arterial narrowing with focal irregularities</li>
+                            <li><strong>Grade 3</strong>: Grade 2 plus retinal hemorrhages, exudates, cotton-wool spots, or retinal edema</li>
+                            <li><strong>Grade 4</strong>: Grade 3 plus papilledema</li>
+                        </ol>
+                        <div style="margin-top: 15px;">
+                            <p><strong>Clinical significance:</strong></p>
+                            <ul style="padding-left: 25px;">
+                                <li>Grades 1-2 indicate mild-moderate hypertension</li>
+                                <li>Grades 3-4 indicate severe hypertension and increased cardiovascular risk</li>
+                                <li>Presence of retinopathy correlates with other target organ damage</li>
+                            </ul>
+                        </div>
+                        <div style="background-color: #f5f5f5; padding: 15px; border-left: 3px solid var(--primary-color); margin-top: 15px;">
+                            <p>Fundoscopic examination should be performed in all patients with newly diagnosed hypertension.</p>
+                        </div>
+                    </div>
+                `,
+                "patient-education": `
+                    <div style="font-size: 22px; line-height: 1.6;">
+                        <h3 style="color: var(--primary-color); margin-bottom: 15px;">Patient Education for Hypertension</h3>
+                        <p>Key points to discuss with hypertensive patients:</p>
+                        <ul style="padding-left: 25px;">
+                            <li>Explanation of hypertension as a chronic, usually asymptomatic condition</li>
+                            <li>Importance of regular blood pressure monitoring</li>
+                            <li>Medication adherence even when feeling well</li>
+                            <li>Potential complications of uncontrolled hypertension:
+                                <ul style="padding-left: 20px; margin-top: 5px;">
+                                    <li>Stroke</li>
+                                    <li>Heart attack</li>
+                                    <li>Heart failure</li>
+                                    <li>Kidney disease</li>
+                                    <li>Vision loss</li>
+                                </ul>
+                            </li>
+                            <li>Warning signs requiring immediate medical attention:
+                                <ul style="padding-left: 20px; margin-top: 5px;">
+                                    <li>Severe headache</li>
+                                    <li>Chest pain</li>
+                                    <li>Shortness of breath</li>
+                                    <li>Visual changes</li>
+                                    <li>Severe anxiety/confusion</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div style="background-color: #f5f5f5; padding: 15px; border-left: 3px solid var(--primary-color); margin-top: 15px;">
+                            <p><strong>Note:</strong> Use visual aids (posters, pictures of retinopathy) to enhance understanding. Provide written materials for reference.</p>
+                        </div>
+                    </div>
+                `
+            };
+
+            // When user clicks on an info link, open the modal
+            if (infoLinks.length && modal && infoContent) {
+                infoLinks.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const infoKey = this.getAttribute('data-info');
+                        if (infoData[infoKey]) {
+                            infoContent.innerHTML = infoData[infoKey];
+                            modal.style.display = "block";
+                        }
+                    });
+                });
+            }
+
+            // When user clicks on (x), close the modal
+            if (span && modal) {
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+            }
+
+            // When user clicks anywhere outside the modal, close it
+            if (modal) {
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            }
+
+            // Navigation within the form
+            const tocLinks = document.querySelectorAll('.template-toc a');
+            if (tocLinks.length) {
+                tocLinks.forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                            // Add highlight to the section
+                            targetElement.style.backgroundColor = '#f5f5f5';
+                            setTimeout(() => {
+                                targetElement.style.backgroundColor = "";
+                            }, 2000);
+                        }
+                    });
+                });
+            }
+
+            
+          // Navbar functionality
+  const vibrantNav = document.querySelector('.vibrant-nav-container');
+  const navHeader = document.querySelector('.vibrant-nav-header');
+  
+  // Set animation delays for each link
+  document.querySelectorAll('.vibrant-nav-link').forEach((link, index) => {
+    link.style.setProperty('--i', index);
+  });
+  
+  // Toggle dropdown
+  if (navHeader) {
+    navHeader.addEventListener('click', function(e) {
+      e.stopPropagation();
+      vibrantNav.classList.toggle('active');
+    });
+  }
+  
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function() {
+    if (vibrantNav) {
+      vibrantNav.classList.remove('active');
+    }
+  });
+  
+  // Highlight current page
+  const currentPage = window.location.pathname.split('/').pop();
+  const navLinks = document.querySelectorAll('.vibrant-nav-link');
+  
+  navLinks.forEach(link => {
+    const linkHref = link.getAttribute('href');
+    if (linkHref === currentPage) {
+      link.classList.add('current');
+      link.innerHTML = '<i>✨</i> ' + link.textContent.replace('🩺 ', '').replace('🌸 ', '').replace('🤕 ', '');
+    }
+  });
+
+
+        });
+    </script>
+</body>
+</html>

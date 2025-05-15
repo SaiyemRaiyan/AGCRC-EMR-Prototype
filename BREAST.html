@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMADER GRAM EMR - Breast Problem Assessment</title>
+    <style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+        background-color: #f5f5f5;
+        font-size: 26px;
+    }
+    
+    .header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #0b4813;
+        padding-bottom: 10px;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .logo {
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+    }
+    
+    .clinic-name {
+        color: #0b4813;
+        font-weight: bold;
+        font-size: 34px;
+    }
+    
+    .template-title {
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 5px;
+        color: #2c3e50;
+    }
+    
+    .version {
+        font-size: 16px;
+        color: #666;
+        margin-top: 5px;
+    }
+    
+    .container {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+    
+    .panel {
+        flex: 1;
+        min-width: 800px;
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .section {
+        margin-bottom: 25px;
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 8px;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    
+    .section-title {
+        background-color: #0b4813;
+        color: white;
+        padding: 12px 20px;
+        margin: -15px -15px 20px -15px;
+        border-radius: 8px 8px 0 0;
+        font-weight: bold;
+        font-size: 30px;
+    }
+    
+    .subsection {
+        margin-bottom: 25px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-radius: 6px;
+        border: 1px solid #eee;
+    }
+    
+    .subsection-title {
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #0b4813;
+        font-size: 30px;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 8px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .form-group label:not(.radio-option label) {
+        font-weight: bold;
+        color: #2c3e50;
+    }
+    
+    .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        gap: 20px;
+    }
+    
+    .form-col {
+        flex: 1;
+        min-width: 250px;
+    }
+    
+    input[type="text"], 
+    input[type="number"],
+    input[type="date"],
+    input[type="tel"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-size: 16px;
+        background-color: #f9f9f9;
+    }
+    
+    textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+    
+    .radio-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 8px 0;
+    }
+    
+    .radio-option {
+        display: flex;
+        align-items: center;
+    }
+    
+    .radio-option input {
+        margin-right: 8px;
+        transform: scale(1.2);
+    }
+    
+    .radio-option label {
+        font-weight: normal;
+    }
+    
+    .hidden {
+        display: none;
+    }
+    
+    .required:after {
+        content: " *";
+        color: #e74c3c;
+    }
+    
+    .btn {
+        background-color: #0b4813;
+        color: white;
+        border: none;
+        padding: 14px 28px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 18px;
+        margin-top: 20px;
+        transition: background-color 0.3s;
+    }
+    
+    .btn:hover {
+        background-color: #0d5a1a;
+    }
+    
+    .signature-line {
+        border-top: 1px solid #333;
+        width: 300px;
+        margin-top: 40px;
+    }
+    
+    .signature-label {
+        font-size: 16px;
+        color: #666;
+    }
+    
+    .underline {
+        text-decoration: underline;
+    }
+    
+    .asterisk {
+        color: #e74c3c;
+    }
+    
+    .diagnosis-list {
+        margin-left: 20px;
+    }
+    
+    .diagnosis-list li {
+        margin-bottom: 10px;
+        padding-left: 10px;
+    }
+    
+    .two-column {
+        column-count: 2;
+        column-gap: 30px;
+    }
+    
+    .red-flag {
+        color: #cc0000;
+        font-weight: bold;
+    }
+    
+    .audit-item {
+        font-weight: bold;
+    }
+    
+    .bold-text {
+        font-weight: bold;
+        display: inline-block;
+        margin-right: 10px;
+    }
+    
+    .footer {
+        margin-top: 30px;
+        border-top: 2px solid #0b4813;
+        padding-top: 20px;
+    }
+    
+    .signature {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    
+    .buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    button {
+        padding: 8px 15px;
+        background-color: #0b4813;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.95em;
+    }
+    
+    button:hover {
+        background-color: #0b4813;
+    }
+    
+    .reference {
+        font-size: 0.9em;
+        color: #666;
+        margin-top: 30px;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border-left: 3px solid #0b4813;
+    }
+    
+    .palpation-options {
+        display: flex;
+        gap: 20px;
+        margin-top: 10px;
+    }
+    
+    .palpation-side {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .palpation-row {
+        display: flex;
+        gap: 20px;
+        margin: 15px 0;
+    }
+    
+    .palpation-item {
+        flex: 1;
+    }
+    
+    .palpation-options {
+        display: flex;
+        gap: 15px;
+        margin-top: 5px;
+    }
+    
+    .inline-option {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+    }
+    
+    .clavicular-row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .clavicular-item {
+        flex: 1;
+    }
+    
+    .clavicular-item textarea {
+        width: 100%;
+    }
+    
+    .skin-nipple-options {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .thickening-options {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .thickening-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .lesion-section {
+        margin: 15px 0;
+    }
+    
+    .lesion-row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .lesion-item {
+        flex: 1;
+    }
+    
+    .lesion-item input {
+        width: 100%;
+    }
+    
+
+    @media (max-width: 1800px) {
+        .container {
+            flex-direction: column;
+        }
+        
+        .panel {
+            min-width: 100%;
+        }
+        
+        .answer-options {
+            flex-direction: column;
+            gap: 5px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        body {
+            padding: 15px;
+            font-size: 15px;
+        }
+        
+        .header {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .logo {
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+        
+        .form-col {
+            min-width: 100%;
+        }
+        
+        .two-column {
+            column-count: 1;
+        }
+        
+        .radio-group {
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .section {
+            padding: 12px;
+        }
+        
+        .subsection {
+            padding: 12px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Amader Gram Logo" class="logo">
+        <div>
+            <div class="clinic-name">AMADER GRAM CANCER CARE AND RESEARCH CENTER</div>
+            <div class="template-title">BREAST PROBLEM TEMPLATES FOR HISTORY, AND PHYSICAL EXAMINATION</div>
+        </div>
+    </div>
+    
+    <!-- Patient Information Section -->
+    <div class="section">
+        <div class="section-title">Patient Information</div>
+        
+        <div class="form-row">
+            <div class="form-col">
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" class="auto-fill" placeholder="Auto-filled">
+                </div>
+            </div>
+            <div class="form-col">
+                <div class="form-group">
+                    <label>ID:</label>
+                    <input type="text" class="auto-fill" placeholder="Auto-filled">
+                </div>
+            </div>
+            <div class="form-col">
+                <div class="form-group">
+                    <label>Date:</label>
+                    <input type="date" id="visit-date">
+                </div>
+            </div>
+            <div class="form-col">
+                <div class="form-group">
+                    <label>Age today:</label>
+                    <input type="number" id="age" min="0" max="120" style="width: 80px;"> years
+                </div>
+            </div>
+            <div class="form-col">
+                <div class="form-group">
+                    <label>Physician:</label>
+                    <input type="text" class="auto-fill" placeholder="Auto-filled">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Diagnosis Reference Section -->
+    <div class="section">
+        <div class="section-title">Diagnosis Reference</div>
+        <p><strong>In a consecutive case series of 1085 women seeking help for breast problems in Bangladesh:</strong> Two thirds of women had history, physical examination and ultrasound findings consistent with fibrocystic conditions (diffuse tenderness and lumpiness, especially in upper outer quadrants of breasts), 12% had fibro-adenomas, 5% inflammatory-infectious conditions (abscess, nipple fungal infection, bacterial or granulomatous mastitis), 4% had well-defined cyclic mastalgia, 2% obvious or strongly suspected breast malignancy, and 1% had masses of uncertain nature.</p>
+    </div>
+    
+    <!-- Red Flags Section -->
+    <div class="section">
+        <div class="section-title">Red Flags</div>
+        <ul class="red-flag">
+            <li>Rapid onset of inflammatory signs → abscess, bacterial/granulomatous infection, inflammatory breast cancer.</li>
+            <li>Chronic, growing, irregular bordered, unilateral breast mass, especially with skin changes → suspect breast cancer.</li>
+            <li>Nipple discharge which is unilateral and bloody or sero-sanguineous → intraductal papilloma, ductal ectasia; with mass → breast cancer.</li>
+        </ul>
+    </div>
+    
+    <div class="container">
+        <!-- Left Panel - History -->
+        <div class="panel">
+            <div class="section-title">History</div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Menstrual and Reproductive History</div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Is the patient having menstrual periods in last 6 months?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="menstrual" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="menstrual" value="no"> NO</label>
+                    </div>
+                    
+                    <div id="menstrual-details" style="margin-top: 10px; display: none;">
+                        <div class="form-group">
+                            <label>When was the first day of bleeding of the last menstrual period?</label>
+                            <input type="date">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>How many days does her menstrual cycle last?</label>
+                            <input type="number" min="1" max="45" style="width: 80px;"> DAYS
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Is the patient currently using:</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="checkbox"> Birth control pills</label>
+                                <label class="radio-option"><input type="checkbox"> Hormonal injections for birth control (such as Depo-Provera)</label>
+                                <label class="radio-option"><input type="checkbox"> An Intra-uterine device (IUDs) such as Copper T IUD</label>
+                                <label class="radio-option"><input type="checkbox"> Hormonal implant</label>
+                                <label class="radio-option"><input type="checkbox"> Condoms</label>
+                                <label class="radio-option"><input type="checkbox"> Personal sterilization</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Is the patient currently lactating?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="lactating" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="lactating" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div id="postmenopausal-group" style="margin-top: 15px; display: none;">
+                    <div class="form-group">
+                        <label>If the patient is currently no longer having menstrual periods, when was her last menstrual period?</label>
+                        <input type="month"> → Patient is now <input type="number" min="0" max="100" style="width: 60px;"> years postmenopausal.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Pregnancy History</div>
+                
+                <div class="form-group">
+                    <label class="audit-item">How old was the woman at the time for her first full term pregnancy?</label>
+                    <input type="number" min="10" max="60" style="width: 80px;"> years 
+                </div>
+                
+                <div class="form-group">
+                    <label class="audit-item">How old was the woman at the time of her most recent or last full-term pregnancy?</label>
+                    <input type="number" min="10" max="60" style="width: 80px;"> years old
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Previous Diagnosis</div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Has the patient previously been given a diagnosis for the current breast problem?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="previous-dx" value="no"> NO → "Other medical problems etc.."</label>
+                        <label class="radio-option"><input type="radio" name="previous-dx" value="yes"> YES → What was this diagnosis →   
+                            <input type="text" placeholder="Diagnosis" style="margin-left: 36px;">
+                        </label>
+                    </div>
+                    
+                    <div id="cancer-details" style="margin-top: 15px; display: none;">
+                        <div class="form-group">
+                            <label>If this diagnosis was breast cancer:</label>
+                            
+                            <div class="form-group">
+                                <label>When did this breast cancer problem first occur?</label>
+                                <input type="month">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>What was the problem(s)?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="checkbox"> Lump</label>
+                                    <label class="radio-option"><input type="checkbox"> Pain in the breast</label>
+                                    <label class="radio-option"><input type="checkbox"> Soreness or redness in the skin of the Breast</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Has the patient brought some medical records which provide specific information about this breast cancer?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="records" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="records" value="no"> NO</label>
+                                </div>
+                                
+                                <div class="form-group" style="margin-top: 10px;">
+                                    <label>If YES record the information here:</label>
+                                    <textarea placeholder="Record medical information from provided records"></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Date of diagnosis:</label>
+                                <input type="date">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Clinical and pathological size of the primary cancer:</label>
+                                <input type="text">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Pathological characteristics of the cancer:</label>
+                                <textarea placeholder="Histologic type, grade, evidence of skin involvement, lympho-vascular invasion"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Estrogen receptor protein (with Allred score):</label>
+                                <input type="text">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Progesterone receptor protein (with Allred score):</label>
+                                <input type="text">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Her-2/neu status:</label>
+                                <input type="text">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Date and type of any surgery:</label>
+                                <input type="text">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Pathological status of axillary lymph nodes:</label>
+                                <textarea placeholder="number examined, number found to demonstrate metastatic cancer, characteristics of metastases-extra-nodal extension, sizes"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Examinations for evidence of metastatic disease:</label>
+                                <textarea placeholder="Chest X ray, liver function tests, CT or bone scans"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Does the patient currently have any signs of symptoms suggestive of metastatic disease, specifically:</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="checkbox"> local-regional skin or soft tissue/lymph node changes</label>
+                                    <label class="radio-option"><input type="checkbox"> pulmonary symptoms: shortness of breath, pleuritic pain, cough</label>
+                                    <label class="radio-option"><input type="checkbox"> liver discomfort or anorexia</label>
+                                    <label class="radio-option"><input type="checkbox"> specific site bone pain</label>
+                                    <label class="radio-option"><input type="checkbox"> New neurological symptoms-headache</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Current Problem</div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Whatever the breast problem has been, how long has the patient had this problem?</label>
+                    <input type="text" placeholder="Duration of problem">
+                </div>
+                
+                <div class="form-group">
+                    <label>Did the patient have some treatment for this breast problem?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="treatment" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="treatment" value="no"> NO</label>
+                    </div>
+                    
+                    <div id="treatment-details" style="margin-top: 10px; display: none;">
+                        <div class="form-group">
+                            <label>What was the treatment:</label>
+                            <textarea></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Was this treatment helpful?</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="helpful" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="helpful" value="no"> NO</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="new-problem-section">
+                    <div class="form-group">
+                        <label>When did this new breast problem start:</label>
+                        <input type="month">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>What is the problem?</label>
+                        <textarea></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Is the problem affecting:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="checkbox"> The right breast</label>
+                            <label class="radio-option"><input type="checkbox"> The left breast</label>
+                            <label class="radio-option"><input type="checkbox"> Both breasts</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Symptoms with this new problem:</label>
+                        
+                        <div class="form-group">
+                            <label>Pain</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="pain" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="pain" value="no"> NO</label>
+                            </div>
+                            
+                            <div id="pain-details" style="margin-top: 10px; display: none;">
+                                <div class="form-group">
+                                    <label>How intense is usual breast pain score?</label>
+                                    <input type="number" min="0" max="10" style="width: 60px;">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>worst breast pain score?</label>
+                                    <input type="number" min="0" max="10" style="width: 60px;">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>current breast pain score?</label>
+                                    <input type="number" min="0" max="10" style="width: 60px;">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Pain scale:</label>
+                                    <img src="symptom scale.png" alt="Pain scale faces" style="max-width: 100%; height: auto;">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>If YES, where is the pain?</label>
+                                    <textarea placeholder="Describe pain location"></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>If YES, over time/last months, has the pain been:</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="pain-progression" value="worse"> Getting worse</label>
+                                        <label class="radio-option"><input type="radio" name="pain-progression" value="same"> Staying the same</label>
+                                        <label class="radio-option"><input type="radio" name="pain-progression" value="better"> Getting better</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="audit-item">If the patient is still having menstrual periods, is the pain related in time to these?</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="pain-menstrual" value="yes"> YES</label>
+                                        <label class="radio-option"><input type="radio" name="pain-menstrual" value="no"> NO</label>
+                                    </div>
+                                    
+                                    <div id="pain-menstrual-details" style="margin-top: 10px; display: none;">
+                                        <div class="form-group">
+                                            <label>Does the pain get worse in the days just before the menstrual bleeding begins?</label>
+                                            <div class="radio-group">
+                                                <label class="radio-option"><input type="radio" name="pain-premenstrual" value="yes"> YES</label>
+                                                <label class="radio-option"><input type="radio" name="pain-premenstrual" value="no"> NO</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Soreness or redness in the skin of the Breast</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="soreness" value="yes" class="soreness-radio"> YES</label>
+                                <label class="radio-option"><input type="radio" name="soreness" value="no" class="soreness-radio" checked> NO</label>
+                            </div>
+                            
+                            <div id="medical-records-section" style="margin-top: 15px; display: none;">
+                                <div class="form-group">
+                                    <label>Has the patient brought some medical records which provide specific information about this breast cancer?</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="medical_records" value="yes" class="records-radio"> YES</label>
+                                        <label class="radio-option"><input type="radio" name="medical_records" value="no" class="records-radio" checked> NO</label>
+                                    </div>
+                                </div>
+                                
+                                <div id="records-details-section" style="margin-top: 15px; display: none;">
+                                    <div class="form-group">
+                                        <label>If YES record the information here:</label>
+                                        <textarea placeholder="Record medical information from provided records"></textarea>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Link: If the patient has a previous diagnosis of breast cancer specifically seek the following information:</label>
+                                        <input type="text" placeholder="Enter link or reference">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Date of diagnosis:</label>
+                                        <input type="date">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Clinical and pathological size of the primary cancer:</label>
+                                        <input type="text">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Pathological characteristics of the cancer:</label>
+                                        <textarea placeholder="Histologic type, grade, evidence of skin involvement, lympho-vascular invasion"></textarea>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Estrogen receptor protein (with Allred score):</label>
+                                        <input type="text">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Progesterone receptor protein (with Allred score):</label>
+                                        <input type="text">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Her-2/neu status:</label>
+                                        <input type="text">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Date and type of any surgery:</label>
+                                        <input type="text">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Pathological status of axillary lymph nodes:</label>
+                                        <textarea placeholder="number examined, number found to demonstrate metastatic cancer, characteristics of metastases-extra-nodal extension, sizes"></textarea>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Examinations for evidence of metastatic disease:</label>
+                                        <textarea placeholder="Chest X ray, liver function tests, CT or bone scans"></textarea>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Does the patient currently have any signs of symptoms suggestive of metastatic disease, specifically:</label>
+                                        <div class="radio-group">
+                                            <label class="radio-option"><input type="radio" name="local_changes" value="yes"> local-regional skin or soft tissue/lymph node changes YES</label>
+                                            <label class="radio-option"><input type="radio" name="local_changes" value="no"> NO</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Pulmonary symptoms:</label>
+                                        <div class="radio-group">
+                                            <label class="radio-option"><input type="checkbox" name="pulmonary_symptoms" value="shortness_breath"> shortness of breath</label>
+                                            <label class="radio-option"><input type="checkbox" name="pulmonary_symptoms" value="pleuritic_pain"> pleuritic pain</label>
+                                            <label class="radio-option"><input type="checkbox" name="pulmonary_symptoms" value="cough"> cough</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="liver_symptoms" value="yes"> liver discomfort or anorexia YES</label>
+                                        <label class="radio-option"><input type="radio" name="liver_symptoms" value="no"> NO</label>
+                                    </div>
+                                    
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="bone_pain" value="yes"> specific site bone pain YES</label>
+                                        <label class="radio-option"><input type="radio" name="bone_pain" value="no"> NO</label>
+                                    </div>
+                                    
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="neuro_symptoms" value="yes"> New neurological symptoms-headache YES</label>
+                                        <label class="radio-option"><input type="radio" name="neuro_symptoms" value="no"> NO</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="audit-item">Does the patient have breast lumpiness or a mass?</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="lump" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="lump" value="no"> NO</label>
+                            </div>
+                            
+                            <div id="lump-details" style="margin-top: 10px; display: none;">
+                                <div class="form-group">
+                                    <label>where is any lumpiness or mass</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="checkbox"> Right breast</label>
+                                        <label class="radio-option"><input type="checkbox"> Left breast</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>If there is a mass=a distinct dominant lump, is this growing in size?</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="mass-growing" value="yes"> YES</label>
+                                        <label class="radio-option"><input type="radio" name="mass-growing" value="no"> NO</label>
+                                        <label class="radio-option"><input type="radio" name="mass-growing" value="na"> NOT APPLICABLE</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Does the patient have an isolated mobile "mouse" which is painless and firm/hard?</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="mouse" value="yes"> YES</label>
+                                        <label class="radio-option"><input type="radio" name="mouse" value="no"> NO</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Breast skin/nipple changes/inflammation?</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="skin-changes" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="skin-changes" value="no"> NO</label>
+                            </div>
+                            
+                            <div id="skin-changes-details" style="margin-top: 10px; display: none;">
+                                <div class="form-group">
+                                    <label>Deescribe these:</label>
+                                    <textarea></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Any changes/lumpiness/tenderness in the underarm area on the same side as the breast problem?</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="underarm" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="underarm" value="no"> NO</label>
+                            </div>
+                            
+                            <div id="underarm-details" style="margin-top: 10px; display: none;">
+                                <div class="form-group">
+                                    <label>Describe these:</label>
+                                    <textarea></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Has the patient had a recent injury to the breast area?</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="injury" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="injury" value="no"> NO</label>
+                            </div>
+                            
+                            <div id="injury-details" style="margin-top: 10px; display: none;">
+                                <div class="form-group">
+                                    <label>Describe these:</label>
+                                    <textarea></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="audit-item">Patient belief regarding cause of new problem:</label>
+                            <textarea></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Is this new problem interfering with activities of daily living:</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="interference" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="interference" value="no"> NO</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Patient reports moderate or greater physical activity during:</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="activity" value="less"> Less than 3 hours per week</label>
+                                <label class="radio-option"><input type="radio" name="activity" value="3-5"> 3-5 hours per week</label>
+                                <label class="radio-option"><input type="radio" name="activity" value="more"> More than 5 hours per week</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Panel - Physical Examination -->
+        <div class="panel">
+            <div class="section-title">Targeted Physical Examination</div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Vital Signs</div>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Weight:</label>
+                            <input type="number" step="0.1" id="weight"> kg
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Height:</label>
+                            <input type="number" step="0.1" id="height"> cm
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="audit-item">Estimated B.M.I:</label>
+                            <input type="number" step="0.1" id="bmi" readonly style="background-color: #eee;"> 
+                        </div>
+                    </div>
+                    
+                    <div class="vitals-section">
+                        <div class="form-row">
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label>Blood pressure: #1 <input type="number" style="width: 60px;"> mmHg</label>
+                                    <span style="margin: 0 10px;">/</span>
+                                    <label>Blood pressure: #2 <input type="number" style="width: 60px;"> mmHg</label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Average: <input type="text" readonly style="background-color: #eee; width: 100px;"></label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Pulse rate/minute: <input type="number"></label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Respiratory rate/minute: <input type="number"></label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label>Triceps skinfold thickness: <input type="number"> mm</label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="audit-item">Estimated B.M.I: <input type="number" step="0.1" id="bmi" readonly style="background-color: #eee;"></label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="audit-item">Waist circumference: <input type="number"> cm</label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="audit-item">Hip circumference: <input type="number"> cm</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Neck Examination</div>
+                
+                <div class="form-group">
+                    <label>Cervical/supraclavicular lymph nodes palpable</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="cervical-nodes" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="cervical-nodes" value="no"> NO</label>
+                    </div>
+                    
+                    <div id="cervical-nodes-details" style="margin-top: 10px; display: none;">
+                        <div class="form-group">
+                            <label>Describe size and site(s)</label>
+                            <textarea></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Hard/firm</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="cervical-firm" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="cervical-firm" value="no"> NO</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Infraclavicular lymph nodes palpable</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="infraclavicular-nodes" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="infraclavicular-nodes" value="no"> NO</label>
+                    </div>
+                    
+                    <div id="infraclavicular-nodes-details" style="margin-top: 10px; display: none;">
+                        <div class="form-group">
+                            <label>Describe size and site(s)</label>
+                            <textarea></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Hard/firm</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="infraclavicular-firm" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="infraclavicular-firm" value="no"> NO</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Thyroid Palpable/enlarged:</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="thyroid" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="thyroid" value="no"> NO</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Heart Examination</div>
+                
+                <div class="form-group">
+                    <label>Cardiac impulse:</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="impulse" value="normal"> Normal</label>
+                        <label class="radio-option"><input type="radio" name="impulse" value="increased"> Increased</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Heart sounds:</label>
+                    <div class="form-group">
+                        <label>S1 Intensity:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="s1" value="normal"> Normal</label>
+                            <label class="radio-option"><input type="radio" name="s1" value="increased"> Increased</label>
+                            <label class="radio-option"><input type="radio" name="s1" value="decreased"> Decreased</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 5px;">
+                        <label>S2 Intensity:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="s2" value="normal"> Normal</label>
+                            <label class="radio-option"><input type="radio" name="s2" value="increased"> Increased</label>
+                            <label class="radio-option"><input type="radio" name="s2" value="decreased"> Decreased</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Murmurs:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="murmurs" value="none"> None</label>
+                            <label class="radio-option"><input type="radio" name="murmurs" value="present"> Present → 
+                                <input type="text" placeholder="Describe murmur" style="margin-left: 5px;">
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>S3</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="s3" value="present"> Present</label>
+                            <label class="radio-option"><input type="radio" name="s3" value="none"> None heard</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>S4</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="s4" value="present"> Present</label>
+                            <label class="radio-option"><input type="radio" name="s4" value="none"> None heard</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Lung Auscultation</div>
+                
+                <div class="form-group">
+                    <label>Findings with normal breathing:</label>
+                    
+                    <div class="form-group">
+                        <label>Right:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="right-lung" value="normal"> No abnormal sounds over all fields</label>
+                            <label class="radio-option"><input type="radio" name="right-lung" value="abnormal"> Abnormal sounds:
+                                <input type="text" placeholder="Describe" style="margin-left: 35px;">
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Left:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="left-lung" value="normal"> No abnormal sounds over all fields</label>
+                            <label class="radio-option"><input type="radio" name="left-lung" value="abnormal"> Abnormal sounds:
+                                <input type="text" placeholder="Describe" style="margin-left: 35px;">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Breast Examination</div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Estimated breast volume (By bra size: A, B, C, D):</label>
+                    <select>
+                        <option value="">Select size</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E or larger</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Skin and nipples:</label>
+                    <div class="skin-nipple-options">
+                        <span class="light-text">Skin changes</span>
+                        <select>
+                            <option value="">Select</option>
+                            <option value="redness">Redness</option>
+                            <option value="lumpiness">Lumpiness</option>
+                            <option value="both">Both</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <span class="light-text">Nipple changes</span>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>If nipple discharge, does this appear to be from a single duct?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="single-duct" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="single-duct" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Any dimpling suggesting underlying mass?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="dimpling" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="dimpling" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="palpation-section">
+                    <div class="palpation-row">
+                      <div class="palpation-group">
+                        <h4>Palpation Left breast:</h4>
+                        <div class="palpation-options">
+                          <label class="palpation-option">
+                            <input type="checkbox"> Dominant mass → M
+                          </label>
+                          <label class="palpation-option">
+                            <input type="checkbox"> Pain sites → P
+                          </label>
+                          <label class="palpation-option">
+                            <input type="checkbox"> Nodularity → N
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="palpation-row">
+                      <div class="palpation-group">
+                        <h4>Palpation Right breast:</h4>
+                        <div class="palpation-options">
+                          <label class="palpation-option">
+                            <input type="checkbox"> Dominant mass → M
+                          </label>
+                          <label class="palpation-option">
+                            <input type="checkbox"> Pain sites → P
+                          </label>
+                          <label class="palpation-option">
+                            <input type="checkbox"> Nodularity → N
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Left axilla: Palpable nodes</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="left-axilla" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="left-axilla" value="no"> NO</label>
+                    </div>
+                    
+                    <div id="left-axilla-details" style="margin-top: 10px; display: none;">
+                        <div class="form-group">
+                            <label># and sizes</label>
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Right axilla: Palpable nodes</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="right-axilla" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="right-axilla" value="no"> NO</label>
+                    </div>
+                    
+                    <div id="right-axilla-details" style="margin-top: 10px; display: none;">
+                        <div class="form-group">
+                            <label># and sizes</label>
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Breast Ultrasound Examination</div>
+                
+                <div class="clavicular-row">
+                    <div class="clavicular-item">
+                        <div class="form-group">
+                            <label>Supraclavicular space left</label>
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="clavicular-item">
+                        <div class="form-group">
+                            <label>Supraclavicular space right</label>
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="clavicular-row">
+                    <div class="clavicular-item">
+                        <div class="form-group">
+                            <label>Infraclavicular area left:</label>
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="clavicular-item">
+                        <div class="form-group">
+                            <label>Infraclavicular space right:</label>
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Axilla left nodes</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="axilla-left" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="axilla-left" value="no"> NO</label>
+                    </div>
+                    
+                    <div id="axilla-left-details" style="margin-top: 10px; display: none;">
+                        <div class="form-group">
+                            <label># and sizes</label>
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Axilla right nodes</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="axilla-right" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="axilla-right" value="no"> NO</label>
+                    </div>
+                    
+                    <div id="axilla-right-details" style="margin-top: 10px; display: none;">
+                        <div class="form-group">
+                            <label># and sizes</label>
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Breast skin Thickening or retraction</label>
+                    <div class="thickening-options">
+                        <div class="thickening-item">
+                            <label>Left:</label>
+                            <label class="radio-option"><input type="radio" name="left-thickening" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="left-thickening" value="no"> NO</label>
+                        </div>
+                        <div class="thickening-item">
+                            <label>Right:</label>
+                            <label class="radio-option"><input type="radio" name="right-thickening" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="right-thickening" value="no"> NO</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lesion-section">
+                    <div class="lesion-row">
+                        <div class="lesion-item">
+                            <div class="bold-text">Lesion Echo-pattern</div>
+                            <input type="text">
+                        </div>
+                        
+                        <div class="lesion-item">
+                            <div class="bold-text">Shape</div>
+                            <input type="text">
+                        </div>
+                    </div>
+                    
+                    <div class="lesion-row">
+                        <div class="lesion-item">
+                            <div class="bold-text">Dimensions</div>
+                            <input type="text">
+                        </div>
+                        
+                        <div class="lesion-item">
+                            <div class="bold-text">Posterior features</div>
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="bold-text">Ducts</div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Patient visual review of ultrasound images</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="ultrasound-review" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="ultrasound-review" value="no"> NO</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Summary of Key Findings</div>
+                
+                <div class="form-group">
+                    <label>Potentially causative factors</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Important co-morbid conditions:</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Critical history and symptoms:</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Critical physical examination findings:</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Ultrasound examination findings</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Differential diagnoses:</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Disease severity:</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Interference with activities of daily living:</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="interference-summary" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="interference-summary" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Red flag history or physical examination findings which suggest specific testing or specialist consultation:</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Immediate laboratory testing suggested:</label>
+                    <textarea></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+                         <!-- Summary Section-->
+<div class="section" style="width: 100%; margin-top: 30px;">
+    <div class="section-title">SUMMARY OF BREAST PROBLEM DIAGNOSIS AND STATUS</div>
+    
+    <div class="subsection">
+        <div class="subsection-title">INCLUDING PATIENT ASSESSMENT OF THIS PROBLEM, TREATMENT SIDE EFFECTS, AND TREATMENT COST:</div>
+        <textarea style="min-height: 100px; width: 100%;"></textarea>
+    </div>
+    
+    <div class="subsection">
+        <div class="form-group">
+            <label>Changes made to Master major problem and diagnoses list updating this and any other problems.</label>
+            <div class="radio-group" style="margin-top: 10px; display: flex; gap: 20px;">
+                <label class="radio-option"><input type="radio" name="changes-made" value="done"> DONE</label>
+                <label class="radio-option"><input type="radio" name="changes-made" value="none"> NONE NEEDED</label>
+            </div>
+        </div>
+    </div>
+    
+    <div class="subsection">
+        <div class="form-group">
+            <label>Immediate recommended further tests:</label>
+            <div class="radio-group" style="margin-top: 10px; display: flex; gap: 20px;">
+                <label class="radio-option"><input type="radio" name="immediate-tests" value="none"> NONE</label>
+                <label class="radio-option"><input type="radio" name="immediate-tests" value="specific"> Specific tests and appointments</label>
+            </div>
+            <div id="specific-tests" style="margin-top: 10px; display: none;">
+                <textarea placeholder="List specific tests and appointments" style="width: 100%;"></textarea>
+            </div>
+        </div>
+    </div>
+    
+    <div class="subsection">
+        <div class="form-group">
+            <label>Tele-consultations obtained:</label>
+            <div class="radio-group" style="margin-top: 10px; display: flex; gap: 20px;">
+                <label class="radio-option"><input type="radio" name="teleconsult" value="none"> NONE</label>
+                <label class="radio-option"><input type="radio" name="teleconsult" value="yes"> Name of Consultant <input type="text" placeholder="Consultant name" style="margin-left: 10px; width: 300px;"></label>
+            </div>
+        </div>
+    </div>
+    
+    <div class="subsection">
+        <div class="form-group">
+            <label>Recommended medical interventions:</label>
+            <textarea style="min-height: 80px; width: 100%;"></textarea>
+        </div>
+    </div>
+    
+    <div class="subsection">
+        <div class="form-group">
+            <label>Patient education:</label>
+            <textarea style="min-height: 80px; width: 100%;"></textarea>
+        </div>
+    </div>
+    
+    <div class="subsection">
+        <div class="form-group">
+            <label>Follow up visit plans emphasizing importance of regular follow up visits to prevent complications:</label>
+            <textarea style="min-height: 80px; width: 100%;"></textarea>
+        </div>
+    </div>
+    
+    <div class="subsection">
+        <div class="form-group">
+            <label>Amader Gram virtual care system follow up plans:</label>
+            <textarea style="min-height: 80px; width: 100%;"></textarea>
+        </div>
+    </div>
+    
+    <div class="subsection">
+        <div class="form-row" style="display: flex; justify-content: space-between; gap: 30px;">
+            <div class="form-col" style="flex: 1;">
+                <div class="form-group">
+                    <label>Health information technician:</label>
+                    <input type="text" style="width: 100%;">
+                </div>
+                
+                <div class="form-group">
+                    <label>Amader Gram services telephone number for appointments:</label>
+                    <input type="tel" placeholder="Enter mobile number" style="width: 100%;">
+                </div>
+                
+                <div class="form-group">
+                    <label>Amader Gram telephone number for medical questions:</label>
+                    <input type="tel" placeholder="Enter mobile number" style="width: 100%;">
+                </div>
+                
+                <div class="form-group">
+                    <label style="display: flex; align-items: center;">
+                        <input type="checkbox" style="margin-right: 10px;"> Provision of paper copy for this visit GIVEN
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-col" style="flex: 1;">
+                <div class="form-group">
+                    <label>DATE</label>
+                    <input type="date" style="width: 100%;">
+                </div>
+                
+                <div class="form-group">
+                    <label>Medical assistant:</label>
+                    <input type="text" style="width: 100%;">
+                </div>
+                
+                <div class="form-group">
+                    <label>Medical officer:</label>
+                    <input type="text" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+      <div class="buttons" style="margin-top: 20px; text-align: left;">
+        <button id="save-btn">SAVE</button>
+        <button id="submit-btn">SUBMIT TO EMR</button>
+        <button id="print-btn">PRINT</button>
+    </div>
+</div>
+   
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Improved toggle display function
+        function toggleDisplay(triggerSelector, targetId, checkValue = true) {
+            const triggers = document.querySelectorAll(triggerSelector);
+            const target = document.getElementById(targetId);
+            
+            if (!triggers.length || !target) return;
+            
+            function updateDisplay() {
+                const shouldShow = Array.from(triggers).some(el => 
+                    el.checked && (checkValue === true || el.value == checkValue)
+                );
+                target.style.display = shouldShow ? 'block' : 'none';
+            }
+            
+            triggers.forEach(trigger => {
+                trigger.addEventListener('change', updateDisplay);
+            });
+            
+            // Initialize
+            updateDisplay();
+        }
+
+        // Set up all conditional displays
+        toggleDisplay('input[name="menstrual"]', 'menstrual-details', 'yes');
+        toggleDisplay('input[name="menstrual"]', 'postmenopausal-group', 'no');
+        toggleDisplay('input[name="previous-dx"]', 'cancer-details', 'yes');
+        toggleDisplay('input[name="pain"]', 'pain-details', 'yes');
+        toggleDisplay('input[name="pain-menstrual"]', 'pain-menstrual-details', 'yes');
+        toggleDisplay('input[name="lump"]', 'lump-details', 'yes');
+        toggleDisplay('input[name="skin-changes"]', 'skin-changes-details', 'yes');
+        toggleDisplay('input[name="underarm"]', 'underarm-details', 'yes');
+        toggleDisplay('input[name="injury"]', 'injury-details', 'yes');
+        toggleDisplay('input[name="cervical-nodes"]', 'cervical-nodes-details', 'yes');
+        toggleDisplay('input[name="infraclavicular-nodes"]', 'infraclavicular-nodes-details', 'yes');
+        toggleDisplay('input[name="left-axilla"]', 'left-axilla-details', 'yes');
+        toggleDisplay('input[name="right-axilla"]', 'right-axilla-details', 'yes');
+        toggleDisplay('input[name="axilla-left"]', 'axilla-left-details', 'yes');
+        toggleDisplay('input[name="axilla-right"]', 'axilla-right-details', 'yes');
+        toggleDisplay('input[name="treatment"]', 'treatment-details', 'yes');
+        toggleDisplay('input[name="immediate-tests"]', 'specific-tests', 'specific');
+        toggleDisplay('input[name="teleconsult"]', 'consultant-details', 'yes');
+        toggleDisplay('.soreness-radio', 'medical-records-section', 'yes');
+        toggleDisplay('.records-radio', 'records-details-section', 'yes');
+
+        // BMI calculation
+        const weightInput = document.getElementById('weight');
+        const heightInput = document.getElementById('height');
+        const bmiInput = document.getElementById('bmi');
+
+        function calculateBMI() {
+            if (weightInput && heightInput && bmiInput) {
+                const weight = parseFloat(weightInput.value);
+                const height = parseFloat(heightInput.value) / 100; // convert cm to m
+                bmiInput.value = (weight && height > 0) ? (weight / (height * height)).toFixed(1) : '';
+            }
+        }
+
+        if (weightInput && heightInput) {
+            ['input', 'change'].forEach(event => {
+                weightInput.addEventListener(event, calculateBMI);
+                heightInput.addEventListener(event, calculateBMI);
+            });
+            calculateBMI();
+        }
+
+        // Cancer diagnosis check
+        const previousDxYes = document.querySelector('input[name="previous-dx"][value="yes"]');
+        if (previousDxYes) {
+            const cancerInput = previousDxYes.parentElement.querySelector('input[type="text"]');
+            const cancerDetails = document.getElementById('cancer-details');
+            
+            if (cancerInput && cancerDetails) {
+                function checkCancerDiagnosis() {
+                    cancerDetails.style.display = (
+                        previousDxYes.checked && 
+                        cancerInput.value.toLowerCase().includes('cancer')
+                    ) ? 'block' : 'none';
+                }
+                
+                previousDxYes.addEventListener('change', checkCancerDiagnosis);
+                cancerInput.addEventListener('input', checkCancerDiagnosis);
+                checkCancerDiagnosis();
+            }
+        }
+
+        // Button functionality
+        document.getElementById('save-btn')?.addEventListener('click', function() {
+            // Validate form before saving
+            if (validateForm()) {
+                alert('Form data saved successfully!');
+                // In real implementation: saveFormData();
+            }
+        });
+        
+        document.getElementById('submit-btn')?.addEventListener('click', function() {
+            if (validateForm()) {
+                if (confirm('Are you sure you want to submit this to EMR?')) {
+                    alert('Form submitted to EMR successfully!');
+                    // In real implementation: submitToEMR();
+                }
+            }
+        });
+        
+        document.getElementById('print-btn')?.addEventListener('click', function() {
+            window.print();
+        });
+
+        // Form validation
+        function validateForm() {
+            // Example: Check required fields are filled
+            let isValid = true;
+            
+            document.querySelectorAll('[required]').forEach(field => {
+                if (!field.value.trim()) {
+                    field.style.borderColor = 'red';
+                    isValid = false;
+                } else {
+                    field.style.borderColor = '';
+                }
+            });
+            
+            if (!isValid) {
+                alert('Please fill in all required fields');
+                return false;
+            }
+            return true;
+        }
+
+        // Initialize all hidden fields and trigger change events
+        document.querySelectorAll('.hidden').forEach(el => {
+            el.style.display = 'none';
+        });
+        
+        document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(el => {
+            if (el.checked) el.dispatchEvent(new Event('change'));
+        });
+    });
+
+    // Example form data functions (for actual implementation)
+    function saveFormData() {
+        const formData = collectFormData();
+        console.log('Saving:', formData);
+    }
+
+    function submitToEMR() {
+        const formData = collectFormData();
+        console.log('Submitting to EMR:', formData);
+    }
+
+    function collectFormData() {
+        return {
+            // Collect all form data here
+            assessment: document.querySelector('.subsection textarea')?.value,
+            changesMade: document.querySelector('input[name="changes-made"]:checked')?.value,
+        };
+    }
+</script>
+</body>
+</html>

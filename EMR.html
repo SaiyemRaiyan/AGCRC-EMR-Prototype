@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('AG.jpg') no-repeat center center/cover;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #b4f8f6, #72b4e8, #ccb5fd, #e3c7f0);
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-panel {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-panel img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-panel span {
+            color: #0e1521;
+            font-size: 1.5em;
+            font-weight: 600;
+            background: linear-gradient(90deg, #1f3d25, #1f884b, #1f2f4b);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 3s linear infinite;
+        }
+
+        @keyframes glow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .nav-links a {
+            color: #1f293a;
+            text-decoration: none;
+            font-weight: bolder;
+            font-size: 1.3em;
+            padding: 10px 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            border-radius: 5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #0a2716;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #0a2b18;
+            background: rgba(14, 53, 30, 0.1);
+        }
+
+        .logout-button {
+            margin-left: auto;
+            padding-right: 20px;
+        }
+
+        .logout-button a {
+            background-color: #0a2716;
+            color: #fff;
+            font-weight: bolder;
+            font-size: 20px;
+            padding: 10px 30px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .logout-button a:hover {
+            background-color: #0e390eeb;
+            box-shadow: 0 0 10px rgba(11, 52, 23, 0.717);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 1400px;
+            margin: 100px auto;
+            padding: 30px;
+            background: linear-gradient(135deg, #bae7ec, #d1c3f3d9, #a5d3cb, #a9c3e6);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            font-size: 3.5em;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 1000;
+            background: linear-gradient(90deg, #2c6a2d, #5b8926, #174618, #1e8525);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glowText 3s linear infinite;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #2c6a2d, transparent);
+            border-radius: 50%;
+        }
+
+        @keyframes glowText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .section {
+            background: linear-gradient(135deg, #bef1e5, #aacec1, #b0c0dc, #c5b0ca);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            animation: gradientShift 10s ease infinite;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .section h3 {
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            color: #0a2716;
+            background: linear-gradient(90deg, #0f3e18, #1d8247, #102447);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            font-family: 'Microsoft YaHei bold';
+            text-align: center;
+            -webkit-text-fill-color: transparent;
+            animation: glowText 3s linear infinite;
+            padding-bottom: 10px;
+            position: relative;
+        }
+
+        .section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 30%;
+            width: 40%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #0f3e18, transparent);
+        }
+        
+        .section-header h5 {
+            font-size: 1.8em; 
+            color: #146134;
+            margin-bottom: 5px;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .input-group label {
+            font-size: 1.8em;
+            color: #146134;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .input-group input,
+        .input-group select,
+        .input-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #46884c;
+            border-radius: 8px;
+            font-size: 1.2em;
+            color: #1f293a;
+            background: rgba(255, 255, 255, 0.7);
+            outline: none;
+            transition: all 0.3s ease;
+            min-width: 40px;
+            margin-bottom: 8px;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus,
+        .input-group textarea:focus {
+            border-color: #042c15e6;
+            box-shadow: 0 0 0 3px rgba(70, 136, 76, 0.3);
+        }
+
+        .input-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            background: #042c15e6;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            gap: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:hover {
+            background: #2f6e46e6;
+            box-shadow: 0 6px 12px rgba(47, 110, 70, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        /* Checkbox and Radio Styles */
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+         
+        .checkbox-group div label {
+            font-size: 1.3em; 
+            color: #113c11;
+            font-weight: 600;
+            margin-bottom: 10px; 
+            line-height: 1.4; 
+        }
+
+        /* Radio Options */
+        .radio-options {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .radio-option:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .radio-option input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #042c15e6;
+        }
+
+        .radio-option label {
+            font-size: 1.1em !important;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        /* Exposure Options */
+        .exposure-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .exposure-options label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .exposure-options label:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Health Items */
+        .health-item {
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .health-item label {
+            font-size: 1.3em;
+            color: #113e11;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .health-item textarea {
+            width: 100%;
+            padding: 12px;
+            min-height: 80px;
+            font-size: 1.1em;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Habits Section - Three Column Layout */
+        .habits-columns {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .habit-column {
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.3); 
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .habit-column:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .habit-column-title {
+            font-size: 1.3em;
+            color: #113e11;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: center;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(70, 136, 76, 0.3);
+        }
+
+        .habit-subgroup {
+            margin-bottom: 15px;
+        }
+
+        .habit-subgroup-label {
+            font-size: 1.1em;
+            color: #113e11;
+            margin-bottom: 8px;
+            margin-left: 5px;
+            font-weight: 600;
+        }
+
+        /* Other Habits */
+        .other-habits {
+            margin-top: 20px;
+        }
+
+        .habit-option {
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .habit-question {
+            font-size: 1.3em;
+            color: #113e11;
+            font-weight: bolder;
+            margin-bottom: 10px;
+        }
+
+        /* Visit Records Section Specific Styles */
+        #visitRecordsForm {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .input-row .input-group {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .share-button {
+            background: #1a5276;
+        }
+
+        .share-button:hover {
+            background: #2874a6;
+            box-shadow: 0 6px 12px rgba(40, 116, 166, 0.4);
+        }
+
+        /* File Upload Styles */
+        .file-upload-box {
+            position: relative;
+            min-width: 150px;
+            flex: 1;
+        }
+
+        .hidden-file-input {
+            opacity: 0;
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        .upload-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 2px solid #46884c;
+            border-radius: 8px;
+            color: #1f293a;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            font-size: 1em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .upload-button:hover {
+            background: rgba(115, 239, 126, 0.748);
+            box-shadow: 0 0 8px rgba(122, 237, 124, 0.765);
+        }
+
+        .findings-box {
+            flex: 2;
+            min-width: 200px;
+        }
+
+        .findings-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #46884c;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.7);
+            color: #1f293a;
+            transition: all 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        .findings-input:focus {
+            outline: none;
+            border-color: #042c15e6;
+            box-shadow: 0 0 0 3px rgba(70, 136, 76, 0.3);
+        }
+
+        .report-label {
+            font-weight: bold;
+            min-width: 150px;
+            font-size: 1.2em;
+            color: #113e11;
+            display: flex;
+            align-items: center;
+        }
+
+        .upload-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .section-header {
+            margin-bottom: 20px;
+        }
+
+        .section-separator {
+            height: 2px;
+            background: linear-gradient(90deg, #31a839, #157f3f, #176346, #10371f);
+            margin: 10px 0 20px;
+            border-radius: 2px;
+        }
+        
+        /* Form actions for Major Medical History */
+        .form-actions {
+            display: flex;
+            gap: 20px;
+            margin-top: 25px;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+        
+        .btn-save {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            background: #042c15e6;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            gap: 8px;
+        }
+        
+        .btn-save:hover {
+            background: #2f6e46e6;
+            box-shadow: 0 6px 12px rgba(47, 110, 70, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+            
+            h2 {
+                font-size: 2.5em;
+            }
+            
+            .section h3 {
+                font-size: 2em;
+            }
+            
+            .nav-links {
+                gap: 10px;
+            }
+            
+            .nav-links a {
+                padding: 8px 15px;
+                font-size: 1.1em;
+            }
+            
+            .input-group label {
+                font-size: 1.5em;
+            }
+            
+            .habits-columns {
+                flex-direction: column;
+            }
+            
+            .habit-column {
+                min-width: 100%;
+            }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(#2c6a2d, #1e8525);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(#1e8525, #2c6a2d);
+        }
+
+        /* Floating notification */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #042c15e6;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.5s ease;
+            z-index: 1000;
+        }
+
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-panel">
+            <img src="logo.png" alt="Logo">
+            <span>AGCRC</span>
+        </div>
+        <div class="nav-links">
+            <li><a href="Guidelines.html"><i class="fas fa-book-medical"></i> Guidelines</a></li>
+            <li><a href="registration.html"><i class="fas fa-user-plus"></i> Registration</a></li>
+            <li><a href="index.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            <li><a href="patients.html"><i class="fas fa-file-medical"></i> Patients</a></li>
+            <li><a href="health-history.html"><i class="fas fa-heartbeat"></i> Health_History</a></li>
+            <li><a href="EMR.html"><i class="fas fa-file-medical"></i> EMR</a></li>
+        </div>
+        <div class="logout-button">
+            <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </nav>
+
+    <!-- EMR Container -->
+    <div class="container">
+        <h2><i class="fas fa-file-medical-alt"></i> Electronic Medical Record (EMR)</h2>
+        
+        <!-- Section 1: Part 1 - Determinants for Health -->
+        <div class="section">
+            <h3><i class="fas fa-heartbeat"></i> Determinants for Health</h3>
+
+            <!-- Patient Concerns and Goals -->
+            <div class="input-group">
+                <label><i class="fas fa-comment-medical"></i> Patient Concerns and Goals:</label>
+                <textarea placeholder="Enter primary purposes for the visit..."></textarea>
+            </div>
+
+            <!-- Economic Status -->
+            <div class="input-group">
+                <label><i class="fas fa-money-bill-wave"></i> Economic Status:</label>
+                <div class="checkbox-group">
+                    <div>
+                        <label><i class="fas fa-utensils"></i> Is there enough money to provide food, clothing and for children, school supplies, for all members?</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="money_yes" name="money" value="Yes">
+                                <label for="money_yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="money_no" name="money" value="No">
+                                <label for="money_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label><i class="fas fa-file-invoice-dollar"></i> Does the household have major financial debt?</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="debt_yes" name="debt" value="Yes">
+                                <label for="debt_yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="debt_no" name="debt" value="No">
+                                <label for="debt_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label><i class="fas fa-piggy-bank"></i> Is there a major source of income in the household?</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="income_yes" name="income" value="Yes">
+                                <label for="income_yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="income_no" name="income" value="No">
+                                <label for="income_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Literacy -->
+            <div class="input-group">
+                <label><i class="fas fa-book-reader"></i> Literacy:</label>
+                <select>
+                    <option value="" disabled selected>Select categories</option>
+                    <option value="Cannot read at all">Cannot read at all</option>
+                    <option value="Able to read only parts of a sentence">Able to read only parts of a sentence</option>
+                    <option value="Able to read whole sentence">Able to read whole sentence</option>
+                    <option value="Blind/visually impaired">Blind/visually impaired</option>
+                </select>
+            </div>
+
+            <!-- Education -->
+            <div class="input-group">
+                <label><i class="fas fa-graduation-cap"></i> Education:</label>
+                <select>
+                    <option value="" disabled selected>Select categories</option>
+                    <option value="No formal education">No formal education</option>
+                    <option value="Primary school">Primary school</option>
+                    <option value="Secondary school">Secondary school</option>
+                    <option value="Higher secondary">Higher secondary</option>
+                    <option value="University">University</option>
+                </select>
+            </div>
+
+            <!-- Major feelings of distress -->
+            <div class="input-group">
+                <label><i class="fas fa-sad-tear"></i> Major feelings of distress, that life is very hard:</label>
+                <div class="radio-options">
+                    <div class="radio-option">
+                        <input type="radio" id="distress_yes" name="distress" value="Yes">
+                        <label for="distress_yes">Yes</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="distress_no" name="distress" value="No">
+                        <label for="distress_no">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Close to neighbors -->
+            <div class="input-group">
+                <label><i class="fas fa-people-arrows"></i> Do you feel that you are close to your neighbors?</label>
+                <div class="radio-options">
+                    <div class="radio-option">
+                        <input type="radio" id="neighbors_yes" name="neighbors" value="Yes">
+                        <label for="neighbors_yes">Yes</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="neighbors_no" name="neighbors" value="No">
+                        <label for="neighbors_no">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Home facilities -->
+            <div class="input-group">
+                <label><i class="fas fa-home"></i> Home facilities:</label>
+                <div class="checkbox-group">
+                    <div>
+                        <label><i class="fas fa-tint"></i> Drinking water source:</label>
+                        <select>
+                            <option value="" disabled selected>Select</option>
+                            <option value="Pond">Pond</option>
+                            <option value="Well">Well</option>
+                            <option value="Piped">Piped</option>
+                            <option value="Commercial">Commercial</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label><i class="fas fa-lightbulb"></i> Electricity:</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="electricity_yes" name="electricity" value="Yes">
+                                <label for="electricity_yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="electricity_no" name="electricity" value="No">
+                                <label for="electricity_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label><i class="fas fa-toilet"></i> Toilet:</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="toilet_yes" name="toilet" value="Yes">
+                                <label for="toilet_yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="toilet_no" name="toilet" value="No">
+                                <label for="toilet_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label><i class="fas fa-house-damage"></i> Shelter from rain and cold:</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="shelter_adequate" name="shelter" value="Adequate">
+                                <label for="shelter_adequate">Adequate</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="shelter_poor" name="shelter" value="Poor">
+                                <label for="shelter_poor">Poor</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label><i class="fas fa-paw"></i> Farm animals:</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="animals_yes" name="animals" value="Yes">
+                                <label for="animals_yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="animals_no" name="animals" value="No">
+                                <label for="animals_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Death of family member -->
+            <div class="input-group">
+                <label><i class="fas fa-cross"></i> Death of family member in last year (Mother, father, sister, brother, husband wife, child):</label>
+                <div class="radio-options">
+                    <div class="radio-option">
+                        <input type="radio" id="death_yes" name="death" value="Yes">
+                        <label for="death_yes">Yes</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="death_no" name="death" value="No">
+                        <label for="death_no">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Household member health problem -->
+            <div class="input-group">
+                <label><i class="fas fa-procedures"></i> Does a household member have a major health problem?</label>
+                <div class="radio-options">
+                    <div class="radio-option">
+                        <input type="radio" id="health_yes" name="health" value="Yes">
+                        <label for="health_yes">Yes</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="health_no" name="health" value="No">
+                        <label for="health_no">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parental chronic stress -->
+            <div class="input-group">
+                <label><i class="fas fa-history"></i> Did either of your parents experience chronic major stress in their lives (war, famine, death of children, death of sisters or brothers at age <50)?</label>
+                <div class="radio-options">
+                    <div class="radio-option">
+                        <input type="radio" id="stress_yes" name="stress" value="Yes">
+                        <label for="stress_yes">Yes</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="stress_no" name="stress" value="No">
+                        <label for="stress_no">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mother's eclampsia -->
+            <div class="input-group">
+                <label><i class="fas fa-female"></i> Did your mother have eclampsia -high blood pressure- during pregnancy?</label>
+                <div class="radio-options">
+                    <div class="radio-option">
+                        <input type="radio" id="eclampsia_yes" name="eclampsia" value="Yes">
+                        <label for="eclampsia_yes">Yes</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="eclampsia_no" name="eclampsia" value="No">
+                        <label for="eclampsia_no">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exposures -->
+            <div class="input-group">
+                <label><i class="fas fa-radiation-alt"></i> Do you have exposures to the following:</label>
+                <div class="checkbox-group">
+                    <div>
+                        <label><i class="fas fa-water"></i> Arsenic from well water</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="arsenic_yes" name="arsenic" value="Yes">
+                                <label for="arsenic_yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="arsenic_no" name="arsenic" value="No">
+                                <label for="arsenic_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label><i class="fas fa-spray-can"></i> Pesticides from agricultural work</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="pesticides_yes" name="pesticides" value="Yes">
+                                <label for="pesticides_yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="pesticides_no" name="pesticides" value="No">
+                                <label for="pesticides_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label><i class="fas fa-gas-pump"></i> Fossil fuel-derived endocrine disruptors including PFAS (forever chemicals)</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="pfas_yes" name="pfas" value="Yes">
+                                <label for="pfas_yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="pfas_no" name="pfas" value="No">
+                                <label for="pfas_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label><i class="fas fa-trash-alt"></i> Plastics exposure</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="plastics_yes" name="plastics" value="Yes">
+                                <label for="plastics_yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="plastics_no" name="plastics" value="No">
+                                <label for="plastics_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label><i class="fas fa-flask"></i> High potable water salinity</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="salinity_yes" name="salinity" value="Yes">
+                                <label for="salinity_yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="salinity_no" name="salinity" value="No">
+                                <label for="salinity_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label><i class="fas fa-battery-three-quarters"></i> Lead from neighborhood used lead batteries dump (unrecycled), smelters, or contaminated turmeric</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="lead_yes" name="lead" value="Yes">
+                                <label for="lead_yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="lead_no" name="lead" value="No">
+                                <label for="lead_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extreme ecological exposures -->
+            <div class="input-group">
+                <label><i class="fas fa-globe-americas"></i> Extreme ecological exposures:</label>
+                <div class="checkbox-group">
+                    <div>
+                        <label><i class="fas fa-temperature-high"></i> Heat especially with high humidity: TMax>36°C for > 14 days/year, with humidity>60%</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="heat_yes" name="heat" value="Yes">
+                                <label for="heat_yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="heat_no" name="heat" value="No">
+                                <label for="heat_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label><i class="fas fa-smog"></i> Air pollution: Air quality Index >=100 on >14 days/year</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="air_yes" name="air" value="Yes">
+                                <label for="air_yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="air_no" name="air" value="No">
+                                <label for="air_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label><i class="fas fa-volume-up"></i> Noise pollution</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="noise_yes" name="noise" value="Yes">
+                                <label for="noise_yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="noise_no" name="noise" value="No">
+                                <label for="noise_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label><i class="fas fa-lightbulb"></i> Light pollution</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="light_yes" name="light" value="Yes">
+                                <label for="light_yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="light_no" name="light" value="No">
+                                <label for="light_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Covid-19 infection -->
+            <div class="input-group">
+                <label><i class="fas fa-virus"></i> Have you suffered from Covid-19 infection from which you believe you have not completely recovered?</label>
+                <div class="radio-options">
+                    <div class="radio-option">
+                        <input type="radio" id="covid_yes" name="covid" value="Yes">
+                        <label for="covid_yes">Yes</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="covid_no" name="covid" value="No">
+                        <label for="covid_no">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dengue infection -->
+            <div class="input-group">
+                <label><i class="fas fa-bug"></i> Have you suffered from dengue infection from which you believe you have not completely recovered?</label>
+                <div class="radio-options">
+                    <div class="radio-option">
+                        <input type="radio" id="dengue_yes" name="dengue" value="Yes">
+                        <label for="dengue_yes">Yes</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="dengue_no" name="dengue" value="No">
+                        <label for="dengue_no">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Food scarcity -->
+            <div class="input-group">
+                <label><i class="fas fa-bread-slice"></i> Have you suffered from food scarcity in the past?</label>
+                <div class="radio-options">
+                    <div class="radio-option">
+                        <input type="radio" id="food_yes" name="food" value="Yes">
+                        <label for="food_yes">Yes</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="food_no" name="food" value="No">
+                        <label for="food_no">No</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="button-group">
+                <button type="submit" class="button"><i class="fas fa-save"></i> Save Visit</button>
+                <button type="button" class="button share-button">
+                    <i class="fas fa-share-alt"></i> Share with Doctor
+                </button>
+            </div>
+        </div>
+
+        <!-- Section 1: Part 2 - Medical History -->
+        <div class="section">
+            <h3><i class="fas fa-medkit"></i> Medical History</h3>
+
+            <!-- Non-communicable diseases -->
+            <div class="input-group">
+                <label><i class="fas fa-disease"></i> Non communicable diseases, conditions, and surgeries (including mental health, oral health, high or low BMI, disabilities, visual problems; and for women age at menarche, age at first full term pregnancy, total full-term pregnancies, age at last full term child birth)</label>
+                <select>
+                    <option value="" disabled selected>Select categories</option>
+                    <option value="Mental health">Mental health</option>
+                    <option value="Oral health">Oral health</option>
+                    <option value="High BMI">High BMI</option>
+                    <option value="Low BMI">Low BMI</option>
+                    <option value="Disabilities">Disabilities</option>
+                    <option value="Visual problems">Visual problems</option>
+                    <option value="Age at menarche">Age at menarche (for women)</option>
+                    <option value="Age at first pregnancy">Age at first full term pregnancy (for women)</option>
+                    <option value="Total pregnancies">Total full-term pregnancies (for women)</option>
+                    <option value="Age at last childbirth">Age at last full term child birth (for women)</option>
+                </select>
+            </div>
+
+            <!-- Communicable diseases -->
+            <div class="input-group">
+                <label><i class="fas fa-viruses"></i> Communicable diseases, active or inactive including Covid, dengue</label>
+                <select>
+                    <option value="" disabled selected>Select categories</option>
+                    <option value="Covid-19">Covid-19</option>
+                    <option value="Dengue">Dengue</option>
+                    <option value="Tuberculosis">Tuberculosis</option>
+                    <option value="Hepatitis">Hepatitis</option>
+                    <option value="HIV/AIDS">HIV/AIDS</option>
+                    <option value="Malaria">Malaria</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <!-- Allergies -->
+            <div class="input-group">
+                <label><i class="fas fa-allergies"></i> Allergies:</label>
+                <textarea placeholder="List all known allergies..."></textarea>
+            </div>
+
+            <!-- Immunizations -->
+            <div class="input-group">
+                <label><i class="fas fa-syringe"></i> Immunizations:</label>
+                <textarea placeholder="List all immunizations received..."></textarea>
+            </div>
+
+            <!-- Habits Section (now embedded in Medical History) -->
+            <div class="input-group">
+                <label><i class="fas fa-user-clock"></i> Habits:</label>
+                <div class="habits-columns">
+                    <!-- Tobacco Smoking -->
+                    <div class="habit-column">
+                        <div class="habit-column-title"><i class="fas fa-smoking"></i> Tobacco smoking</div>
+                        <div class="habit-subgroup">
+                            <div class="habit-subgroup-label">Current:</div>
+                            <div class="radio-options">
+                                <div class="radio-option">
+                                    <input type="radio" id="smoke_current_yes" name="smoke_current" value="Yes">
+                                    <label for="smoke_current_yes">Yes</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="smoke_current_no" name="smoke_current" value="No">
+                                    <label for="smoke_current_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="habit-subgroup">
+                            <div class="habit-subgroup-label">In Past:</div>
+                            <div class="radio-options">
+                                <div class="radio-option">
+                                    <input type="radio" id="smoke_past_yes" name="smoke_past" value="Yes">
+                                    <label for="smoke_past_yes">Yes</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="smoke_past_no" name="smoke_past" value="No">
+                                    <label for="smoke_past_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="habit-subgroup" style="display: flex; align-items: center; gap: 10px;">
+                            <label style="font-size: 1em; white-space: nowrap;">If YES, number of pack/years of smoking:</label>
+                            <input type="number" min="1" max="50" value="1" style="width: 80px; padding: 8px; font-size: 1em; border-radius: 5px; border: 1px solid #46884c;">
+                        </div>
+                    </div>
+
+                    <!-- Tobacco Chewing -->
+                    <div class="habit-column">
+                        <div class="habit-column-title"><i class="fas fa-chewing-tobacco"></i> Tobacco chewing</div>
+                        <div class="habit-subgroup">
+                            <div class="habit-subgroup-label">Current:</div>
+                            <div class="radio-options">
+                                <div class="radio-option">
+                                    <input type="radio" id="chew_current_yes" name="chew_current" value="Yes">
+                                    <label for="chew_current_yes">Yes</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="chew_current_no" name="chew_current" value="No">
+                                    <label for="chew_current_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="habit-subgroup">
+                            <div class="habit-subgroup-label">In Past:</div>
+                            <div class="radio-options">
+                                <div class="radio-option">
+                                    <input type="radio" id="chew_past_yes" name="chew_past" value="Yes">
+                                    <label for="chew_past_yes">Yes</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="chew_past_no" name="chew_past" value="No">
+                                    <label for="chew_past_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Betel Nut Chewing -->
+                    <div class="habit-column">
+                        <div class="habit-column-title"><i class="fas fa-leaf"></i> Betel nut chewing (Areca catechu)</div>
+                        <div class="radio-options" style="justify-content: center; margin-top: 15px;">
+                            <div class="radio-option">
+                                <input type="radio" id="betel_yes" name="betel" value="Yes">
+                                <label for="betel_yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="betel_no" name="betel" value="No">
+                                <label for="betel_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Habits -->
+                <div class="habit-option">
+                    <div class="habit-question"><i class="fas fa-fire"></i> Cooking with nonelectric or non-gas fire in the home:</div>
+                    <div class="radio-options">
+                        <div class="radio-option">
+                            <input type="radio" id="cooking_yes" name="cooking" value="Yes">
+                            <label for="cooking_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="cooking_no" name="cooking" value="No">
+                            <label for="cooking_no">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="habit-option">
+                    <div class="habit-question"><i class="fas fa-moon"></i> Sleep less than 7 hours/night:</div>
+                    <div class="radio-options">
+                        <div class="radio-option">
+                            <input type="radio" id="sleep_yes" name="sleep" value="Yes">
+                            <label for="sleep_yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="sleep_no" name="sleep" value="No">
+                            <label for="sleep_no">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="other-habits">
+                    <div class="habit-option">
+                        <div class="habit-question"><i class="fas fa-running"></i> Physical activity:</div>
+                        <div class="habit-question">Less than 3-5 hours per week</div>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="activity_yes" name="activity" value="Yes">
+                                <label for="activity_yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="activity_no" name="activity" value="No">
+                                <label for="activity_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Medications -->
+                <div class="input-group">
+                    <label><i class="fas fa-pills"></i> Medications:</label>
+                    <textarea placeholder="List current medications..."></textarea>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="button-group">
+                <button type="submit" class="button"><i class="fas fa-save"></i> Save Visit</button>
+                <button type="button" class="button share-button">
+                    <i class="fas fa-share-alt"></i> Share with Doctor
+                </button>
+            </div>
+        </div>
+
+        <!-- Section II: Visit Records -->
+        <div class="section">
+            <h3><i class="fas fa-clipboard-list"></i> II. Visit Records</h3>
+            <form id="visitRecordsForm">
+                <!-- Visit Details -->
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="visitDate"><i class="fas fa-calendar-day"></i> Visit Date:</label>
+                        <input type="date" id="visitDate">
+                    </div>
+                    <div class="input-group">
+                        <label for="visitPurpose"><i class="fas fa-question-circle"></i> Purpose of Visit:</label>
+                        <input type="text" id="visitPurpose" placeholder="Enter purpose">
+                    </div>
+                </div>
+
+                <!-- Doctor Notes -->
+                <div class="input-group">
+                    <label for="doctorNotes"><i class="fas fa-notes-medical"></i> Doctor's Notes:</label>
+                    <textarea id="doctorNotes" placeholder="Enter notes from the visit..." rows="4"></textarea>
+                </div>
+
+                <!-- Report Uploads Section -->
+                <div class="report-section">
+                    <div class="section-header">
+                        <h5><i class="fas fa-file-upload"></i> Upload Medical Reports</h5>
+                        <div class="section-separator"></div>
+                    </div>
+                    <div class="section-uploads">
+                        <!-- Blood Report -->
+                        <div class="upload-row">
+                            <span class="report-label"><i class="fas fa-tint"></i> Blood Report:</span>
+                            <div class="file-upload-box">
+                                <input type="file" id="bloodReport" class="hidden-file-input" accept=".pdf,.jpg,.png">
+                                <label for="bloodReport" class="upload-button">Choose File</label>
+                            </div>
+                            <div class="findings-box">
+                                <input type="text" class="findings-input" placeholder="Enter findings">
+                            </div>
+                        </div>
+
+                        <!-- X-ray Report -->
+                        <div class="upload-row">
+                            <span class="report-label"><i class="fas fa-x-ray"></i> X-ray Report:</span>
+                            <div class="file-upload-box">
+                                <input type="file" id="xrayReport" class="hidden-file-input" accept=".pdf,.jpg,.png">
+                                <label for="xrayReport" class="upload-button">Choose File</label>
+                            </div>
+                            <div class="findings-box">
+                                <input type="text" class="findings-input" placeholder="Enter findings">
+                            </div>
+                        </div>
+
+                        <!-- Ultrasound Report -->
+                        <div class="upload-row">
+                            <span class="report-label"><i class="fas fa-procedures"></i> Ultrasound:</span>
+                            <div class="file-upload-box">
+                                <input type="file" id="ultrasoundReport" class="hidden-file-input" accept=".pdf,.jpg,.png">
+                                <label for="ultrasoundReport" class="upload-button">Choose File</label>
+                            </div>
+                            <div class="findings-box">
+                                <input type="text" class="findings-input" placeholder="Enter findings">
+                            </div>
+                        </div>
+
+                        <!-- Other Images -->
+                        <div class="upload-row">
+                            <span class="report-label"><i class="fas fa-images"></i> Other Images:</span>
+                            <div class="file-upload-box">
+                                <input type="file" id="otherImages" class="hidden-file-input" accept=".pdf,.jpg,.png">
+                                <label for="otherImages" class="upload-button">Choose File</label>
+                            </div>
+                            <div class="findings-box">
+                                <input type="text" class="findings-input" placeholder="Enter findings">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prescription -->
+                <div class="input-group">
+                    <label for="prescription"><i class="fas fa-prescription-bottle-alt"></i> Prescription:</label>
+                    <textarea id="prescription" placeholder="Enter prescription details..." rows="4"></textarea>
+                </div>
+
+                <!-- Follow-up -->
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="followUpDate"><i class="fas fa-calendar-check"></i> Follow-up Date:</label>
+                        <input type="date" id="followUpDate">
+                    </div>
+                    <div class="input-group">
+                        <label for="followUpPurpose"><i class="fas fa-info-circle"></i> Purpose:</label>
+                        <input type="text" id="followUpPurpose" placeholder="Follow-up purpose">
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="button-group">
+                    <button type="submit" class="button"><i class="fas fa-save"></i> Save Visit</button>
+                    <button type="button" class="button share-button">
+                        <i class="fas fa-share-alt"></i> Share with Doctor
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Notification -->
+    <div class="notification" id="notification">Changes saved successfully!</div>
+                
+    <script>
+        // Form submission for Major Medical History
+        function saveMedicalHistory() {
+            showNotification('Medical History saved successfully!');
+        }
+        
+        // Handle file upload display
+        document.querySelectorAll('.hidden-file-input').forEach(input => {
+            input.addEventListener('change', function() {
+                const fileName = this.files[0]?.name || 'No file chosen';
+                this.nextElementSibling.textContent = fileName.length > 20 ? 
+                    fileName.substring(0, 17) + '...' : fileName;
+            });
+        });
+
+        // Share button functionality
+        document.querySelectorAll('.share-button').forEach(button => {
+            button.addEventListener('click', function() {
+                showNotification('Records prepared for sharing. Would you like to send to another doctor?');
+            });
+        });
+
+        // Form submission for Visit Records
+        document.getElementById('visitRecordsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showNotification('Visit records saved successfully!');
+        });
+
+        // Show notification
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // Add hover effects to all sections
+        document.querySelectorAll('.section').forEach(section => {
+            section.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+            });
+            
+            section.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+                this.style.boxShadow = '';
+            });
+        });
+
+        // Add focus styles to form elements
+        document.querySelectorAll('input, textarea, select').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.querySelector('label').style.color = '#042c15';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.querySelector('label').style.color = '#146134';
+            });
+        });
+    </script>
+</body>
+</html>

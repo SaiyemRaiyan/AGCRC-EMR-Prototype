@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGCRC- Asthma Accute</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+<div class="vibrant-nav-container">
+  <div class="vibrant-nav-header">
+    <div class="vibrant-nav-icon">📋</div>
+    <div class="vibrant-nav-title">DISEASE TEMPLATES</div>
+    <div class="vibrant-nav-arrow">▼</div>
+  </div>
+  <div class="vibrant-nav-dropdown">
+    <a href="ABDOMINAL PAIN.html" class="vibrant-nav-link">
+      <i>🩺</i> ABDOMINAL PAIN
+    </a>
+    <a href="ANEMIA.html" class="vibrant-nav-link">
+      <i>🩸</i> ANEMIA
+    </a>
+    <a href="ASTHMA ACCUTE.html" class="vibrant-nav-link">
+      <i>🌬️</i> ASTHMA ACUTE
+    </a>
+    <a href="ASTHMA SYMPTOM.html" class="vibrant-nav-link">
+      <i>😤</i> ASTHMA SYMPTOM
+    </a>
+    <a href="BACK PAIN.html" class="vibrant-nav-link">
+      <i>🧘</i> BACK PAIN
+    </a>
+    <a href="CHEST_PAIN.html" class="vibrant-nav-link">
+      <i>❤️</i> CHEST PAIN
+    </a>
+    <a href="DIABETES.html" class="vibrant-nav-link">
+      <i>🩸</i> DIABETES
+    </a>
+    <a href="GERD.html" class="vibrant-nav-link">
+      <i>🤢</i> GERD
+    </a>
+    <a href="GYNECOLOGY.html" class="vibrant-nav-link">
+      <i>🌸</i> GYNECOLOGY
+    </a>
+    <a href="HEADACHE.html" class="vibrant-nav-link">
+      <i>🤕</i> HEADACHE
+    </a>
+    <a href="HYPERTENSION.html" class="vibrant-nav-link">
+      <i>🩺</i> HYPERTENSION
+    </a>
+    <a href="STROKE.html" class="vibrant-nav-link">
+      <i>🧠</i> STROKE
+    </a>
+  </div>
+</div>
+
+  <div class="header">
+    <img src="logo.png" alt="Amader Gram Logo" class="logo">
+    <div>
+      <div class="clinic-name">AMADER GRAM CANCER CARE AND RESEARCH CENTER</div>
+      <div class="template-title">ASTHMA FOR ACUTE ATTACK</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="main-content">
+    <!-- Patient Information Section -->
+            <div class="section">
+                <div class="section-title">Patient Information</div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Name:</label>
+                            <input type="text" class="auto-fill" placeholder="Auto-filled">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>ID:</label>
+                            <input type="text" class="auto-fill" placeholder="Auto-filled">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Date of Visit:</label>
+                            <input type="date" id="visit-date" value="<?php echo date('Y-m-d'); ?>">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Age today:</label>
+                            <input type="number" id="age" min="0" max="120" style="width: 80px;" class="auto-fill" placeholder="Auto-filled"> years
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+      <!-- Appearance Section -->
+      <div class="panel">
+        <div class="section-title">Appearance</div>
+
+        <div class="subsection">
+          <div class="form-group">
+            <label>Upright posture because of air hunger</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="posture" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="posture" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Finger-nail beds:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="nails" value="pink"> PINK</label>
+              <label class="radio-option"><input type="radio" name="nails" value="blue"> BLUE</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Conjunctiva:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="conjunctiva" value="pink"> PINK</label>
+              <label class="radio-option"><input type="radio" name="conjunctiva" value="blue"> BLUE</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Lips:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="lips" value="pink"> PINK</label>
+              <label class="radio-option"><input type="radio" name="lips" value="blue"> BLUE</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Pursed lips</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="pursed" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="pursed" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Mental confusion</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="confusion" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="confusion" value="no"> NO</label>
+            </div>
+            <div id="confusion-emergency" class="emergency-message hidden">→ Consider potential emergency situation because of no or very limited air movement, and hypoxia.</div>
+          </div>
+
+          <div class="form-group">
+            <label>Audible wheezing</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="wheezing" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="wheezing" value="no"> NO</label>
+            </div>
+            <div id="wheezing-emergency" class="emergency-message hidden">→ Consider potential emergency situation because of no or very limited air movement.</div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Vital Signs</div>
+
+          <div class="form-group">
+            <label class="audit-item">Oximetry: %oxygen saturation</label>
+            <input type="number" id="oxygen" min="0" max="100" style="width: 150px;">
+            <div id="oxygen-emergency" class="emergency-message hidden">→ EMERGENCY</div>
+          </div>
+
+          <div class="form-group">
+            <label>Respiratory rate/minute</label>
+            <input type="number" id="resp-rate" style="width: 150px;">
+            <div id="resp-rate-emergency" class="emergency-message hidden">→ Consider potential emergency situation</div>
+          </div>
+
+          <div class="form-group">
+            <label>Heart rate/minute</label>
+            <input type="number" id="heart-rate" style="width: 150px;">
+            <div id="heart-rate-emergency" class="emergency-message hidden">→ Consider potential emergency situation</div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">Lung Auscultation with Amplified Stethoscope</div>
+
+          <div class="form-group">
+            <label>Wheezing present:</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="wheezing-present" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="wheezing-present" value="no"> NO</label>
+            </div>
+          </div>
+
+          <div class="lung-auscultation-grid">
+            <div class="lung-section">
+              <h4>Right lung:</h4>
+              <div class="form-group">
+                <label class="audit-item">Anterior upper lung fields</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="right-ant-upper" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="right-ant-upper" value="no"> NO</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="audit-item">Anterior lower lung fields</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="right-ant-lower" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="right-ant-lower" value="no"> NO</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="audit-item">Posterior upper lung fields</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="right-post-upper" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="right-post-upper" value="no"> NO</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="audit-item">Posterior lower lung fields</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="right-post-lower" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="right-post-lower" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="lung-section">
+              <h4>Left lung:</h4>
+              <div class="form-group">
+                <label class="audit-item">Anterior upper lung fields</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="left-ant-upper" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="left-ant-upper" value="no"> NO</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="audit-item">Anterior lower lung fields</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="left-ant-lower" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="left-ant-lower" value="no"> NO</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="audit-item">Posterior upper lung fields</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="left-post-upper" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="left-post-upper" value="no"> NO</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="audit-item">Posterior lower lung fields</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="left-post-lower" value="yes"> YES</label>
+                  <label class="radio-option"><input type="radio" name="left-post-lower" value="no"> NO</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+               
+
+      <!-- Summary Section -->
+      <div class="section" style="width: 100%; margin-top: 30px;">
+        <div class="section-title">SUMMARY OF ASTHMA ACCUTE ATTACK DIAGNOSIS AND STATUS</div>
+        
+        <div class="subsection">
+            <div class="subsection-title">Determinants/causes for this problem</div>
+            <textarea style="min-height: 100px; width: 100%;"></textarea>
+            <div class="form-group">
+                <label>Done, noting: <input type="text" style="width: 80%;"></label>
+            </div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">Notable physical examination abnormalities</div>
+            <textarea style="min-height: 100px; width: 100%;"></textarea>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">Red flags from history and physical examination</div>
+            <textarea style="min-height: 100px; width: 100%;"></textarea>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">Physician review of Determinants for health and medical history EMR section</div>
+            <textarea style="min-height: 100px; width: 100%;"></textarea>
+            <div class="form-group">
+                <label>Done, noting: <input type="text" style="width: 80%;"></label>
+            </div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">Physician review to confirm and check history and physical examination data</div>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="review-confirm" value="confirm"> Confirmed</label>
+                <label class="radio-option"><input type="radio" name="review-confirm" value="not-confirm"> Not confirmed</label>
+            </div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">Physician analysis and synthesis of the history and physical examination data: Differential diagnoses and details (key disease stage and activity measures)</div>
+            <textarea style="min-height: 100px; width: 100%;"></textarea>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">Physician recommendations for further diagnostic data</div>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="diagnostic-recommendation" value="immediate"> Immediate</label>
+                <label class="radio-option"><input type="radio" name="diagnostic-recommendation" value="when-possible"> When possible</label>
+            </div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">Tele-consultation</div>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="teleconsult" value="done"> Done</label>
+                <label class="radio-option"><input type="radio" name="teleconsult" value="not-done"> Not done</label>
+            </div>
+            <div id="teleconsultant-details" style="margin-top: 15px; display: none;">
+                <div class="form-group">
+                    <label>Teleconsultant name</label>
+                    <input type="text" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">Summary of tele-consultant comments and recommendations</div>
+            <textarea style="min-height: 100px; width: 100%;"></textarea>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">Discussion with patient concerning tele-consultant recommendations</div>
+            <textarea style="min-height: 100px; width: 100%;"></textarea>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">Goals for interventions</div>
+            <textarea style="min-height: 100px; width: 100%;"></textarea>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">Patient education</div>
+            <div class="form-group">
+                <label><input type="checkbox"> Review of specific symptoms and signs from physical examination</label>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox"> Discussion of problem chronicity and benefits of regular evaluations</label>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox"> Review of in-room health posters</label>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox"> Discussion of appropriate physical activities</label>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox"> Discussion of immunization status</label>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox"> Review of specific written patient management instructions for this problem</label>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox"> Review of any patient educational videos</label>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox"> Discussion of specific medication treatment(s) proposed: Benefits, risks, costs</label>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox"> Physical therapy plan by patient alone discussed</label>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox"> Physical therapy referral discussed with benefits and risks</label>
+            </div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">Specialist consultation recommended</div>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="specialist-consult" value="yes"> YES</label>
+                <label class="radio-option"><input type="radio" name="specialist-consult" value="no"> NO</label>
+            </div>
+            <div id="specialist-details" style="margin-top: 15px; display: none;">
+                <div class="form-group">
+                    <label>Discussion of benefits, risks and costs with patient</label>
+                    <textarea style="min-height: 80px; width: 100%;"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Consultant name and contact information</label>
+                    <input type="text" style="width: 100%;">
+                </div>
+                <div class="form-group">
+                    <label>Consultation appointment made</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="consult-appointment" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="consult-appointment" value="no"> NO</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="subsection">
+            <div class="subsection-title">Follow-up care plans</div>
+            
+            <div class="form-group">
+                <label>With these providers</label>
+                <div class="form-group">
+                    <label>Purpose discussed with patient</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="purpose-discussed" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="purpose-discussed" value="no"> NO</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Specific scheduled appointment made</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="appointment-made" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="appointment-made" value="no"> NO</label>
+                    </div>
+                    <div id="appointment-date" style="margin-top: 10px; display: none;">
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label>Month</label>
+                                <input type="text">
+                            </div>
+                            <div class="form-col">
+                                <label>Day</label>
+                                <input type="text">
+                            </div>
+                            <div class="form-col">
+                                <label>Year</label>
+                                <input type="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>With system virtual care providers</label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="virtual-care" value="yes"> YES</label>
+                    <label class="radio-option"><input type="radio" name="virtual-care" value="no"> NO</label>
+                </div>
+                <div id="virtual-care-details" style="margin-top: 15px; display: none;">
+                    <div class="form-group">
+                        <label>Discussion of purpose</label>
+                        <textarea style="min-height: 80px; width: 100%;"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Telephone number of this service</label>
+                        <input type="tel" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>With patient's village community health worker/volunteer</label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="community-health" value="yes"> YES</label>
+                    <label class="radio-option"><input type="radio" name="community-health" value="no"> NO</label>
+                </div>
+                <div id="community-health-details" style="margin-top: 15px; display: none;">
+                    <div class="form-group">
+                        <label>Discussion of purpose</label>
+                        <textarea style="min-height: 80px; width: 100%;"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="subsection">
+            <div class="form-group">
+                <label>On the basis of this visit, have changes been made to the Determinants for health and medical history summary EMR section for this patient?</label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="emr-changes" value="yes"> YES</label>
+                    <label class="radio-option"><input type="radio" name="emr-changes" value="no"> NO</label>
+                    <label class="radio-option"><input type="radio" name="emr-changes" value="none"> NONE INDICATED</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Medical assistant providing this service</label>
+                <input type="text" style="width: 100%; border-bottom: 1px solid #000; border-top: none; border-left: none; border-right: none; background: transparent;">
+            </div>
+            
+            <div class="form-group">
+                <label>Medical Officer/physician providing this service</label>
+                <input type="text" style="width: 100%; border-bottom: 1px solid #000; border-top: none; border-left: none; border-right: none; background: transparent;">
+            </div>
+            
+            <div class="form-group">
+                <label>Telephone number for appointments in this clinic</label>
+                <input type="tel" style="width: 100%; border-bottom: 1px solid #000; border-top: none; border-left: none; border-right: none; background: transparent;">
+            </div>
+            
+            <div class="form-group">
+                <label>Paper copy of this entire visit record provided to patient</label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="paper-copy" value="yes"> YES</label>
+                    <label class="radio-option"><input type="radio" name="paper-copy" value="no"> NO</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Updated/current Determinants for health and medical history summary uploaded onto patient's cell phone application</label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="uploaded-app" value="yes"> YES</label>
+                    <label class="radio-option"><input type="radio" name="uploaded-app" value="no"> NO</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="buttons" style="margin-top: 20px; text-align: left;">
+            <button id="save-btn">SAVE</button>
+            <button id="submit-btn">SUBMIT TO EMR</button>
+            <button id="print-btn">PRINT</button>
+        </div>
+    </div>
+      
+  </div>
+
+    <!-- Links Column -->
+    <div class="links-column">
+      <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">Visit Record Templates</h3>
+
+      <nav class="template-toc">
+        <ul>
+          <li><a href="#patient-info" class="template-link">1. Patient Information</a></li>
+          <li><a href="#appearance" class="template-link">2. Appearance</a></li>
+          <li>
+            <a href="#physical-exam" class="template-link">3. Physical Examinations</a>
+            <ul>
+              <li><a href="#vital-signs" class="template-link">3.1 Vital Signs</a></li>
+              <li><a href="#lung-auscultation" class="template-link">3.2 Lung Auscultation</a></li>
+            </ul>
+          </li>
+          <li><a href="#immediate-assessment" class="template-link">4. Immediate Assessment</a></li>
+          <li><a href="#follow-up" class="template-link">5. Follow-up Plans</a></li>
+        </ul>
+      </nav>
+
+                   <!-- Examination References Section -->
+         <div class="info-links-section" style="margin-top: 30px;">
+               <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">Examination References</h3>
+  
+    <a href="#" class="info-link" data-info="asthma-guidelines">Asthma Acute Attack Guidelines</a>
+    <a href="#" class="info-link" data-info="immediate-assessment">Immediate Assessment Protocol</a>
+    <a href="#" class="info-link" data-info="inhaler-technique">Inhaler Technique</a>
+    <a href="#" class="info-link" data-info="wheezing">Wheezing Characteristics</a>
+    <a href="#" class="info-link" data-info="emergency-management">Emergency Management</a>
+    <a href="#" class="info-link" data-info="lung-auscultation">Lung Auscultation</a>
+    <a href="#" class="info-link" data-info="patient-education">Patient Education</a>
+  </div>
+</div>
+  </div>
+
+  <!-- Info Modal -->
+  <div id="infoModal" class="info-modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="infoContent" class="info-content"></div>
+    </div>
+  </div>
+
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+  // Set current date
+  const today = new Date();
+  const visitDateInput = document.getElementById('visit-date');
+  if (visitDateInput) {
+    visitDateInput.valueAsDate = today;
+  }
+
+  // Toggle display function for conditional sections
+  function toggleDisplay(triggerSelector, targetId, checkValue = true) {
+    const triggers = document.querySelectorAll(triggerSelector);
+    const target = document.getElementById(targetId);
+
+    if (!triggers.length || !target) return;
+
+    function updateDisplay() {
+      const shouldShow = Array.from(triggers).some(el =>
+        el.checked && (checkValue === true || el.value == checkValue)
+      );
+      target.style.display = shouldShow ? 'block' : 'none';
+    }
+
+    triggers.forEach(trigger => {
+      trigger.addEventListener('change', updateDisplay);
+    });
+    updateDisplay();
+  }
+
+  // Set up all conditional displays
+  toggleDisplay('input[name="allergies"]', 'allergies-details', 'yes');
+  toggleDisplay('input[name="exposure"]', 'exposure-details', 'yes');
+  toggleDisplay('input[name="family"]', 'family-details', 'yes');
+  toggleDisplay('input[name="xray"]', 'xray-details', 'yes');
+  toggleDisplay('input[name="hemoglobin"]', 'hemoglobin-details', 'yes');
+  toggleDisplay('input[name="eosinophil"]', 'eosinophil-details', 'yes');
+  toggleDisplay('input[name="oximetry"]', 'oximetry-details', 'yes');
+  toggleDisplay('input[name="spirometry"]', 'spirometry-details', 'yes');
+  toggleDisplay('input[name="peakflow"]', 'peakflow-details', 'yes');
+  toggleDisplay('input[name="treatment"]', 'treatment-details', 'other');
+  toggleDisplay('input[name="testing"]', 'testing-details', 'specific');
+  toggleDisplay('input[name="tele"]', 'tele-details', 'yes');
+  toggleDisplay('input[name="hypertension"]', 'hypertension-details', 'yes');
+  toggleDisplay('input[name="spirometry_type"]', 'peak-flow-container', 'fev1');
+  toggleDisplay('input[name="teleconsult"]', 'teleconsultant-details', 'done');
+  toggleDisplay('input[name="specialist-consult"]', 'specialist-details', 'yes');
+  toggleDisplay('input[name="appointment-made"]', 'appointment-date', 'yes');
+  toggleDisplay('input[name="virtual-care"]', 'virtual-care-details', 'yes');
+  toggleDisplay('input[name="community-health"]', 'community-health-details', 'yes');
+
+  // BMI calculation
+  const weightInput = document.getElementById('weight');
+  const heightInput = document.getElementById('height');
+  const bmiInput = document.getElementById('bmi');
+
+  function calculateBMI() {
+    if (weightInput && heightInput && bmiInput) {
+      const weight = parseFloat(weightInput.value);
+      const height = parseFloat(heightInput.value) / 100; // convert cm to m
+      bmiInput.value = (weight && height > 0) ? (weight / (height * height)).toFixed(1) : "";
+    }
+  }
+
+  if (weightInput && heightInput) {
+    ['input', 'change'].forEach(event => {
+      weightInput.addEventListener(event, calculateBMI);
+      heightInput.addEventListener(event, calculateBMI);
+    });
+    calculateBMI();
+  }
+
+  // Blood pressure average calculation
+  const bp1Systolic = document.getElementById('bp1-systolic');
+  const bp1Diastolic = document.getElementById('bp1-diastolic');
+  const bp2Systolic = document.getElementById('bp2-systolic');
+  const bp2Diastolic = document.getElementById('bp2-diastolic');
+  const bpAverage = document.getElementById('bp-average');
+
+  function calculateBPAverage() {
+    if (bp1Systolic && bp1Diastolic && bp2Systolic && bp2Diastolic && bpAverage) {
+      const sys1 = parseFloat(bp1Systolic.value) || 0;
+      const dia1 = parseFloat(bp1Diastolic.value) || 0;
+      const sys2 = parseFloat(bp2Systolic.value) || 0;
+      const dia2 = parseFloat(bp2Diastolic.value) || 0;
+
+      if (sys1 > 0 && dia1 > 0 && sys2 > 0 && dia2 > 0) {
+        const avgSys = Math.round((sys1 + sys2) / 2);
+        const avgDia = Math.round((dia1 + dia2) / 2);
+        bpAverage.value = `${avgSys}/${avgDia}`;
+      } else {
+        bpAverage.value = "";
+      }
+    }
+  }
+
+  if (bp1Systolic && bp1Diastolic && bp2Systolic && bp2Diastolic) {
+    ['input', 'change'].forEach(event => {
+      bp1Systolic.addEventListener(event, calculateBPAverage);
+      bp1Diastolic.addEventListener(event, calculateBPAverage);
+      bp2Systolic.addEventListener(event, calculateBPAverage);
+      bp2Diastolic.addEventListener(event, calculateBPAverage);
+    });
+    calculateBPAverage();
+  }
+
+  // Waist/Hip ratio calculation
+  const waistInput = document.getElementById('waist-circumference');
+  const hipInput = document.getElementById('hip-circumference');
+  const ratioDisplay = document.getElementById('waist-hip-ratio');
+
+  function calculateWaistHipRatio() {
+    if (waistInput && hipInput && ratioDisplay) {
+      const waist = parseFloat(waistInput.value);
+      const hip = parseFloat(hipInput.value);
+
+      if (waist > 0 && hip > 0) {
+        const ratio = (waist / hip).toFixed(2);
+        ratioDisplay.textContent = ratio;
+      } else {
+        ratioDisplay.textContent = "";
+      }
+    }
+  }
+
+  if (waistInput && hipInput) {
+    ['input', 'change'].forEach(event => {
+      waistInput.addEventListener(event, calculateWaistHipRatio);
+      hipInput.addEventListener(event, calculateWaistHipRatio);
+    });
+    calculateWaistHipRatio();
+  }
+
+  // Emergency indicators
+  const oxygenInput = document.getElementById('oxygen');
+  const oxygenEmergency = document.getElementById('oxygen-emergency');
+  const respRateInput = document.getElementById('resp-rate');
+  const respRateEmergency = document.getElementById('resp-rate-emergency');
+  const heartRateInput = document.getElementById('heart-rate');
+  const heartRateEmergency = document.getElementById('heart-rate-emergency');
+  const confusionYes = document.querySelector('input[name="confusion"][value="yes"]');
+  const confusionNo = document.querySelector('input[name="confusion"][value="no"]');
+  const confusionEmergency = document.getElementById('confusion-emergency');
+  const wheezingYes = document.querySelector('input[name="wheezing"][value="yes"]');
+  const wheezingNo = document.querySelector('input[name="wheezing"][value="no"]');
+  const wheezingEmergency = document.getElementById('wheezing-emergency');
+
+  function checkEmergencyValues() {
+    // Oxygen saturation
+    if (oxygenInput && oxygenEmergency) {
+      if (oxygenInput.value && oxygenInput.value < 90) {
+        oxygenEmergency.style.display = 'block';
+        oxygenInput.style.backgroundColor = '#ffdddd';
+        oxygenInput.style.borderColor = 'red';
+      } else {
+        oxygenEmergency.style.display = 'none';
+        oxygenInput.style.backgroundColor = '';
+        oxygenInput.style.borderColor = '';
+      }
+    }
+    
+    // Respiratory rate
+    if (respRateInput && respRateEmergency) {
+      if (respRateInput.value && respRateInput.value > 24) {
+        respRateEmergency.style.display = 'block';
+        respRateInput.style.backgroundColor = '#ffdddd';
+        respRateInput.style.borderColor = 'red';
+      } else {
+        respRateEmergency.style.display = 'none';
+        respRateInput.style.backgroundColor = '';
+        respRateInput.style.borderColor = '';
+      }
+    }
+    
+    // Heart rate
+    if (heartRateInput && heartRateEmergency) {
+      if (heartRateInput.value && heartRateInput.value > 120) {
+        heartRateEmergency.style.display = 'block';
+        heartRateInput.style.backgroundColor = '#ffdddd';
+        heartRateInput.style.borderColor = 'red';
+      } else {
+        heartRateEmergency.style.display = 'none';
+        heartRateInput.style.backgroundColor = '';
+        heartRateInput.style.borderColor = '';
+      }
+    }
+  }
+
+  if (oxygenInput) oxygenInput.addEventListener('input', checkEmergencyValues);
+  if (respRateInput) respRateInput.addEventListener('input', checkEmergencyValues);
+  if (heartRateInput) heartRateInput.addEventListener('input', checkEmergencyValues);
+
+  if (confusionYes && confusionNo && confusionEmergency) {
+    confusionYes.addEventListener('change', function() {
+      confusionEmergency.style.display = this.checked ? 'block' : 'none';
+    });
+    confusionNo.addEventListener('change', function() {
+      confusionEmergency.style.display = 'none';
+    });
+  }
+
+  if (wheezingYes && wheezingNo && wheezingEmergency) {
+    wheezingYes.addEventListener('change', function() {
+      wheezingEmergency.style.display = 'none';
+    });
+    wheezingNo.addEventListener('change', function() {
+      wheezingEmergency.style.display = this.checked ? 'block' : 'none';
+    });
+  }
+
+  // Initialize any hidden fields
+  document.querySelectorAll('.hidden').forEach(el => {
+    el.style.display = 'none';
+  });
+
+  // Button functionality
+  const saveBtn = document.getElementById('save-btn');
+  const submitBtn = document.getElementById('submit-btn');
+  const printBtn = document.getElementById('print-btn');
+
+  if (saveBtn) {
+    saveBtn.addEventListener('click', function() {
+      alert('Form data saved successfully!');
+    });
+  }
+
+  if (submitBtn) {
+    submitBtn.addEventListener('click', function() {
+      if (confirm('Are you sure you want to submit this to EMR?')) {
+        alert('Form submitted to EMR successfully!');
+      }
+    });
+  }
+
+  if (printBtn) {
+    printBtn.addEventListener('click', function() {
+      window.print();
+    });
+  }
+
+  // Info modal functionality
+  const modal = document.getElementById("infoModal");
+  const infoLinks = document.querySelectorAll(".info-link");
+  const infoContent = document.getElementById("infoContent");
+  const span = document.getElementsByClassName("close")[0];
+
+  // Examination References content - Focused on Emergency Management and Immediate Assessment
+  const examRefData = {
+    "emergency-management": `
+      <div style="font-size: 22px; line-height: 1.6;">
+        <h3 style="color: var(--primary-color); margin-bottom: 15px;">Emergency Management</h3>
+        <p style="font-weight: bold; color: var(--danger-color);">Activate when patient shows signs of severe distress</p>
+        
+        <div style="margin-bottom: 20px;">
+          <h4 style="color: var(--secondary-color); margin-bottom: 10px;">Immediate Actions:</h4>
+          <ol style="padding-left: 25px;">
+            <li><strong>Nasal Oxygen high flow</strong> → Goal O₂ saturation >92%</li>
+            <li><strong>Inhaler drug:</strong> Short-acting beta agonist (SABA) = Albuterol (Multiple puffs)</li>
+            <li><strong>Hydrocortisone</strong> 100 mg I.V.</li>
+            <li><strong>Reassurance</strong> and patient calming</li>
+            <li><strong>Observation</strong> with repeat assessments:
+              <ul style="padding-left: 20px; margin-top: 5px;">
+                <li>Peak flow rate</li>
+                <li>CBC (for infection)</li>
+                <li>Chest X-ray (if indicated)</li>
+              </ul>
+            </li>
+            <li><strong>Temporary increase</strong> in frequency of regular drug treatment</li>
+          </ol>
+        </div>
+        
+        <div style="background-color: #ffeeee; padding: 15px; border-left: 3px solid var(--danger-color); margin-bottom: 20px;">
+          <h4 style="color: var(--danger-color); margin-top: 0;">Critical Action Required:</h4>
+          <p style="font-weight: bold; margin-bottom: 0;">IF NO IMPROVEMENT AFTER 15-30 MINUTES → ACTIVATE EMERGENCY RESPONSE AND SEEK IMMEDIATE TELECONSULTATION</p>
+        </div>
+      </div>
+    `,
+    "immediate-assessment": `
+      <div style="font-size: 22px; line-height: 1.6;">
+        <h3 style="color: var(--primary-color); margin-bottom: 15px;">Immediate Assessment Protocol</h3>
+        
+        <div style="margin-bottom: 20px;">
+          <h4 style="color: var(--secondary-color); margin-bottom: 10px;">Assessment Steps:</h4>
+          <ol style="padding-left: 25px;">
+            <li><strong>Evaluate respiratory distress:</strong> Assess work of breathing, accessory muscle use</li>
+            <li><strong>Check oxygenation:</strong> Measure SpO₂ with pulse oximetry</li>
+            <li><strong>Assess air movement:</strong> Listen for wheezing or silent chest</li>
+            <li><strong>Evaluate mental status:</strong> Check for confusion or lethargy</li>
+            <li><strong>Measure peak flow:</strong> If possible (values <50% predicted indicate severe attack)</li>
+            <li><strong>Check vital signs:</strong> Heart rate, respiratory rate, blood pressure</li>
+          </ol>
+        </div>
+        
+        <div style="background-color: #f5f5f5; padding: 15px; border-left: 3px solid var(--primary-color); margin-bottom: 20px;">
+          <h4 style="color: var(--primary-color); margin-top: 0;">Severity Indicators:</h4>
+          <ul style="padding-left: 25px;">
+            <li>SpO₂ <90%</li>
+            <li>Respiratory rate >30/min</li>
+            <li>Heart rate >120/min</li>
+            <li>Inability to speak in full sentences</li>
+            <li>Use of accessory muscles</li>
+            <li>Altered mental status</li>
+          </ul>
+        </div>
+        
+        <div style="background-color: #ffeeee; padding: 15px; border-left: 3px solid var(--danger-color);">
+          <h4 style="color: var(--danger-color); margin-top: 0;">Emergency Action Required:</h4>
+          <p style="font-weight: bold; margin-bottom: 0;">If any severity indicators present → Initiate Emergency Management Protocol immediately</p>
+        </div>
+      </div>
+    `,
+    "asthma-guidelines": "Asthma acute attack management guidelines recommend:<br><br>1. Immediate assessment of severity<br>2. Oxygen therapy if saturation <90%<br>3. Short-acting beta agonists (SABA) as first-line treatment<br>4. Systemic corticosteroids for moderate to severe attacks<br>5. Continuous monitoring until improvement",
+    "inhaler-technique": "Proper inhaler technique during acute attack:<br><br>1. Shake inhaler well before use<br>2. Exhale completely away from inhaler<br>3. Place mouthpiece between teeth and seal lips<br>4. Press canister while starting to inhale slowly<br>5. Hold breath for 10 seconds if possible<br>6. Wait 1 minute between puffs",
+    "wheezing": "Wheezing characteristics in acute asthma:<br><br>- High-pitched whistling sounds<br>- Typically more pronounced during expiration<br>- May be absent in severe obstruction (silent chest)<br>- Changes with bronchodilator treatment",
+    "lung-auscultation": "Lung auscultation findings in acute asthma:<br><br>- Wheezing (expiratory or biphasic)<br>- Prolonged expiratory phase<br>- Reduced breath sounds in severe obstruction<br>- Crackles may indicate complicating pneumonia",
+    "patient-education": "Patient education after acute attack:<br><br>1. Review inhaler technique<br>2. Identify and avoid triggers<br>3. Understand action plan<br>4. Recognize warning signs of worsening<br>5. Importance of follow-up<br>6. When to seek emergency care"
+  };
+
+  // When user clicks on an info link, open the modal
+  if (infoLinks.length && modal && infoContent) {
+    infoLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const infoKey = this.getAttribute('data-info');
+        if (examRefData[infoKey]) {
+          infoContent.innerHTML = examRefData[infoKey];
+          modal.style.display = "block";
+          
+          // Scroll modal content to top when opened
+          infoContent.scrollTop = 0;
+        }
+      });
+    });
+  }
+
+  // When user clicks on (x), close the modal
+  if (span && modal) {
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+  }
+
+  // When user clicks anywhere outside the modal, close it
+  if (modal) {
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  }
+
+  // Navigation within the form
+  const tocLinks = document.querySelectorAll('.template-toc a');
+  if (tocLinks.length) {
+    tocLinks.forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+
+          // Add highlight to the section
+          targetElement.style.backgroundColor = '#f5f5f5';
+          setTimeout(() => {
+            targetElement.style.backgroundColor = '';
+          }, 2000);
+        }
+      });
+    });
+  }
+
+  // Make sure all panels are fully visible
+  document.querySelectorAll('.panel').forEach(panel => {
+    panel.style.overflow = 'visible';
+    panel.style.maxHeight = 'none';
+  });
+
+
+               // Navbar functionality
+  const vibrantNav = document.querySelector('.vibrant-nav-container');
+  const navHeader = document.querySelector('.vibrant-nav-header');
+  
+  // Set animation delays for each link
+  document.querySelectorAll('.vibrant-nav-link').forEach((link, index) => {
+    link.style.setProperty('--i', index);
+  });
+  
+  // Toggle dropdown
+  if (navHeader) {
+    navHeader.addEventListener('click', function(e) {
+      e.stopPropagation();
+      vibrantNav.classList.toggle('active');
+    });
+  }
+  
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function() {
+    if (vibrantNav) {
+      vibrantNav.classList.remove('active');
+    }
+  });
+  
+  // Highlight current page
+  const currentPage = window.location.pathname.split('/').pop();
+  const navLinks = document.querySelectorAll('.vibrant-nav-link');
+  
+  navLinks.forEach(link => {
+    const linkHref = link.getAttribute('href');
+    if (linkHref === currentPage) {
+      link.classList.add('current');
+      link.innerHTML = '<i>✨</i> ' + link.textContent.replace('🩺 ', '').replace('🌸 ', '').replace('🤕 ', '');
+    }
+  });
+
+
+});
+  </script>
+</body>
+</html>

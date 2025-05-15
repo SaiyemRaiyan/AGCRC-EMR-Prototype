@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health History</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('AG.jpg') no-repeat center center/cover;
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #b4f8f6, #72b4e8, #ccb5fd, #e3c7f0);
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-panel {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-panel img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-panel span {
+            color: #0e1521;
+            font-size: 1.5em;
+            font-weight: 600;
+            background: linear-gradient(90deg, #1f3d25, #1f884b, #1f2f4b);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 3s linear infinite;
+        }
+
+        @keyframes glow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .nav-links a {
+            color: #1f293a;
+            text-decoration: none;
+            font-weight: bolder;
+            font-size: 1.3em;
+            padding: 10px 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #0a2716;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #0a2b18;
+            background: rgba(14, 53, 30, 0.1);
+        }
+
+        .logout-button {
+            margin-left: auto;
+            padding-right: 20px;
+        }
+
+        .logout-button a {
+            background-color: #0a2716;
+            color: #fff;
+            font-weight: bolder;
+            font-size: 20px;
+            padding: 10px 30px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logout-button a:hover {
+            background-color: #0e390eeb;
+            box-shadow: 0 0 10px rgba(11, 52, 23, 0.717);
+            transform: translateY(-2px);
+        }
+
+        /* Container Styles */
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 1400px;
+            margin: 100px auto;
+            padding: 30px;
+            background: linear-gradient(135deg, #bae7ec, #d1c3f3d9, #a5d3cb, #a9c3e6);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            font-size: 3.5em;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 1000;
+            background: linear-gradient(90deg, #2c6a2d, #5b8926, #174618, #1e8525);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glowText 3s linear infinite;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #2c6a2d, transparent);
+            border-radius: 50%;
+        }
+
+        @keyframes glowText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Section Styles */
+        .patient-info, .section {
+            background: linear-gradient(135deg, #bef1e5, #aacec1, #b0c0dc, #c5b0ca);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            animation: gradientShift 10s ease infinite;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .patient-info:hover, .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .patient-info h3, .section h4 {
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            color: #0a2716;
+            background: linear-gradient(90deg, #0f3e18, #1d8247, #102447);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            font-family: 'Microsoft YaHei bold';
+            text-align: center;
+            -webkit-text-fill-color: transparent;
+            animation: glowText 3s linear infinite;
+            padding-bottom: 10px;
+            position: relative;
+        }
+
+        .patient-info h3::after, .section h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 30%;
+            width: 40%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #0f3e18, transparent);
+        }
+
+        .patient-info p, .section p {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #1f293a;
+            font-weight: 600;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #0a2716;
+            margin-bottom: 15px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .info-section {
+            border-left: 3px solid #0a2716;
+            padding-left: 15px;
+            margin: 15px 0;
+            transition: border-color 0.3s ease;
+        }
+
+        .info-section:hover {
+            border-color: #1d8247;
+        }
+
+        /* Allergy Input Group */
+        .allergy-input-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        #allergyType {
+            width: 200px;
+            padding: 12px;
+            border: 2px solid #1d4920;
+            border-radius: 8px;
+            font-size: 1em;
+            color: #0a0e15;
+            background: rgba(255, 255, 255, 0.7);
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        #allergyType:focus {
+            border-color: #042c15e6;
+            box-shadow: 0 0 0 3px rgba(70, 136, 76, 0.3);
+        }
+
+        #otherAllergyContainer {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        #otherAllergy {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #133e17;
+            border-radius: 8px;
+            font-size: 1em;
+            color: #1f293a;
+            background: rgba(255, 255, 255, 0.7);
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        #otherAllergy:focus {
+            border-color: #042c15e6;
+            box-shadow: 0 0 0 3px rgba(70, 136, 76, 0.3);
+        }
+
+        /* Form Styles */
+        .section form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .section label {
+            font-size: 1.4em;
+            color: #146134;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section input, .section select, .section textarea {
+            padding: 12px 15px;
+            border: 2px solid #46884c;
+            border-radius: 8px;
+            font-size: 1.1em;
+            color: #1f293a;
+            background: rgba(255, 255, 255, 0.7);
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .section input:focus, .section select:focus, .section textarea:focus {
+            border-color: #042c15e6;
+            box-shadow: 0 0 0 3px rgba(70, 136, 76, 0.3);
+        }
+
+        .section textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* Updated Form Layout */
+        .section form > div {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .section form > div > label {
+            min-width: 200px;
+            font-size: 1.3em;
+            color: #113e11;
+            font-weight: 700;
+            background: none !important;
+            -webkit-background-clip: initial !important;
+            -webkit-text-fill-color: initial !important;
+            animation: none !important;
+        }
+
+        /* Blood Pressure Group */
+        .blood-pressure-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .blood-pressure-group > div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Button Styles */
+        .section button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            background: #042c15e6;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            gap: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section button:hover {
+            background: #2f6e46e6;
+            box-shadow: 0 6px 12px rgba(47, 110, 70, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .section button:active {
+            transform: translateY(0);
+        }
+
+        /* Number and Select Inputs */
+        .section input[type="number"],
+        .section select {
+            width: 180px;
+            padding: 12px;
+            font-size: 1.1em;
+            border: 2px solid #46884c;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.7);
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        /* Oxygen Saturation Group */
+        .section h5 {
+            font-size: 1.6em;
+            color: #0d310d;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Condition and Relationship Group */
+        .condition-relationship-group {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .condition-relationship-group > div {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .condition-relationship-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.3em;
+            color: #113e11;
+            font-weight: 700;
+        }
+
+        /* Medications Section Layout */
+        .medication-group {
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .input-group label {
+            min-width: 150px;
+            font-size: 1.3em;
+            color: #113e11;
+            font-weight: 600;
+        }
+
+        .input-group input {
+            flex: 1;
+            min-width: 100px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .medication-group h5 {
+            font-size: 1.5em;
+            color: #0d310d;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #46884c;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Upload Rows */
+        .upload-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .report-label {
+            font-weight: bold;
+            min-width: 150px;
+            font-size: 1.3em;
+            color: #113e11;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .file-upload-box {
+            position: relative;
+            min-width: 150px;
+            flex: 1;
+        }
+
+        .hidden-file-input {
+            opacity: 0;
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        .upload-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 2px solid #46884c;
+            border-radius: 8px;
+            color: #1f293a;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            font-size: 1em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .upload-button:hover {
+            background: rgba(115, 239, 126, 0.748);
+            box-shadow: 0 0 8px rgba(122, 237, 124, 0.765);
+        }
+
+        .findings-box {
+            flex: 2;
+            min-width: 200px;
+        }
+
+        .findings-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #46884c;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.7);
+            color: #1f293a;
+            transition: all 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        .findings-input:focus {
+            outline: none;
+            border-color: #042c15e6;
+            box-shadow: 0 0 0 3px rgba(70, 136, 76, 0.3);
+        }
+
+        .section-header {
+            margin-bottom: 20px;
+        }
+
+        .section-separator {
+            height: 2px;
+            background: linear-gradient(90deg, #31a839, #157f3f, #176346, #10371f);
+            margin: 10px 0 20px;
+            border-radius: 2px;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #042c15e6;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.5s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+            
+            h2 {
+                font-size: 2.5em;
+            }
+            
+            .section h4, .patient-info h3 {
+                font-size: 2em;
+            }
+            
+            .nav-links {
+                gap: 10px;
+            }
+            
+            .nav-links a {
+                padding: 8px 15px;
+                font-size: 1.1em;
+            }
+            
+            .input-group label {
+                font-size: 1.2em;
+                min-width: 120px;
+            }
+            
+            .section form > div > label {
+                min-width: 100%;
+            }
+            
+            .condition-relationship-group > div {
+                min-width: 100%;
+            }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(#2c6a2d, #1e8525);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(#1e8525, #2c6a2d);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-panel">
+            <img src="logo.png" alt="Logo">
+            <span>AGCRC</span>
+        </div>
+        <div class="nav-links">
+            <li><a href="Guidelines.html"><i class="fas fa-book-medical"></i> Guidelines</a></li>
+            <li><a href="registration.html"><i class="fas fa-user-plus"></i> Registration</a></li>
+            <li><a href="index.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            <li><a href="patients.html"><i class="fas fa-file-medical"></i> Patients</a></li>
+            <li><a href="health-history.html"><i class="fas fa-heartbeat"></i> Health_History</a></li>
+            <li><a href="EMR.html"><i class="fas fa-file-medical"></i> EMR</a></li>
+            <li><a href="Visit Problem Templates/ABDOMINAL PAIN.html"><i class="fas fa-file-medical"></i>STROKE</a></li>
+        </div>
+        <div class="logout-button">
+            <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </nav>
+
+    <!-- Health History Container -->
+    <div class="container">
+        <h2><i class="fas fa-heartbeat"></i> Health History</h2>
+
+        <!-- Patient Information -->
+        <div class="patient-info">
+            <img src="https://via.placeholder.com/120" alt="Profile Picture" class="profile-image">
+            <h3><i class="fas fa-user-injured"></i> Patient Information</h3>
+            <div class="info-section">
+                <p><i class="fas fa-user"></i> <strong>Full Name:</strong> Sumaiya Aktar</p>
+                <p><i class="fas fa-birthday-cake"></i> <strong>Date of Birth:</strong> 15-03-1990</p>
+                <p><i class="fas fa-venus-mars"></i> <strong>Gender:</strong> Female</p>
+                <p><i class="fas fa-tint"></i> <strong>Blood Type:</strong> O+</p>
+            </div>
+
+            <!-- Allergies -->
+            <div class="info-section">
+                <h4><i class="fas fa-allergies"></i> Allergies</h4>
+                <div class="allergy-input-group">
+                    <select id="allergyType" onchange="handleAllergyTypeChange()">
+                        <option value="" disabled selected>Select allergy</option>
+                        <option value="Drug">Drug</option>
+                        <option value="Food">Food</option>
+                        <option value="Environment">Environment</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <div id="otherAllergyContainer" style="display: none;">
+                        <input type="text" id="otherAllergy" placeholder="Specify allergy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vital Signs Section -->
+        <div class="section">
+            <h4><i class="fas fa-heartbeat"></i> Vital Signs</h4>
+            <form id="vitalSignsForm">
+                <!-- Blood Pressure -->
+                <div>
+                    <label for="bpDateTime"><i class="far fa-calendar-alt"></i> Blood Pressure Date/Time:</label>
+                    <input type="datetime-local" id="bpDateTime">
+                </div>
+                
+                <div class="blood-pressure-group">
+                    <div>
+                        <label for="systolic1"><i class="fas fa-heart"></i> Systolic 1:</label>
+                        <input type="number" id="systolic1" placeholder="Systolic 1">
+                    </div>
+                    <div>
+                        <label for="diastolic1"><i class="fas fa-heart"></i> Diastolic 1:</label>
+                        <input type="number" id="diastolic1" placeholder="Diastolic 1">
+                    </div>
+                    <div>
+                        <label for="systolic2"><i class="fas fa-heart"></i> Systolic 2:</label>
+                        <input type="number" id="systolic2" placeholder="Systolic 2">
+                    </div>
+                    <div>
+                        <label for="diastolic2"><i class="fas fa-heart"></i> Diastolic 2:</label>
+                        <input type="number" id="diastolic2" placeholder="Diastolic 2">
+                    </div>
+                    <div>
+                        <label for="systolic3"><i class="fas fa-heart"></i> Systolic 3:</label>
+                        <input type="number" id="systolic3" placeholder="Systolic 3">
+                    </div>
+                    <div>
+                        <label for="diastolic3"><i class="fas fa-heart"></i> Diastolic 3:</label>
+                        <input type="number" id="diastolic3" placeholder="Diastolic 3">
+                    </div>
+                </div>
+
+                <!-- Temperature -->
+                <div>
+                    <label for="temperature"><i class="fas fa-thermometer-half"></i> Temperature (°F):</label>
+                    <select id="temperature">
+                        <option value="" disabled selected>Select temperature</option>
+                        <option value="98">98°F</option>
+                        <option value="99">99°F</option>
+                        <option value="100">100°F</option>
+                        <option value="101">101°F</option>
+                        <option value="102">102°F</option>
+                        <option value="103">103°F</option>
+                        <option value="104">104°F</option>
+                        <option value="105">105°F</option>
+                        <option value="106">106°F</option>
+                        <option value="107">107°F</option>
+                        <option value="108">108°F</option>
+                        <option value="109">109°F</option>
+                        <option value="110">110°F</option>
+                    </select>
+                </div>
+
+                <!-- Respiratory Rate -->
+                <div>
+                    <label for="respiratoryRate"><i class="fas fa-lungs"></i> Respiratory Rate:</label>
+                    <select id="respiratoryRate">
+                        <option value="" disabled selected>Select respiratory rate</option>
+                    </select>
+                </div>
+
+                <!-- Heart Rate -->
+                <div>
+                    <label for="heartRate"><i class="fas fa-heartbeat"></i> Heart Rate:</label>
+                    <select id="heartRate">
+                        <option value="" disabled selected>Select heart rate</option>
+                    </select>
+                </div>
+
+                <!-- Height, Weight, Waist, BMI -->
+                <div>
+                    <label for="height"><i class="fas fa-ruler-vertical"></i> Height (cm):</label>
+                    <input type="number" id="height" placeholder="Height">
+                </div>
+                <div>
+                    <label for="weight"><i class="fas fa-weight"></i> Weight (kg):</label>
+                    <input type="number" id="weight" placeholder="Weight">
+                </div>
+                <div>
+                    <label for="waist"><i class="fas fa-ruler-horizontal"></i> Waist (cm):</label>
+                    <input type="number" id="waist" placeholder="Waist">
+                </div>
+                <div>
+                    <label for="bmi"><i class="fas fa-calculator"></i> BMI:</label>
+                    <input type="number" id="bmi" placeholder="BMI" readonly>
+                </div>
+
+                <!-- Oxygen Saturation -->
+                <div>
+                    <h5><i class="fas fa-lungs"></i> Oxygen Saturation</h5>
+                    <div>
+                        <label for="spo2">SpO2:</label>
+                        <input type="number" id="spo2" placeholder="SpO2">
+                    </div>
+                    <div>
+                        <label for="spo2Percentage">Percentage (%):</label>
+                        <select id="spo2Percentage">
+                            <option value="" disabled selected>Select</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit"><i class="fas fa-save"></i> Save Vital Signs</button>
+            </form>
+        </div>
+
+        <!-- Past Medical History Section -->
+        <div class="section">
+            <h4><i class="fas fa-file-medical"></i> Past Medical History</h4>
+            <form id="pastMedicalHistoryForm">
+                <!-- Chronic Conditions -->
+                <div>
+                    <label for="chronicConditions"><i class="fas fa-disease"></i> Chronic Conditions:</label>
+                    <div>
+                        <select id="chronicConditions" onchange="handleChronicConditionsChange()">
+                            <option value="" disabled selected>Select chronic condition</option>
+                            <option value="Diabetes">Diabetes</option>
+                            <option value="Hypertension">Hypertension</option>
+                            <option value="Asthma">Asthma</option>
+                            <option value="Heart Failure">Heart Failure</option>
+                            <option value="Arthritis">Arthritis</option>
+                            <option value="High Cholesterol">High Cholesterol</option>
+                            <option value="Kidney Disease">Kidney Disease</option>
+                            <option value="Obesity">Obesity</option>
+                            <option value="Depression">Depression</option>
+                            <option value="Stroke">Stroke</option>
+                            <option value="Others">Others</option>
+                        </select>
+                        <input type="text" id="chronicConditionsOther" placeholder="Specify other condition" style="display: none; margin-left: 10px;">
+                    </div>
+                </div>
+
+                <!-- Past Illnesses -->
+                <div>
+                    <label for="pastIllnesses"><i class="fas fa-virus"></i> Past Illnesses:</label>
+                    <div>
+                        <select id="pastIllnesses" onchange="handlePastIllnessesChange()">
+                            <option value="" disabled selected>Select past illness</option>
+                            <option value="Pneumonia">Pneumonia</option>
+                            <option value="Tuberculosis">Tuberculosis</option>
+                            <option value="Malaria">Malaria</option>
+                            <option value="Allergies">Allergies</option>
+                            <option value="Colds and Flu">Colds and Flu</option>
+                            <option value="Conjunctivitis">Conjunctivitis</option>
+                            <option value="Diarrhea">Diarrhea</option>
+                            <option value="Headaches">Headaches</option>
+                            <option value="Mononucleosis">Mononucleosis</option>
+                            <option value="Stomach Aches">Stomach Aches</option>
+                            <option value="Others">Others</option>
+                        </select>
+                        <input type="text" id="pastIllnessesOther" placeholder="Specify other illness" style="display: none; margin-left: 10px;">
+                    </div>
+                </div>
+
+                <!-- Previous Surgeries -->
+                <div>
+                    <label for="previousSurgeries"><i class="fas fa-procedures"></i> Previous Surgeries:</label>
+                    <div>
+                        <input type="date" id="surgeryDate" placeholder="Date">
+                        <input type="text" id="surgeryType" placeholder="Type">
+                        <input type="text" id="surgeryHospital" placeholder="Hospital">
+                        <input type="text" id="surgerySurgeon" placeholder="Surgeon Name">
+                    </div>
+                </div>
+
+                <!-- Hospitalizations -->
+                <div>
+                    <label for="hospitalizations"><i class="fas fa-hospital"></i> Hospitalizations:</label>
+                    <div>
+                        <input type="text" id="hospitalizationReason" placeholder="Reason">
+                        <input type="date" id="hospitalizationDate" placeholder="Date">
+                        <input type="text" id="hospitalizationHospital" placeholder="Hospital Name">
+                    </div>
+                </div>
+
+                <!-- Injuries -->
+                <div>
+                    <label for="injuries"><i class="fas fa-bone"></i> Injuries:</label>
+                    <div>
+                        <select id="injuries" onchange="handleInjuriesChange()">
+                            <option value="" disabled selected>Select injury</option>
+                            <option value="Fractures">Fractures</option>
+                            <option value="Trauma">Trauma</option>
+                            <option value="Others">Others</option>
+                        </select>
+                        <input type="text" id="injuriesOther" placeholder="Specify other injury" style="display: none; margin-left: 10px;">
+                    </div>
+                </div>
+
+                <!-- Mental Health History -->
+                <div>
+                    <label for="mentalHealthHistory"><i class="fas fa-brain"></i> Mental Health History:</label>
+                    <div>
+                        <select id="mentalHealthHistory" onchange="handleMentalHealthHistoryChange()">
+                            <option value="" disabled selected>Select mental health condition</option>
+                            <option value="Depression">Depression</option>
+                            <option value="Anxiety">Anxiety</option>
+                            <option value="Others">Others</option>
+                        </select>
+                        <input type="text" id="mentalHealthHistoryOther" placeholder="Specify other condition" style="display: none; margin-left: 10px;">
+                    </div>
+                </div>
+
+                <button type="submit"><i class="fas fa-save"></i> Save Past Medical History</button>
+            </form>
+        </div>
+             
+        <!-- Family Medical History Section -->
+        <div class="section">
+            <h4><i class="fas fa-family"></i> Family Medical History</h4>
+            <form id="familyMedicalHistoryForm">
+                <!-- Hereditary Diseases -->
+                <div>
+                    <label for="hereditaryDiseases"><i class="fas fa-dna"></i> Hereditary Diseases:</label>
+                    <div>
+                        <select id="hereditaryDiseases" onchange="handleHereditaryDiseasesChange()">
+                            <option value="" disabled selected>Select hereditary disease</option>
+                            <option value="Heart Disease">Heart Disease</option>
+                            <option value="Cancer">Cancer</option>
+                            <option value="Diabetes">Diabetes</option>
+                            <option value="Alzheimer's">Alzheimer's</option>
+                            <option value="Others">Others</option>
+                        </select>
+                        <input type="text" id="hereditaryDiseasesOther" 
+                               placeholder="Specify other disease" 
+                               style="display: none; margin-left: 10px;">
+                    </div>
+                </div>
+
+                <!-- Condition and Relationship Section -->
+                <div class="condition-relationship-group">
+                    <div>
+                        <label for="relationship"><i class="fas fa-users"></i> Relationship:</label>
+                        <select id="relationship">
+                            <option value="" disabled selected>Select relationship</option>
+                            <option value="Father">Father</option>
+                            <option value="Mother">Mother</option>
+                            <option value="Sibling">Sibling</option>
+                            <option value="Grandparent">Grandparent</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="condition"><i class="fas fa-diagnoses"></i> Condition:</label>
+                        <input type="text" id="condition" placeholder="Enter condition">
+                    </div>
+                </div>
+
+                <button type="submit"><i class="fas fa-save"></i> Save Family Medical History</button>
+            </form>
+        </div>
+
+        <!-- Medications Section -->
+        <div class="section">
+            <h4><i class="fas fa-pills"></i> Medications</h4>
+            <form id="medicationsForm">
+                <!-- Current Medications -->
+                <div class="medication-group">
+                    <h5><i class="fas fa-prescription-bottle-alt"></i> Current Medications</h5>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="drugName">Drug Name:</label>
+                            <input type="text" id="drugName" placeholder="Enter drug name">
+                        </div>
+                        <div class="input-group">
+                            <label for="dosage">Dosage:</label>
+                            <input type="text" id="dosage" placeholder="Enter dosage">
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="frequency">Frequency:</label>
+                            <input type="text" id="frequency" placeholder="Enter frequency">
+                        </div>
+                        <div class="input-group">
+                            <label for="prescribingDoctor">Prescribing Doctor:</label>
+                            <input type="text" id="prescribingDoctor" placeholder="Enter doctor's name">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Past Medications -->
+                <div class="medication-group">
+                    <h5><i class="fas fa-history"></i> Past Medications</h5>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="discontinuedDrugs">Discontinued drugs:</label>
+                            <input type="text" id="discontinuedDrugs" placeholder="Enter discontinued drugs">
+                        </div>
+                        <div class="input-group">
+                            <label for="discontinuedReasons">Reasons:</label>
+                            <input type="text" id="discontinuedReasons" placeholder="Enter reasons">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit"><i class="fas fa-save"></i> Save Medications</button>
+            </form>
+        </div>
+
+        <!-- Immunization History Section -->
+        <div class="section">
+            <h4><i class="fas fa-syringe"></i> Immunization History</h4>
+            <form id="immunizationHistoryForm">
+                <!-- Vaccinations -->
+                <div class="medication-group">
+                    <h5><i class="fas fa-shield-virus"></i> Vaccinations</h5>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="vaccineName">Name:</label>
+                            <input type="text" id="vaccineName" placeholder="Enter vaccine name">
+                        </div>
+                        <div class="input-group">
+                            <label for="vaccineDate">Date:</label>
+                            <input type="date" id="vaccineDate">
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="boosterRequired">Booster Required:</label>
+                            <input type="text" id="boosterRequired" placeholder="Enter booster details">
+                        </div>
+                        <div class="input-group">
+                            <label for="expiryDate">Expiry Date (if applicable):</label>
+                            <input type="date" id="expiryDate">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit"><i class="fas fa-save"></i> Save Immunization History</button>
+            </form>
+        </div>
+
+        <!-- Lifestyle & Social History Section -->
+        <div class="section">
+            <h4><i class="fas fa-running"></i> Lifestyle & Social History</h4>
+            <form id="lifestyleSocialHistoryForm">
+
+                <!-- Smoking -->
+                <div class="medication-group">
+                    <h5><i class="fas fa-smoking"></i> Smoking</h5>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <select id="smokingStatus" onchange="handleSmokingStatusChange()">
+                                <option value="" disabled selected>Select status</option>
+                                <option value="Current">Current</option>
+                                <option value="Past">Past</option>
+                                <option value="No Smoking">No Smoking</option>
+                            </select>
+                        </div>
+                        <div class="input-group" id="smokingFrequencyGroup" style="display: none;">
+                            <label for="smokingFrequency">Frequency:</label>
+                            <select id="smokingFrequency">
+                                <option value="" disabled selected>Select frequency</option>
+                                <option value="Daily">Daily</option>
+                                <option value="Regularly but not Daily">Regularly but not Daily</option>
+                                <option value="Occasionally">Occasionally</option>
+                            </select>
+                        </div>
+                        <div class="input-group" id="smokingYearsGroup" style="display: none;">
+                            <label for="smokingYears">Years:</label>
+                            <input type="number" id="smokingYears" placeholder="Enter years">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alcohol Consumption -->
+                <div class="medication-group">
+                    <h5><i class="fas fa-wine-glass-alt"></i> Alcohol Consumption</h5>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="alcoholFrequency">Frequency:</label>
+                            <select id="alcoholFrequency">
+                                <option value="" disabled selected>Select frequency</option>
+                                <option value="Daily">Daily</option>
+                                <option value="Regularly but not Daily">Regularly but not Daily</option>
+                                <option value="Occasionally">Occasionally</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="alcoholQuantity">Quantity:</label>
+                            <input type="number" id="alcoholQuantity" placeholder="Enter quantity (1-50)" min="1" max="50">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drug Use -->
+                <div class="medication-group">
+                    <h5><i class="fas fa-cannabis"></i> Drug Use</h5>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="recreationalDrugs">Recreational:</label>
+                            <input type="text" id="recreationalDrugs" placeholder="Enter recreational drug use">
+                        </div>
+                        <div class="input-group">
+                            <label for="prescribedDrugs">Prescribed:</label>
+                            <input type="text" id="prescribedDrugs" placeholder="Enter prescribed drug use">
+                        </div>
+                        <div class="input-group">
+                            <label for="illegalDrugs">Illegal Use History:</label>
+                            <input type="text" id="illegalDrugs" placeholder="Enter illegal drug use">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise Habits -->
+                <div class="medication-group">
+                    <h5><i class="fas fa-dumbbell"></i> Exercise Habits</h5>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <input type="text" id="exerciseHabits" placeholder="Enter exercise habits">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dietary Preferences/Restrictions -->
+                <div class="medication-group">
+                    <h5><i class="fas fa-utensils"></i> Dietary Preferences/Restrictions</h5>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <input type="text" id="dietaryPreferences" placeholder="Enter dietary preferences/restrictions">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sleep Patterns -->
+                <div class="medication-group">
+                    <h5><i class="fas fa-bed"></i> Sleep Patterns</h5>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <input type="text" id="sleepPatterns" placeholder="Enter sleep patterns">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Occupation & Exposure Risks -->
+                <div class="medication-group">
+                    <h5><i class="fas fa-briefcase-medical"></i> Occupation & Exposure Risks</h5>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="hazardousMaterials">Hazardous Materials:</label>
+                            <select id="hazardousMaterials" onchange="handleHazardousMaterialsChange()">
+                                <option value="" disabled selected>Select material</option>
+                                <option value="Explosive">Explosive</option>
+                                <option value="Gases">Gases</option>
+                                <option value="Flammable Solids">Flammable Solids</option>
+                                <option value="Flammable Liquids">Flammable Liquids</option>
+                                <option value="Oxidizing substances and organic peroxide">Oxidizing substances and organic peroxide</option>
+                                <option value="Radioactive materials">Radioactive materials</option>
+                                <option value="Miscellaneous">Miscellaneous</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="input-group" id="hazardousMaterialsOtherGroup" style="display: none;">
+                            <label for="hazardousMaterialsOther">Specify Other:</label>
+                            <input type="text" id="hazardousMaterialsOther" placeholder="Enter other material">
+                        </div>
+                        <div class="input-group">
+                            <label for="radiationExposure">Radiation Exposure:</label>
+                            <input type="text" id="radiationExposure" placeholder="Enter radiation exposure">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit"><i class="fas fa-save"></i> Save Lifestyle & Social History</button>
+            </form>
+        </div>
+         
+        <!-- Reproductive History Section -->
+        <div class="section">
+            <h4><i class="fas fa-baby"></i> Reproductive History</h4>
+            <form id="reproductiveHistoryForm">
+                <!-- Pregnancy History -->
+                <div class="medication-group">
+                    <h5><i class="fas fa-female"></i> Pregnancy History</h5>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="numberOfPregnancies">Number of Pregnancies:</label>
+                            <select id="numberOfPregnancies"></select>
+                        </div>
+                        <div class="input-group">
+                            <label for="miscarriages">Miscarriages:</label>
+                            <select id="miscarriages"></select>
+                        </div>
+                        <div class="input-group">
+                            <label for="birthComplications">Birth Complications:</label>
+                            <input type="text" id="birthComplications" placeholder="Enter complications">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menstrual History -->
+                <div class="medication-group">
+                    <h5><i class="fas fa-calendar-alt"></i> Menstrual History</h5>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="ageOfFirstPeriod">Age of First Period:</label>
+                            <select id="ageOfFirstPeriod"></select>
+                        </div>
+                        <div class="input-group">
+                            <label for="regularity">Regularity:</label>
+                            <select id="regularity">
+                                <option value="" disabled selected>Select regularity</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="menopauseAge">Menopause Age:</label>
+                            <select id="menopauseAge"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sexually Transmitted Diseases -->
+                <div class="medication-group">
+                    <h5><i class="fas fa-virus"></i> Sexually Transmitted Diseases</h5>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="stdHistory">History:</label>
+                            <input type="text" id="stdHistory" placeholder="Enter STD history">
+                        </div>
+                        <div class="input-group">
+                            <label for="stdTreatment">Treatment:</label>
+                            <input type="text" id="stdTreatment" placeholder="Enter treatment details">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit"><i class="fas fa-save"></i> Save Reproductive History</button>
+            </form>
+        </div>
+
+        <!-- Screening & Diagnostic Tests Section -->
+        <div class="section">
+            <h4><i class="fas fa-microscope"></i> Screening & Diagnostic Tests</h4>
+            <form id="screeningTestsForm">
+                <!-- Recent Lab Tests -->
+                <div class="medication-group">
+                    <h5><i class="fas fa-flask"></i> Recent Lab Tests</h5>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="bloodWork">Blood Work:</label>
+                            <input type="text" id="bloodWork" placeholder="Enter blood work details">
+                        </div>
+                        <div class="input-group">
+                            <label for="urinalysis">Urinalysis:</label>
+                            <input type="text" id="urinalysis" placeholder="Enter urinalysis details">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imaging Reports -->
+                <div class="report-section">
+                    <div class="section-header">
+                        <h5><i class="fas fa-x-ray"></i> Imaging Reports</h5>
+                        <div class="section-separator"></div>
+                    </div>
+                    <div class="section-uploads">
+                        <!-- X-ray -->
+                        <div class="upload-row">
+                            <span class="report-label"><i class="fas fa-x-ray"></i> X-ray:</span>
+                            <div class="file-upload-box">
+                                <input type="file" id="xray" class="hidden-file-input" accept="image/*,.pdf">
+                                <label for="xray" class="upload-button">Choose File</label>
+                            </div>
+                            <div class="findings-box">
+                                <input type="text" class="findings-input" placeholder="Findings">
+                            </div>
+                        </div>
+
+                        <!-- MRI -->
+                        <div class="upload-row">
+                            <span class="report-label"><i class="fas fa-magnet"></i> MRI:</span>
+                            <div class="file-upload-box">
+                                <input type="file" id="mri" class="hidden-file-input" accept="image/*,.pdf">
+                                <label for="mri" class="upload-button">Choose File</label>
+                            </div>
+                            <div class="findings-box">
+                                <input type="text" class="findings-input" placeholder="Findings">
+                            </div>
+                        </div>
+
+                        <!-- CT Scan -->
+                        <div class="upload-row">
+                            <span class="report-label"><i class="fas fa-ct-scan"></i> CT Scan:</span>
+                            <div class="file-upload-box">
+                                <input type="file" id="ctScan" class="hidden-file-input" accept="image/*,.pdf">
+                                <label for="ctScan" class="upload-button">Choose File</label>
+                            </div>
+                            <div class="findings-box">
+                                <input type="text" class="findings-input" placeholder="Findings">
+                            </div>
+                        </div>
+
+                        <!-- Ultrasound -->
+                        <div class="upload-row">
+                            <span class="report-label"><i class="fas fa-procedures"></i> Ultrasound:</span>
+                            <div class="file-upload-box">
+                                <input type="file" id="ultrasound" class="hidden-file-input" accept="image/*,.pdf">
+                                <label for="ultrasound" class="upload-button">Choose File</label>
+                            </div>
+                            <div class="findings-box">
+                                <input type="text" class="findings-input" placeholder="Findings">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specialist Reports -->
+                <div class="report-section">
+                    <div class="section-header">
+                        <h5><i class="fas fa-user-md"></i> Specialist Reports</h5>
+                        <div class="section-separator"></div>
+                    </div>
+                    <div class="section-uploads">
+                        <!-- Cardiology -->
+                        <div class="upload-row">
+                            <span class="report-label"><i class="fas fa-heartbeat"></i> Cardiology:</span>
+                            <div class="file-upload-box">
+                                <input type="file" id="cardiology" class="hidden-file-input" accept="image/*,.pdf">
+                                <label for="cardiology" class="upload-button">Choose File</label>
+                            </div>
+                            <div class="findings-box">
+                                <input type="text" class="findings-input" placeholder="Findings">
+                            </div>
+                        </div>
+
+                        <!-- Neurology -->
+                        <div class="upload-row">
+                            <span class="report-label"><i class="fas fa-brain"></i> Neurology:</span>
+                            <div class="file-upload-box">
+                                <input type="file" id="neurology" class="hidden-file-input" accept="image/*,.pdf">
+                                <label for="neurology" class="upload-button">Choose File</label>
+                            </div>
+                            <div class="findings-box">
+                                <input type="text" class="findings-input" placeholder="Findings">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit"><i class="fas fa-save"></i> Save Screening & Diagnostic Tests</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span>Changes saved successfully!</span>
+    </div>
+                
+    <script>  
+        function handleAllergyTypeChange() {
+            const allergyType = document.getElementById('allergyType');
+            const otherAllergyContainer = document.getElementById('otherAllergyContainer');
+            otherAllergyContainer.style.display = allergyType.value === 'Other' ? 'block' : 'none';
+        }
+
+        // Function to populate Respiratory Rate, Heart Rate, and SpO2 Percentage
+        function populateSelectOptions() {
+            const respiratoryRate = document.getElementById('respiratoryRate');
+            const heartRate = document.getElementById('heartRate');
+            const percentageSelect = document.getElementById('spo2Percentage');
+    
+            // Populate Respiratory Rate (1-100)
+            for(let i = 1; i <= 100; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = `${i} breaths/min`;
+                respiratoryRate.appendChild(option);
+            }
+    
+            // Populate Heart Rate (1-100)
+            for(let i = 1; i <= 100; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = `${i} BPM`;
+                heartRate.appendChild(option);
+            }
+    
+            // Populate SpO2 Percentage (1-100)
+            for(let i = 1; i <= 100; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = `${i}%`;
+                percentageSelect.appendChild(option);
+            }
+        }
+    
+        // Call the function to populate all select options
+        populateSelectOptions();
+    
+        // Function to handle "Others" option for Chronic Conditions
+        function handleChronicConditionsChange() {
+            const chronicConditions = document.getElementById('chronicConditions');
+            const chronicConditionsOther = document.getElementById('chronicConditionsOther');
+            if (chronicConditions.value === 'Others') {
+                chronicConditionsOther.style.display = 'inline-block';
+            } else {
+                chronicConditionsOther.style.display = 'none';
+            }
+        }
+    
+        // Function to handle "Others" option for Past Illnesses
+        function handlePastIllnessesChange() {
+            const pastIllnesses = document.getElementById('pastIllnesses');
+            const pastIllnessesOther = document.getElementById('pastIllnessesOther');
+            if (pastIllnesses.value === 'Others') {
+                pastIllnessesOther.style.display = 'inline-block';
+            } else {
+                pastIllnessesOther.style.display = 'none';
+            }
+        }
+    
+        // Function to handle "Others" option for Injuries
+        function handleInjuriesChange() {
+            const injuries = document.getElementById('injuries');
+            const injuriesOther = document.getElementById('injuriesOther');
+            if (injuries.value === 'Others') {
+                injuriesOther.style.display = 'inline-block';
+            } else {
+                injuriesOther.style.display = 'none';
+            }
+        }
+    
+        // Function to handle "Others" option for Mental Health History
+        function handleMentalHealthHistoryChange() {
+            const mentalHealthHistory = document.getElementById('mentalHealthHistory');
+            const mentalHealthHistoryOther = document.getElementById('mentalHealthHistoryOther');
+            if (mentalHealthHistory.value === 'Others') {
+                mentalHealthHistoryOther.style.display = 'inline-block';
+            } else {
+                mentalHealthHistoryOther.style.display = 'none';
+            }
+        }
+    
+        // Function to calculate BMI
+        function calculateBMI() {
+            const height = parseFloat(document.getElementById('height').value) / 100; // Convert cm to meters
+            const weight = parseFloat(document.getElementById('weight').value);
+    
+            if (isNaN(height) || isNaN(weight)) {
+                document.getElementById('bmi').value = '';
+                return;
+            }
+    
+            const bmi = (weight / (height * height)).toFixed(2);
+            document.getElementById('bmi').value = bmi;
+        }
+    
+        // Automatically calculate BMI when height or weight changes
+        document.getElementById('height').addEventListener('input', calculateBMI);
+        document.getElementById('weight').addEventListener('input', calculateBMI);
+    
+        // Form Submission for Vital Signs
+        document.getElementById('vitalSignsForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            showNotification('Vital signs saved successfully!');
+        });
+    
+        // Form Submission for Past Medical History
+        document.getElementById('pastMedicalHistoryForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            showNotification('Past medical history saved successfully!');
+        });
+           
+        // Add this to the existing JavaScript functions
+        function handleHereditaryDiseasesChange() {
+            const hereditaryDiseases = document.getElementById('hereditaryDiseases');
+            const hereditaryDiseasesOther = document.getElementById('hereditaryDiseasesOther');
+            if (hereditaryDiseases.value === 'Others') {
+                hereditaryDiseasesOther.style.display = 'inline-block';
+            } else {
+                hereditaryDiseasesOther.style.display = 'none';
+            }
+        }
+
+        // Add this to the existing form submission handlers
+        document.getElementById('familyMedicalHistoryForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            showNotification('Family medical history saved successfully!');
+        });
+
+        // Add this to the existing JavaScript functions
+        document.getElementById('medicationsForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            showNotification('Medications saved successfully!');
+        });
+
+        // Add this to the existing JavaScript functions
+        document.getElementById('immunizationHistoryForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            showNotification('Immunization history saved successfully!');
+        });
+
+        // Add this to the existing JavaScript functions
+        document.getElementById('lifestyleSocialHistoryForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            showNotification('Lifestyle & Social History saved successfully!');
+        });
+
+        // Handle Smoking Status Change
+        function handleSmokingStatusChange() {
+            const smokingStatus = document.getElementById('smokingStatus').value;
+            const smokingFrequencyGroup = document.getElementById('smokingFrequencyGroup');
+            const smokingYearsGroup = document.getElementById('smokingYearsGroup');
+
+            if(smokingStatus === 'Current' || smokingStatus === 'Past') {
+                smokingFrequencyGroup.style.display = 'flex';
+                smokingYearsGroup.style.display = 'flex';
+            } else {
+                smokingFrequencyGroup.style.display = 'none';
+                smokingYearsGroup.style.display = 'none';
+            }
+        }
+
+        // Handle Hazardous Materials Change
+        function handleHazardousMaterialsChange() {
+            const hazardousMaterials = document.getElementById('hazardousMaterials').value;
+            const hazardousMaterialsOtherGroup = document.getElementById('hazardousMaterialsOtherGroup');
+
+            if (hazardousMaterials === 'Other') {
+                hazardousMaterialsOtherGroup.style.display = 'flex';
+            } else {
+                hazardousMaterialsOtherGroup.style.display = 'none';
+            }
+        }
+
+        // Add to existing populateSelectOptions function
+        function populateReproductiveHistoryOptions() {
+            // Number of Pregnancies (1-10)
+            const pregnanciesSelect = document.getElementById('numberOfPregnancies');
+            addOptions(pregnanciesSelect, 1, 10);
+
+            // Miscarriages (1-5)
+            const miscarriagesSelect = document.getElementById('miscarriages');
+            addOptions(miscarriagesSelect, 1, 5);
+
+            // Age of First Period (10-15)
+            const firstPeriodSelect = document.getElementById('ageOfFirstPeriod');
+            addOptions(firstPeriodSelect, 10, 15);
+
+            // Menopause Age (45-60)
+            const menopauseSelect = document.getElementById('menopauseAge');
+            addOptions(menopauseSelect, 45, 60);
+        }
+
+        // Generic function to add number options
+        function addOptions(selectElement, start, end) {
+            const defaultOption = document.createElement('option');
+            defaultOption.value = "";
+            defaultOption.textContent = `Select ${selectElement.id.replace(/([A-Z])/g, ' $1').toLowerCase()}`;
+            defaultOption.disabled = true;
+            defaultOption.selected = true;
+            selectElement.appendChild(defaultOption);
+
+            for(let i = start; i <= end; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = i;
+                selectElement.appendChild(option);
+            }
+        }
+        
+        // Call this in your existing initialization
+        populateReproductiveHistoryOptions();
+
+        //Screening & Diagnostic Tests
+        document.getElementById('screeningTestsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showNotification('Screening & Diagnostic Tests saved successfully!');
+        });
+
+        // File upload name display (optional enhancement)
+        document.querySelectorAll('input[type="file"]').forEach(input => {
+            input.addEventListener('change', function() {
+                const fileName = this.files[0]?.name || 'No file chosen';
+                this.nextElementSibling.textContent = fileName.length > 20 ? 
+                    fileName.substring(0, 17) + '...' : fileName;
+            });
+        });
+
+        // Show notification
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.querySelector('span').textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // Add hover effects to all sections
+        document.querySelectorAll('.section, .patient-info').forEach(section => {
+            section.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+            });
+            
+            section.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+                this.style.boxShadow = '';
+            });
+        });
+
+        // Add focus styles to form elements
+        document.querySelectorAll('input, textarea, select').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.querySelector('label').style.color = '#042c15';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.querySelector('label').style.color = '#146134';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient List | AGCRC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: url('AG.jpg') no-repeat center center/cover;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: linear-gradient(90deg, #b4f8f6, #72b4e8, #ccb5fd, #e3c7f0);
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-panel {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-panel img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-panel span {
+            color: #0e1521;
+            font-size: 1.8em;
+            font-weight: 600;
+            background: linear-gradient(90deg, #1f2a3d, #1f884b, #1f2f4b);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 3s linear infinite;
+        }
+
+        @keyframes glow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8em;
+            color: #1f293a;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a {
+            color: #1f293a;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: 700;
+            padding: 12px 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #0a2716;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #0a2b18;
+            background: rgba(14, 53, 30, 0.1);
+        }
+
+        .logout-button {
+            margin-left: auto;
+            padding-right: 20px;
+        }
+
+        .logout-button a {
+            background: linear-gradient(135deg, #042c15, #2f6e46);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1em;
+            padding: 10px 25px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(4, 44, 21, 0.4);
+        }
+
+        .logout-button a:hover {
+            background: linear-gradient(135deg, #2f6e46, #042c15);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(47, 110, 70, 0.6);
+        }
+
+        /* Responsive Navbar */
+        @media (max-width: 767px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                background: rgba(74, 187, 221, 0.95);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: left 0.3s ease;
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+                padding-top: 70px;
+            }
+            .nav-links.active {
+                left: 0;
+            }
+            .logout-button {
+                display: none;
+            }
+        }
+
+        /* Enhanced Header Section */
+        .form-header {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 25px 0;
+            background: linear-gradient(135deg, #97f5d4 0%, #d1ba99 100%);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid #e0e6ed;
+            text-align: center;
+        }
+
+        .agcrc-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2c3e50;
+            margin: 0;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+            animation: titleFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .emr-system {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #113814d3;
+            margin: 15px 0 0 0;
+            padding: 10px 30px;
+            display: inline-block;
+            background: rgba(136, 235, 111, 0);
+            border-radius: 30px;
+            text-shadow: none;
+            position: relative;
+            overflow: hidden;
+            animation: pulseText 2s infinite alternate;
+        }
+
+        @keyframes pulseText {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        .emr-system::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                rgba(52, 152, 219, 0.1) 0%, 
+                rgba(52, 152, 219, 0.2) 50%, 
+                rgba(52, 152, 219, 0.1) 100%);
+            animation: shimmer 3s infinite linear;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Main Content Container */
+        .container {
+            margin-top: 260px;
+            padding: 40px 0;
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Floating Particles Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .animated-bg span {
+            position: absolute;
+            display: block;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 15s linear infinite;
+            bottom: -150px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Enhanced Patient List Box */
+        .patient-list-box {
+            position: relative;
+            width: 100%;
+            padding: 60px;
+            background: rgba(230, 255, 230, 0.85);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(70, 136, 76, 0.3);
+            animation: pulse 6s infinite alternate, floatBox 8s ease-in-out infinite;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        @keyframes floatBox {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+
+        @keyframes pulse {
+            0% { 
+                background-color: rgba(230, 255, 230, 0.85);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            }
+            50% { 
+                background-color: rgba(210, 255, 210, 0.85);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            }
+            100% { 
+                background-color: rgba(230, 255, 230, 0.85);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        .patient-list-box:hover {
+            transform: translateY(-10px) rotateX(5deg) scale(1.02);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
+            animation: none;
+        }
+
+        .patient-list-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(70, 136, 76, 0.1),
+                rgba(70, 136, 76, 0.05),
+                transparent
+            );
+            transform: rotate(30deg);
+            z-index: -1;
+            animation: shine 6s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: rotate(30deg) translate(-30%, -30%); }
+            100% { transform: rotate(30deg) translate(30%, 30%); }
+        }
+
+        /* Patient List Title */
+        .patient-list-box h2 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 800;
+            color: #0a2716;
+            position: relative;
+            padding-bottom: 15px;
+            animation: textGlow 3s ease-in-out infinite alternate, floatTitle 4s ease-in-out infinite;
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 5px rgba(10, 39, 22, 0.3);
+            }
+            to {
+                text-shadow: 0 0 15px rgba(70, 136, 76, 0.8),
+                             0 0 25px rgba(70, 136, 76, 0.4);
+            }
+        }
+
+        .patient-list-box h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #2c6a2d, transparent);
+            border-radius: 50%;
+            animation: linePulse 2s infinite, rainbow 8s linear infinite;
+        }
+
+        @keyframes rainbow {
+            0% { background: linear-gradient(90deg, transparent, #2c6a2d, transparent); }
+            25% { background: linear-gradient(90deg, transparent, #4a8f4c, transparent); }
+            50% { background: linear-gradient(90deg, transparent, #6ab56d, transparent); }
+            75% { background: linear-gradient(90deg, transparent, #4a8f4c, transparent); }
+            100% { background: linear-gradient(90deg, transparent, #2c6a2d, transparent); }
+        }
+
+        @keyframes linePulse {
+            0%, 100% { opacity: 0.7; width: 50%; }
+            50% { opacity: 1; width: 60%; }
+        }
+
+        /* Search Container */
+        .search-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .search-container input[type="text"],
+        .search-container select {
+            padding: 12px 20px;
+            border: 2px solid #46884c;
+            border-radius: 30px;
+            font-size: 1.1em;
+            color: #1f293a;
+            background: rgba(255, 255, 255, 0.9);
+            outline: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-container input[type="text"]:focus,
+        .search-container select:focus {
+            border-color: #042c15;
+            box-shadow: 0 0 0 4px rgba(70, 136, 76, 0.3);
+        }
+
+        .search-container button {
+            background: linear-gradient(135deg, #042c15, #2f6e46);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 25px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(4, 44, 21, 0.4);
+        }
+
+        .search-container button.reset {
+            background: linear-gradient(135deg, #1c6c23, #3a8a41);
+        }
+
+        .search-container button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(47, 110, 70, 0.6);
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 30px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid rgba(70, 136, 76, 0.3);
+        }
+
+        /* Table Header */
+        th {
+            background: linear-gradient(135deg, #042c15, #2f6e46);
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: sticky;
+            top: 0;
+        }
+
+        /* Table Rows */
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        tr:nth-child(odd) {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        tr:hover {
+            background-color: rgba(210, 255, 210, 0.7);
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+
+        /* View Button */
+        .btn.view-btn {
+            background: linear-gradient(135deg, #042c15, #2f6e46);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 8px 20px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 4px 15px rgba(4, 44, 21, 0.4);
+        }
+
+        .btn.view-btn:hover {
+            background: linear-gradient(135deg, #2f6e46, #042c15);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(47, 110, 70, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 240px;
+            }
+            
+            .patient-list-box {
+                padding: 40px;
+            }
+            
+            .search-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .agcrc-title {
+                font-size: 2rem;
+            }
+            
+            .emr-system {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin-top: 220px;
+            }
+            
+            .patient-list-box {
+                padding: 30px 20px;
+            }
+            
+            .patient-list-box h2 {
+                font-size: 1.8em;
+            }
+            
+            th, td {
+                padding: 10px 5px;
+                font-size: 0.9em;
+            }
+            
+            .agcrc-title {
+                font-size: 1.6rem;
+            }
+            
+            .emr-system {
+                font-size: 1.3rem;
+                padding: 8px 20px;
+            }
+            
+            .navbar {
+                padding: 12px 20px;
+            }
+            
+            .logo-panel span {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-panel">
+            <img src="logo.png" alt="Logo">
+            <span>AGCRC</span>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="nav-links">                
+            <li><a href="Guidelines.html"><i class="fas fa-book-medical"></i> Guidelines</a></li>
+            <li><a href="registration.html"><i class="fas fa-user-plus"></i> Registration</a></li>
+            <li><a href="index.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            <li><a href="health-history.html"><i class="fas fa-heartbeat"></i> Health_History</a></li>
+            <li><a href="EMR.html"><i class="fas fa-file-medical"></i> EMR</a></li>
+        </ul>
+        <div class="logout-button">
+            <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </nav>
+    
+    <!-- Updated Page Header -->
+    <div class="form-header">
+        <h1 class="agcrc-title">Amader Gram Cancer Care and Research Center (AGCRC)</h1>
+        <h2 class="emr-system">Electronic Medical Record (EMR) System</h2>
+    </div>
+    
+    <!-- Patient List Container -->
+    <div class="container">
+        <!-- Animated Background Elements -->
+        <div class="animated-bg">
+            <!-- Bubbles will be added dynamically via JavaScript -->
+        </div>
+        
+        <!-- Enhanced Patient List Box -->
+        <div class="patient-list-box">
+            <h2><i class="fas fa-users"></i> List of Patients</h2>
+            
+            <div class="search-container">
+                <input type="text" id="searchByName" placeholder="Search by Name">
+                <select id="searchById">
+                    <option value="">Search by Patient ID</option>
+                    <!-- Options will be dynamically populated -->
+                </select>
+                <button onclick="searchPatients()"><i class="fas fa-search"></i> Search</button>
+                <button class="reset" onclick="resetSearch()"><i class="fas fa-redo"></i> Reset</button>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Patient ID</th>
+                        <th>Record No</th>
+                        <th>Name</th>
+                        <th>Father/Husband Name</th>
+                        <th>District</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="patientTableBody">
+                    <!-- Rows will be added dynamically here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Toggle Navbar Visibility
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Create floating bubbles
+        function createBubbles() {
+            const animatedBg = document.querySelector('.animated-bg');
+            const bubbleCount = 15;
+            
+            for (let i = 0; i < bubbleCount; i++) {
+                const bubble = document.createElement('span');
+                const size = Math.random() * 100 + 50;
+                const posX = Math.random() * 100;
+                const delay = Math.random() * 15;
+                const duration = Math.random() * 20 + 10;
+                
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                bubble.style.left = `${posX}%`;
+                bubble.style.bottom = `-${size}px`;
+                bubble.style.animationDelay = `${delay}s`;
+                bubble.style.animationDuration = `${duration}s`;
+                bubble.style.opacity = Math.random() * 0.5 + 0.1;
+                
+                animatedBg.appendChild(bubble);
+            }
+        }
+        
+        // Initialize bubbles
+        createBubbles();
+
+        // Sample data for demonstration
+        const patients = [
+            { id: 21262, recordNo: 'KHL-27182', name: 'Sumaiya Akter', fatherHusbandName: 'Md Abdullah (Husband)', district: 'Khulna' },
+            { id: 21263, recordNo: 'KHL-27183', name: 'Sumi Begum', fatherHusbandName: 'Mazhar Mahmud (Husband)', district: 'Pirojpur' },
+            { id: 15575, recordNo: 'KHL-27184', name: 'Anika Tabassum', fatherHusbandName: 'Abdur Rob (Father)', district: 'Sylhet' },
+            { id: 12323, recordNo: 'KHL-27185', name: 'Tahera Aktar', fatherHusbandName: 'Abdullah Sheikh (Father)', district: 'Khulna' },
+            { id: 10577, recordNo: 'KHL-27186', name: 'Umme Kulshum', fatherHusbandName: 'Touhid Ahmed(Husband)', district: 'Bagherhat' },
+            { id: 1496, recordNo: 'KHL-27187', name: 'Rahela Banu', fatherHusbandName: 'Abu Sayid (Husband)', district: 'Satkhira' },
+            { id: 1975, recordNo: 'KHL-27188', name: 'Moriom Islam', fatherHusbandName: 'Khosru Miah (Father)', district: 'Rupsha' },
+            { id: 4598, recordNo: 'KHL-27189', name: 'Zarin Anjum', fatherHusbandName: 'Abid Rahman (Husband)', district: 'Mongla' },
+            { id: 7556, recordNo: 'KHL-271890', name: 'Bilkis Begum', fatherHusbandName: 'Jahangir Alam (Father)', district: 'Barishal' },
+            { id: 11664, recordNo: 'KHL-271891', name: 'Rabeya Islam', fatherHusbandName: 'Monir Sheikh (Father)', district: 'Khulna' },
+        ];
+
+        // Populate the dropdown with patient IDs
+        const searchByIdDropdown = document.getElementById('searchById');
+        patients.forEach(patient => {
+            const option = document.createElement('option');
+            option.value = patient.id;
+            option.textContent = patient.id;
+            searchByIdDropdown.appendChild(option);
+        });
+
+        function renderPatients(filteredPatients = patients) {
+            const tbody = document.getElementById('patientTableBody');
+            tbody.innerHTML = filteredPatients.map(patient => `
+                <tr>
+                    <td>${patient.id}</td>
+                    <td>${patient.recordNo}</td>
+                    <td>${patient.name}</td>
+                    <td>${patient.fatherHusbandName}</td>
+                    <td>${patient.district}</td>
+                    <td><button class="btn view-btn" onclick="viewPatient(${patient.id})"><i class="fas fa-eye"></i> View</button></td>
+                </tr>
+            `).join('');
+        }
+
+        function viewPatient(patientId) {
+            // Redirect to EMR page with patient ID
+            window.location.href = `EMR.html?patientId=${patientId}`;
+        }
+
+        function searchPatients() {
+            const searchByName = document.getElementById('searchByName').value.toLowerCase();
+            const searchById = document.getElementById('searchById').value;
+
+            const filteredPatients = patients.filter(patient => {
+                const matchesName = patient.name.toLowerCase().includes(searchByName);
+                const matchesId = searchById ? patient.id === parseInt(searchById) : true;
+                return matchesName && matchesId;
+            });
+
+            renderPatients(filteredPatients);
+        }
+
+        function resetSearch() {
+            document.getElementById('searchByName').value = '';
+            document.getElementById('searchById').value = '';
+            renderPatients();
+        }
+
+        // Initial render
+        renderPatients();
+
+        // Add interactive bubbles on click
+        document.addEventListener('click', function(e) {
+            if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'SELECT') {
+                const bubble = document.createElement('span');
+                bubble.style.left = e.clientX + 'px';
+                bubble.style.top = e.clientY + 'px';
+                bubble.style.width = Math.random() * 50 + 20 + 'px';
+                bubble.style.height = bubble.style.width;
+                bubble.style.animationDuration = Math.random() * 10 + 10 + 's';
+                bubble.style.background = `rgba(255, 255, 255, ${Math.random() * 0.4 + 0.1})`;
+                document.querySelector('.animated-bg').appendChild(bubble);
+                
+                // Remove bubble after animation completes
+                setTimeout(() => {
+                    bubble.remove();
+                }, 15000);
+            }
+        });
+    </script>
+</body>
+</html>

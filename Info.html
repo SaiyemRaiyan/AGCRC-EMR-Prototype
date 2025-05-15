@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Details</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('AG.jpg') no-repeat center center/cover; 
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #b4f8f6, #72b4e8, #ccb5fd, #e3c7f0);; /* Light transparent background */
+            z-index: 1000;
+        }
+
+        .logo-panel {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-panel img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-panel span {
+            color: #0e1521; 
+            font-size: 1.5em;
+            font-weight: 600;
+            background: linear-gradient(90deg, #1f2a3d, #1f884b, #1f2f4b); 
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 3s linear infinite;
+        }
+
+        @keyframes glow {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #1f293a; 
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 700; 
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            border-radius: 5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #0a2716; 
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #0a2b18; 
+            background: rgba(14, 53, 30, 0.1); 
+            font-weight: 700; 
+        }
+
+        /* Container Styles */
+        .container {
+            position: relative;
+            width: 80%;
+            margin: 100px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95); 
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #103a11, #53752d, #104d12, #385f0d);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glowText 3s linear infinite;
+        }
+
+        @keyframes glowText {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Patient Information Styles */
+        .patient-info {
+            margin-bottom: 30px;
+        }
+
+        .patient-info h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #1f293a;
+        }
+
+        .patient-info p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #1f293a;
+        }
+
+        .patient-info ul {
+            margin-left: 20px;
+        }
+
+        .patient-info ul li {
+            margin-bottom: 5px;
+        }
+
+        /* Links Section Styles */
+        .links-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .links-section a {
+            text-decoration: none;
+            color: #fff;
+            background: #042c15e6;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .links-section a:hover {
+            background: #2f6e46e6;
+            box-shadow: 0 0 10px #2f6e46e6, 0 0 20px #2f6e46e6, 0 0 40px #2f6e46e6;
+        }
+
+        /* Button styling */
+        .popdown-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px; 
+        }
+
+        /* Arrow styling */
+        .arrow {
+            font-size: 12px;
+            transition: transform 0.3s ease; 
+        }
+
+        /* Rotate arrow when popdown is open */
+        .popdown-btn.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Popdown box styling */
+        .popdown-box {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            margin-top: 5px;
+            z-index: 1;
+            width: 200px;
+        }
+
+        /* Show the popdown box */
+        .popdown-box.show {
+            display: block;
+        }
+
+        /* List styling */
+        .popdown-box ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .popdown-box ul li {
+            padding: 8px 16px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .popdown-box ul li:hover {
+            background-color: #f1f1f1;
+        }
+
+        .popdown-box ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* Selected item styling */
+        .selected-item {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-panel">
+            <img src="logo.png" alt="Logo">
+            <span>AGCRC</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">About</a>
+            <a href="registration.html">New Registration</a>
+            <a href="#">Patient</a> 
+            <a href="#">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Patient Details Container -->
+    <div class="container">
+        <h2>Patient Details</h2>
+
+        <!-- Patient Information (Generic for All Pages) -->
+        <div class="patient-info">
+            <h3>Patient Information</h3>
+            <p><strong>Full Name:</strong> Sumaiya Aktar</p>
+            <p><strong>Date of Birth:</strong> 15-03-1990</p>
+            <p><strong>Gender:</strong> Female</p>
+            <p><strong>Blood Type:</strong> O+</p>
+        </div>
+
+        <!-- Button to trigger the popdown box -->
+<button class="popdown-btn" onclick="togglePopdown()">
+    Show Allergy
+    <span class="arrow">▼</span> 
+</button>
+
+<!-- Popdown box content -->
+<div class="popdown-box" id="popdownBox">
+    <ul>
+        <li onclick="selectItem('Drug')">Drug</li>
+        <li onclick="selectItem('Food')">Food</li>
+        <li onclick="selectItem('Environmental')">Environmental</li>
+        <li onclick="selectItem('Other')">Other</li>
+    </ul>
+</div>
+
+<!-- Display selected item -->
+<div class="selected-item" id="selectedItem"></div>
+
+
+        <!-- Links to Other Sections -->
+        <div class="links-section">
+            <a href="health-history.html">Health History</a>
+            <a href="past-medical-history.html">Past Medical History</a>
+            <a href="family-medical-history.html">Family Medical History</a>
+            <a href="medications.html">Medications</a>
+            <a href="immunization-history.html">Immunization History</a>
+            <a href="lifestyle-social-history.html">Lifestyle & Social History</a>
+            <a href="reproductive-history.html">Reproductive History</a>
+            <a href="screening-diagnostic-tests.html">Screening & Diagnostic Tests</a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to toggle the popdown box
+        function togglePopdown() {
+            var popdownBox = document.getElementById("popdownBox");
+            var popdownBtn = document.querySelector(".popdown-btn");
+            popdownBox.classList.toggle("show");
+            popdownBtn.classList.toggle("active"); // Toggle active class for arrow rotation
+        }
+    
+        // Function to handle item selection
+        function selectItem(item) {
+            // Update the selected item display
+            document.getElementById("selectedItem").innerText = "Selected: " + item;
+    
+            // Close the popdown box
+            var popdownBox = document.getElementById("popdownBox");
+            var popdownBtn = document.querySelector(".popdown-btn");
+            popdownBox.classList.remove("show");
+            popdownBtn.classList.remove("active"); // Remove active class to reset arrow
+        }
+    
+        // Close the popdown box if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.popdown-btn')) {
+                var popdownBox = document.getElementById("popdownBox");
+                var popdownBtn = document.querySelector(".popdown-btn");
+                if (popdownBox.classList.contains('show')) {
+                    popdownBox.classList.remove('show');
+                    popdownBtn.classList.remove("active"); // Reset arrow
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>

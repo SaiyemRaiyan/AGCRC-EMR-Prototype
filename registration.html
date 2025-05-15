@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration | AGCRC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            background: url('AG.jpg') no-repeat center center/cover;
+            color: #333;
+            /* Removed overflow: hidden to enable scrolling */
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: linear-gradient(90deg, #b4f8f6, #72b4e8, #ccb5fd, #e3c7f0);
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-panel {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-panel img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-panel span {
+            color: #0e1521;
+            font-size: 1.8em;
+            font-weight: 600;
+            background: linear-gradient(90deg, #1f2a3d, #1f884b, #1f2f4b);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 3s linear infinite;
+        }
+
+        @keyframes glow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8em;
+            color: #1f293a;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a {
+            color: #1f293a;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: 700;
+            padding: 12px 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #0a2716;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #0a2b18;
+            background: rgba(14, 53, 30, 0.1);
+        }
+
+        /* Responsive Navbar */
+        @media (max-width: 767px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                background: rgba(74, 187, 221, 0.95);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: left 0.3s ease;
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+                padding-top: 70px;
+            }
+            .nav-links.active {
+                left: 0;
+            }
+        }
+
+        /* Enhanced Header Section */
+        .form-header {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 25px 0;
+            background: linear-gradient(135deg, #97f5d4 0%, #d1ba99 100%);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid #e0e6ed;
+            text-align: center;
+        }
+
+        .agcrc-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2c3e50;
+            margin: 0;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+            animation: titleFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .emr-system {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #113814d3;
+            margin: 15px 0 0 0;
+            padding: 10px 30px;
+            display: inline-block;
+            background: rgba(136, 235, 111, 0);
+            border-radius: 30px;
+            text-shadow: none;
+            position: relative;
+            overflow: hidden;
+            animation: pulseText 2s infinite alternate;
+        }
+
+        @keyframes pulseText {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        .emr-system::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                rgba(52, 152, 219, 0.1) 0%, 
+                rgba(52, 152, 219, 0.2) 50%, 
+                rgba(52, 152, 219, 0.1) 100%);
+            animation: shimmer 3s infinite linear;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Adjust container spacing */
+        .container {
+            margin-top: 260px;
+            padding: 20px 0;
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Floating Particles Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .animated-bg span {
+            position: absolute;
+            display: block;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 15s linear infinite;
+            bottom: -150px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Enhanced Registration Box */
+        .registration-box {
+            position: relative;
+            width: 100%;
+            padding: 60px;
+            background: rgba(230, 255, 230, 0.85);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(70, 136, 76, 0.3);
+            animation: pulse 6s infinite alternate, floatBox 8s ease-in-out infinite;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        @keyframes floatBox {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+
+        @keyframes pulse {
+            0% { 
+                background-color: rgba(230, 255, 230, 0.85);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            }
+            50% { 
+                background-color: rgba(210, 255, 210, 0.85);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            }
+            100% { 
+                background-color: rgba(230, 255, 230, 0.85);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        .registration-box:hover {
+            transform: translateY(-10px) rotateX(5deg) scale(1.02);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
+            animation: none;
+        }
+
+        .registration-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(70, 136, 76, 0.1),
+                rgba(70, 136, 76, 0.05),
+                transparent
+            );
+            transform: rotate(30deg);
+            z-index: -1;
+            animation: shine 6s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: rotate(30deg) translate(-30%, -30%); }
+            100% { transform: rotate(30deg) translate(30%, 30%); }
+        }
+
+        /* Form Title with Enhanced Animation */
+        .registration-box h2 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 800;
+            color: #0a2716;
+            position: relative;
+            padding-bottom: 15px;
+            animation: textGlow 3s ease-in-out infinite alternate, floatTitle 4s ease-in-out infinite;
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 5px rgba(10, 39, 22, 0.3);
+            }
+            to {
+                text-shadow: 0 0 15px rgba(70, 136, 76, 0.8),
+                             0 0 25px rgba(70, 136, 76, 0.4);
+            }
+        }
+
+        .registration-box h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #2c6a2d, transparent);
+            border-radius: 50%;
+            animation: linePulse 2s infinite, rainbow 8s linear infinite;
+        }
+
+        @keyframes rainbow {
+            0% { background: linear-gradient(90deg, transparent, #2c6a2d, transparent); }
+            25% { background: linear-gradient(90deg, transparent, #4a8f4c, transparent); }
+            50% { background: linear-gradient(90deg, transparent, #6ab56d, transparent); }
+            75% { background: linear-gradient(90deg, transparent, #4a8f4c, transparent); }
+            100% { background: linear-gradient(90deg, transparent, #2c6a2d, transparent); }
+        }
+
+        @keyframes linePulse {
+            0%, 100% { opacity: 0.7; width: 50%; }
+            50% { opacity: 1; width: 60%; }
+        }
+
+        /* Radio Buttons */
+        .radio-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 15px 30px;
+            border-radius: 30px;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: floatInput 6s ease-in-out infinite;
+        }
+
+        @keyframes floatInput {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .radio-label.new {
+            color: #0e4212;
+        }
+
+        .radio-label.follow-up {
+            color: #0f4319;
+        }
+
+        .radio-label:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .radio-label input[type="radio"] {
+            margin-right: 10px;
+            cursor: pointer;
+            accent-color: #0a2716;
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+
+        .radio-label:hover input[type="radio"] {
+            transform: scale(1.3);
+        }
+
+        /* Form Layout */
+        .form-columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .column {
+            width: 100%;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border-left: 5px solid #46884c;
+            animation: fadeIn 0.5s ease forwards;
+            transform-style: preserve-3d;
+        }
+
+        .section:hover {
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px) rotateX(2deg);
+        }
+
+        .section h3 {
+            font-size: 1.4em;
+            color: #0a2716;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(70, 136, 76, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section h3 i {
+            color: #2c6a2d;
+            font-size: 1.2em;
+        }
+
+        /* Enhanced Input Fields */
+        .input-box {
+            position: relative;
+            margin: 25px 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            animation: floatInput 6s ease-in-out infinite;
+        }
+
+        .input-box:hover {
+            transform: translateX(10px) translateY(-5px);
+            animation: none;
+        }
+
+        .input-box input,
+        .input-box select,
+        .input-box textarea {
+            width: 100%;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #46884c;
+            outline: none;
+            border-radius: 12px;
+            font-size: 1.1em;
+            color: #1f293a;
+            padding: 0 20px;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-box textarea {
+            height: 120px;
+            resize: vertical;
+            padding: 15px;
+        }
+
+        .input-box input:focus,
+        .input-box input:valid,
+        .input-box select:focus,
+        .input-box select:valid,
+        .input-box textarea:focus,
+        .input-box textarea:valid {
+            border-color: #042c15;
+            box-shadow: 0 0 0 4px rgba(70, 136, 76, 0.3),
+                        inset 0 3px 8px rgba(0, 0, 0, 0.1);
+            transform: scale(1.02);
+        }
+
+        .input-box label {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            font-size: 1.1em;
+            color: #1f293a;
+            pointer-events: none;
+            transition: all 0.4s ease;
+            background: transparent;
+            padding: 0 10px;
+        }
+
+        .input-box input:focus~label,
+        .input-box input:valid~label,
+        .input-box select:focus~label,
+        .input-box select:valid~label,
+        .input-box textarea:focus~label,
+        .input-box textarea:valid~label {
+            top: 0;
+            font-size: 0.9em;
+            background: #fff;
+            color: #042c15;
+            transform: translateY(-50%);
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+        }
+
+        /* Date Field */
+        .date-field {
+            margin: 25px 0;
+        }
+
+        .date-field label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: #1f293a;
+            font-weight: 500;
+        }
+
+        .date-field input {
+            width: 100%;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #46884c;
+            outline: none;
+            border-radius: 12px;
+            font-size: 1.1em;
+            color: #1f293a;
+            padding: 0 20px;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .date-field input:focus {
+            border-color: #042c15;
+            box-shadow: 0 0 0 4px rgba(70, 136, 76, 0.3);
+            transform: scale(1.02);
+        }
+
+        /* Marital Status */
+        .marital-status {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .marital-status label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1em;
+            color: #1f293a;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: floatInput 6s ease-in-out infinite;
+        }
+
+        .marital-status label:hover {
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .marital-status input[type="radio"] {
+            accent-color: #0a2716;
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+
+        .marital-status label:hover input[type="radio"] {
+            transform: scale(1.3);
+        }
+
+        /* Select Dropdown */
+        .input-box select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding-right: 40px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2346884c'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 15px center/15px;
+            cursor: pointer;
+        }
+
+        /* Buttons */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .btn {
+            width: 100%;
+            max-width: 250px;
+            height: 60px;
+            background: linear-gradient(135deg, #042c15, #2f6e46);
+            border: none;
+            outline: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.2em;
+            color: #fff;
+            font-weight: 700;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            box-shadow: 0 8px 20px rgba(4, 44, 21, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(47, 110, 70, 0.6);
+            background: linear-gradient(135deg, #2f6e46, #042c15);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-reset {
+            background: linear-gradient(135deg, #1c6c23, #3a8a41);
+        }
+
+        .btn-reset:hover {
+            background: linear-gradient(135deg, #3a8a41, #1c6c23);
+        }
+
+        /* Ripple Effect */
+        .btn span.ripple {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.4);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Confirmation Message */
+        .confirmation-message {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 1.3em;
+            color: #042c15;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            padding: 20px;
+            border-radius: 12px;
+            background: rgba(70, 136, 76, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .confirmation-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Child Fields */
+        .child-group {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            border-left: 5px solid #46884c;
+            animation: fadeIn 0.5s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (min-width: 992px) {
+            .column {
+                width: 48%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 240px;
+            }
+            
+            .registration-box {
+                padding: 40px;
+            }
+            
+            .radio-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: none;
+            }
+            
+            .agcrc-title {
+                font-size: 2rem;
+            }
+            
+            .emr-system {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin-top: 220px;
+            }
+            
+            .registration-box {
+                padding: 30px 20px;
+            }
+            
+            .section {
+                padding: 20px 15px;
+            }
+            
+            .agcrc-title {
+                font-size: 1.6rem;
+            }
+            
+            .emr-system {
+                font-size: 1.3rem;
+                padding: 8px 20px;
+            }
+            
+            .navbar {
+                padding: 12px 20px;
+            }
+            
+            .logo-panel span {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+
+        /* Shake animation for invalid fields */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #46884c;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2c6a2d;
+        }
+    </style>
+</head>
+<body>
+     <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-panel">
+            <img src="logo.png" alt="Logo">
+            <span>AGCRC</span>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="nav-links">                
+            <li><a href="Guidelines.html"><i class="fas fa-book-medical"></i> Guidelines</a></li>
+            <li><a href="registration.html"><i class="fas fa-user-plus"></i> Registration</a></li>
+            <li><a href="index.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            <li><a href="health-history.html"><i class="fas fa-heartbeat"></i> Health_History</a></li>
+            <li><a href="EMR.html"><i class="fas fa-file-medical"></i> EMR</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Updated Page Header -->
+    <div class="form-header">
+        <h1 class="agcrc-title">Amader Gram Cancer Care and Research Center (AGCRC)</h1>
+        <h2 class="emr-system">Electronic Medical Record (EMR) System</h2>
+    </div>
+    
+    <!-- Registration Container -->
+    <div class="container">
+        <!-- Animated Background Elements -->
+        <div class="animated-bg">
+            <!-- Bubbles will be added dynamically via JavaScript -->
+        </div>
+        
+        <!-- Enhanced Registration Box -->
+        <div class="registration-box">
+            <h2><i class="fas fa-user-edit"></i> Patient Registration</h2>
+            
+            <div class="radio-buttons">
+                <label class="radio-label new">
+                    <input type="radio" name="registration-type" value="new"> 
+                    <i class="fas fa-user-plus"></i> New Patient
+                </label>
+                <label class="radio-label follow-up">
+                    <input type="radio" name="registration-type" value="follow-up" id="follow-up-radio"> 
+                    <i class="fas fa-user-clock"></i> Follow-up
+                </label>
+            </div>
+            
+            <form action="#" method="POST">
+                <div class="form-columns">
+                    <!-- Column 1 -->
+                    <div class="column">
+                        <!-- Section 1: Personal Information -->
+                        <div class="section">
+                            <h3><i class="fas fa-user-circle"></i> Personal Information</h3>
+                            
+                            <div class="input-box">
+                                <input type="text" id="agms-number" name="agms-number" required>
+                                <label><i class="fas fa-id-card"></i> Amader Gram Medical Services Number</label>
+                            </div>
+                            
+                            <div class="date-field">
+                                <label for="registration-date"><i class="fas fa-calendar-day"></i> Date of Registration:</label>
+                                <input type="date" id="registration-date" name="registration-date" required>
+                            </div>
+                            
+                            <div class="input-box">
+                                <input type="text" id="full-name-en" name="full-name-en" required>
+                                <label><i class="fas fa-signature"></i> Full Name (English)</label>
+                            </div>
+                            
+                            <div class="input-box">
+                                <input type="text" id="full-name-bn" name="full-name-bn" required>
+                                <label><i class="fas fa-signature"></i> Full Name (Bengali)</label>
+                            </div>
+                            
+                            <div class="input-box">
+                                <input type="text" id="preferred-name-en" name="preferred-name-en" required>
+                                <label><i class="fas fa-signature"></i> Preferred Name (English)</label>
+                            </div>
+                            
+                            <div class="input-box">
+                                <input type="text" id="preferred-name-bn" name="preferred-name-bn" required>
+                                <label><i class="fas fa-signature"></i> Preferred Name (Bengali)</label>
+                            </div>
+                            
+                            <div class="date-field">
+                                <label for="dob"><i class="fas fa-birthday-cake"></i> Date of Birth:</label>
+                                <input type="date" id="dob" name="dob" required>
+                            </div>
+                            
+                            <div class="input-box">
+                                <input type="text" id="national-id" name="national-id" required>
+                                <label><i class="fas fa-id-card-alt"></i> NID Number</label>
+                            </div>
+                        </div>
+
+                        <!-- Section 3: Marital Status -->
+                        <div class="section">
+                            <h3><i class="fas fa-heart"></i> Marital Status</h3>
+                            
+                            <div class="marital-status">
+                                <label><input type="radio" name="marital-status" value="married"> <i class="fas fa-ring"></i> Married</label>
+                                <label><input type="radio" name="marital-status" value="never-married"> <i class="fas fa-user"></i> Never Married</label>
+                                <label><input type="radio" name="marital-status" value="single"> <i class="fas fa-user"></i> Single</label>
+                                <label><input type="radio" name="marital-status" value="widow"> <i class="fas fa-user"></i> Widow</label>
+                            </div>
+                            
+                            <!-- Spouse Information (for Married) -->
+                            <div id="spouse-info" style="display: none;">
+                                <div class="input-box">
+                                    <input type="text" id="spouse-name-en" name="spouse-name-en">
+                                    <label><i class="fas fa-user-friends"></i> Spouse's Full Name (English)</label>
+                                </div>
+                                <div class="input-box">
+                                    <input type="text" id="spouse-name-bn" name="spouse-name-bn">
+                                    <label><i class="fas fa-user-friends"></i> Spouse's Full Name (Bengali)</label>
+                                </div>
+                            </div>
+
+                            <!-- Widow Children Information -->
+                            <div id="widow-children-info" style="display: none; margin-top: 20px;">
+                                <div class="input-box">
+                                    <select id="child-count" name="child-count">
+                                        <option value="" disabled selected>Select number of children</option>
+                                        <option value="0">No Children</option>
+                                        <option value="1">1 Child</option>
+                                        <option value="2">2 Children</option>
+                                        <option value="3">3 Children</option>
+                                        <option value="4">4 Children</option>
+                                        <option value="5">5 Children</option>
+                                    </select>
+                                    <label><i class="fas fa-child"></i> Number of Children</label>
+                                </div>
+                                <div id="children-fields-container" style="margin-top: 15px;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="column">
+                        <!-- Section 2: Contact Information -->
+                        <div class="section">
+                            <h3><i class="fas fa-address-book"></i> Contact Information</h3>
+                            
+                            <div class="input-box">
+                                <input type="text" id="upazila" name="upazila" required>
+                                <label><i class="fas fa-map-marker-alt"></i> Upazila (Sub-district)</label>
+                            </div>
+                            
+                            <div class="input-box">
+                                <input type="text" id="union" name="union" required>
+                                <label><i class="fas fa-map-marker-alt"></i> Union</label>
+                            </div>
+                            
+                            <div class="input-box">
+                                <input type="text" id="village" name="village" required>
+                                <label><i class="fas fa-map-marker-alt"></i> Village</label>
+                            </div>
+                            
+                            <div class="input-box">
+                                <input type="text" id="household-number" name="household-number" required>
+                                <label><i class="fas fa-home"></i> Household Number</label>
+                            </div>
+                            
+                            <div class="input-box">
+                                <input type="tel" id="phone" name="phone">
+                                <label><i class="fas fa-mobile-alt"></i> Cell Phone Number (if available)</label>
+                            </div>
+                            
+                            <div class="input-box">
+                                <input type="email" id="email" name="email">
+                                <label><i class="fas fa-envelope"></i> Email Address (if available)</label>
+                            </div>
+                        </div>
+
+                        <!-- Section 4: Family Information -->
+                        <div class="section">
+                            <h3><i class="fas fa-users"></i> Family Information</h3>
+                            
+                            <div class="input-box">
+                                <input type="text" id="father-name" name="father-name" required>
+                                <label><i class="fas fa-male"></i> Father's Full Name</label>
+                            </div>
+                            
+                            <div class="input-box">
+                                <input type="text" id="mother-name" name="mother-name" required>
+                                <label><i class="fas fa-female"></i> Mother's Full Name</label>
+                            </div>
+                            
+                            <div class="input-box">
+                                <input type="text" id="phone" name="phone" required>
+                                <label><i class="fas fa-mobile-alt"></i> Phone Number (Own)</label>
+                            </div>
+                            
+                            <div class="input-box">
+                                <input type="text" id="closest-family-member" name="closest-family-member">
+                                <label><i class="fas fa-user-friends"></i> Closest Adult Family Member (other than spouse)</label>
+                            </div>
+            
+                            <div class="input-box">
+                                <input type="tel" id="family-member-phone" name="family-member-phone">
+                                <label><i class="fas fa-mobile-alt"></i> Phone Number of Closest Family Member</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit and Reset Buttons -->
+                <div class="button-container">
+                    <button type="submit" class="btn">
+                        <i class="fas fa-check-circle"></i> Submit Registration
+                    </button>
+                    <button type="reset" class="btn btn-reset">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                </div>
+                
+                <!-- Confirmation Message -->
+                <div id="confirmation-message" class="confirmation-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Toggle Navbar Visibility
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Create floating bubbles
+        function createBubbles() {
+            const animatedBg = document.querySelector('.animated-bg');
+            const bubbleCount = 15;
+            
+            for (let i = 0; i < bubbleCount; i++) {
+                const bubble = document.createElement('span');
+                const size = Math.random() * 100 + 50;
+                const posX = Math.random() * 100;
+                const delay = Math.random() * 15;
+                const duration = Math.random() * 20 + 10;
+                
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                bubble.style.left = `${posX}%`;
+                bubble.style.bottom = `-${size}px`;
+                bubble.style.animationDelay = `${delay}s`;
+                bubble.style.animationDuration = `${duration}s`;
+                bubble.style.opacity = Math.random() * 0.5 + 0.1;
+                
+                animatedBg.appendChild(bubble);
+            }
+        }
+        
+        // Initialize bubbles
+        createBubbles();
+
+        // Follow-up radio button redirect
+        const followUpRadio = document.getElementById('follow-up-radio');
+        followUpRadio.addEventListener('change', () => {
+            if (followUpRadio.checked) {
+                window.location.href = 'List of Registration.html';
+            }
+        });
+
+        // Marital status handling
+        const maritalStatusRadios = document.querySelectorAll('input[name="marital-status"]');
+        const spouseInfoDiv = document.getElementById('spouse-info');
+        const widowChildrenDiv = document.getElementById('widow-children-info');
+        const childCountSelect = document.getElementById('child-count');
+
+        maritalStatusRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                if (radio.value === 'married') {
+                    spouseInfoDiv.style.display = 'block';
+                    widowChildrenDiv.style.display = 'none';
+                } else if (radio.value === 'widow') {
+                    spouseInfoDiv.style.display = 'none';
+                    widowChildrenDiv.style.display = 'block';
+                    // Reset child count when widow is selected
+                    childCountSelect.value = '';
+                    document.getElementById('children-fields-container').innerHTML = '';
+                } else {
+                    spouseInfoDiv.style.display = 'none';
+                    widowChildrenDiv.style.display = 'none';
+                }
+            });
+        });
+
+        // Add child information fields for widow
+        childCountSelect.addEventListener('change', () => {
+            const childCount = parseInt(childCountSelect.value);
+            const childrenFieldsContainer = document.getElementById('children-fields-container');
+            childrenFieldsContainer.innerHTML = '';
+            
+            if (childCount > 0) {
+                for (let i = 1; i <= childCount; i++) {
+                    const childGroup = document.createElement('div');
+                    childGroup.classList.add('child-group');
+                    
+                    childGroup.innerHTML = `
+                        <div class="input-box">
+                            <input type="text" id="child${i}-name" name="child${i}-name" required>
+                            <label><i class="fas fa-child"></i> Child ${i} Name</label>
+                        </div>
+                        <div class="date-field">
+                            <label for="child${i}-dob"><i class="fas fa-birthday-cake"></i> Child ${i} Date of Birth:</label>
+                            <input type="date" id="child${i}-dob" name="child${i}-dob" required>
+                        </div>
+                    `;
+                    
+                    childrenFieldsContainer.appendChild(childGroup);
+                }
+            }
+        });
+
+        // Form validation and submission
+        const form = document.querySelector('form');
+        const confirmationMessage = document.getElementById('confirmation-message');
+
+        // Ripple effect for buttons
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                const x = e.clientX - e.target.getBoundingClientRect().left;
+                const y = e.clientY - e.target.getBoundingClientRect().top;
+                
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+
+            // Check if all required fields are filled
+            const requiredFields = form.querySelectorAll('[required]');
+            let allFieldsValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    allFieldsValid = false;
+                    field.style.borderColor = '#e74c3c';
+                    // Add shake animation to invalid fields
+                    field.style.animation = 'shake 0.5s';
+                    setTimeout(() => {
+                        field.style.animation = '';
+                    }, 500);
+                } else {
+                    field.style.borderColor = '#46884c';
+                }
+            });
+
+            if (allFieldsValid) {
+                // Show confirmation message
+                confirmationMessage.innerHTML = '<i class="fas fa-check-circle"></i> Successfully Submitted the Registration Process';
+                confirmationMessage.classList.add('show');
+
+                // Add floating particles on success
+                for (let i = 0; i < 20; i++) {
+                    setTimeout(() => {
+                        createFloatingParticle();
+                    }, i * 100);
+                }
+
+                // Reset the form after 3 seconds
+                setTimeout(() => {
+                    form.reset();
+                    confirmationMessage.classList.remove('show');
+                    // Reset marital status sections
+                    spouseInfoDiv.style.display = 'none';
+                    widowChildrenDiv.style.display = 'none';
+                    document.querySelector('input[name="marital-status"]:checked').checked = false;
+                }, 3000);
+            } else {
+                confirmationMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please fill out all required fields.';
+                confirmationMessage.classList.add('show');
+                setTimeout(() => {
+                    confirmationMessage.classList.remove('show');
+                }, 3000);
+            }
+        });
+
+        function createFloatingParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'absolute';
+            particle.style.width = '10px';
+            particle.style.height = '10px';
+            particle.style.background = 'rgba(70, 136, 76, 0.7)';
+            particle.style.borderRadius = '50%';
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = '50%';
+            particle.style.zIndex = '100';
+            particle.style.transform = 'translate(-50%, -50%)';
+            particle.style.animation = `floatParticle ${Math.random() * 2 + 1}s ease-out forwards`;
+            
+            document.querySelector('.registration-box').appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 2000);
+        }
+        
+        // Add CSS for floating particles
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes floatParticle {
+                0% {
+                    transform: translate(-50%, -50%) scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translate(${Math.random() * 100 - 50}%, -150%) scale(0);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Add interactive bubbles on click
+        document.addEventListener('click', function(e) {
+            if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') {
+                const bubble = document.createElement('span');
+                bubble.style.left = e.clientX + 'px';
+                bubble.style.top = e.clientY + 'px';
+                bubble.style.width = Math.random() * 50 + 20 + 'px';
+                bubble.style.height = bubble.style.width;
+                bubble.style.animationDuration = Math.random() * 10 + 10 + 's';
+                bubble.style.background = `rgba(255, 255, 255, ${Math.random() * 0.4 + 0.1})`;
+                document.querySelector('.animated-bg').appendChild(bubble);
+                
+                // Remove bubble after animation completes
+                setTimeout(() => {
+                    bubble.remove();
+                }, 15000);
+            }
+        });
+
+        // Improved floating labels
+        document.querySelectorAll('.input-box input, .input-box select, .input-box textarea').forEach(input => {
+            // Check on page load if there's a value
+            if (input.value) {
+                input.parentElement.classList.add('has-value');
+            }
+            
+            // Add event listeners
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('focused');
+                if (input.value) {
+                    input.parentElement.classList.add('has-value');
+                } else {
+                    input.parentElement.classList.remove('has-value');
+                }
+            });
+            
+            // For select elements that might change programmatically
+            if (input.tagName === 'SELECT') {
+                input.addEventListener('change', () => {
+                    if (input.value) {
+                        input.parentElement.classList.add('has-value');
+                    } else {
+                        input.parentElement.classList.remove('has-value');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
