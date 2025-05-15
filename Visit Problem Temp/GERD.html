@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGCRC- GERD</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+<div class="vibrant-nav-container">
+  <div class="vibrant-nav-header">
+    <div class="vibrant-nav-icon">📋</div>
+    <div class="vibrant-nav-title">DISEASE TEMPLATES</div>
+    <div class="vibrant-nav-arrow">▼</div>
+  </div>
+  <div class="vibrant-nav-dropdown">
+    <a href="ABDOMINAL PAIN.html" class="vibrant-nav-link">
+      <i>🩺</i> ABDOMINAL PAIN
+    </a>
+    <a href="ANEMIA.html" class="vibrant-nav-link">
+      <i>🩸</i> ANEMIA
+    </a>
+    <a href="ASTHMA ACCUTE.html" class="vibrant-nav-link">
+      <i>🌬️</i> ASTHMA ACUTE
+    </a>
+    <a href="ASTHMA SYMPTOM.html" class="vibrant-nav-link">
+      <i>😤</i> ASTHMA SYMPTOM
+    </a>
+    <a href="BACK PAIN.html" class="vibrant-nav-link">
+      <i>🧘</i> BACK PAIN
+    </a>
+    <a href="CHEST_PAIN.html" class="vibrant-nav-link">
+      <i>❤️</i> CHEST PAIN
+    </a>
+    <a href="DIABETES.html" class="vibrant-nav-link">
+      <i>🩸</i> DIABETES
+    </a>
+    <a href="GERD.html" class="vibrant-nav-link">
+      <i>🤢</i> GERD
+    </a>
+    <a href="GYNECOLOGY.html" class="vibrant-nav-link">
+      <i>🌸</i> GYNECOLOGY
+    </a>
+    <a href="HEADACHE.html" class="vibrant-nav-link">
+      <i>🤕</i> HEADACHE
+    </a>
+    <a href="HYPERTENSION.html" class="vibrant-nav-link">
+      <i>🩺</i> HYPERTENSION
+    </a>
+    <a href="STROKE.html" class="vibrant-nav-link">
+      <i>🧠</i> STROKE
+    </a>
+  </div>
+</div>
+
+<div class="header">
+    <img src="logo.png" alt="Amader Gram Logo" class="logo">
+    <div>
+        <div class="clinic-name">AMADER GRAM CANCER CARE AND RESEARCH CENTER</div>
+        <div class="template-title">GASTROESOPHAGEAL REFLUX DISEASE (GERD) TEMPLATE</div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="main-content">
+        <!-- Patient Information Section -->
+        <div class="section">
+            <div class="section-title">Patient Information</div>
+            
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="form-group">
+                        <label>Name:</label>
+                        <input type="text" class="auto-fill" placeholder="Auto-filled">
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label>ID:</label>
+                        <input type="text" class="auto-fill" placeholder="Auto-filled">
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label>Date of Visit:</label>
+                        <input type="date" id="visit-date" value="<?php echo date('Y-m-d'); ?>">
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label>Age today:</label>
+                        <input type="number" id="age" min="0" max="120" style="width: 80px;" class="auto-fill" placeholder="Auto-filled"> years
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Diagnosis Section -->
+        <div class="section">
+            <div class="section-title">Diagnosis</div>
+            
+            <div class="red-flag">
+                <strong>Red flags:</strong> Pain which is really lower chest pain with pain that is squeezing, crushing and intense pain brought on by exertion → <strong>Chest pain EMR template</strong>.
+                Difficulty swallowing. Weight loss. Vomiting blood.
+            </div>
+            
+            <div class="reference">
+                <strong>Clinical diagnosis:</strong> After-eating, behind-breast-bone burning, made worse by lying down. Regurgitation with sour taste in mouth. Past history of these symptoms. Associated with central obesity and smoking.
+            </div>
+        </div>
+
+        <!-- History Section -->
+        <div class="section">
+            <div class="section-title">History</div>
+            
+            <div class="subsection">
+                <div class="subsection-title">History of:</div>
+                
+                <div class="form-group">
+                    <label>Trauma</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="trauma" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="trauma" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Heart disease</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="heart-disease" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="heart-disease" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Current cigarette smoking</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="smoking" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="smoking" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Waist circumference >85cm (men) / >80cm (women)</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="waist" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="waist" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Weight loss >5kg in last 6 months</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="weight-loss" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="weight-loss" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Difficulty swallowing</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="difficulty-swallowing" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="difficulty-swallowing" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Is this an acute/new problem?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="new-problem" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="new-problem" value="no"> NO</label>
+                    </div>
+                    <div id="new-problem-date" style="margin-top: 10px; display: none;">
+                        <label>Date of beginning of new problem:</label>
+                        <input type="date">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Symptoms currently the patient attributes or associated with new problem:</label>
+                    <textarea></textarea>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Location of pain/tenderness/burning:</div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Epigastric</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="epigastric" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="epigastric" value="no"> NO</label>
+                    </div>
+                    <div id="epigastric-describe" style="margin-top: 10px; display: none;">
+                        <label>Describe:</label>
+                        <textarea></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Behind breast bone</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="breast-bone" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="breast-bone" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Throat</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="throat" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="throat" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Left upper chest</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="left-chest" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="left-chest" value="no"> NO</label>
+                    </div>
+                    <div id="pain-radiation" style="margin-top: 10px; display: none;">
+                        <label>Does the pain radiate to the neck or axilla?</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="pain-radiation" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="pain-radiation" value="no"> NO</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Nature of pain:</div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Burning</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="burning" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="burning" value="no"> NO</label>
+                    </div>
+                </div>
+                
+            <div class="form-group">
+                <label>Gnawing</label>
+               <div class="radio-group">
+                  <label class="radio-option">
+                     <input type="radio" name="gnawing" value="yes" onclick="document.getElementById('peptic-ulcer-text').style.display='block'"> YES
+                  </label>
+                  <label class="radio-option">
+                     <input type="radio" name="gnawing" value="no" onclick="document.getElementById('peptic-ulter-text').style.display='none'"> NO
+                  </label>
+               </div>
+                      <div id="peptic-ulcer-text" style="display: none; margin-top: 10px;">
+                             <p style="color: red; font-weight: bold;">Peptic ulcer</p>
+                      </div>
+
+           </div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Worsens after lying down</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="lying-down" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="lying-down" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Colicky</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="colicky" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="colicky" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Wakes patient up at night?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="night-pain" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="night-pain" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Occurs after eating</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="after-eating" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="after-eating" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Regurgitation/sour taste in throat</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="regurgitation" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="regurgitation" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Fever</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="fever" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="fever" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Diarrhea</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="diarrhea" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="diarrhea" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Nausea</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="nausea" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="nausea" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Vomiting</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="vomiting" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="vomiting" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Associated non-productive cough?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="cough" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="cough" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Pain on swallowing?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="pain-swallowing" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="pain-swallowing" value="no"> NO</label>
+                    </div>
+                    <div id="constant-pain" style="margin-top: 10px; display: none;">
+                        <label>Is this pain constant?</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="constant-pain" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="constant-pain" value="no"> NO</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Sense of blockage on swallowing?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="blockage" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="blockage" value="no"> NO</label>
+                    </div>
+                    <div id="blockage-liquids" style="margin-top: 10px; display: none;">
+                        <label>Blockage with liquids?</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="blockage-liquids" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="blockage-liquids" value="no"> NO</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Blood or dark stools?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="blood-stools" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="blood-stools" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>What makes pain worse?</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>What makes pain better?</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Patient beliefs regarding cause of this problem:</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Is this new problem interfering with activities of daily living:</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="adl" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="adl" value="no"> NO</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+           <!-- Targeted Physical Examination Section -->
+      <div class="section">
+        <div class="section-title">Targeted Physical Examination</div>
+        
+         <div class="subsection">
+                <div class="subsection-title">Vital signs</div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Weight (kg):</label>
+                            <input type="number" id="weight" step="0.1">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Height (cm):</label>
+                            <input type="number" id="height">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label class="audit-item">Estimated B.M.I.:</label>
+                            <input type="text" id="bmi" readonly>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label class="audit-item">Waist circumference (cm):</label>
+                            <input type="number" id="waist-circumference">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Hip circumference (cm):</label>
+                            <input type="number" id="hip-circumference">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Waist/Hip ratio:</label>
+                            <span id="waist-hip-ratio"></span>
+                        </div>
+                    </div>
+                </div>
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label>Current pain score:</label>
+                <input type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label>Usual pain score:</label>
+                <input type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label>Worst pain score:</label>
+                <input type="number" min="0" max="10">
+              </div>
+            </div>
+          </div>
+
+          <div class="pain-faces">
+            <img src="symptom scale.png" alt="Symptom Scale" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+          </div>
+
+                        <!-- Blood Pressure Section -->
+
+          <div class="form-row" style="align-items: flex-end; gap: 20px;">
+             <div class="form-group" style="flex: 1;">
+              <label>Blood pressure 1:</label>
+                 <div style="display: flex; align-items: center; gap: 5px;">
+                   <input type="number" id="bp1-systolic" style="width: 80px; text-align: center;"> 
+                   <span>/</span>
+                       <input type="number" id="bp1-diastolic" style="width: 80px; text-align: center;">
+                    <span>mmHg</span>
+                  </div>
+             </div>
+  
+           <div class="form-group" style="flex: 1;">
+                 <label>Blood pressure 2:</label>
+                   <div style="display: flex; align-items: center; gap: 5px;">
+                  <input type="number" id="bp2-systolic" style="width: 80px; text-align: center;">
+                    <span>/</span>
+                   <input type="number" id="bp2-diastolic" style="width: 80px; text-align: center;">
+                    <span>mmHg</span>
+                 </div>
+             </div>
+  
+            <div class="form-group" style="flex: 1; margin-left: 20px;">
+                <label>Average:</label>
+                  <input type="text" id="bp-average" readonly style="background-color: #f5f5f5; width: 180px; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+            </div>
+
+                            <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Pulse rate/minute:</label>
+                            <input type="number">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Respiratory rate/minute:</label>
+                            <input type="number">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Temperature (°C):</label>
+                            <input type="number" step="0.1">
+                        </div>
+                    </div>
+                </div>
+          <div class="form-group">
+            <label>Ocular Jaundice</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="pulses-simultaneous" value="yes"> YES</label>
+              <label class="radio-option"><input type="radio" name="pulses-simultaneous" value="no"> NO</label>
+            </div>
+          </div>
+        </div>
+
+            
+            <div class="subsection">
+                <div class="subsection-title">Neck exam</div>
+                
+                <div class="form-group">
+                    <label>Cervical lymphadenopathy</label>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Left</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="cervical-left" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="cervical-left" value="no"> NO</label>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <label>Right</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="cervical-right" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="cervical-right" value="no"> NO</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Supraclavicular lymphadenopathy</label>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Left</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="supraclavicular-left" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="supraclavicular-left" value="no"> NO</label>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <label>Right</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="supraclavicular-right" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="supraclavicular-right" value="no"> NO</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Mouth and throat exam</div>
+                
+                <div class="form-group">
+                    <label>Normal</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="mouth-throat" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="mouth-throat" value="no"> NO</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Abdominal examination</div>
+                
+                <div class="form-group">
+                    <label>Appearance:</label>
+                    <textarea placeholder="Bloating/distention, skin changes"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Bowel sounds:</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Patient indicated pain/tenderness site:</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Palpation: Guarding (tensing of abdominal muscles)?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="guarding" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="guarding" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Localized tenderness site:</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Mass</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="mass" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="mass" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Rebound tenderness (increased pain when palpation in tender area is released)</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="rebound" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="rebound" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Is the liver height enlarged to percussion (≥10 cm in women, ≥13 cm in men)</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="liver-enlarged" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="liver-enlarged" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Liver tenderness</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="liver-tenderness" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="liver-tenderness" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Spleen tip palpable</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="spleen" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="spleen" value="no"> NO</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Abdominal ultrasound examination</div>
+                
+                <div class="form-group">
+                    <label>Liver</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Gall bladder, bile ducts</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Pancreas</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Spleen</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="audit-item">GE junction</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Stomach</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Kidneys Pelvices</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Kidneys Stones</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Adrenals</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Bowel/appendix</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Hernia</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Abdominal aorta</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Bladder</label>
+                    <textarea></textarea>
+                </div>
+            </div>
+            
+        <div class="subsection">
+          <div class="subsection-title">Heart examination</div>
+          <div class="form-group">
+            <label><a href="#" class="info-link" data-info="cardiac-auscultation">A PRIMER ON CARDIAC AUSCULTATION</a></label>
+          </div>
+          
+          
+          <div class="form-group">
+            <label>Heart sounds:</label>
+            <div class="form-group">
+              <label>Cardiac impulse:</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="cardiac-impulse" value="normal"> Normal</label>
+                <label class="radio-option"><input type="radio" name="cardiac-impulse" value="increased"> Increased</label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div class="form-group">
+                <label>S1 Intensity</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="s1-intensity" value="normal"> Normal</label>
+                  <label class="radio-option"><input type="radio" name="s1-intensity" value="increased"> Increased</label>
+                  <label class="radio-option"><input type="radio" name="s1-intensity" value="decreased"> Decreased</label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label>S2 Intensity</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="s2-intensity" value="normal"> Normal</label>
+                  <label class="radio-option"><input type="radio" name="s2-intensity" value="increased"> Increased</label>
+                  <label class="radio-option"><input type="radio" name="s2-intensity" value="decreased"> Decreased</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>Murmurs:</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="murmurs-present" value="none"> None</label>
+                <label class="radio-option"><input type="radio" name="murmurs-present" value="present"> Present</label>
+              </div>
+              
+              <div id="murmurs-present-details" style="margin-top: 10px; display: none;">
+                <div class="form-group">
+                  <label>Description:</label>
+                  <textarea style="min-height: 60px;"></textarea>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>S3</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="s3-present" value="present"> Present</label>
+                <label class="radio-option"><input type="radio" name="s3-present" value="none"> None heard</label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>S4</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="s4-present" value="present"> Present</label>
+                <label class="radio-option"><input type="radio" name="s4-present" value="none"> None heard</label>
+              </div>
+            </div>
+          </div>
+        </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Lung auscultation:</div>
+                
+                <div class="form-group">
+                    <label>Findings with normal breathing:</label>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Right</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="right-lung" value="normal"> No abnormal sounds over all fields</label>
+                                <label class="radio-option"><input type="radio" name="right-lung" value="abnormal"> Abnormal sounds:</label>
+                            </div>
+                            <div id="right-lung-details" style="margin-top: 10px; display: none;">
+                                <textarea placeholder="Describe abnormal sounds"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <label>Left</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="left-lung" value="normal"> No abnormal sounds over all fields</label>
+                                <label class="radio-option"><input type="radio" name="left-lung" value="abnormal"> Abnormal sounds:</label>
+                            </div>
+                            <div id="left-lung-details" style="margin-top: 10px; display: none;">
+                                <textarea placeholder="Describe abnormal sounds"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Rectal examination:</div>
+                
+                <div class="form-group">
+                    <label class="audit-item">Stool test for occult blood:</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="occult-blood" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="occult-blood" value="no"> NO</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="section">
+            <div class="section-title">Summary of key history and physical examination items</div>
+            
+            <div class="form-group">
+                <label>Potentially causative factors</label>
+                <textarea></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Important co-morbid conditions:</label>
+                <textarea></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Disease severity:</label>
+                <textarea></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Interference with activities of daily living:</label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="summary-adl" value="yes"> YES</label>
+                    <label class="radio-option"><input type="radio" name="summary-adl" value="no"> NO</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Critical physical examination findings:</label>
+                <textarea></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Differential diagnoses</label>
+                <textarea></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Red flag history or physical examination/ultrasound findings which suggest specific testing (endoscopy, Helicobacter pylori testing) or specialist consultation especially those suggestive of peptic ulcer or esophageal disease.</label>
+                <textarea></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Immediate laboratory testing suggested:</label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="checkbox" name="cbc"> CBC</label>
+                    <label class="radio-option"><input type="checkbox" name="other-test"> Other:</label>
+                    <input type="text" id="other-test-details" style="width: 300px; display: none;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary of GERD Diagnosis Section -->
+        <div class="section">
+            <div class="section-title">SUMMARY OF GASTROESOPHAGEAL REFLUX DISEASE (GERD) DIAGNOSIS AND STATUS INCLUDING PATIENT ASSESSMENT OF THIS PROBLEM, TREATMENT SIDE EFFECTS, AND TREATMENT COST:</div>
+            
+            <div class="form-group">
+                <label>Changes made to Master major problem and diagnoses list updating this and any other problems.</label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="problem-list" value="done"> DONE</label>
+                    <label class="radio-option"><input type="radio" name="problem-list" value="none"> NONE NEEDED</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Immediate recommended further tests:</label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="further-tests" value="none"> NONE</label>
+                    <label class="radio-option"><input type="radio" name="further-tests" value="specific"> Specific tests and appointments</label>
+                </div>
+                <div id="specific-tests" style="margin-top: 10px; display: none;">
+                    <textarea></textarea>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Physical therapy</label>
+                <textarea></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Tele-consultations obtained:</label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="teleconsult" value="none"> NONE</label>
+                    <label class="radio-option"><input type="radio" name="teleconsult" value="yes"> Name of consultant:</label>
+                </div>
+                <div id="teleconsult-details" style="margin-top: 10px; display: none;">
+                    <input type="text" style="width: 100%;">
+                    <label style="margin-top: 10px;">Recommendations:</label>
+                    <textarea></textarea>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Patient education:</label>
+                <div class="form-group">
+                    <label><input type="checkbox"> Review of specific symptoms and signs from physical examination</label>
+                </div>
+                <div class="form-group">
+                    <label><input type="checkbox"> Discussion of problem chronicity and benefits of regular evaluations</label>
+                </div>
+                <div class="form-group">
+                    <label><input type="checkbox"> Review of in-room health posters</label>
+                </div>
+                <div class="form-group">
+                    <label><input type="checkbox"> Discussion of appropriate physical activities</label>
+                </div>
+                <div class="form-group">
+                    <label><input type="checkbox"> Discussion of immunization status</label>
+                </div>
+                <div class="form-group">
+                    <label><input type="checkbox">  Review of specific written patient management instructions for this problem</label>
+                </div>
+                <div class="form-group">
+                    <label><input type="checkbox"> Review of any patient educational videos</label>
+                </div>
+                <div class="form-group">
+                    <label><input type="checkbox"> Discussion of specific medication treatment(s) proposed: Benefits, risks, costs</label>
+                </div>
+                <div class="form-group">
+                    <label><input type="checkbox"> Physical therapy plan by patient alone discussed</label>
+                </div>
+                <div class="form-group">
+                    <label><input type="checkbox"> Physical therapy referral discussed with benefits and risks</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Follow up visit plans emphasizing importance of regular follow up visits to prevent complications:</label>
+                <textarea></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Amader Gram virtual care system follow up plans:</label>
+                <textarea></textarea>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="form-group">
+                        <label>Health information technician:</label>
+                        <input type="text" style="width: 100%;">
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label>Medical assistant:</label>
+                        <input type="text" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="form-group">
+                        <label>Medical officer:</label>
+                        <input type="text" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="form-group">
+                        <label>Amader Gram services telephone number for appointments:</label>
+                        <input type="tel" style="width: 100%;">
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label>Amader Gram telephone number for medical questions:</label>
+                        <input type="tel" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Provision of paper copy for this visit</label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="paper-copy" value="given"> GIVEN</label>
+                    <label class="radio-option"><input type="radio" name="paper-copy" value="not-given"> NOT GIVEN</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons Section -->
+        <div class="buttons">
+            <button id="save-btn">SAVE</button>
+            <button id="submit-btn">SUBMIT TO EMR</button>
+            <button id="print-btn">PRINT</button>
+        </div>
+    </div>
+
+    <!-- Links Column -->
+    <div class="links-column">
+        <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">Visit Record Templates</h3>
+        <nav class="template-toc">
+            <ul>
+                <li><a href="#diagnosis" class="template-link">1. Diagnosis</a></li>
+                <li><a href="#history" class="template-link">2. History</a></li>
+                <li>
+                    <a href="#physical-exam" class="template-link">3. Physical Examinations</a>
+                    <ul>
+                        <li><a href="#vital-signs" class="template-link">3.1 Vital Signs</a></li>
+                        <li><a href="#abdominal-exam" class="template-link">3.2 Abdominal Exam</a></li>
+                        <li><a href="#heart-lung-exam" class="template-link">3.3 Heart/Lung Exam</a></li>
+                    </ul>
+                </li>
+                <li><a href="#summary" class="template-link">4. Summary</a></li>
+                <li><a href="#gerd-diagnosis" class="template-link">5. GERD Diagnosis</a></li>
+            </ul>
+        </nav>
+
+               <!-- Examination References Section -->
+          <div class="info-links-section" style="margin-top: 30px;">
+    <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">Examination References</h3>
+
+    <a href="#" class="info-link" data-info="gerd-guidelines">GERD Diagnosis Guidelines</a>
+    <a href="#" class="info-link" data-info="red-flags">GERD Red Flags</a>
+    <a href="#" class="info-link" data-info="treatment-options">GERD Treatment Options</a>
+    <a href="#" class="info-link" data-info="recommendations">Medical Recommendations</a>
+    <a href="#" class="info-link" data-info="lifestyle-modifications">Lifestyle Modifications</a>
+    <a href="#" class="info-link" data-info="abdominal-exam">Abdominal Examination</a>
+    <a href="#" class="info-link" data-info="patient-education">Patient Education</a>
+    <a href="#" class="info-link" data-info="reference">Reference Article</a>
+   </div>
+    </div>
+</div>
+
+<!-- Info Modal -->
+<div id="infoModal" class="info-modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="infoContent" class="info-content"></div>
+    </div>
+</div>
+
+</body>
+</html>

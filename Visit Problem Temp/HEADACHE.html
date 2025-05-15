@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGCRC- Headache</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+<div class="vibrant-nav-container">
+  <div class="vibrant-nav-header">
+    <div class="vibrant-nav-icon">📋</div>
+    <div class="vibrant-nav-title">DISEASE TEMPLATES</div>
+    <div class="vibrant-nav-arrow">▼</div>
+  </div>
+  <div class="vibrant-nav-dropdown">
+    <a href="ABDOMINAL PAIN.html" class="vibrant-nav-link">
+      <i>🩺</i> ABDOMINAL PAIN
+    </a>
+    <a href="ANEMIA.html" class="vibrant-nav-link">
+      <i>🩸</i> ANEMIA
+    </a>
+    <a href="ASTHMA ACCUTE.html" class="vibrant-nav-link">
+      <i>🌬️</i> ASTHMA ACUTE
+    </a>
+    <a href="ASTHMA SYMPTOM.html" class="vibrant-nav-link">
+      <i>😤</i> ASTHMA SYMPTOM
+    </a>
+    <a href="BACK PAIN.html" class="vibrant-nav-link">
+      <i>🧘</i> BACK PAIN
+    </a>
+    <a href="CHEST_PAIN.html" class="vibrant-nav-link">
+      <i>❤️</i> CHEST PAIN
+    </a>
+    <a href="DIABETES.html" class="vibrant-nav-link">
+      <i>🩸</i> DIABETES
+    </a>
+    <a href="GERD.html" class="vibrant-nav-link">
+      <i>🤢</i> GERD
+    </a>
+    <a href="GYNECOLOGY.html" class="vibrant-nav-link">
+      <i>🌸</i> GYNECOLOGY
+    </a>
+    <a href="HEADACHE.html" class="vibrant-nav-link">
+      <i>🤕</i> HEADACHE
+    </a>
+    <a href="HYPERTENSION.html" class="vibrant-nav-link">
+      <i>🩺</i> HYPERTENSION
+    </a>
+    <a href="STROKE.html" class="vibrant-nav-link">
+      <i>🧠</i> STROKE
+    </a>
+  </div>
+</div>
+
+
+    <div class="header">
+        <img src="logo.png" alt="Amader Gram Logo" class="logo">
+        <div>
+            <div class="clinic-name">AMADER GRAM CANCER CARE AND RESEARCH CENTER</div>
+            <div class="template-title">EMR HEADACHE (H/A) TEMPLATE FOR HISTORY, AND PHYSICAL EXAMINATION</div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="main-content">
+            <!-- Patient Information Section -->
+            <div class="section">
+                <div class="section-title">Patient Information</div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Name:</label>
+                            <input type="text" class="auto-fill" placeholder="Auto-filled">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>ID:</label>
+                            <input type="text" class="auto-fill" placeholder="Auto-filled">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Date of Visit:</label>
+                            <input type="date" id="visit-date" value="<?php echo date('Y-m-d'); ?>">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Age today:</label>
+                            <input type="number" id="age" min="0" max="120" style="width: 80px;" class="auto-fill" placeholder="Auto-filled"> years
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diagnosis Section -->
+            <div class="section">
+                <div class="section-title">Diagnosis</div>
+                <div class="red-flag">
+                    <strong>Red flags:</strong> New headache; explosive headache; change in chronic headache pattern with increasing severity; neurological symptoms or signs such as altered mental status, focal neurological deficit, stiff neck, worse headache when lying flat.
+                </div>
+
+                <div class="reference">
+                    <strong>Clinical diagnosis:</strong>
+                    <ul>
+                        <li><a href="#" class="info-link" data-info="tension-headache">Tension/muscle contraction type headache (H/A)</a>. Most common type. Slow onset. Tightening/squeezing around the entire head or bilateral in frontotemporal, occipito-cervical regions. Common triggers: Hunger, sleep deprivation, dehydration</li>
+                        <li><a href="#" class="info-link" data-info="cluster-headache">Cluster headache (H/A)</a>. Infrequent. More common in men. Burning or stabbing pain around the eye. Unilateral.</li>
+                        <li><a href="#" class="info-link" data-info="migraine-headache">Migraine headache (H/A)</a>. Headaches occurring at intervals. Throbbing pain. Nausea. Light and sound sensitivity. Usually affecting one side of head; commonly frontotemporal. More common in women and during ages 30 thru 40s. Some migraine H/As are associated with aura preceding H/A lasting 5-60 minutes with visual and sensory symptoms.</li>
+                        <li><a href="#" class="info-link" data-info="post-traumatic-headache">Post traumatic headache (H/A)</a>.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- History Section -->
+            <div class="section">
+                <div class="section-title">History</div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">History of:</div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Trauma</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="trauma" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="trauma" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label class="audit-item">Specific triggers for H/A:</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-option"><input type="checkbox" name="trigger-caffeine"> Caffeine</label>
+                                    <label class="checkbox-option"><input type="checkbox" name="trigger-weather"> Weather changes</label>
+                                    <label class="checkbox-option"><input type="checkbox" name="trigger-dehydration"> Dehydration</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>BMI >22</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="bmi" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="bmi" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Associated fever or myalgias</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="fever-myalgia" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="fever-myalgia" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label class="audit-item">Vertigo</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="vertigo" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="vertigo" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Nausea/vomiting</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="nausea" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="nausea" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label class="audit-item">Photophobia</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="photophobia" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="photophobia" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label class="audit-item">Aura</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="aura" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="aura" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Phonophobia</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="phonophobia" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="phonophobia" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label class="audit-item">Associated stiff neck</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="stiff-neck" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="stiff-neck" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Increased when lying down</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="lying-down" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="lying-down" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="subsection-title">Site:</div>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Unilateral</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="unilateral" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="unilateral" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Holocephalic</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="holocephalic" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="holocephalic" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Retro-orbital</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="retro-orbital" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="retro-orbital" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Temporal</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="temporal" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="temporal" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Frontal</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="frontal" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="frontal" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="audit-item">Timing On awakening from sleep</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="morning-headache" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="morning-headache" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Duration:</label>
+                        <input type="number" name="duration" min="0" style="width: 80px;"> Hours
+                    </div>
+                    
+                    <div class="subsection-title">Character:</div>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Throbbing</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="throbbing" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="throbbing" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Pressure</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="pressure" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="pressure" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Sharp</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="sharp" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="sharp" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="audit-item">Changed from any previous H/A</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="changed-pattern" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="changed-pattern" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Date of beginning of headache:</label>
+                        <input type="date" name="headache-start-date">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="audit-item">Patient beliefs about causes of this (and if present previous) headache(s):</label>
+                        <textarea name="patient-beliefs"></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label class="audit-item">Usual H/A pain level</label>
+                                <input type="number" name="usual-pain" min="0" max="10">
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label class="audit-item">Worst H/A pain level</label>
+                                <input type="number" name="worst-pain" min="0" max="10">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pain-faces">
+                        <img src="symptom scale.png" alt="Symptom Scale" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Is this headache problem interfering with activities of daily living:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="adl" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="adl" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="audit-item">Does patient report being severely stressed?</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="stress" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="stress" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Is there a history of headaches in close relatives: mother father sister or brother?</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="family-history" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="family-history" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Before this headache problem, patient reports moderate or greater physical activity during:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="activity-level" value="less"> Less than 3 hours per week</label>
+                            <label class="radio-option"><input type="radio" name="activity-level" value="moderate"> 3-5 hours per week</label>
+                            <label class="radio-option"><input type="radio" name="activity-level" value="more"> More than 5 hours per week</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Medications taken for headache:</label>
+                        <textarea name="medications"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Targeted Physical Examination Section -->
+            <div class="section">
+                <div class="section-title">Targeted Physical Examinations</div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Vital signs</div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Weight (kg):</label>
+                                <input type="number" id="weight" step="0.1">
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Height (cm):</label>
+                                <input type="number" id="height">
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label class="audit-item">Estimated B.M.I.:</label>
+                                <input type="text" id="bmi" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label class="audit-item">Waist circumference (cm):</label>
+                                <input type="number" id="waist-circumference">
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Hip circumference (cm):</label>
+                                <input type="number" id="hip-circumference">
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Waist/Hip ratio:</label>
+                                <span id="waist-hip-ratio"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row" style="align-items: flex-end; gap: 20px;">
+                        <div class="form-group" style="flex: 1;">
+                            <label>Blood pressure 1:</label>
+                            <div style="display: flex; align-items: center; gap: 5px;">
+                                <input type="number" id="bp1-systolic" style="width: 80px; text-align: center;">
+                                <span>/</span>
+                                <input type="number" id="bp1-diastolic" style="width: 80px; text-align: center;">
+                                <span>mmHg</span>
+                            </div>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label>Blood pressure 2:</label>
+                            <div style="display: flex; align-items: center; gap: 5px;">
+                                <input type="number" id="bp2-systolic" style="width: 80px; text-align: center;">
+                                <span>/</span>
+                                <input type="number" id="bp2-diastolic" style="width: 80px; text-align: center;">
+                                <span>mmHg</span>
+                            </div>
+                        </div>
+                        <div class="form-group" style="flex: 1; margin-left: 20px;">
+                            <label class="audit-item">Average:</label>
+                            <input type="text" id="bp-average" readonly style="background-color: #F5f5f5; width: 180px; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Pulse rate/minute:</label>
+                                <input type="number">
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Respiratory rate/minute:</label>
+                                <input type="number">
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Temperature (°C):</label>
+                                <input type="number" step="0.1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Head and neck exam</div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Head/scalp tenderness</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="scalp-tenderness" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="scalp-tenderness" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label class="audit-item">Temporal artery tenderness</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="temporal-artery" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="temporal-artery" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Sinus area tenderness:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="sinus-tenderness" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="sinus-tenderness" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Ear exam:</label>
+                        <textarea name="ear-exam"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Mouth exam:</label>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label>Throat/tonsils</label>
+                                <textarea name="throat-exam"></textarea>
+                            </div>
+                            <div class="form-col">
+                                <label>Tongue</label>
+                                <textarea name="tongue-exam"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label>Teeth</label>
+                                <textarea name="teeth-exam"></textarea>
+                            </div>
+                            <div class="form-col">
+                                <label>Gums and inside cheeks</label>
+                                <textarea name="gums-exam"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Neck Jaw angle - Temperomandibular joint tenderness</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="tmj-tenderness" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="tmj-tenderness" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Right neck adenopathy</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="right-adenopathy" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="right-adenopathy" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Left neck adenopathy</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="left-adenopathy" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="left-adenopathy" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Cervical spine tenderness</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="cervical-tenderness" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="cervical-tenderness" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label class="audit-item">Cervical muscle tenderness and stiffness</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="cervical-muscle" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="cervical-muscle" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Carotid artery auscultation bruits</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="carotid-bruit" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="carotid-bruit" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Neck range of motion</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="neck-rom" value="normal"> Normal</label>
+                            <label class="radio-option"><input type="radio" name="neck-rom" value="abnormal"> Abnormal</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Thyroid Palpable/enlarged:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="thyroid" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="thyroid" value="no"> NO</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="audit-item">Fine finger tremor:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="finger-tremor" value="present"> PRESENT</label>
+                            <label class="radio-option"><input type="radio" name="finger-tremor" value="absent"> ABSENT</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Retinal fundoscopic imaging</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="fundoscopy-done" value="yes"> DONE</label>
+                            <label class="radio-option"><input type="radio" name="fundoscopy-done" value="no"> NOT DONE</label>
+                        </div>
+                        <div id="fundoscopy-details" style="margin-top: 10px; display: none;">
+                <div class="form-group">
+                        <label>Are pupils dilated</label>
+                   <div class="radio-group">
+                     <label class="radio-option"><input type="radio" name="pupils-dilated" value="yes" onchange="toggleMedicalEmergency(this)"> YES</label>
+                     <label class="radio-option"><input type="radio" name="pupils-dilated" value="no" onchange="toggleMedicalEmergency(this)"> NO</label>
+                  </div>
+                 <div id="medical-emergency-alert" style="display: none; color: red; font-weight: bold; margin-top: 5px;">
+                               MEDICAL EMERGENCY
+                           </div>
+                </div>
+                            <div class="form-group">
+                                <label class="audit-item">Optic disc swelling</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="disc-swelling" value="present"> Present</label>
+                                    <label class="radio-option"><input type="radio" name="disc-swelling" value="absent"> Absent</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Retinal vessel changes</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="vessel-changes" value="present"> Present</label>
+                                    <label class="radio-option"><input type="radio" name="vessel-changes" value="absent"> Absent</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Retinal vessel pulsations</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="vessel-pulsations" value="present"> Present</label>
+                                    <label class="radio-option"><input type="radio" name="vessel-pulsations" value="absent"> Absent</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Heart examination</div>
+                    
+                    <div class="form-group">
+                        <label><a href="#" class="info-link" data-info="cardiac-auscultation">A PRIMER ON CARDIAC AUSCULTATION</a></label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Cardiac impulse:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="cardiac-impulse" value="normal"> Normal</label>
+                            <label class="radio-option"><input type="radio" name="cardiac-impulse" value="increased"> Increased</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Heart sounds:</label>
+                        <div class="form-group">
+                            <label>S1 Intensity</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="s1-intensity" value="normal"> Normal</label>
+                                <label class="radio-option"><input type="radio" name="s1-intensity" value="increased"> Increased</label>
+                                <label class="radio-option"><input type="radio" name="s1-intensity" value="decreased"> Decreased</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>S2 Intensity</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="s2-intensity" value="normal"> Normal</label>
+                                <label class="radio-option"><input type="radio" name="s2-intensity" value="increased"> Increased</label>
+                                <label class="radio-option"><input type="radio" name="s2-intensity" value="decreased"> Decreased</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Murmurs:</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="murmurs-present" value="none"> None</label>
+                            <label class="radio-option"><input type="radio" name="murmurs-present" value="present"> Present</label>
+                        </div>
+                        <div id="murmurs-present-details" style="margin-top: 10px; display: none;">
+                            <div class="form-group">
+                                <label>Description:</label>
+                                <textarea style="min-height: 60px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>S3</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="s3-present" value="present"> Present</label>
+                            <label class="radio-option"><input type="radio" name="s3-present" value="none"> None heard</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>S4</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="s4-present" value="present"> Present</label>
+                            <label class="radio-option"><input type="radio" name="s4-present" value="none"> None heard</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Lung auscultation:</div>
+                    
+                    <div class="form-group">
+                        <label>Findings with normal breathing:</label>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label>Right</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="right-lung" value="normal"> No abnormal sounds over all fields</label>
+                                    <label class="radio-option"><input type="radio" name="right-lung" value="abnormal"> Abnormal sounds:</label>
+                                </div>
+                                <div id="right-lung-details" style="margin-top: 10px; display: none;">
+                                    <textarea placeholder="Describe abnormal sounds"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <label>Left</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="left-lung" value="normal"> No abnormal sounds over all fields</label>
+                                    <label class="radio-option"><input type="radio" name="left-lung" value="abnormal"> Abnormal sounds:</label>
+                                </div>
+                                <div id="left-lung-details" style="margin-top: 10px; display: none;">
+                                    <textarea placeholder="Describe abnormal sounds"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Neurological examination:</div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Is speech fluent?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="speech-fluent" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="speech-fluent" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Can patient comprehend regular speech?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="comprehend-speech" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="comprehend-speech" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Can patient repeat 3 common words?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="repeat-words" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="repeat-words" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="subsection-title">Cranial nerve assessment:</div>
+                     <div class="form-group">
+                        <label>I. Olfactory: Does patient report any change in sense of smell?</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="olfactory" value="yes"> YES</label>
+                            <label class="radio-option"><input type="radio" name="olfactory" value="no"> NO</label>
+                        </div>
+                     </div>
+                    
+                    <div class="form-group">
+                        <label>II. Optic:</label>
+                        <div class="form-group">
+                            <label>Test visual fields Upper, lateral, lower fields:</label>
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <label>Right eye</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="right-visual" value="normal"> Normal</label>
+                                        <label class="radio-option"><input type="radio" name="right-visual" value="abnormal"> Abnormal</label>
+                                    </div>
+                                </div>
+                                <div class="form-col">
+                                    <label>Left eye</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="left-visual" value="normal"> Normal</label>
+                                        <label class="radio-option"><input type="radio" name="left-visual" value="abnormal"> Abnormal</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="audit-item">Visual acuity assessment (SNELLEN CHART)</label>
+                        </div>
+                       <div class="form-group">
+                          <label><a href="#" class="info-link" data-info="visual-acuity">Visual Acuity Assessment Strategy</a></label>
+                          </div>
+                       </div>
+                    
+                    <div class="form-group">
+                        <label>III. Oculomotor:</label>
+                        <div class="form-group">
+                            <label>Pupillary reaction to light:</label>
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <label>Right eye</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="right-pupil-light" value="yes"> YES</label>
+                                        <label class="radio-option"><input type="radio" name="right-pupil-light" value="no"> NO</label>
+                                    </div>
+                                </div>
+                                <div class="form-col">
+                                    <label>Left eye</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="left-pupil-light" value="yes"> YES</label>
+                                        <label class="radio-option"><input type="radio" name="left-pupil-light" value="no"> NO</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <label>Right eye consensual</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="right-consensual" value="yes"> YES</label>
+                                        <label class="radio-option"><input type="radio" name="right-consensual" value="no"> NO</label>
+                                    </div>
+                                </div>
+                                <div class="form-col">
+                                    <label>Left eye consensual</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="left-consensual" value="yes"> YES</label>
+                                        <label class="radio-option"><input type="radio" name="left-consensual" value="no"> NO</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="audit-item">Pupillary constriction looking at near object</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="pupil-constriction" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="pupil-constriction" value="no"> NO</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="audit-item">Pupillary dilation looking at far object</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="pupil-dilation" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="pupil-dilation" value="no"> NO</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>IV. Trochlear</label>
+                        <div class="form-group">
+                            <label>Able to follow light up and down, right and left:</label>
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <label>Right eye</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="right-trochlear" value="yes"> YES</label>
+                                        <label class="radio-option"><input type="radio" name="right-trochlear" value="no"> NO</label>
+                                    </div>
+                                </div>
+                                <div class="form-col">
+                                    <label>Left eye</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="left-trochlear" value="yes"> YES</label>
+                                        <label class="radio-option"><input type="radio" name="left-trochlear" value="no"> NO</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>V. Trigeminal</label>
+                        <div class="form-group">
+                            <label>Corneal test: Light touch🡪blink reflex</label>
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <label>Right eye</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="right-corneal" value="yes"> YES</label>
+                                        <label class="radio-option"><input type="radio" name="right-corneal" value="no"> NO</label>
+                                    </div>
+                                </div>
+                                <div class="form-col">
+                                    <label>Left eye</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="left-corneal" value="yes"> YES</label>
+                                        <label class="radio-option"><input type="radio" name="left-corneal" value="no"> NO</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Light touch to forehead felt:</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="forehead-touch" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="forehead-touch" value="no"> NO</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>VI. Abducens</label>
+                        <div class="form-group">
+                            <label>Eyes move following penlight in coordinated manner:</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="abducens" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="abducens" value="no"> NO</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>VII. Facial</label>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label>Smile:</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="smile" value="normal"> Normal</label>
+                                </div>
+                                <label class="radio-option"><input type="radio" name="smile" value="asymmetric"> Asymmetric</label>
+                            </div>
+                            <div class="form-col">
+                                <label>Showing teeth:</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="teeth" value="normal"> Normal</label>
+                                </div>
+                                <label class="radio-option"><input type="radio" name="teeth" value="asymmetric"> Asymmetric</label>
+                            </div>
+                            <div class="form-col">
+                                <label>Raise eyebrows:</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="eyebrows" value="normal"> Normal</label>
+                                </div>
+                                <label class="radio-option"><input type="radio" name="eyebrows" value="asymmetric"> Asymmetric</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>VIII. Vestibulocochlear</label>
+                        <div class="form-group">
+                            <label>Hears watch tic:</label>
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <label>Right ear</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="right-hearing" value="yes"> YES</label>
+                                        <label class="radio-option"><input type="radio" name="right-hearing" value="no"> NO</label>
+                                    </div>
+                                </div>
+                                <div class="form-col">
+                                    <label>Left ear</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option"><input type="radio" name="left-hearing" value="yes"> YES</label>
+                                        <label class="radio-option"><input type="radio" name="left-hearing" value="no"> NO</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Gait:</label>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label class="audit-item">REGULAR</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="gait-regular" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="gait-regular" value="no"> NO</label>
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <label class="audit-item">STEADY/STABLE</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="gait-steady" value="yes"> YES</label>
+                                    <label class="radio-option"><input type="radio" name="gait-steady" value="no"> NO</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>IX. Glossopharyngeal</label>
+                        <div class="form-group">
+                            <label class="audit-item">Uvula midline</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="uvula" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="uvula" value="no"> NO</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Swallow normal</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="swallow" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="swallow" value="no"> NO</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>X. Vagus</label>
+                        <div class="form-group">
+                            <label>Speech without hoarseness</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="hoarseness" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="hoarseness" value="no"> NO</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>XI. Accessory</label>
+                        <div class="form-group">
+                            <label>Shrugs shoulders against resistance</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="shoulder-shrug" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="shoulder-shrug" value="no"> NO</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Turns head side to side against resistance</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="head-turn" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="head-turn" value="no"> NO</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>XII. Hypoglossal</label>
+                        <div class="form-group">
+                            <label class="audit-item">Tongue protrudes in midline and moves side to side normally</label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="tongue-movement" value="yes"> YES</label>
+                                <label class="radio-option"><input type="radio" name="tongue-movement" value="no"> NO</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Strength:</label>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label>Arm raise right</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="arm-right" value="normal"> NORMAL</label>
+                                    <label class="radio-option"><input type="radio" name="arm-right" value="weak"> WEAK</label>
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <label>Arm raise left</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="arm-left" value="normal"> NORMAL</label>
+                                    <label class="radio-option"><input type="radio" name="arm-left" value="weak"> WEAK</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label>Leg raise right</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="leg-right" value="normal"> NORMAL</label>
+                                    <label class="radio-option"><input type="radio" name="leg-right" value="weak"> WEAK</label>
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <label>Leg raise left</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="leg-left" value="normal"> NORMAL</label>
+                                    <label class="radio-option"><input type="radio" name="leg-left" value="weak"> WEAK</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Reflexes:</label>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label>Brachial right:</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="brachial-right" value="normal"> NORMAL</label>
+                                    <label class="radio-option"><input type="radio" name="brachial-right" value="hyper"> HYPER</label>
+                                    <label class="radio-option"><input type="radio" name="brachial-right" value="decreased"> DECREASED</label>
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <label>Brachial left:</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="brachial-left" value="normal"> NORMAL</label>
+                                    <label class="radio-option"><input type="radio" name="brachial-left" value="hyper"> HYPER</label>
+                                    <label class="radio-option"><input type="radio" name="brachial-left" value="decreased"> DECREASED</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label>Knee right:</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="knee-right" value="normal"> NORMAL</label>
+                                    <label class="radio-option"><input type="radio" name="knee-right" value="hyper"> HYPER</label>
+                                    <label class="radio-option"><input type="radio" name="knee-right" value="decreased"> DECREASED</label>
+                                </div>
+                            </div>
+                            <div class="form-col">
+                                <label>Knee left:</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="knee-left" value="normal"> NORMAL</label>
+                                    <label class="radio-option"><input type="radio" name="knee-left" value="hyper"> HYPER</label>
+                                    <label class="radio-option"><input type="radio" name="knee-left" value="decreased"> DECREASED</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Section -->
+            <div class="section">
+                <div class="section-title">Summary of key history and physical examination items:</div>
+                
+                <div class="form-group">
+                    <label>Potentially causative factors</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Important co-morbid conditions:</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Disease severity:</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Interference with activities of daily living:</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="summary-adl" value="yes"> YES</label>
+                        <label class="radio-option"><input type="radio" name="summary-adl" value="no"> NO</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Critical physical examination findings:</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Differential diagnoses:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option"><input type="checkbox" name="dx-tension"> Tension H/A</label>
+                        <label class="checkbox-option"><input type="checkbox" name="dx-cluster"> Cluster H/A</label>
+                        <label class="checkbox-option"><input type="checkbox" name="dx-migraine"> Migraine H/A</label>
+                        <label class="checkbox-option"><input type="checkbox" name="dx-other"> Other:</label>
+                        <input type="text" id="other-dx-details" style="width: 300px; display: none;">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Red flag history or physical examination findings which suggest imaging, or specialist consultation:</label>
+                    <textarea></textarea>
+                </div>
+            </div>
+
+            <!-- Summary of Headache Diagnosis Section -->
+            <div class="section">
+                <div class="section-title">SUMMARY OF HEADACHE DIAGNOSIS AND STATUS INCLUDING PATIENT ASSESSMENT OF THIS PROBLEM, TREATMENT SIDE EFFECTS, AND TREATMENT COST:</div>
+                
+                <div class="form-group">
+                    <label>Changes made to Master major problem and diagnoses list updating this and any other problems.</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="problem-list" value="done"> DONE</label>
+                        <label class="radio-option"><input type="radio" name="problem-list" value="none"> NONE NEEDED</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Immediate recommended further tests:</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="further-tests" value="none"> NONE</label>
+                        <label class="radio-option"><input type="radio" name="further-tests" value="specific"> Specific tests and appointments</label>
+                    </div>
+                    <div id="specific-tests" style="margin-top: 10px; display: none;">
+                        <textarea></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Tele-consultations obtained:</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="teleconsult" value="none"> NONE</label>
+                        <label class="radio-option"><input type="radio" name="teleconsult" value="yes"> Name of consultant:</label>
+                    </div>
+                    <div id="teleconsult-details" style="margin-top: 10px; display: none;">
+                        <input type="text" style="width: 100%;">
+                        <label style="margin-top: 10px;">Recommendations:</label>
+                        <textarea></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Recommended medical interventions:</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Patient education:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option"><input type="checkbox"> Review of specific symptoms and signs from physical examination</label>
+                        <label class="checkbox-option"><input type="checkbox"> Discussion of problem chronicity and benefits of regular evaluations</label>
+                        <label class="checkbox-option"><input type="checkbox"> Review of in-room health posters</label>
+                        <label class="checkbox-option"><input type="checkbox"> Discussion of appropriate physical activities</label>
+                        <label class="checkbox-option"><input type="checkbox"> Discussion of immunization status</label>
+                        <label class="checkbox-option"><input type="checkbox"> Review of specific written patient management instructions for this problem</label>
+                        <label class="checkbox-option"><input type="checkbox"> Review of any patient educational videos</label>
+                        <label class="checkbox-option"><input type="checkbox"> Discussion of specific medication treatment(s) proposed: Benefits, risks, costs</label>
+                        <label class="checkbox-option"><input type="checkbox"> Physical therapy plan by patient alone discussed</label>
+                        <label class="checkbox-option"><input type="checkbox"> Physical therapy referral discussed with benefits and risks</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Follow up visit plans emphasizing importance of regular follow up visits to prevent complications:</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Amader Gram virtual care system follow up plans:</label>
+                    <textarea></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Health information technician:</label>
+                            <input type="text" style="width: 100%;">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Medical assistant:</label>
+                            <input type="text" style="width: 100%;">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Medical officer:</label>
+                            <input type="text" style="width: 100%;">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Amader Gram services telephone number for appointments:</label>
+                            <input type="tel" style="width: 100%;">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label>Amader Gram telephone number for medical questions:</label>
+                            <input type="tel" style="width: 100%;">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Provision of paper copy for this visit</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="paper-copy" value="given"> GIVEN</label>
+                        <label class="radio-option"><input type="radio" name="paper-copy" value="not-given"> NOT GIVEN</label>
+                    </div>
+                </div>
+                
+                <!-- Buttons Section -->
+                <div class="buttons">
+                    <button id="save-btn">SAVE</button>
+                    <button id="submit-btn">SUBMIT TO EMR</button>
+                    <button id="print-btn">PRINT</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Links Column -->
+        <div class="links-column">
+            <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">Visit Record Templates</h3>
+            
+            <nav class="template-toc">
+                <ul>
+                    <li><a href="#diagnosis" class="template-link">1. Diagnosis</a></li>
+                    <li><a href="#history" class="template-link">2. History</a></li>
+                    <li>
+                        <a href="#physical-exam" class="template-link">3. Physical Examinations</a>
+                        <ul>
+                            <li><a href="#vital-signs" class="template-link">3.1 Vital Signs</a></li>
+                            <li><a href="#head-neck-exam" class="template-link">3.2 Head/Neck Exam</a></li>
+                            <li><a href="#heart-lung-exam" class="template-link">3.3 Heart/Lung Exam</a></li>
+                            <li><a href="#neuro-exam" class="template-link">3.4 Neurological Exam</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#summary" class="template-link">4. Summary</a></li>
+                    <li><a href="#headache-diagnosis" class="template-link">5. Headache Diagnosis</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Examination References Section -->
+            <div class="info-links-section" style="margin-top: 30px;">
+                <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">Examination References</h3>
+                <a href="#" class="info-link" data-info="headache-guidelines">Headache Diagnosis Guidelines</a>
+                <a href="#" class="info-link" data-info="red-flags">Headache Red Flags</a>
+                <a href="#" class="info-link" data-info="treatment-options">Headache Treatment Options</a>
+                <a href="#" class="info-link" data-info="recommendations">Medical Recommendations</a>
+                <a href="#" class="info-link" data-info="lifestyle-modifications">Lifestyle Modifications</a>
+                <a href="#" class="info-link" data-info="neuro-exam">Neurological Examination</a>
+                <a href="#" class="info-link" data-info="patient-education">Patient Education</a>
+                <a href="#" class="info-link" data-info="reference">Reference Article</a>
+            </div>
+                  <!-- Snellen Chart Section -->
+    <div style="margin-top: 30px; text-align: center;">
+        <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">SNELLEN CHART</h3>
+        <img src="SNELLEN CHART.jpg" alt="Snellen Chart" 
+             style="width: 100%; max-width: 700px; 
+                    margin: 15px auto; 
+                    background-color: transparent;
+                    box-shadow: none;
+                    border: none;">
+         </div>
+        </div>
+    </div>
+    
+    <!-- Info Modal -->
+    <div id="infoModal" class="info-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="infoContent" class="info-content"></div>
+        </div>
+    </div>
+</body>
+</html>
